@@ -7,4 +7,5 @@ https://www.jianshu.com/p/cf4989c20bd8
 当然，个gitbook serve这一步会出错，会出现fontsettings.js找不到的情况，我们需要修改C:\Users\pili\.gitbook\versions\3.2.3\lib\output\website\copyPluginAssets.js，设置confirm: false，再重启个gitbook serve就可以了。
 详见https://github.com/GitbookIO/gitbook/issues/1309
 然后就可以在http://localhost:4000访问书籍了
+![](/assets/FirstChapter1.PNG)
 

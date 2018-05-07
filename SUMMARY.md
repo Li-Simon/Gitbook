@@ -13,7 +13,7 @@
     * [第三节 需要做的事情](chapter3/section3.md)
 * [第四章 XXX](chapter4/README.md)
     * [第一节 比特币代码分析](chapter4/section1.md)
-        * [第一小节 比特币代码分析](chapter4/section1/part1.md)    
+        * [第一段 VS2017下调试Bitcoincode](chapter4/section1/part1.md)    
     * [第二节 密码学笔记](chapter4/section2.md)
     * [第三节 比特币下的区块链](chapter4/section3.md)
 

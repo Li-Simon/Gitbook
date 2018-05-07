@@ -1,4 +1,4 @@
-# 第一章
+# 第一章：怎么安装使用GitBook
 
 怎么利用gitbook生成自己的书，可以参考如下链接
 https://www.jianshu.com/p/cf4989c20bd8

@@ -9,4 +9,5 @@ https://www.cnblogs.com/Lam7/p/6109872.html
 详见https://github.com/GitbookIO/gitbook/issues/1309
 然后就可以在 http://localhost:4000 访问书籍了
 ![](/assets/FirstChapter1.PNG)
-
+如果想让章节有层次感的显示，则可以在summary.md中设置
+![](/assets/GitbookChapterSectionPart.png)

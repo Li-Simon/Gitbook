@@ -1,5 +1,5 @@
 # 第一节
-
+Gitbook是Github旗下的产品，它提供书籍的编写与管理的功能，一个核心特征就是，它管理书也像管理代码一样，可以对数据进行fork,建立新的branch,使得书也可以进行版本迭代。
 怎么利用gitbook生成自己的书，可以参考如下链接
 https://www.jianshu.com/p/cf4989c20bd8
 https://www.cnblogs.com/Lam7/p/6109872.html

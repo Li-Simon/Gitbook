@@ -21,8 +21,6 @@ Action可以接受0个至16个传入参数，无返回值
 Predicate只能接受一个传入参数，返回值为bool类型
 ```
 
-$$x^{2}$$
-
 ```
  Mutex的使用
  // Summary:

@@ -1,2 +1,4 @@
-# 第一节 插值
+# 第一节 Kriging插值
+https://xg1990.com/blog/archives/222
+
 

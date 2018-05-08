@@ -8,7 +8,7 @@
 2. 优化目标/代价函数 $$J = Var((\hat{z_0} - z_0))$$取极小值
 3. 空间关联
 
-$$r_{ij} = \sigma^2 - C_{ij}$$
+半方差函数$$r_{ij} = \sigma^2 - C_{ij}$$
 等价于$$r_{ij} = \frac{1}{2}E[(z_i-z_j)^2]$$
 $$\begin{bmatrix}r_{11}&r_{12}&\cdots&r_{1n}&1\\ r_{21}&r_{22}&\cdots&r_{2n}&1\\\cdots&\cdots&\cdots&\cdots&\cdots\\r_{n1}&r_{n2}&\cdots&r_{nn}&1\\1&1&\cdots&1&0\end{bmatrix}\begin{bmatrix} \lambda_1\\ \lambda_2\\\cdots\\\lambda_n\\0\end{bmatrix}=\begin{bmatrix} r_{1o}\\ r_{2o}\\\cdots\\r_{no}\\1\end{bmatrix}$$
 

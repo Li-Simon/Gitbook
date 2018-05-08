@@ -24,6 +24,7 @@ Predicate只能接受一个传入参数，返回值为bool类型
 $$x^{2}$$
 
 ```
+ Mutex的使用
  // Summary:
         //     Initializes a new instance of the System.Threading.Mutex class with a Boolean
         //     value that indicates whether the calling thread should have initial ownership

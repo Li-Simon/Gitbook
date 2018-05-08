@@ -189,7 +189,7 @@ public void OnUpdateUserChange(UserLevel userLevel)
                 btDelete.Enabled = false;
             }
         }
-        
+
 private List<IUserManagement> m_lsUser = new List<IUserManagement>(); 
 //User Management 把不同控件添加到m_lsUser
 m_iuserManageContainer.AddModule(m_treeView);
@@ -200,9 +200,9 @@ m_iuserManageContainer.AddModule(m_userManagementDlg);
 m_iuserManageContainer.AddModule(m_rawDataExplorer);
 m_iuserManageContainer.AddModule(this);
 m_iuserManageContainer.OnUpdateUserChange();
-                
+
 void AddModule(IUserManagement user){m_lsUser.Add(user);}
-然后调用更新函数                
+然后调用每个控件自己的OnUpdateUserChange函数                
 public void OnUpdateUserChange()
 {
     foreach (var item in m_lsUser)

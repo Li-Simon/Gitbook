@@ -165,5 +165,52 @@ public class GenericList<T> {
 }
 ```
 
+```
+为控件添加权限
+1.让需要设置权限的控件继承一个接口IUserManagement，这个接口就只有一个方法OnUpdateUserChange，这个方法里面处理不同用户的权限。
+public void OnUpdateUserChange(UserLevel userLevel)
+        {
+            if (userLevel == UserLevel.USER_ADMIN)
+            {
+                btAdd.Enabled = true;
+                btEdit.Enabled = true;
+                btDelete.Enabled = true;
+            }
+            else if (userLevel == UserLevel.USER_ENGINEER)
+            {
+                btAdd.Enabled = true;
+                btEdit.Enabled = true;
+                btDelete.Enabled = true;
+            }
+            else
+            {
+                btAdd.Enabled = false;
+                btEdit.Enabled = false;
+                btDelete.Enabled = false;
+            }
+        }
+        
+private List<IUserManagement> m_lsUser = new List<IUserManagement>(); 
+//User Management 把不同控件添加到m_lsUser
+m_iuserManageContainer.AddModule(m_treeView);
+m_iuserManageContainer.AddModule(m_sysConfigEditorCtrl);
+m_iuserManageContainer.AddModule(m_probeLibraryMainDlg);
+m_iuserManageContainer.AddModule(m_defaultRecipeCtrl);
+m_iuserManageContainer.AddModule(m_userManagementDlg);
+m_iuserManageContainer.AddModule(m_rawDataExplorer);
+m_iuserManageContainer.AddModule(this);
+m_iuserManageContainer.OnUpdateUserChange();
+                
+void AddModule(IUserManagement user){m_lsUser.Add(user);}
+然后调用更新函数                
+public void OnUpdateUserChange()
+{
+    foreach (var item in m_lsUser)
+    {
+        item.OnUpdateUserChange(USERLEVEL);
+    }
+}
+```
+
 
 

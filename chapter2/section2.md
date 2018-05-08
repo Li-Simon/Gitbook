@@ -72,7 +72,7 @@ IModuleCommonInterface iMagnet = MagnetSystem.GetInstance as IModuleCommonInterf
 
 ```
 Event 
- public static event EventHandler<NexusWaferLocationEventArgs> WaferLocationEvent
+public static event EventHandler<NexusWaferLocationEventArgs> WaferLocationEvent
         {
             add { m_waferLocationEvent += value; }
             remove { m_waferLocationEvent -= value; }

@@ -67,5 +67,10 @@ $$x^{2}$$
         var mutex = new Mutex(false, RS7.IF.CommonFunction.CommonString.MutexName, out createdNew);
 ```
 
+```
+as 的用法
+IModuleCommonInterface iMagnet = MagnetSystem.GetInstance as IModuleCommonInterface;
+```
+
 
 

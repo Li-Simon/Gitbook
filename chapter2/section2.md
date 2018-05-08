@@ -70,5 +70,14 @@ as 的用法
 IModuleCommonInterface iMagnet = MagnetSystem.GetInstance as IModuleCommonInterface;
 ```
 
+```
+Event 
+ public static event EventHandler<NexusWaferLocationEventArgs> WaferLocationEvent
+        {
+            add { m_waferLocationEvent += value; }
+            remove { m_waferLocationEvent -= value; }
+        }
+```
+
 
 

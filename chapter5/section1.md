@@ -2,8 +2,10 @@
 
 [https://xg1990.com/blog/archives/222](https://xg1990.com/blog/archives/222)
 空间插值问题，就是在已知空间上若干离散点 $$(x_i,y_i)$$的某一属性(如气温，海拔)的观测值$$z_i = z(x_i,y_i)$$的条件下，估计空间上任意一点$$(x,y)$$的属性值的问题。
+直观来讲，根据地理学第一定律， All attribute values on a geographic surface are related to each other, but closer values are more strongly related than are more distant ones.
+大意就是，地理属性有空间相关性，相近的事物会更相似。由此人们发明了反距离插值，对于空间上任意一点$$(x,y)$$ 的属性$$z = z ( x , y )$$ ，
+定义反距离插值公式估计量 $$\hat{z} = \sum^{n}_{i=0}{\frac{1}{d^\alpha}z_i}$$
 
-https://xg1990.com/blog/archives/222
 克里金插值公式$$\hat{z_o} = \sum^{n}_{i=0}{\lambda_iz_i}$$  
 其中$$\hat{z_0}$$是点$$(x_o,y_o)$$处的估计值， 即：$$z_o=z(x_o,y_o)$$  
 假设条件:  

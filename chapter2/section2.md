@@ -10,7 +10,6 @@ q = from sl in m_cassette.slot_descs
 
 ```
 C#委托
-
 Action<int, string, string> dr = this.OnFinishedLoadingWaferInternal;
     this.Invoke(dr, new object[] { slot, waferID, lotID });
 

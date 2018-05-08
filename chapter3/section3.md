@@ -291,7 +291,7 @@ namespace RS7.DataProcessing.Numerics
 
             return Math.Sqrt(r);
         }
-        
+
         public Matrix Trans()
         {
             Matrix result = new Matrix(Columns, Rows);
@@ -465,7 +465,7 @@ namespace RS7.DataProcessing.Numerics
             {
                 return null;
             }
-            
+
             int rows = sections.Length;
             int cols = sections[0].Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Length;
 
@@ -502,7 +502,6 @@ namespace RS7.DataProcessing.Numerics
 
     }
 }
-
 ```
 
 

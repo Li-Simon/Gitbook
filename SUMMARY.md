@@ -16,5 +16,8 @@
         * [第一段 VS2017下调试Bitcoincode](chapter4/section1/part1.md)
     * [第二节 密码学笔记](chapter4/section2.md)
     * [第三节 比特币下的区块链](chapter4/section3.md)
+* [第五章 算法](chapter5/README.md)
+    * [第一节 插值](chapter5/section1.md)
+
 * [结束](end/README.md)
 

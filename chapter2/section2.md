@@ -69,7 +69,27 @@ Predicate只能接受一个传入参数，返回值为bool类型
 as 的用法
 IModuleCommonInterface iMagnet = MagnetSystem.GetInstance as IModuleCommonInterface;
 is : 检查一个对象是否兼容于其他指定的类型,并返回一个Bool值,永远不会抛出异常
+object o = new object();
+        if (o is Label)
+         {
+             Label lb = (Label)o;
+             Response.Write("类型转换成功");
+         }
+         else
+         {
+             Response.Write("类型转换失败");
+         }
 as:与强制类型转换是一样的,但是永远不会抛出异常,即如果转换不成功,会返回null
+object o = new object();
+         Label lb = o as Label;
+         if (lb == null)
+         {
+             Response.Write("类型转换失败");
+         }
+         else
+         {
+             Response.Write("类型转换成功");
+         }
 ```
 
 ```

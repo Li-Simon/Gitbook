@@ -167,7 +167,8 @@ public class GenericList<T> {
 
 ```
 为控件添加权限
-1.让需要设置权限的控件继承一个接口IUserManagement，这个接口就只有一个方法OnUpdateUserChange，这个方法里面处理不同用户的权限。
+1.让需要设置权限的控件继承一个接口IUserManagement，这个接口就只有一个方法OnUpdateUserChange，
+这个方法里面处理不同用户的权限。
 public void OnUpdateUserChange(UserLevel userLevel)
         {
             if (userLevel == UserLevel.USER_ADMIN)

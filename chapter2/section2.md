@@ -101,5 +101,10 @@ public static event EventHandler<NexusWaferLocationEventArgs> WaferLocationEvent
         }
 ```
 
+```
+UserControl是C#在做Windows窗体应用程序时，经常用到的一个控件。他和Form一样，是一个展示型的控件。
+本文介绍下Usercontrol在开发中常用的一些属性和方法。
+```
+
 
 

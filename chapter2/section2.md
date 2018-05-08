@@ -123,11 +123,6 @@ https://blog.csdn.net/songyi160/article/details/50824274
 ```
 
 ```
-public bool FloatTopLayer
-{
-    get => ForwardParameters.GetParameterValue<bool>(CalculationParameters.Names.JxRA_FLOAT_TOP_LAYER, true);
-    set => ForwardParameters.SetParameterValue<bool>(CalculationParameters.Names.JxRA_FLOAT_TOP_LAYER, value);
-}
 Lamda 表达式
 To create a lambda expression, you specify input parameters (if any) on the left side of the lambda operator =>,
 and you put the expression or statement block on the other side. For example, the lambda expression x => x * x 
@@ -138,6 +133,11 @@ static void Main(string[] args)
 {  
     del myDelegate = x => x * x;  
     int j = myDelegate(5); //j = 25  
+}
+public bool FloatTopLayer
+{
+    get => ForwardParameters.GetParameterValue<bool>(CalculationParameters.Names.JxRA_FLOAT_TOP_LAYER, true);
+    set => ForwardParameters.SetParameterValue<bool>(CalculationParameters.Names.JxRA_FLOAT_TOP_LAYER, value);
 }
 
 ```

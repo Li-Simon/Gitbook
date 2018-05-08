@@ -122,5 +122,13 @@ https://blog.csdn.net/songyi160/article/details/50824274
 4.接口自身可从多个接口继承，类和结构可继承多个接口，但接口不能继承类。
 ```
 
+```
+public bool FloatTopLayer
+{
+    get => ForwardParameters.GetParameterValue<bool>(CalculationParameters.Names.JxRA_FLOAT_TOP_LAYER, true);
+    set => ForwardParameters.SetParameterValue<bool>(CalculationParameters.Names.JxRA_FLOAT_TOP_LAYER, value);
+}
+```
+
 
 

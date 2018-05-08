@@ -139,7 +139,25 @@ public bool FloatTopLayer
     get => ForwardParameters.GetParameterValue<bool>(CalculationParameters.Names.JxRA_FLOAT_TOP_LAYER, true);
     set => ForwardParameters.SetParameterValue<bool>(CalculationParameters.Names.JxRA_FLOAT_TOP_LAYER, value);
 }
+```
 
+```
+给定参数化类型 T 的一个变量 t，只有当 T 为引用类型时，语句 t = null 才有效；只有当 T 为数值类型而不是结构体时，
+语句 t = 0 才能正常使用；对于结构体，此关键字将返回初始化为 零或空 的每个结构成员，具体取决于这些结构是值类型还是引用类型。
+public class GenericList<T> {
+    private class Node {
+        public Node next;
+        public T Data;
+    }
+    private Node head;
+    public T GetFirst() {
+        T temp = default(T);
+        if(head != null) {
+            temp = head.data;
+        }
+        return temp
+    }
+}
 ```
 
 

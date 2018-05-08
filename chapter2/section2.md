@@ -105,5 +105,11 @@ UserControl是C#在做Windows窗体应用程序时，经常用到的一个控件
 本文介绍下Usercontrol在开发中常用的一些属性和方法。
 ```
 
+```
+C# 用Linq的方式实现对Xml文件的基本操作（创建xml文件、增删改查xml文件节点信息）
+https://www.cnblogs.com/mingmingruyuedlut/archive/2011/01/27/1946239.html
+https://blog.csdn.net/songyi160/article/details/50824274
+```
+
 
 

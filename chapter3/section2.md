@@ -10,6 +10,8 @@
    2. [https://github.com/lbbc1117/Nacho](https://github.com/lbbc1117/Nacho)
    3. 矩阵求逆需要记下一些notes或者文档。
       1. 这些只是一些练习，真实的可能会调用一些现成的库。目的是练练C++，也是为以后工作备用
+   4. SVD 求解论文
+      1. http://people.duke.edu/~hpgavin/SystemID/References/Golub+Reinsch-NM-1970.pdf
 
 
 

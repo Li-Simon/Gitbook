@@ -7,7 +7,8 @@
    2. 第一个，实现克里金插值
 2. 版本的迭代问题，每次也不求代码很完善，一次次测试与迭代，在过程中追求完美。
    1. 每个版本要说明改进的地方，为啥要改
-   2. https://github.com/lbbc1117/Nacho
+   2. [https://github.com/lbbc1117/Nacho](https://github.com/lbbc1117/Nacho)
+   3. 矩阵求逆需要记下一些notes或者文档。
 
 
 

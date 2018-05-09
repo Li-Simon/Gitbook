@@ -14,7 +14,10 @@
       1. [http://people.duke.edu/~hpgavin/SystemID/References/Golub+Reinsch-NM-1970.pdf](http://people.duke.edu/~hpgavin/SystemID/References/Golub+Reinsch-NM-1970.pdf)
    5. **Armadillo **C++ library for linear algebra scientific computing  [http://arma.sourceforge.net/](http://arma.sourceforge.net/)
       1. [https://github.com/conradsnicta/armadillo-code/](https://github.com/conradsnicta/armadillo-code/)
-      2. https://en.wikipedia.org/wiki/Comparison\_of\_linear\_algebra\_libraries
+      2. [https://en.wikipedia.org/wiki/Comparison\_of\_linear\_algebra\_libraries](https://en.wikipedia.org/wiki/Comparison_of_linear_algebra_libraries)
+   6. 适合自己的才是最好的，
+      1. 做一个自己实用的线性代数库，尽可能能供多的人去继承，去开发。
+      2. 要有自己的开发文档。
 
 
 

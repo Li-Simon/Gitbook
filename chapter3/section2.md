@@ -18,7 +18,8 @@
    6. 适合自己的才是最好的，
       1. 做一个自己实用的线性代数库，尽可能能供多的人去继承，去开发。
       2. 要有自己的开发文档。
-   7. eigen： https://github.com/Li-Simon/eigen-git-mirror
+   7. eigen： [https://github.com/Li-Simon/eigen-git-mirror](https://github.com/Li-Simon/eigen-git-mirror)
+      1. 功能比**Armadillo 强大**
 
 
 

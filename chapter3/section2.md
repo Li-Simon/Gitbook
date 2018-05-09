@@ -9,6 +9,7 @@
    1. 每个版本要说明改进的地方，为啥要改
    2. [https://github.com/lbbc1117/Nacho](https://github.com/lbbc1117/Nacho)
    3. 矩阵求逆需要记下一些notes或者文档。
+      1. 这些只是一些练习，真实的可能会调用一些现成的库。
 
 
 

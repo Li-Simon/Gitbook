@@ -13,6 +13,7 @@
    4. SVD 求解论文
       1. [http://people.duke.edu/~hpgavin/SystemID/References/Golub+Reinsch-NM-1970.pdf](http://people.duke.edu/~hpgavin/SystemID/References/Golub+Reinsch-NM-1970.pdf)
    5. **Armadillo **C++ library for linear algebra scientific computing  [http://arma.sourceforge.net/](http://arma.sourceforge.net/)
+      1. https://github.com/conradsnicta/armadillo-code/
 
 
 

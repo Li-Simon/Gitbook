@@ -230,5 +230,33 @@ C#委托和事件(Delegate、Event、EventHandler、EventArgs)
 https://www.cnblogs.com/Scl891004X/p/6142917.html
 ```
 
+```
+事件
+class Events : IDrawingObject
+{
+    event EventHandler PreDrawEvent;
+
+    event EventHandler IDrawingObject.OnDraw
+    {
+        add
+        {
+            lock (PreDrawEvent)
+            {
+                PreDrawEvent += value;
+            }
+        }
+        remove
+        {
+            lock (PreDrawEvent)
+            {
+                PreDrawEvent -= value;
+            }
+        }
+    }
+
+}
+上下文关键字 value 用在普通属性声明的 set 访问器中。 此关键字类似于方法的输入参数
+```
+
 
 

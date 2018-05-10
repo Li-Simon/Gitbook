@@ -5,6 +5,10 @@
 
 需要安装mathjax
 
+```
+npm install mathjax
+```
+
 首先在书籍project的最顶成新建一个book.json,内容如下
 
 ```
@@ -30,9 +34,5 @@ gitbook pdf ./ mybook.pdf
 
 [http://ldehai.com/blog/2016/11/30/write-with-gitbook/](http://ldehai.com/blog/2016/11/30/write-with-gitbook/)
 
-
-
 no such file fontsettings.js
-
-
 

@@ -66,7 +66,6 @@ CTxOut(nValue=50.00000000, scriptPubKey=0x5F1DF16B2B704C8A578D0B)
 A transaction. hash is the truncated hash. ver is the transaction version.
 vout.size is the number of outputs. 
 nLockTime is intended for use with transaction replacement, and is not currently used for anything useful.
-
 ```
 
 ```
@@ -81,6 +80,37 @@ public:
     uint32_t nBits;
     uint32_t nNonce;
 }
+class CBlock : public CBlockHeader
+{
+public:
+    // network and disk
+    std::vector<CTransactionRef> vtx;
+}
+CBlock(hash=00000000009ffdadbb2a, ver=1, hashPrevBlock=0000000000b079382c19, hashMerkleRoot=e81287,
+nTime=1281156783, nBits=1c00ba18, nNonce=2283211008, vtx=6)
+  CTransaction(hash=2d7f4d, ver=1, vin.size=1, vout.size=1, nLockTime=0)
+    CTxIn(COutPoint(000000, -1), coinbase 0418ba001c02ce03)
+    CTxOut(nValue=50.00000000, scriptPubKey=0x4FE11D72F988AEA611F026)
+  CTransaction(hash=3407a8, ver=1, vin.size=2, vout.size=1, nLockTime=0)
+    CTxIn(COutPoint(df39bf, 0), scriptSig=0x01DD1AD8E9EFE65B70E983)
+    CTxIn(COutPoint(64ebea, 1), scriptSig=0x0165A1F9873BA16265D9C4)
+    CTxOut(nValue=0.06000000, scriptPubKey=OP_DUP OP_HASH160 0xEDEF)
+  CTransaction(hash=5edf5a, ver=1, vin.size=1, vout.size=1, nLockTime=0)
+    CTxIn(COutPoint(b77e0f, 0), scriptSig=0x01E39C53AFC1B9BE02E53A)
+    CTxOut(nValue=350.00000000, scriptPubKey=OP_DUP OP_HASH160 0xD7EF)
+  CTransaction(hash=65c356, ver=1, vin.size=1, vout.size=2, nLockTime=0)
+    CTxIn(COutPoint(893335, 0), scriptSig=0x01B8C315FD58F0DFA0DEA2)
+    CTxOut(nValue=1.85850000, scriptPubKey=OP_DUP OP_HASH160 0x3181)
+    CTxOut(nValue=3.14150000, scriptPubKey=OP_DUP OP_HASH160 0xF99E)
+  CTransaction(hash=89aa32, ver=1, vin.size=1, vout.size=2, nLockTime=0)
+    CTxIn(COutPoint(4a7469, 0), scriptSig=0x010D15199DCE4B11D391CF)
+    CTxOut(nValue=0.05000000, scriptPubKey=OP_DUP OP_HASH160 0x5603)
+    CTxOut(nValue=0.20000000, scriptPubKey=OP_DUP OP_HASH160 0x6074)
+  CTransaction(hash=e3e69c, ver=1, vin.size=1, vout.size=2, nLockTime=0)
+    CTxIn(COutPoint(b77e0f, 1), scriptSig=0x012E18AF1264180255E0C3)
+    CTxOut(nValue=50.00000000, scriptPubKey=OP_DUP OP_HASH160 0x458E)
+    CTxOut(nValue=100.00000000, scriptPubKey=OP_DUP OP_HASH160 0x9EEF)
+  vMerkleTree: 2d7f4d 3407a8 5edf5a 65c356 89aa32 e3e69c 8ebc6a d5e414 89b77c d1074c 70a4e6 e81287
 ```
 
 

@@ -1,5 +1,7 @@
 # 第一节 C++
 
+接口：即抽象类，就是包含至少一个纯虚函数的类
+
 ```
 一个类里面实现多种接口Iinterface, IinterfaceB, IinterfaceC
 ```

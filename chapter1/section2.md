@@ -7,6 +7,7 @@
 
 ```
 npm install mathjax
+安装特定版本的npm install mathjax@2.6.1
 ```
 
 首先在书籍project的最顶成新建一个book.json,内容如下

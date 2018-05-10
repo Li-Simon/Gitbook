@@ -273,5 +273,11 @@ public int ID
 上下文关键字 value 用在普通属性声明的 set 访问器中。 此关键字类似于方法的输入参数
 ```
 
+```
+[DllImport("mpi.dll", EntryPoint = "setMFCmode", CallingConvention = CallingConvention.Cdecl)]     internal static extern void setMFCmode();
+[DllImport("mpi.dll", EntryPoint = "ver", CallingConvention = CallingConvention.Cdecl)]            internal static extern StringBuilder ver(int print);
+[DllImport("mpi.dll", EntryPoint = "openDCE", CallingConvention = CallingConvention.Cdecl)]        internal static extern IntPtr openDCE(string pwdin, string cnfname);
+```
+
 
 

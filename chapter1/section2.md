@@ -31,7 +31,7 @@ npm install mathjax
 
 然后再用gitbook install命令安装mathjax
 
-gitbook pdf ./ mybook.pdf
+gitbook pdf ./ mybook.pdf  （./ mybook.pdf 之间有空格）
 
 [http://ldehai.com/blog/2016/11/30/write-with-gitbook/](http://ldehai.com/blog/2016/11/30/write-with-gitbook/)
 

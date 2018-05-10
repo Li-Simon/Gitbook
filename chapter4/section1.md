@@ -3,7 +3,7 @@
 Validation.cpp  
 BTC 基本类
 
-https://en.bitcoin.it/wiki/Dump\_format
+[https://en.bitcoin.it/wiki/Dump\_format](https://en.bitcoin.it/wiki/Dump_format)
 
 ```
 class COutPoint
@@ -18,7 +18,7 @@ truncated hash of the transaction, and the second value is an output index.
 ```
 
 ```
-lass CTxIn
+class CTxIn
 {
 public:
     COutPoint prevout;
@@ -33,6 +33,15 @@ A transaction input.
 scriptSig is the truncated scriptSig of the input. "coinbase" is the non-truncated scriptSig of a generation input. 
 nSequence appears only if the input has a non-default sequence. 
 Sequence numbers are intended for use with the transaction replacement feature, but can currently be safely ignored.
+```
+
+```
+class CTxOut
+{
+public:
+    CAmount nValue;
+    CScript scriptPubKey;
+}
 ```
 
 

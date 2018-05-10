@@ -270,6 +270,8 @@ public int ID
      get { return _id; } //当外部访问“属性”ID时，返回id的值
 
 }
+
+上下文关键字 value 用在普通属性声明的 set 访问器中。 此关键字类似于方法的输入参数
 ```
 
 

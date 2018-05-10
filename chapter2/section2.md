@@ -213,5 +213,17 @@ public void OnUpdateUserChange()
 }
 ```
 
+```
+ C#中，使用ServiceController类控制windows服务，使用之前要先添加引用：System.ServiceProcess，
+ 然后在命名空间中引用：using System.ServiceProcess。
+private void StartService()  
+{  
+    this._controller = new ServiceController("ServicesName");  
+    this._controller.Start();  
+    this._controller.WaitForStatus(ServiceControllerStatus.Running);  
+    this._controller.Close();  
+} 
+```
+
 
 

@@ -12,5 +12,9 @@ C++通过ATL来实现接口的继承。
 
 ![](/assets/import.png)
 
-COM组件接口继承的实现 https://blog.csdn.net/dingbaosheng/article/details/624504
+COM组件接口继承的实现 [https://blog.csdn.net/dingbaosheng/article/details/624504](https://blog.csdn.net/dingbaosheng/article/details/624504)
+
+##### [TL学习笔记03](http://wallimn.iteye.com/blog/327853)
+
+
 

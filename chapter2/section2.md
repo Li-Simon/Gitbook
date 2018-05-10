@@ -222,7 +222,12 @@ private void StartService()
     this._controller.Start();  
     this._controller.WaitForStatus(ServiceControllerStatus.Running);  
     this._controller.Close();  
-} 
+}
+```
+
+```
+C#委托和事件(Delegate、Event、EventHandler、EventArgs)
+https://www.cnblogs.com/Scl891004X/p/6142917.html
 ```
 
 

@@ -42,6 +42,10 @@ public:
     CAmount nValue;
     CScript scriptPubKey;
 }
+CTxOut(nValue=50.00000000, scriptPubKey=OP_DUP OP_HASH160 0x1512)
+A transaction output. 
+nValue is the the full-precision output value. 
+scriptPubKey is the truncated CScript for the output (the entire script string is truncated to 30 characters).
 ```
 
 

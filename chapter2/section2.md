@@ -274,6 +274,21 @@ public int ID
 ```
 
 ```
+DllImport是System.Runtime.InteropServices命名空间下的一个属性类，其功能是提供从非托管DLL导出的函数的必要调用信息。
+    DllImport属性应用于方法，要求最少要提供包含入口点的dll的名称。
+    DllImport的定义如下：
+[AttributeUsage(AttributeTargets.Method)]
+   　 public class DllImportAttribute: System.Attribute
+   　 {
+   　 　public DllImportAttribute(string dllName) {…} //定位参数为dllName
+   　 　public CallingConvention CallingConvention; //入口点调用约定
+   　 　public CharSet CharSet;                                   //入口点采用的字符接
+   　　 public string EntryPoint;                                  //入口点名称
+   　 　public bool ExactSpelling;                               //是否必须与指示的入口点拼写完全一致，默认false
+   　 　public bool PreserveSig;                                  //方法的签名是被保留还是被转换
+   　 　public bool SetLastError;                                  //FindLastError方法的返回值保存在这里
+   　 　public string Value { get {…} }
+   　 } 
 [DllImport("mpi.dll", EntryPoint = "setMFCmode", CallingConvention = CallingConvention.Cdecl)]     internal static extern void setMFCmode();
 [DllImport("mpi.dll", EntryPoint = "ver", CallingConvention = CallingConvention.Cdecl)]            internal static extern StringBuilder ver(int print);
 [DllImport("mpi.dll", EntryPoint = "openDCE", CallingConvention = CallingConvention.Cdecl)]        internal static extern IntPtr openDCE(string pwdin, string cnfname);

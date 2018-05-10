@@ -258,5 +258,19 @@ class Events : IDrawingObject
 上下文关键字 value 用在普通属性声明的 set 访问器中。 此关键字类似于方法的输入参数
 ```
 
+```
+value是c#中的“属性”
+例如c#某个类中有一个成员变量（字段），为了安全性，外部如果要访问它，必须通过“属性”来访问：
+private int _id;//这是一个成员变量，private表示是私有的，外部不可访问
+
+public int ID
+{
+     set { _id = value; } //value就是外部为“属性”ID所赋的值
+
+     get { return _id; } //当外部访问“属性”ID时，返回id的值
+
+}
+```
+
 
 

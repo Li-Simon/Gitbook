@@ -274,9 +274,9 @@ public int ID
 ```
 
 ```
-DllImport是System.Runtime.InteropServices命名空间下的一个属性类，其功能是提供从非托管DLL导出的函数的必要调用信息。
-    DllImport属性应用于方法，要求最少要提供包含入口点的dll的名称。
-    DllImport的定义如下：
+ DllImport是System.Runtime.InteropServices命名空间下的一个属性类，其功能是提供从非托管DLL导出的函数的必要调用信息。
+ DllImport属性应用于方法，要求最少要提供包含入口点的dll的名称。
+ DllImport的定义如下：
 [AttributeUsage(AttributeTargets.Method)]
    　 public class DllImportAttribute: System.Attribute
    　 {

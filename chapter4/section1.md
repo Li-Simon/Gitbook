@@ -111,6 +111,12 @@ nTime=1281156783, nBits=1c00ba18, nNonce=2283211008, vtx=6)
     CTxOut(nValue=50.00000000, scriptPubKey=OP_DUP OP_HASH160 0x458E)
     CTxOut(nValue=100.00000000, scriptPubKey=OP_DUP OP_HASH160 0x9EEF)
   vMerkleTree: 2d7f4d 3407a8 5edf5a 65c356 89aa32 e3e69c 8ebc6a d5e414 89b77c d1074c 70a4e6 e81287
+  
+  A block. Hash is the truncated hash. Version is the block version. 
+  HashPrevBlock is the truncated hash of the previous block. 
+  HashMerkleRoot is the truncated Merkle root. nTime is the Unix timestamp of the block. 
+  nBits is the current target in compact format. nNonce is the nonce. 
+  vtx is the number of transactions.
 ```
 
 

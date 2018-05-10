@@ -10,17 +10,17 @@
 ```
 {
     "gitbook": "3.2.3",
-	"plugins": ["mathjax"],
+    "plugins": ["mathjax"],
     "links": {
         "sidebar": {
             "Contact us / Support": "https://www.gitbook.com/contact"
         }
     },
     "pluginsConfig": {
-	"mathjax":{
+    "mathjax":{
             "forceSVG": true
         }
-		}
+        }
 }
 ```
 
@@ -28,7 +28,7 @@
 
 gitbook pdf ./ mybook.pdf
 
-http://ldehai.com/blog/2016/11/30/write-with-gitbook/
+[http://ldehai.com/blog/2016/11/30/write-with-gitbook/](http://ldehai.com/blog/2016/11/30/write-with-gitbook/)
 
 
 

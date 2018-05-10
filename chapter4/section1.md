@@ -48,5 +48,11 @@ nValue is the the full-precision output value.
 scriptPubKey is the truncated CScript for the output (the entire script string is truncated to 30 characters).
 ```
 
+```
+CTransaction(hash=4a5e1e, ver=1, vin.size=1, vout.size=1, nLockTime=0)
+CTxIn(COutPoint(000000, -1), coinbase 04ffff001d010)
+CTxOut(nValue=50.00000000, scriptPubKey=0x5F1DF16B2B704C8A578D0B)
+```
+
 
 

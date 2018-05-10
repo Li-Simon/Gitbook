@@ -49,9 +49,38 @@ scriptPubKey is the truncated CScript for the output (the entire script string i
 ```
 
 ```
+class CTransaction
+{
+public:
+    const int32_t nVersion;
+    const std::vector<CTxIn> vin;
+    const std::vector<CTxOut> vout;
+    const uint32_t nLockTime;
+private:
+    /** Memory only. */
+    const uint256 hash;
+}
 CTransaction(hash=4a5e1e, ver=1, vin.size=1, vout.size=1, nLockTime=0)
 CTxIn(COutPoint(000000, -1), coinbase 04ffff001d010)
 CTxOut(nValue=50.00000000, scriptPubKey=0x5F1DF16B2B704C8A578D0B)
+A transaction. hash is the truncated hash. ver is the transaction version.
+vout.size is the number of outputs. 
+nLockTime is intended for use with transaction replacement, and is not currently used for anything useful.
+
+```
+
+```
+class CBlockHeader
+{
+public:
+    // header
+    int32_t nVersion;
+    uint256 hashPrevBlock;
+    uint256 hashMerkleRoot;
+    uint32_t nTime;
+    uint32_t nBits;
+    uint32_t nNonce;
+}
 ```
 
 

@@ -5,7 +5,9 @@ BTC 基本类
 
 [https://en.bitcoin.it/wiki/Dump\_format](https://en.bitcoin.it/wiki/Dump_format)
 
-https://en.bitcoin.it/wiki/Bitcoin\_Core\_0.11\_\(ch\_6\):\_The\_Blockchain
+[https://en.bitcoin.it/wiki/Bitcoin\_Core\_0.11\_\(ch\_6\):\_The\_Blockchain](https://en.bitcoin.it/wiki/Bitcoin_Core_0.11_%28ch_6%29:_The_Blockchain)
+
+https://bitcointalk.to/index.php?topic=1641447.0
 
 ```
 class COutPoint

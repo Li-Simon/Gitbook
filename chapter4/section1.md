@@ -119,5 +119,12 @@ nTime=1281156783, nBits=1c00ba18, nNonce=2283211008, vtx=6)
   vtx is the number of transactions.
 ```
 
+```
+class CChain {
+private:
+    std::vector<CBlockIndex*> vChain;
+}
+```
+
 
 

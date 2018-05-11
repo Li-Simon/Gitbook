@@ -5,6 +5,8 @@ BTC 基本类
 
 [https://en.bitcoin.it/wiki/Dump\_format](https://en.bitcoin.it/wiki/Dump_format)
 
+https://en.bitcoin.it/wiki/Bitcoin\_Core\_0.11\_\(ch\_6\):\_The\_Blockchain
+
 ```
 class COutPoint
 {

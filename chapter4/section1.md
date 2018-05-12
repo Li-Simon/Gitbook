@@ -190,7 +190,33 @@ public:
 ```
 
 ```
-
+class CNodeStats
+{
+public:
+    NodeId nodeid;
+    ServiceFlags nServices;
+    bool fRelayTxes;
+    int64_t nLastSend;
+    int64_t nLastRecv;
+    int64_t nTimeConnected;
+    int64_t nTimeOffset;
+    std::string addrName;
+    int nVersion;
+    std::string cleanSubVer;
+    bool fInbound;
+    bool fAddnode;
+    int nStartingHeight;
+    uint64_t nSendBytes;
+    mapMsgCmdSize mapSendBytesPerMsgCmd;
+    uint64_t nRecvBytes;
+    mapMsgCmdSize mapRecvBytesPerMsgCmd;
+    bool fWhitelisted;
+    double dPingTime;
+    double dPingWait;
+    double dMinPing;
+    std::string addrLocal;
+    CAddress addr;
+};
 ```
 
 

@@ -25,7 +25,7 @@
 20180512
 
 * [ ] 第四章第一节最好把不同的类分开介绍
-* [ ] http://bitcoin-on-nodejs.ebookchain.org/ 这本书要看看
+* [ ] [http://bitcoin-on-nodejs.ebookchain.org/](http://bitcoin-on-nodejs.ebookchain.org/) 这本书要看看
 
 
 

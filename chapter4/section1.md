@@ -366,7 +366,52 @@ public:
 ```
 
 ```
+class CRPCCommand
+{
+public:
+    std::string category;
+    std::string name;
+    rpcfn_type actor;
+    bool okSafeMode;
+    std::vector<std::string> argNames;
+};
+```
 
+```
+/**
+ * Bitcoin RPC command dispatcher.
+ */
+class CRPCTable
+{
+private:
+    std::map<std::string, const CRPCCommand*> mapCommands;
+public:
+    CRPCTable();
+    const CRPCCommand* operator[](const std::string& name) const;
+    std::string help(const std::string& name) const;
+
+    /**
+     * Execute a method.
+     * @param request The JSONRPCRequest to execute
+     * @returns Result of the call.
+     * @throws an exception (UniValue) when an error happens.
+     */
+    UniValue execute(const JSONRPCRequest &request) const;
+
+    /**
+    * Returns a list of registered commands
+    * @returns List of registered commands.
+    */
+    std::vector<std::string> listCommands() const;
+
+
+    /**
+     * Appends a CRPCCommand to the dispatch table.
+     * Returns false if RPC server is already running (dump concurrency protection).
+     * Commands cannot be overwritten (returns false).
+     */
+    bool appendCommand(const std::string& name, const CRPCCommand* pcmd);
+};
 ```
 
 

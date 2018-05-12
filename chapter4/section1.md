@@ -454,5 +454,29 @@ private:
 }
 ```
 
+```
+/** In-flight HTTP request.
+ * Thin C++ wrapper around evhttp_request.
+ */
+class HTTPRequest
+{
+private:
+    struct evhttp_request* req;
+    bool replySent;
+
+public:
+    HTTPRequest(struct evhttp_request* req);
+    ~HTTPRequest();
+
+    enum RequestMethod {
+        UNKNOWN,
+        GET,
+        POST,
+        HEAD,
+        PUT
+    };
+}
+```
+
 
 

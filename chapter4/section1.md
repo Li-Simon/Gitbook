@@ -440,5 +440,19 @@ public:
 };
 ```
 
+```
+/** An encapsulated public key. */
+class CPubKey
+{
+private:
+
+    /**
+     * Just store the serialized data.
+     * Its length can very cheaply be computed from the first byte.
+     */
+    unsigned char m_vch[65];
+}
+```
+
 
 

@@ -31,9 +31,13 @@ npm install mathjax
 
 然后再用gitbook install命令安装mathjax
 
+安装之后gitbook就出现编译错误了，也不能编译生成pdf文件。不论mathjax是哪个版本，从2.5开始都出错。下面选择用katex
+
 gitbook pdf ./ mybook.pdf  （./ mybook.pdf 之间有空格）
 
 [http://ldehai.com/blog/2016/11/30/write-with-gitbook/](http://ldehai.com/blog/2016/11/30/write-with-gitbook/)
 
-no such file fontsettings.js
+no such file fontsettings.js,在上一节有讲怎么处理。
+
+安装Katex
 

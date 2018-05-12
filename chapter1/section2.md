@@ -48,7 +48,7 @@ no such file fontsettings.js,在上一节有讲怎么处理。
        "plugins": ["katex"]
    }
    ```
-4. 运行安装 gitbook install就安装好了
+4. 运行安装 gitbook install就安装好了（安装很慢，一个小时\)
 
 
 

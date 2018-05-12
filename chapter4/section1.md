@@ -414,5 +414,31 @@ public:
 };
 ```
 
+```
+/** A reference to a CKey: the Hash160 of its serialized public key */
+class CKeyID : public uint160
+{
+public:
+    CKeyID() : uint160() {}
+    CKeyID(const uint160& in) : uint160(in) {}
+
+public:
+    base58string GetBase58addressWithNetworkPubkeyPrefix() const;
+};
+```
+
+```
+/** A reference to a CKey: the Hash160 of its serialized public key */
+class CKeyID : public uint160
+{
+public:
+    CKeyID() : uint160() {}
+    CKeyID(const uint160& in) : uint160(in) {}
+
+public:
+    base58string GetBase58addressWithNetworkPubkeyPrefix() const;
+};
+```
+
 
 

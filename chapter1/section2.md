@@ -39,7 +39,8 @@ gitbook pdf ./ mybook.pdf  （./ mybook.pdf 之间有空格）
 
 no such file fontsettings.js,在上一节有讲怎么处理。
 
-安装Katex [https://github.com/GitbookIO/plugin-katex](https://github.com/GitbookIO/plugin-katex)
+#安装Katex 
+[https://github.com/GitbookIO/plugin-katex](https://github.com/GitbookIO/plugin-katex)
 
 1. 在你的书籍文件夹里创建book.json 
 2. 里面写入如下内容

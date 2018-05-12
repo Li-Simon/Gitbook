@@ -478,5 +478,36 @@ public:
 }
 ```
 
+```
+struct CBlockTemplate
+{
+    CBlock block;
+    std::vector<CAmount> vTxFees;
+    std::vector<int64_t> vTxSigOpsCost;
+    std::vector<unsigned char> vchCoinbaseCommitment;
+};
+```
+
+```
+/** A transaction with a merkle branch linking it to the block chain. */
+class CMerkleTx
+{
+private:
+    /** Constant used in hashBlock to indicate tx has been abandoned */
+    static const uint256 ABANDON_HASH;
+
+public:
+    CTransactionRef tx;
+    uint256 hashBlock;
+
+    /* An nIndex == -1 means that hashBlock (in nonzero) refers to the earliest
+    * block in the chain we know this or any in-wallet dependency conflicts
+    * with. Older clients interpret nIndex == -1 as unconfirmed for backward
+    * compatibility.
+    */
+    int nIndex;
+}
+```
+
 
 

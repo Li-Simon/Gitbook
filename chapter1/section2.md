@@ -48,7 +48,12 @@ no such file fontsettings.js,在上一节有讲怎么处理。
        "plugins": ["katex"]
    }
    ```
-4. 运行安装 gitbook install就安装好了（安装很慢，一个小时\),可以换个地方安装，只要把book.json换个地方，再在这个folder安装gitbook install，然后把node_modules 拷到你书籍所在的folder就可以。
+4. 运行安装 gitbook install就安装好了（安装很慢，一个小时\),可以换个地方安装，只要把book.json换个地方，再在这个folder安装gitbook install，然后把node\_modules 拷到你书籍所在的folder就可以。
+
+中文在cmd中乱码的问题：
+
+1. 打开cmd, 输入chcp 65001chcp 65001
+2. 右击cmd上方，选择属性--&gt;字体--&gt;SimSun-ExtB就可以显示了。
 
 
 

@@ -256,7 +256,7 @@ private:
     std::set<int64_t> setKeyPool;
     static CFeeRate minTxFee;
     static CFeeRate fallbackFee;
-    
+
     void SetNull()
     {
         m_nWalletVersion = FEATURE_BASE;
@@ -271,6 +271,75 @@ private:
         fBroadcastTransactions = false;
     }
 }
+```
+
+```
+class CValidationInterface {
+protected:
+    virtual void UpdatedBlockTip(const CBlockIndex *pindexNew, const CBlockIndex *pindexFork, bool fInitialDownload) {}
+    virtual void SyncTransaction(const CTransaction &tx, const CBlockIndex *pindex, int posInBlock) {}
+    virtual void SetBestChain(const CBlockLocator &locator) {}
+    virtual void UpdatedTransaction(const uint256 &hash) {}
+    virtual void Inventory(const uint256 &hash) {}
+    virtual void ResendWalletTransactions(int64_t nBestBlockTime, CConnman* connman) {}
+    virtual void BlockChecked(const CBlock&, const CValidationState&) {}
+    virtual void GetScriptForMining(boost::shared_ptr<CReserveScript>&) {};
+    virtual void ResetRequestCount(const uint256 &hash) {};
+    virtual void NewPoWValidBlock(const CBlockIndex *pindex, const std::shared_ptr<const CBlock>& block) {};
+    friend void ::RegisterValidationInterface(CValidationInterface*);
+    friend void ::UnregisterValidationInterface(CValidationInterface*);
+    friend void ::UnregisterAllValidationInterfaces();
+};
+```
+
+
+
+```
+/** Keystore which keeps the private keys encrypted.
+ * It derives from the basic key store, which is used if no encryption is active.
+ */
+class CCryptoKeyStore : public CBasicKeyStore
+{
+private:
+    CryptedKeyMap mapCryptedKeys;
+
+    CKeyingMaterial vMasterKey;
+
+    //! if fUseCrypto is true, mapKeys must be empty
+    //! if fUseCrypto is false, vMasterKey must be empty
+    bool fUseCrypto;
+
+    //! keeps track of whether Unlock has run a thorough check before
+    bool fDecryptionThoroughlyChecked;
+
+protected:
+    bool SetCrypted();
+
+    //! will encrypt previously unencrypted keys
+    bool EncryptKeys(CKeyingMaterial& vMasterKeyIn);
+
+    bool Unlock(const CKeyingMaterial& vMasterKeyIn);
+}
+```
+
+
+
+```
+/** Basic key store, that keeps keys in an address->secret map */
+class CBasicKeyStore : public CKeyStore
+{
+protected:
+    KeyMap mapKeys;
+    WatchKeyMap mapWatchKeys;
+    ScriptMap mapScripts;
+    WatchOnlySet setWatchOnly;
+}
+```
+
+
+
+```
+
 ```
 
 

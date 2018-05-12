@@ -219,5 +219,59 @@ public:
 };
 ```
 
+```
+/** 
+ * A CWallet is an extension of a keystore, which also maintains a set of transactions and balances,
+ * and provides the ability to create new transactions.
+ */
+class CWallet : public CCryptoKeyStore, public CValidationInterface
+{
+private:
+    static std::atomic<bool> fFlushThreadRunning;
+    CWalletDB *m_pwalletdbEncryption;
+
+    //! the current wallet version: clients below this version are not able to load the wallet
+    int m_nWalletVersion;
+
+    //! the maximum wallet format version: memory-only variable that specifies to what version this wallet may be upgraded
+    int m_nWalletMaxVersion;
+
+    int64_t nNextResend;
+    int64_t nLastResend;
+    bool fBroadcastTransactions;
+    TxSpends mapTxSpends;
+    void AddToSpends(const COutPoint& outpoint, const uint256& wtxid);
+    void AddToSpends(const uint256& wtxid);
+
+    /* Mark a transaction (and its in-wallet descendants) as conflicting with a particular block. */
+    void MarkConflicted(const uint256& hashBlock, const uint256& hashTx);
+
+    void SyncMetaData(std::pair<TxSpends::iterator, TxSpends::iterator>);
+
+    /* the HD chain data model (external chain counters) */
+    CHDChain m_hdChain;
+
+    bool m_fFileBacked;
+
+    std::set<int64_t> setKeyPool;
+    static CFeeRate minTxFee;
+    static CFeeRate fallbackFee;
+    
+    void SetNull()
+    {
+        m_nWalletVersion = FEATURE_BASE;
+        m_nWalletMaxVersion = FEATURE_BASE;
+        m_fFileBacked = false;
+        nMasterKeyMaxID = 0;
+        m_pwalletdbEncryption = NULL;
+        nOrderPosNext = 0;
+        nNextResend = 0;
+        nLastResend = 0;
+        nTimeFirstKey = 0;
+        fBroadcastTransactions = false;
+    }
+}
+```
+
 
 

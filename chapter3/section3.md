@@ -23,6 +23,9 @@
 * [ ] 整理Bitcoin Code中一些基本类与函数，这个搭建整个BTC的基石，同步到Github上面去。
 
 20180512
+
 * [ ] 第四章第一节最好把不同的类分开介绍
+* [ ] http://bitcoin-on-nodejs.ebookchain.org/ 这本书要看看
+
 
 

@@ -41,3 +41,14 @@ no such file fontsettings.js,在上一节有讲怎么处理。
 
 安装Katex
 
+1. 在你的书籍文件夹里创建book.json
+2. 里面写入如下内容
+3. ```
+   {
+       "plugins": ["katex"]
+   }
+   ```
+4. 运行安装 gitbook install就安装好了
+
+
+

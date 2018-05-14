@@ -4,7 +4,7 @@
 * [第一章 工具](工具/README.md)
     * [第一节 Gitbook的安装与使用](工具/section1.md)
     * [第二节 编辑数学公式](工具/section2.md)
-* [第二章 编程语言](编程语言/README.md)
+* [第二章 设计模式](设计模式/README.md)
     * [第一节 C++](编程语言/section1.md)
     * [第二节 C#](编程语言/section2.md)
 * [第三章 日志](日志/README.md)

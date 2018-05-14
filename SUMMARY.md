@@ -21,7 +21,7 @@
     * [第一节 插值](算法/section1.md)
 * [第六章 C++](C++/README.md)
     * [第一节 基本语法](C++/基本语法.md)
-* [第七章 C#](C#/README.md)
-    * [第一节 基本语法](C#/基本语法.md)
+* [第七章 CSharp](CSharp/README.md)
+    * [第一节 基本语法](CSharp/基本语法.md)
 * [结束](end/README.md)
 

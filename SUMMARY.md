@@ -18,6 +18,7 @@
     * [第五节 比特币BIPS](区块链/appdx-bips.md)
 * [第五章 算法](算法/README.md)
     * [第一节 插值](算法/section1.md)
+    * [第二节 最长递增子序列](算法/最长递增子序列.md)
 * [第六章 C++](C++/README.md)
     * [第一节 基本语法](C++/基本语法.md)
 * [第七章 CSharp](CSharp/README.md)

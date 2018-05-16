@@ -26,6 +26,7 @@
     * [模板类与模板函数](C++/模板类与模板函数.md)
 * [第七章 CSharp](CSharp/README.md)
     * [基本语法](CSharp/基本语法.md)
+    * [Lamda表达式](CSharp/Lamda表达式.md)
     * [反射](CSharp/反射.md)
 * [第八章 机器学习](机器学习/README.md)
     * [第一节 CNN](机器学习/CNN.md)

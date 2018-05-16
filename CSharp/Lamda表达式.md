@@ -1,6 +1,6 @@
 # Lamda表达式
 
-```
+```csharp
 Lamda 表达式
 To create a lambda expression, you specify input parameters (if any) on the left side of the lambda operator =>,
 and you put the expression or statement block on the other side. For example, the lambda expression x => x * x 
@@ -17,6 +17,18 @@ public bool FloatTopLayer
     get => ForwardParameters.GetParameterValue<bool>(CalculationParameters.Names.JxRA_FLOAT_TOP_LAYER, true);
     set => ForwardParameters.SetParameterValue<bool>(CalculationParameters.Names.JxRA_FLOAT_TOP_LAYER, value);
 }
+```
+
+```csharp
+
+ public class ProbeManagerFactory
+    {
+        static public IProbeManager PROBEMANAGER
+        {
+            set;
+            get;
+        }
+    }
 ```
 
 

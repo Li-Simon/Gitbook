@@ -29,6 +29,7 @@
     * [基本语法](CSharp/基本语法.md)
     * [Lamda表达式](CSharp/Lamda表达式.md)
     * [反射](CSharp/反射.md)
+    * [数据库](CSharp/数据库.md)
 * [第八章 机器学习](机器学习/README.md)
     * [第一节 CNN](机器学习/CNN.md)
 * [第九章 计算机理论](计算机理论/README.md)

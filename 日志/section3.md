@@ -76,7 +76,7 @@
 20180517
 
 * [ ] 设计线性代数库，LU分解已经写好，接下来可以利用LU分解做
-  * [ ] 求线性方程组的解 [https://blog.csdn.net/u011584941/article/details/44541127](https://blog.csdn.net/u011584941/article/details/44541127)
+  * [ ] 求线性方程组的解 [https://blog.csdn.net/u011584941/article/details/44541127](https://blog.csdn.net/u011584941/article/details/44541127) 加一个Vector类
   * [ ] 求矩阵行列式
 * [ ] 最小二乘法
   * [ ] SVD

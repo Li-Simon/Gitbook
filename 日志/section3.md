@@ -76,11 +76,12 @@
 20180517
 
 * [ ] 设计线性代数库，LU分解已经写好，接下来可以利用LU分解做
-  * [ ] 求线性方程组的解 https://blog.csdn.net/u011584941/article/details/44541127
+  * [ ] 求线性方程组的解 [https://blog.csdn.net/u011584941/article/details/44541127](https://blog.csdn.net/u011584941/article/details/44541127)
   * [ ] 求矩阵行列式
 * [ ] 最小二乘法
   * [ ] SVD
   * [ ] PCA
+* [ ] SVD, PCA, 线性方程组 求解这些算法封装在一个类里面，而不是CMatrix中，Matrix里面只涉及与matrix属性的东西。
 
 
 

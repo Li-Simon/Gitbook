@@ -7,7 +7,5 @@
 3. Create NeoContract project
 4. Compile the Project
 
-http://ndapp.org/ 上的基于Neo的DAPP一般就几十行代码，都是灌水的， 没有啥学习的价值。还是靠Bitcoin的可以学到更多的知识点。
-
-
+[http://ndapp.org/](http://ndapp.org/) 上的基于Neo的DAPP一般就几十行代码，都是灌水的， 没有啥学习的价值。还是靠Bitcoin的可以学到更多的技能。
 

@@ -8,15 +8,15 @@ $$\begin{bmatrix}a_{11}&a_{12}&\cdots&a_{1n}\\ a_{21}&a_{22}&\cdots&a_{2n}\\\cdo
 \begin{bmatrix}l_{11}&0&\cdots&0\\ l_{21}&l_{22}&\cdots&0\\\cdots&\cdots&\cdots&\cdots\\l_{n1}&l_{n2}&\cdots&l_{nn}\end{bmatrix}*
 \begin{bmatrix}u_{11}&u_{12}&\cdots&u_{1n}\\ 0&u_{22}&\cdots&a_{2n}\\\cdots&\cdots&\cdots&\cdots\\0&0&\cdots&u_{nn}\end{bmatrix}$$
 对比两边矩阵的，可以求得：
-从0开始时为了编程的方便，第0行，或者第0列实际就是矩阵的第1行，第1列。
-第0行：$$a_{1j} = u_{1j}, j = 1, 2,..,n. => u_{1j} = a_{1j}$$
-第0列：$$a_{j1} = l_{j1}u_{11}, j = 1, 2,..,n. => l_{j1} = a_{j1}/u_{11}$$
+但是编程时，行列都是从0开始时，要注意转换。
+第1行：$$a_{1j} = u_{1j}, j = 1, 2,..,n. => u_{1j} = a_{1j}$$
+第1列：$$a_{j1} = l_{j1}u_{11}, j = 1, 2,..,n. => l_{j1} = a_{j1}/u_{11}$$
 ...
-第k行：$$a_{kj} = \sum_{i=0}^{i=k} l_{ki}u_{ij}, => u_{kj} = a_{kj} - \sum_{i=0}^{i=k-1} l_{ki}u_{ij}$$
-第k列：$$a_{jk} = \sum_{i=0}^{i=k} l_{ji}u_{ik}, => u_{jk} = [a_{jk} - \sum_{i=0}^{i=k-1} l_{ji}u_{ik}]/u_{kk}$$
+第k行：$$a_{kj} = \sum_{i=1}^{i=k} l_{ki}u_{ij}, => u_{kj} = a_{kj} - \sum_{i=1}^{i=k-1} l_{ki}u_{ij}$$
+第k列：$$a_{jk} = \sum_{i=1}^{i=k} l_{ji}u_{ik}, => u_{jk} = [a_{jk} - \sum_{i=1}^{i=k-1} l_{ji}u_{ik}]/u_{kk}$$
 
 因为前k-1行的$$u_{ij}$$都已知，前k-1列的$$l_{ij}$$都已知,因此可以求得第k行$$u_{ij}$$，第k列的$$l_{ij}$$
-问题：得保证$$a_{00}$$非0，以及矩阵非奇异。
+问题：得保证$$a_{11}$$非0，以及矩阵非奇异。
 #利用LU分解求线性方程组的解
 
 

@@ -47,7 +47,7 @@ $$\begin{bmatrix}a_{11}&a_{12}&\cdots&a_{1n}\\ a_{21}&a_{22}&\cdots&a_{2n}\\\cdo
 \begin{bmatrix}0\\0\\\cdots\\1\\\cdots\\0\end{bmatrix}$$  
 右边的列，就只是第k行值非0；  
 $$A*b_{k} = e_{k}$$,对所有的$$e_{k}$$求出$$b_{k}$$就可以得到A的逆矩阵$$A^{-1} = B$$  
-实际求解中把A 换成LU来减少计算量。总的计算开销还是$$n^{3}$$
+实际求解中把A 换成LU来减少计算量。总的计算开销还是$$n^{3}$$。但是这样并不比直接的高斯消元法来的快。
 
 算法实现如下。
 
@@ -149,23 +149,23 @@ CVector SolveUpper(CMatrix<double>& mat, CVector& vec)
 template<class T>
 CMatrix<T>  CMatrix<T>::Inv()
 {
-	CMatrix result = *this;
-	CMatrix<double> L(mRows, mColumns);
-	CMatrix<double> U(mRows, mColumns);
-	CMatrix<double> InvMat(mRows, mColumns);
-	LU(result,mRows, &L, &U);
-	for (int col = 0; col < mColumns; col++)
-	{
-		CVector vec(mRows, col);
-		CVector mSolution(mRows);
-		mSolution = SolveLow(L, vec);
-		mSolution = SolveUpper(U, mSolution);
-		for (int row = 0; row<mRows; row++)
-		{
-			InvMat.Set(row, col, mSolution.Get(row));
-		}
-	}
-	return InvMat;
+    CMatrix result = *this;
+    CMatrix<double> L(mRows, mColumns);
+    CMatrix<double> U(mRows, mColumns);
+    CMatrix<double> InvMat(mRows, mColumns);
+    LU(result,mRows, &L, &U);
+    for (int col = 0; col < mColumns; col++)
+    {
+        CVector vec(mRows, col);
+        CVector mSolution(mRows);
+        mSolution = SolveLow(L, vec);
+        mSolution = SolveUpper(U, mSolution);
+        for (int row = 0; row<mRows; row++)
+        {
+            InvMat.Set(row, col, mSolution.Get(row));
+        }
+    }
+    return InvMat;
 }
 ```
 

@@ -80,7 +80,6 @@ void CMatrix<T>::LU(CMatrix &mat, int N, CMatrix* L, CMatrix* U)
 }
 
 //solve linear algebra equations
-
 CVector Solve(CMatrix<double>& mat, CVector& vec)
 {
     CVector X(vec.Size());

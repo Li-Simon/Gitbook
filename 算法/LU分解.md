@@ -34,6 +34,7 @@ $$\begin{bmatrix}u_{11}&u_{12}&\cdots&u_{1n}\\ 0&u_{22}&\cdots&a_{2n}\\\cdots&\c
 对第k行：$$y_{k} = \sum_{i=k}^{i=n}u_{ki}x_{i} => x_{k} = [y_{n}-\sum_{i=k+1}^{i=n}u_{ki}x_{i}]/u_{kk}$$  
 这样通过LU分解矩阵就求得了线性方程组的就X.
 
+#矩阵求逆
 算法实现如下。
 
 ```cpp

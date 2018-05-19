@@ -1,7 +1,10 @@
+
+
+
 # LU分解
 
 
-$$\begin{bmatrix}r_{11}&r_{12}&\cdots&r_{1n}\\ r_{21}&r_{22}&\cdots&r_{2n}\\\cdots&\cdots&\cdots&\cdots&\cdots\\r_{n1}&r_{n2}&\cdots&r_{nn}\\1&1&\cdots&1&0\end{bmatrix}\begin{bmatrix} \lambda_1\\ \lambda_2\\\cdots\\\lambda_n\\0\end{bmatrix}$$
+$$\begin{bmatrix}r_{11}&r_{12}&\cdots&r_{1n}\\ r_{21}&r_{22}&\cdots&r_{2n}\\\cdots&\cdots&\cdots&\cdots\\r_{n1}&r_{n2}&\cdots&r_{nn}\end{bmatrix}$$
 
 
 

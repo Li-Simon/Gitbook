@@ -13,9 +13,11 @@ $$\begin{bmatrix}a_{11}&a_{12}&\cdots&a_{1n}\\ a_{21}&a_{22}&\cdots&a_{2n}\\\cdo
 第0列：$$a_{j1} = l_{j1}u_{11}, j = 1, 2,..,n. => l_{j1} = a_{j1}/u_{11}$$
 ...
 第k行：$$a_{kj} = \sum_{i=0}^{i=k} l_{ki}u_{ij}, => u_{kj} = a_{kj} - \sum_{i=0}^{i=k-1} l_{ki}u_{ij}$$
-因为前k-1行的$$u_{ij}$$都已知，前k-1列的$$l_{ij}$$都已知
+第k列：$$a_{jk} = \sum_{i=0}^{i=k} l_{ji}u_{ik}, => u_{jk} = [a_{jk} - \sum_{i=0}^{i=k-1} l_{ji}u_{ik}]/u_{kk}$$
 
+因为前k-1行的$$u_{ij}$$都已知，前k-1列的$$l_{ij}$$都已知,因此可以求得第k行$$u_{ij}$$，第k列的$$l_{ij}$$
 
+算法实现如下。
 ```cpp
 #include "stdafx.h"
 #include "matrix.h"

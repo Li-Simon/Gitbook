@@ -18,7 +18,21 @@ $$\begin{bmatrix}a_{11}&a_{12}&\cdots&a_{1n}\\ a_{21}&a_{22}&\cdots&a_{2n}\\\cdo
 因为前k-1行的$$u_{ij}$$都已知，前k-1列的$$l_{ij}$$都已知,因此可以求得第k行$$u_{ij}$$，第k列的$$l_{ij}$$
 问题：得保证$$a_{11}$$非0，以及矩阵非奇异。
 #利用LU分解求线性方程组的解
-
+求解线性方程组 Ax=b相当于求解LUx=b;
+设Y = UX; 因此LY = b;首先求解LY = b, 
+$$\begin{bmatrix}l_{11}&0&\cdots&0\\ l_{21}&l_{22}&\cdots&0\\\cdots&\cdots&\cdots&\cdots\\l_{n1}&l_{n2}&\cdots&l_{nn}\end{bmatrix}\begin{bmatrix}y_{1}\\y_{2}\\\cdots&\\y_{n}\end{bmatrix}= 
+\begin{bmatrix}b_{1}\\b_{2}\\\cdots&\\b_{n}\end{bmatrix}$$
+求解上面的方程：
+第1行：$$y_{1} = b_{1}$$
+对于第k行：$$b_{k} = \sum_{i=1}^{i=k}l_{ki}y_{i} =>y_{k} = b_{k} - \sum_{i=1}^{i=k-1}l_{ki}y_{i}$$
+求得Y之后，代入Y=UX求得X:
+$$\begin{bmatrix}u_{11}&u_{12}&\cdots&u_{1n}\\ 0&u_{22}&\cdots&a_{2n}\\\cdots&\cdots&\cdots&\cdots\\0&0&\cdots&u_{nn}\end{bmatrix}\begin{bmatrix}x_{1}\\x_{2}\\\cdots&\\x_{n}\end{bmatrix}= 
+\begin{bmatrix}y_{1}\\y_{2}\\\cdots&\\y_{n}\end{bmatrix}$$
+对于上三角矩阵，我们从第n行开始求解
+对第n行：$$y_{n} = u_{nn}x_{n} => x_{n} = y_{n}/u_{nn}$$
+...
+对第k行：$$y_{k} = \sum_{i=k}^{i=n}u_{ki}x_{i} => x_{k} = [y_{n}-\sum_{i=k+1}^{i=n}u_{ki}x_{i}]/u_{kk}$$
+这样通过LU分解矩阵就求得了线性方程组的就X.
 
 算法实现如下。
 ```cpp

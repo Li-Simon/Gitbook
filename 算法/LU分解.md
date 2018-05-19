@@ -2,14 +2,18 @@
 
 
 # LU分解
+任何非奇异方阵都可以分解成上三角阵与下三角阵之积
 
-
-$$\begin{bmatrix}r_{11}&r_{12}&\cdots&r_{1n}\\ r_{21}&r_{22}&\cdots&r_{2n}\\\cdots&\cdots&\cdots&\cdots\\r_{n1}&r_{n2}&\cdots&r_{nn}\end{bmatrix}$$
-
-
-
-
-
+$$\begin{bmatrix}a_{11}&a_{12}&\cdots&a_{1n}\\ a_{21}&a_{22}&\cdots&a_{2n}\\\cdots&\cdots&\cdots&\cdots\\a_{n1}&a_{n2}&\cdots&a_{nn}\end{bmatrix} = 
+\begin{bmatrix}l_{11}&0&\cdots&0\\ l_{21}&l_{22}&\cdots&0\\\cdots&\cdots&\cdots&\cdots\\l_{n1}&l_{n2}&\cdots&l_{nn}\end{bmatrix}*
+\begin{bmatrix}u_{11}&u_{12}&\cdots&u_{1n}\\ 0&u_{22}&\cdots&a_{2n}\\\cdots&\cdots&\cdots&\cdots\\0&0&\cdots&u_{nn}\end{bmatrix}$$
+对比两边矩阵的，可以求得：
+从0开始时为了编程的方便，第0行，或者第0列实际就是矩阵的第1行，第1列。
+第0行：$$a_{1j} = u_{1j}, j = 1, 2,..,n. => u_{1j} = a_{1j}$$
+第0列：$$a_{j1} = l_{j1}u_{11}, j = 1, 2,..,n. => l_{j1} = a_{j1}/u_{11}$$
+...
+第k行：$$a_{kj} = \sum_{i=0}^{i=k} l_{ki}u_{ij}, => u_{kj} = a_{kj} - \sum_{i=0}^{i=k-1} l_{ki}u_{ij}$$
+因为前k-1行的$$u_{ij}$$都已知，前k-1列的$$l_{ij}$$都已知
 
 
 ```cpp

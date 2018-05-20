@@ -19,3 +19,5 @@ $$((\beta ))_{1}$$
 
 [https://www.wikiwand.com/en/QR\_decomposition\#/Example\_2](https://www.wikiwand.com/en/QR_decomposition#/Example_2)
 
+https://www.wikiwand.com/en/Householder\_transformation
+

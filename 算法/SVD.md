@@ -9,13 +9,13 @@
 
 **Gram-Schmidt正交化**
 
-Gram-Schmidt正交化的基本想法，是利用投影原理在已有正交基的基础上构造一个新的正交基。
+Gram-Schmidt正交化的基本想法，是利用投影原理在已有基的基础上构造一个新的正交基。
 
 $$((\beta ))_{1}$$
 
-http://elsenaju.eu/Calculator/QR-decomposition.htm
+[http://elsenaju.eu/Calculator/QR-decomposition.htm](http://elsenaju.eu/Calculator/QR-decomposition.htm)
 
-https://rosettacode.org/wiki/QR\_decomposition
+[https://rosettacode.org/wiki/QR\_decomposition](https://rosettacode.org/wiki/QR_decomposition)
 
-https://www.wikiwand.com/en/QR\_decomposition\#/Example\_2
+[https://www.wikiwand.com/en/QR\_decomposition\#/Example\_2](https://www.wikiwand.com/en/QR_decomposition#/Example_2)
 

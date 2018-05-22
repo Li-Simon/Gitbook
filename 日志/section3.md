@@ -124,6 +124,7 @@
   对自己的每笔交易，进行签名核实
   保护你的资产
 * [ ] 借鉴BItcoin Core, Bitpie
+* [ ] 先基于NBitcoin,用C\#开发
 
 
 

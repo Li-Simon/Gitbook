@@ -112,6 +112,7 @@
 * [ ] 基于Dotnet\(?core\)开发一个BTC 界面钱包，
   * [ ] 接下来可能要转到QT上面去开发，
   * [ ] 然后添加不同的虚拟币，向其它钱包学习
+* [ ] ProcessProgramMagn.cpp要仔细看
 
 
 

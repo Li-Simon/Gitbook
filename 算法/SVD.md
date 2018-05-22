@@ -21,11 +21,9 @@ $$((\beta ))_{1}$$
 
 [https://www.wikiwand.com/en/Householder\_transformation](https://www.wikiwand.com/en/Householder_transformation)
 
+C\#有开源的免费的代数库mathnet.numerics,功能也比较多，可以通过Nuget来安装这个库
 
+[https://numerics.mathdotnet.com/api/MathNet.Numerics.LinearAlgebra/Matrix\`1.htm\#QR](https://numerics.mathdotnet.com/api/MathNet.Numerics.LinearAlgebra/Matrix`1.htm#QR)
 
-C\#有开源的免费的代数mathnet.numerics,功能也比较多，可以通过Nuget来安装这个库
-
-https://numerics.mathdotnet.com/api/MathNet.Numerics.LinearAlgebra/Matrix%601.htm\#QR
-
-https://numerics.mathdotnet.com/matrix.html
+[https://numerics.mathdotnet.com/matrix.html](https://numerics.mathdotnet.com/matrix.html)
 

@@ -126,6 +126,7 @@
 * [ ] 借鉴BItcoin Core, Bitpie
 * [ ] 先基于NBitcoin,用C\#开发，但是得先看看[NBitcoin文档](https://www.codeproject.com/Articles/835098/NBitcoin-Build-Them-All#simple),看怎么用。
 * [ ] Miura数据存储部分MeasureResultData
+* [ ] Test Code
 
 
 

@@ -1,6 +1,6 @@
 # 基于Nbitcoin的比特币钱包开发日志
 
-* [ ] Test code以及Example code和NBitcoin code一起看，因为最终调用的地方还是在NBItcoin
+* [ ] Test code以及Example code和NBitcoin code一起看，因为最终调用的地方还是在NBitcoin
 
 20180524
 

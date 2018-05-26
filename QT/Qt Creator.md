@@ -7,7 +7,7 @@
 然后安装,Qt5.9.1不需要全选，不然需要13G的空间，安装时间也太长，就选下面两项  
 ![](/assets/importQT-Install-1.png)
 
-安装好之后，打开VS2017
+安装好之后
 
 1. 打开Visual Studio 2017，点击菜单栏中的“工具”，找到“扩展和更新”：
 2. 在扩展和更新中，点击左侧目录进入Visual Studio Marketplace，搜索关键词Qt，第一个结果就是Qt Visual Studio Tools，安装：

@@ -26,5 +26,11 @@ A Bitcoin wallet must do the following:
 [区块链钱包开发](https://medium.com/@robinwan/区块链钱包开发-b3ad79bb1c85)  
 本文讲解了开发钱包的预备知识，包括第一是什么是钱包，以及相关的分类，第二是 RPC、JSON-RPC 以及 JSON，第三是了解区块链相关的基础知识，第四是掌握一门开发语言。接着浅谈了怎么样开发，最后列出了主流项目相关的 RPC 接口以及开源钱包项目。如果读者对钱包开发感兴趣，希望本文能够给读者一个指引。
 
+20180527
 
+通过密码设定来获取助记词：
+
+Safe safe = Safe.Create\(out mnemonic, pw, walletFilePath, Config.Network\);
+
+people relief fade phone unveil bracket change say enter term add worth
 

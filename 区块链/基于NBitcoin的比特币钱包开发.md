@@ -34,3 +34,9 @@ Safe safe = Safe.Create\(out mnemonic, pw, walletFilePath, Config.Network\);
 
 people relief fade phone unveil bracket change say enter term add worth
 
+DotNetWallet:
+
+password:a
+
+mnemonic:soda total coral scout patient bar soup push symptom squeeze whip squeeze
+

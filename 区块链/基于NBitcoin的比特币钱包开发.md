@@ -32,11 +32,15 @@ A Bitcoin wallet must do the following:
 
 Safe safe = Safe.Create\(out mnemonic, pw, walletFilePath, Config.Network\);
 
-people relief fade phone unveil bracket change say enter term add worth
+MCCBit
+
+Password:AA
+
+mnemonic:people relief fade phone unveil bracket change say enter term add worth
 
 DotNetWallet:
 
 password:Alpha2018
 
-mnemonic:scan jazz seminar dog joke caution print hurdle purse merge grape impose
+mnemonic: scan jazz seminar dog joke caution print hurdle purse merge grape impose
 

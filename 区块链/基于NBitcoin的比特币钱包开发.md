@@ -36,7 +36,7 @@ people relief fade phone unveil bracket change say enter term add worth
 
 DotNetWallet:
 
-password:a
+password:Alpha2018
 
-mnemonic:soda total coral scout patient bar soup push symptom squeeze whip squeeze
+mnemonic:scan jazz seminar dog joke caution print hurdle purse merge grape impose
 

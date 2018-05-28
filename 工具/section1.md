@@ -11,3 +11,7 @@ https://www.cnblogs.com/Lam7/p/6109872.html
 ![](/assets/FirstChapter1.PNG)
 如果想让章节有层次感的显示，则可以在summary.md中设置
 ![](/assets/GitbookChapterSectionPart.png)
+
+
+#Error: Error with command "svgexport"
+在cmd中安装：npm install svgexport -g

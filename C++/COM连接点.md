@@ -13,8 +13,9 @@
 
 一旦挂载成功，sink对象就托管给对应的COM对象了，如果对应的COM对象析构了，那么所有它管理的sink对象也就释放了。
 
+# COM Interop\(互操作\)
 
-#COM Interop(互操作)
+CLR是什么？
 
 
 

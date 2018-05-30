@@ -35,8 +35,8 @@ bitcoind \[选项\]
   -dnsseed           使用 DNS 查找节点（默认：1）  
   -banscore=      与行为异常节点断开连接的临界值（默认：100）  
   -bantime=       重新允许行为异常节点连接所间隔的秒数（默认：86400）  
-  -maxreceivebuffer=  最大每连接接收缓存，_1000 字节（默认：10000）  
-  -maxsendbuffer=  最大每连接发送缓存，_1000 字节（默认：10000）  
+  -maxreceivebuffer=  最大每连接接收缓存，\_1000 字节（默认：10000）  
+  -maxsendbuffer=  最大每连接发送缓存，\_1000 字节（默认：10000）  
   -upnp              使用全局即插即用（UPNP）映射监听端口（默认：0）  
   -detachdb          分离货币块和地址数据库。会增加客户端关闭时间（默认：0）  
   -paytxfee=    您发送的交易每 KB 字节的手续费  
@@ -113,7 +113,7 @@ bitcoin.conf 示例
 
 # proxy=127.0.0.1:9050
 
-###### \#
+###### \
 
 ## addnode 与 connect 的区别
 

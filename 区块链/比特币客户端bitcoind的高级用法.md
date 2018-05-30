@@ -22,25 +22,25 @@ Bitcoin 比特币官方客户端有两个版本：一个是图形界面的版本
   -min               启动时最小化
   -splash            启动时显示启动屏幕（默认：1）
   -datadir=<目录名>  指定数据目录
-  -dbcache=<n>       设置数据库缓存大小，单位为兆字节（MB）（默认：25）
-  -dblogsize=<n>     设置数据库磁盘日志大小，单位为兆字节（MB）（默认：100）
-  -timeout=<n>       设置连接超时，单位为毫秒
-  -proxy=<ip:端口>   通过 Socks4 代理链接
+  -dbcache=       设置数据库缓存大小，单位为兆字节（MB）（默认：25）
+  -dblogsize=     设置数据库磁盘日志大小，单位为兆字节（MB）（默认：100）
+  -timeout=       设置连接超时，单位为毫秒
+  -proxy=   通过 Socks4 代理链接
   -dns               addnode 允许查询 DNS 并连接
   -port=<端口>       监听 <端口> 上的连接（默认：8333，测试网络 testnet：18333）
-  -maxconnections=<n>  最多维护 <n> 个节点连接（默认：125）
-  -addnode=<ip>      添加一个节点以供连接，并尝试保持与该节点的连接
-  -connect=<ip>      仅连接到这里指定的节点
+  -maxconnections=  最多维护 个节点连接（默认：125）
+  -addnode=      添加一个节点以供连接，并尝试保持与该节点的连接
+  -connect=      仅连接到这里指定的节点
   -irc               使用 IRC（因特网中继聊天）查找节点（默认：0）
   -listen            接受来自外部的连接（默认：1）
   -dnsseed           使用 DNS 查找节点（默认：1）
-  -banscore=<n>      与行为异常节点断开连接的临界值（默认：100）
-  -bantime=<n>       重新允许行为异常节点连接所间隔的秒数（默认：86400）
-  -maxreceivebuffer=<n>  最大每连接接收缓存，<n>*1000 字节（默认：10000）
-  -maxsendbuffer=<n>  最大每连接发送缓存，<n>*1000 字节（默认：10000）
+  -banscore=      与行为异常节点断开连接的临界值（默认：100）
+  -bantime=       重新允许行为异常节点连接所间隔的秒数（默认：86400）
+  -maxreceivebuffer=  最大每连接接收缓存，*1000 字节（默认：10000）
+  -maxsendbuffer=  最大每连接发送缓存，*1000 字节（默认：10000）
   -upnp              使用全局即插即用（UPNP）映射监听端口（默认：0）
   -detachdb          分离货币块和地址数据库。会增加客户端关闭时间（默认：0）
-  -paytxfee=<amt>    您发送的交易每 KB 字节的手续费
+  -paytxfee=    您发送的交易每 KB 字节的手续费
   -testnet           使用测试网络
   -debug             输出额外的调试信息
   -logtimestamps     调试信息前添加时间戳
@@ -48,15 +48,15 @@ Bitcoin 比特币官方客户端有两个版本：一个是图形界面的版本
   -printtodebugger   发送跟踪/调试信息到调试器
   -rpcuser=<用户名>  JSON-RPC 连接使用的用户名
   -rpcpassword=<密码>  JSON-RPC 连接使用的密码
-  -rpcport=<port>    JSON-RPC 连接所监听的 <端口>（默认：8332）
-  -rpcallowip=<ip>   允许来自指定 <ip> 地址的 JSON-RPC 连接
-  -rpcconnect=<ip>   发送命令到运行在 <ip> 地址的节点（默认：127.0.0.1）
+  -rpcport=    JSON-RPC 连接所监听的 <端口>（默认：8332）
+  -rpcallowip=   允许来自指定 地址的 JSON-RPC 连接
+  -rpcconnect=   发送命令到运行在 地址的节点（默认：127.0.0.1）
   -blocknotify=<命令> 当最好的货币块改变时执行命令（命令中的 %s 会被替换为货币块哈希值）
   -upgradewallet     将钱包升级到最新的格式
-  -keypool=<n>       将密匙池的尺寸设置为 <n>（默认：100）
+  -keypool=       将密匙池的尺寸设置为 （默认：100）
   -rescan            重新扫描货币块链以查找钱包丢失的交易
-  -checkblocks=<n>   启动时检查多少货币块（默认：2500，0 表示全部）
-  -checklevel=<n>    货币块验证的级别（0-6，默认：1）
+  -checkblocks=   启动时检查多少货币块（默认：2500，0 表示全部）
+  -checklevel=    货币块验证的级别（0-6，默认：1）
 
 SSL 选项：
 
@@ -132,79 +132,80 @@ bitcoin.conf 示例
 ##                                                          ##
 ##  如果您在一个局域网内运行了多个节点，您不需要让它们建立许多 ##
 ##  连接。您只需要使用“connect”让它们统一连接到一个已端口转  ##
-##  发并拥有多个连接的节点。                            
- 您可以在下面使用多个 addnode= 设置来连接到指定的节点
- 
-addnode=69.164.218.197
-addnode=10.0.0.2:8333
+##  发并拥有多个连接的节点。                                 ##
+##############################################################
 
- ... 或使用多个 connect= 设置来仅连接到指定的节点
-connect=69.164.218.197
-connect=10.0.0.1:8333
+# 您可以在下面使用多个 addnode= 设置来连接到指定的节点
+#addnode=69.164.218.197
+#addnode=10.0.0.2:8333
 
- 不使用因特网中继聊天（IRC）（irc.lfnet.org #bitcoin 频道）
- 来查找其它节点
-noirc=0
+# ... 或使用多个 connect= 设置来仅连接到指定的节点
+#connect=69.164.218.197
+#connect=10.0.0.1:8333
 
- 入站+出站的最大连接数
-maxconnections=
+# 不使用因特网中继聊天（IRC）（irc.lfnet.org #bitcoin 频道）
+# 来查找其它节点
+#noirc=0
 
-
- JSON-RPC 选项（用于控制运行中的 Bitcoin/bitcoind 进程）：
-
- server=1 告知 Bitcoin-QT 接受 JSON-RPC 命令
-server=0
-
- 您必须设置 rpcuser 和 rpcpassword 以确保 JSON-RPC 的安全
-rpcuser=Ulysseys
-rpcpassword=YourSuperGreatPasswordNumber_DO_NOT_USE_THIS_OR_YOU_WILL_GET_ROBBED_385593
-
- 客户端在 HTTP 连接建立后，等待多少秒以完成一个 RPC HTTP 请求
-rpctimeout=30
-
- 默认仅允许来自本机的 RPC 连接。在这里您可以指定多个
- rpcallowip=，来设置您想允许连接的其它主机 IP 地址。
- 您可以使用 * 作为通配符。
-rpcallowip=10.1.1.34
-rpcallowip=192.168.1.*
-
- 在如下端口监听 RPC 连接
-rpcport=8332
-
- 您可以通过如下设置使用 Bitcoin 或 bitcoind 来发送命令到一个在
- 其它主机远程运行的 Bitcoin/bitcoind 客户端
-rpcconnect=127.0.0.1
-
- 使用安全套接层（也称为 TLS 或 HTTPS）来
- 连接到 Bitcoin -server 或 bitcoind
-rpcssl=1
-
- 当 rpcssl=1 时使用的 OpenSSL 设置
-rpcsslciphers=TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!AH:!3DES:@STRENGTH
-rpcsslcertificatechainfile=server.cert
-rpcsslprivatekeyfile=server.pem
+# 入站+出站的最大连接数
+#maxconnections=
 
 
- 其它选项：
+# JSON-RPC 选项（用于控制运行中的 Bitcoin/bitcoind 进程）：
 
- 设置 gen=1 以尝试生成比特币（采矿）
-gen=0
+# server=1 告知 Bitcoin-QT 接受 JSON-RPC 命令
+#server=0
 
- 预生成如下数目的公匙和私匙，这样钱包备份便可以对已有的交易以及未来
- 多笔交易有效
-keypool=100
+# 您必须设置 rpcuser 和 rpcpassword 以确保 JSON-RPC 的安全
+#rpcuser=Ulysseys
+#rpcpassword=YourSuperGreatPasswordNumber_DO_NOT_USE_THIS_OR_YOU_WILL_GET_ROBBED_385593
 
- 每次您发送比特币的时候支付一个可选的额外的交易手续费。包含手续费的交易
- 会更快的被包含在新生成的货币块中，因此会更快生效
-paytxfee=0.00
+# 客户端在 HTTP 连接建立后，等待多少秒以完成一个 RPC HTTP 请求
+#rpctimeout=30
 
- 允许直接连接，实现“通过 IP 地址支付”功能
-allowreceivebyip=1
+# 默认仅允许来自本机的 RPC 连接。在这里您可以指定多个
+# rpcallowip=，来设置您想允许连接的其它主机 IP 地址。
+# 您可以使用 * 作为通配符。
+#rpcallowip=10.1.1.34
+#rpcallowip=192.168.1.*
 
- 用户界面选项：
+# 在如下端口监听 RPC 连接
+#rpcport=8332
 
- 最小化启动比特币客户端
-min=1
+# 您可以通过如下设置使用 Bitcoin 或 bitcoind 来发送命令到一个在
+# 其它主机远程运行的 Bitcoin/bitcoind 客户端
+#rpcconnect=127.0.0.1
 
- 最小化到系统托盘
-minimizetotray=1
+# 使用安全套接层（也称为 TLS 或 HTTPS）来
+# 连接到 Bitcoin -server 或 bitcoind
+#rpcssl=1
+
+# 当 rpcssl=1 时使用的 OpenSSL 设置
+#rpcsslciphers=TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!AH:!3DES:@STRENGTH
+#rpcsslcertificatechainfile=server.cert
+#rpcsslprivatekeyfile=server.pem
+
+
+# 其它选项：
+
+# 设置 gen=1 以尝试生成比特币（采矿）
+#gen=0
+
+# 预生成如下数目的公匙和私匙，这样钱包备份便可以对已有的交易以及未来
+# 多笔交易有效
+#keypool=100
+
+# 每次您发送比特币的时候支付一个可选的额外的交易手续费。包含手续费的交易
+# 会更快的被包含在新生成的货币块中，因此会更快生效
+#paytxfee=0.00
+
+# 允许直接连接，实现“通过 IP 地址支付”功能
+#allowreceivebyip=1
+
+# 用户界面选项：
+
+# 最小化启动比特币客户端
+#min=1
+
+# 最小化到系统托盘
+#minimizetotray=1

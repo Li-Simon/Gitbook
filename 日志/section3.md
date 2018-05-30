@@ -128,5 +128,10 @@
 * [ ] Miura数据存储部分MeasureResultData
 * [ ] Test Code
 
+20180531
+
+* [ ] 怎么使用Bitcoin core中的BOOST\_AUTO\_TEST\_CASE
+* [ ] 重新Build Bitcoin Linux开发环境并保存一份在移动硬盘
+
 
 

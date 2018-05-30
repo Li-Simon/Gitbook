@@ -15,6 +15,7 @@
 * [第四章 区块链](区块链/README.md)
     * [比特币代码分析](区块链/section1.md)
     * [Bitcoin-cli API](区块链/section2.md)
+    * [比特币客户端bitcoind的高级用法](区块链/比特币客户端bitcoind的高级用法.md)
     * [比特币基本知识](区块链/比特币基本知识.md)
     * [比特币的交易脚本](区块链/比特币的交易脚本.md)
     * [比特币交易脚本操作符](区块链/appdx-scriptops.md)

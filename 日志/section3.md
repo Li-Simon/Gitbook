@@ -131,7 +131,7 @@
 20180531
 
 * [ ] 怎么使用Bitcoin core中的BOOST\_AUTO\_TEST\_CASE
-* [ ] 重新Build Bitcoin Linux开发环境并保存一份在移动硬盘
+* [ ] 重新Build Bitcoin Linux开发环境并保存一份在移动硬盘（这周）
   * [ ] 只能在家里的网络里面，办公室里面网络不能下载
   * [ ] 写一份安装流程到本书
 * [ ] 

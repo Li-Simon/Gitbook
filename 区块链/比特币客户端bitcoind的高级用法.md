@@ -101,149 +101,105 @@ $HOME/Library/Application Support/Bitcoin/
 注意：如果 Bitcoin 比特币客户端测试网模式运行，在数据文件夹下客户端会自动创建名为“testnet”的子文件夹。  
 bitcoin.conf 示例
 
-# bitcoin.conf 配置文件。以 \# 开头的行是注释。
+bitcoin.conf 配置文件。以 \# 开头的行是注释。
 
-# 网络相关的设置：
+网络相关的设置：
 
-# 在测试网络中运行，而不是在真正的比特币网络
+在测试网络中运行，而不是在真正的比特币网络
 
-# testnet=0
+testnet=0
 
-# 通过一个 Socks4 代理服务器连接
+通过一个 Socks4 代理服务器连接
 
-# proxy=127.0.0.1:9050
+proxy=127.0.0.1:9050
 
-## addnode 与 connect 的区别
+# addnode 与 connect 的区别
 
-## 假设您使用了 addnode=4.2.2.4 参数，那么 addnode 便会与
+ 假设您使用了 addnode=4.2.2.4 参数，那么 addnode 便会与您的节点连接，并且告知您的节点所有与它相连接的其它节点。 另外它还会将您的节点信息告知与其相连接的其它节点，这样它们也可以连接到您的节点。
+connect 在您的节点“连接”到它的时候并不会做上述工作。仅它会与您连接，而其它节点不会。
+因此如果您位于防火墙后，或者因为其它原因无法找到节点，则使用“addnode”添加一些节点。如果您想保证隐私，使用“connect”连接到那些您可以“信任”的节点。如果您在一个局域网内运行了多个节点，您不需要让它们建立许多
+连接。您只需要使用“connect”让它们统一连接到一个已端口转
+发并拥有多个连接的节点。 您可以在下面使用多个 addnode= 设置来连接到指定的节点
+addnode=69.164.218.197
+addnode=10.0.0.2:8333
+ ... 或使用多个 connect= 设置来仅连接到指定的节点
+connect=69.164.218.197
+connect=10.0.0.1:8333
+不使用因特网中继聊天（IRC）（irc.lfnet.org \#bitcoin 频道）
+ 来查找其它节点
+noirc=0
+入站+出站的最大连接数
+maxconnections=
+JSON-RPC 选项（用于控制运行中的 Bitcoin/bitcoind 进程）：
+server=1 告知 Bitcoin-QT 接受 JSON-RPC 命令
+server=0
+您必须设置 rpcuser 和 rpcpassword 以确保 JSON-RPC 的安全
+rpcuser=Ulysseys
+rpcpassword=YourSuperGreatPasswordNumber\_DO\_NOT\_USE\_THIS\_OR\_YOU\_WILL\_GET\_ROBBED\_385593
+客户端在 HTTP 连接建立后，等待多少秒以完成一个 RPC HTTP 请求
+rpctimeout=30
+默认仅允许来自本机的 RPC 连接。在这里您可以指定多个
+rpcallowip=，来设置您想允许连接的其它主机 IP 地址。
+您可以使用 \* 作为通配符。
+rpcallowip=10.1.1.34
 
-## 您的节点连接，并且告知您的节点所有与它相连接的其它节点。
+rpcallowip=192.168.1.\*
 
-## 另外它还会将您的节点信息告知与其相连接的其它节点，这样它
+在如下端口监听 RPC 连接
 
-## 们也可以连接到您的节点。
+rpcport=8332
 
-## connect 在您的节点“连接”到它的时候并不会做上述工作。仅
+您可以通过如下设置使用 Bitcoin 或 bitcoind 来发送命令到一个在
 
-## 它会与您连接，而其它节点不会。
+其它主机远程运行的 Bitcoin/bitcoind 客户端
 
-## 因此如果您位于防火墙后，或者因为其它原因无法找到节点，则
+rpcconnect=127.0.0.1
 
-## 使用“addnode”添加一些节点。
+使用安全套接层（也称为 TLS 或 HTTPS）来
 
-## 如果您想保证隐私，使用“connect”连接到那些您可以“信任”
+连接到 Bitcoin -server 或 bitcoind
 
-## 的节点。
+rpcssl=1
 
-## 如果您在一个局域网内运行了多个节点，您不需要让它们建立许多
+当 rpcssl=1 时使用的 OpenSSL 设置
 
-## 连接。您只需要使用“connect”让它们统一连接到一个已端口转
+rpcsslciphers=TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!AH:!3DES:@STRENGTH
 
-## 发并拥有多个连接的节点。
+rpcsslcertificatechainfile=server.cert
 
-# 您可以在下面使用多个 addnode= 设置来连接到指定的节点
+rpcsslprivatekeyfile=server.pem
 
-# addnode=69.164.218.197
+其它选项：
 
-# addnode=10.0.0.2:8333
+设置 gen=1 以尝试生成比特币（采矿）
 
-# ... 或使用多个 connect= 设置来仅连接到指定的节点
+gen=0
 
-# connect=69.164.218.197
+预生成如下数目的公匙和私匙，这样钱包备份便可以对已有的交易以及未来
 
-# connect=10.0.0.1:8333
+多笔交易有效
 
-# 不使用因特网中继聊天（IRC）（irc.lfnet.org \#bitcoin 频道）
+keypool=100
 
-# 来查找其它节点
+每次您发送比特币的时候支付一个可选的额外的交易手续费。包含手续费的交易
 
-# noirc=0
+会更快的被包含在新生成的货币块中，因此会更快生效
 
-# 入站+出站的最大连接数
+paytxfee=0.00
 
-# maxconnections=
+允许直接连接，实现“通过 IP 地址支付”功能
 
-# JSON-RPC 选项（用于控制运行中的 Bitcoin/bitcoind 进程）：
+allowreceivebyip=1
 
-# server=1 告知 Bitcoin-QT 接受 JSON-RPC 命令
+用户界面选项：
 
-# server=0
+最小化启动比特币客户端
 
-# 您必须设置 rpcuser 和 rpcpassword 以确保 JSON-RPC 的安全
+min=1
 
-# rpcuser=Ulysseys
+最小化到系统托盘
 
-# rpcpassword=YourSuperGreatPasswordNumber\_DO\_NOT\_USE\_THIS\_OR\_YOU\_WILL\_GET\_ROBBED\_385593
-
-# 客户端在 HTTP 连接建立后，等待多少秒以完成一个 RPC HTTP 请求
-
-# rpctimeout=30
-
-# 默认仅允许来自本机的 RPC 连接。在这里您可以指定多个
-
-# rpcallowip=，来设置您想允许连接的其它主机 IP 地址。
-
-# 您可以使用 \* 作为通配符。
-
-# rpcallowip=10.1.1.34
-
-# rpcallowip=192.168.1.\*
-
-# 在如下端口监听 RPC 连接
-
-# rpcport=8332
-
-# 您可以通过如下设置使用 Bitcoin 或 bitcoind 来发送命令到一个在
-
-# 其它主机远程运行的 Bitcoin/bitcoind 客户端
-
-# rpcconnect=127.0.0.1
-
-# 使用安全套接层（也称为 TLS 或 HTTPS）来
-
-# 连接到 Bitcoin -server 或 bitcoind
-
-# rpcssl=1
-
-# 当 rpcssl=1 时使用的 OpenSSL 设置
-
-# rpcsslciphers=TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!AH:!3DES:@STRENGTH
-
-# rpcsslcertificatechainfile=server.cert
-
-# rpcsslprivatekeyfile=server.pem
-
-# 其它选项：
-
-# 设置 gen=1 以尝试生成比特币（采矿）
-
-# gen=0
-
-# 预生成如下数目的公匙和私匙，这样钱包备份便可以对已有的交易以及未来
-
-# 多笔交易有效
-
-# keypool=100
-
-# 每次您发送比特币的时候支付一个可选的额外的交易手续费。包含手续费的交易
-
-# 会更快的被包含在新生成的货币块中，因此会更快生效
-
-# paytxfee=0.00
-
-# 允许直接连接，实现“通过 IP 地址支付”功能
-
-# allowreceivebyip=1
-
-# 用户界面选项：
-
-# 最小化启动比特币客户端
-
-# min=1
-
-# 最小化到系统托盘
-
-# minimizetotray=1
+minimizetotray=1
 
 
 

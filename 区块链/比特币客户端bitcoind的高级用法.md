@@ -113,8 +113,6 @@ bitcoin.conf 示例
 
 # proxy=127.0.0.1:9050
 
-###### \
-
 ## addnode 与 connect 的区别
 
 ## 假设您使用了 addnode=4.2.2.4 参数，那么 addnode 便会与

@@ -51,6 +51,7 @@
     * [第一节 CNN](机器学习/CNN.md)
 * [第九章 计算机理论](计算机理论/README.md)
     * [CAP](计算机理论/CAP.md)
+    * [Socket](计算机理论/Socket.md)
 * [第十章 QT](QT/README.md)
     * [Qt Creator](QT/Qt Creator.md)
 * [结束](end/README.md)

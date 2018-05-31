@@ -49,8 +49,6 @@ protocol：故名思意，就是指定协议。常用的协议有，IPPROTO\_TCP
 
 注意：并不是上面的type和protocol可以随意组合的，如SOCK\_STREAM不可以跟IPPROTO\_UDP组合。当protocol为0时，会自动选择type类型对应的默认协议。
 
-
-
 当我们调用socket创建一个socket时，返回的socket描述字它存在于协议族（address family，AF\_XXX）空间中，但没有一个具体的地址。如果想要给它赋值一个地址，就必须调用bind\(\)函数，否则就当调用connect\(\)、listen\(\)时系统会自动随机分配一个端口。
 
 3.2Bind\(\)函数
@@ -79,28 +77,18 @@ int bind(int sockfd, const struct sockaddr *addr, socklen_t addrlen);
 
 如果作为一个服务器，在调用socket\(\)、bind\(\)之后就会调用listen\(\)来监听这个socket，如果客户端这时调用connect\(\)发出连接请求，服务器端就会接收到这个请求。
 
-
-
 ```
 int listen(int sockfd, int backlog);
 int connect(int sockfd, const struct sockaddr *addr, socklen_t addrlen);
 ```
 
-
-
 listen函数的第一个参数即为要监听的socket描述字，第二个参数为相应socket可以排队的最大连接个数。socket\(\)函数创建的socket默认是一个主动类型的，listen函数将socket变为被动类型的，等待客户的连接请求。
 
-
-
 connect函数的第一个参数即为客户端的socket描述字，第二参数为服务器的socket地址，第三个参数为socket地址的长度。客户端通过调用connect函数来建立与TCP服务器的连接。
-
-
 
 3.4、accept\(\)函数
 
 TCP服务器端依次调用socket\(\)、bind\(\)、listen\(\)之后，就会监听指定的socket地址了。TCP客户端依次调用socket\(\)、connect\(\)之后就想TCP服务器发送了一个连接请求。TCP服务器监听到这个请求之后，就会调用accept\(\)函数取接收请求，这样连接就建立好了。之后就可以开始网络I/O操作了，即类同于普通文件的读写I/O操作。
-
-
 
 ```
 int accept(int sockfd, struct sockaddr *addr, socklen_t *addrlen);
@@ -113,8 +101,6 @@ accept函数的第一个参数为服务器的socket描述字，第二个参数�
 3.5、read\(\)、write\(\)等函数
 
 万事具备只欠东风，至此服务器与客户已经建立好连接了。可以调用网络I/O进行读写操作了，即实现了网咯中不同进程之间的通信！网络I/O操作有下面几组：
-
-
 
 read\(\)/write\(\)
 
@@ -171,13 +157,11 @@ close一个TCP socket的缺省行为时把该socket标记为以关闭，然后�
 
 我们知道tcp建立连接要进行“三次握手”，即交换三个分组。大致流程如下：
 
-
-
 客户端向服务器发送一个SYN J
 
 服务器向客户端响应一个SYN K，并对SYN J进行确认ACK J+1
 
-客户端再想服务器发一个确认ACK K+1
+客户端再向服务器发一个确认ACK K+1
 
 这样就完了三次握手，但是这个三次握手发生在socket的那几个函数中呢？请看下图：
 
@@ -194,12 +178,6 @@ C：好的
 ```
 
 ![](/assets/Socket-handshark.png)
-
-从图中可以看出，当客户端调用connect时，触发了连接请求，向服务器发送了SYN J包，这时connect进入阻塞状态；服务器监听到连接请求，即收到SYN J包，调用accept函数接收请求向客户端发送SYN K ，ACK J+1，这时accept进入阻塞状态；客户端收到服务器的SYN K ，ACK J+1之后，这时connect返回，并对SYN K进行确认；服务器收到ACK K+1时，accept返回，至此三次握手完毕，连接建立。
-
-总结：客户端的connect在三次握手的第二个次返回，而服务器端的accept在三次握手的第三次返回。
-
-5、socket中TCP的四次握手释放连接详解
 
 上面介绍了socket中TCP的三次握手建立过程，及其涉及的socket函数。现在我们介绍socket中的四次握手释放连接的过程，请看下图：
 
@@ -223,4 +201,20 @@ C：好的
 这样每个方向上都有一个FIN和ACK。
 
 6.下面给出实现的一个实例
+
+总结：
+
+Client: Connect
+
+Server:accept
+
+Server:send
+
+Client:recv
+
+Client:send
+
+Server:recv
+
+Client:closesocket
 

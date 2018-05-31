@@ -218,3 +218,129 @@ Server:recv
 
 Client:closesocket
 
+```cpp
+// Socket-Server.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <winsock2.h>
+#pragma comment(lib,"ws2_32.lib")  
+//#pragma comment(lib, "WS2_32")
+#include "stdio.h"
+#include <iostream>
+using namespace std;
+
+void main()
+{
+	WORD myVersionRequenst;
+	WSADATA wasData;
+	myVersionRequenst = MAKEWORD(1, 1);
+	int err;
+	err = WSAStartup(myVersionRequenst, &wasData);
+	if (!err)
+	{
+		printf("open socket!\n");
+	}
+	else
+	{
+		printf("Can't open socket!\n");
+		return;
+	}
+
+	SOCKET serSocket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+	SOCKADDR_IN addr;
+	addr.sin_family = AF_INET;
+	addr.sin_addr.S_un.S_addr = INADDR_ANY;// htonl(INADDR_ANY);//ip address
+	addr.sin_port = htons(6000);//bind port
+
+	if (bind(serSocket, (SOCKADDR*)&addr, sizeof(SOCKADDR)) == SOCKET_ERROR)
+	{
+		printf("Bind error\n");
+		return;
+	}
+	if (listen(serSocket, 5) == SOCKET_ERROR)
+	{
+		printf("listen error!\n");
+		return;
+	}
+
+
+	//begin listen
+	SOCKADDR_IN clientsocket;
+	int len = sizeof(SOCKADDR);
+	SOCKET serConn = 0;
+	while (1)
+	{
+		//SOCKET serConn = listen(serSocket, 5);
+		serConn = accept(serSocket, (struct sockaddr*)&clientsocket, &len);
+		if (serConn == INVALID_SOCKET)
+		{
+			printf("Failed accept()\n");
+			return;
+		}
+		//SOCKET serConn = connect(serSocket, (SOCKADDR*)&clientsocket, &len);
+		char sendbuf[100];
+		sprintf_s(sendbuf, "welcome %s!", inet_ntoa(clientsocket.sin_addr));
+		send(serConn, sendbuf, strlen(sendbuf) + 1, 0);
+		
+		char receiveBuf[100];
+		recv(serConn, receiveBuf, strlen(receiveBuf) + 1, 0);
+		printf("%s\n", receiveBuf);
+		closesocket(serConn);//close
+		WSACleanup();//release resource
+	}
+}
+
+
+```
+
+```cpp
+// SocketClient.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <WinSock2.h>
+#include <stdio.h>
+#pragma comment(lib, "ws2_32.lib") 
+
+
+void main()
+{
+	int err;
+	WORD versionRequired;
+	WSADATA wsaData;
+	versionRequired = MAKEWORD(1, 1);
+	err = WSAStartup(versionRequired, &wsaData);//protocal version info
+
+	if (!err)
+	{
+		printf("Client socket opened!\n");
+	}
+	else
+	{
+		printf("Client socket can't open!\n");
+		return;
+	}
+
+	SOCKET clientSocket = socket(AF_INET, SOCK_STREAM, 0);
+	SOCKADDR_IN clientsock_in;
+	clientsock_in.sin_addr.S_un.S_addr = inet_addr("127.0.0.1");
+	clientsock_in.sin_family = AF_INET;
+	clientsock_in.sin_port = htons(6000);
+	connect(clientSocket, (SOCKADDR*)&clientsock_in,sizeof(SOCKADDR));//start connect
+
+	char receivebuf[100];
+	recv(clientSocket, receivebuf, 101, 0);
+	printf("%s\n", receivebuf);
+
+	send(clientSocket, "Hello, this is client\n", strlen("Hello, this is client\n") + 1, 0);
+	closesocket(clientSocket);
+	WSACleanup();
+    return;
+}
+
+
+```
+
+
+

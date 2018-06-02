@@ -52,5 +52,9 @@ testnet donate: **2N8hwP1WmJrFF5QWABn38y63uYLhnJYJYTF**
 
 password: Alpha2018Simon
 
+# NBitcoin.RPC
+
+我们能做的所有查询都是基于Bitcoin Core's RPC API
+
 
 

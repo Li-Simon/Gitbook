@@ -58,3 +58,9 @@ password: Alpha2018Simon
 
 
 
+遇到的问题：
+
+{"Could not load file or assembly 'StandardConfiguration, Version=1.0.0.14, Culture=neutral, PublicKeyToken=null' or one of its dependencies. The system cannot find the file specified.":"StandardConfiguration, Version=1.0.0.14, Culture=neutral, PublicKeyToken=null"}
+
+Solution：usingNuGet Package Manager: install NicolasDorier.StandardConfiguration.1.0.0.14
+

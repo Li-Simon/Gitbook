@@ -64,3 +64,17 @@ Solution：usingNuGet Package Manager: install NicolasDorier.StandardConfigurati
 
 "127.0.0.1:24445"
 
+
+
+"Unable to connect to the remote server"
+
+{"No connection could be made because the target machine actively refused it 127.0.0.1:24445"}
+
+
+
+{"Response status code does not indicate success: 401 \(Unauthorized\)."}
+
+
+
+"http://127.0.0.1:24445/v1/cryptos/BTC/derivations/tpubD6NzVbkrYhZ4Wj8xtqtoehXE88zBZbLkAhRuScECu8ukFxD6Y8T5VHcECy5noySj9oVY8baBRcKUjh5xq9sCudrxAvCY87jomtdkbUavHUV-\[legacy\]/utxos?longPolling=False"
+

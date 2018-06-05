@@ -55,6 +55,7 @@
 * [第九章 计算机理论](计算机理论/README.md)
     * [CAP](计算机理论/CAP.md)
     * [Socket](计算机理论/Socket.md)
+    * [同步与内核对象](计算机理论/同步与内核对象.md)
 * [第十章 QT](QT/README.md)
     * [Qt Creator](QT/Qt Creator.md)
 * [结束](end/README.md)

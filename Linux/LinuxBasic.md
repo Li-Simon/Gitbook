@@ -2,7 +2,7 @@
 
 # Ubuntu VirtualBox上建立share folder[^1]
 
-https://www.howtogeek.com/187703/how-to-access-folders-on-your-host-machine-from-an-ubuntu-virtual-machine-in-virtualbox/
+[https://www.howtogeek.com/187703/how-to-access-folders-on-your-host-machine-from-an-ubuntu-virtual-machine-in-virtualbox/](https://www.howtogeek.com/187703/how-to-access-folders-on-your-host-machine-from-an-ubuntu-virtual-machine-in-virtualbox/)
 
 1通过VirtualBox setting中的shared folded选定windows中的一个文件作为共享文件夹
 
@@ -22,9 +22,5 @@ https://www.howtogeek.com/187703/how-to-access-folders-on-your-host-machine-from
 
 # Linux下文本排序（文本中数字排序）
 
-
-
-
-
-[^1]: https://www.howtogeek.com/187703/how-to-access-folders-on-your-host-machine-from-an-ubuntu-virtual-machine-in-virtualbox/
+sort -n RS430FAVaraibles.txt -o RS430FAVaraiblesSorted.txt
 

@@ -61,5 +61,7 @@
     * [Qt Creator](QT/Qt Creator.md)
 * [第十一章 Python](Python/README.md)
     * [Python Basic](Python/PythonBasic.md)
+* [第十二章 Linux](Linux/README.md)
+    * [Linux Basic](Linux/LinuxBasic.md)
 * [结束](end/README.md)
 

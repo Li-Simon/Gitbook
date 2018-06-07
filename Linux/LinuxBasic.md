@@ -18,7 +18,7 @@
 
 4.重启虚拟机就可以用了![](/assets/Linux_Sharefolder_show.png)
 
-# Ubuntu VirtualBox上建立share folder
+# Linux下文本排序（文本中数字排序）
 
 
 

@@ -16,5 +16,9 @@
 
 命令：sudo adduser lipp vboxsf
 
-4.重启虚拟机就可以用了
+4.重启虚拟机就可以用了![](/assets/Linux_Sharefolder_show.png)
+
+# Ubuntu VirtualBox上建立share folder
+
+
 

@@ -65,5 +65,7 @@
     * [Python Basic](Python/PythonBasic.md)
 * [第十二章 Linux](Linux/README.md)
     * [Linux Basic](Linux/LinuxBasic.md)
+* [第十三章 读书笔记](读书笔记/README.md)
+    * [程序员修炼之道](读书笔记/程序员修炼之道.md)
 * [结束](end/README.md)
 

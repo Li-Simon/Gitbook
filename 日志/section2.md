@@ -20,7 +20,7 @@
       2. 要有自己的开发文档。
    7. eigen： [https://github.com/Li-Simon/eigen-git-mirror](https://github.com/Li-Simon/eigen-git-mirror)
       1. 功能比**Armadillo 强大**
-3. 因此，自己可以基于Eigen编写一个最优化算法的库，可以添加到Eigen中间去。仿照Eigen的风，可以作为自己的最优化，机器学习库函数，是否要保留一些核心功能作为护城河？
+3. 因此，自己可以基于Eigen编写一个最优化算法的库，可以添加到Eigen中间去。仿照Eigen的风，可以作为自己的最优化，机器学习库函数，是否要保留一些核心功能作为护城河？保持文档（理论文档与使用文档）与代码配套
 
 
 

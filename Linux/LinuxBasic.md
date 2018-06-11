@@ -23,4 +23,11 @@
 # Linux下文本排序（文本中数字排序）
 
 sort -n RS430FAVaraibles.txt -o RS430FAVaraiblesSorted.txt
+#扩展磁盘空间
+//查看虚拟磁盘空间信息，确认确实是需要扩容的虚拟硬盘。
+VBoxManage showhdinfo "H:\VirtualBox VMs\Ubuntu_14.04\Ubuntu_14.04.vdi"
+//计算要扩容的空间大小，我这里是要扩展到100G(1024*1024*1024*100)。
+set/a 1024*1024*1024
+//扩展虚拟硬盘空间，最后的数字替换成上面计算出的硬盘空间大小。
+VBoxManage modifymedium "H:\VirtualBox VMs\Ubuntu_14.04\Ubuntu_14.04.vdi" --resizebyte 107374182400
 

@@ -24,7 +24,7 @@
 4. 要熟练使用的库
    1. OpenCV：暂时想不到可以用到什么地方
    2. Eigen：编写一个最优化算法库
-   3. Tensorflow：
+   3. Tensorflow：有tensorflow lite可以为移动设备提供服务。
 
 
 

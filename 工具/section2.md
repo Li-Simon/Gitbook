@@ -188,6 +188,6 @@ Wiki markup - wiki
 Xojo (REALbasic) - xojo
 YAML - yaml
 ```
-
+$$\hat f$$
 
 

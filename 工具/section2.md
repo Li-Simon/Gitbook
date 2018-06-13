@@ -189,5 +189,6 @@ Xojo (REALbasic) - xojo
 YAML - yaml
 ```
 $$\hat f$$
+$$\frac{\partial J(\theta)}{\partial \theta_{j}} = -\frac{1}{m}\sum_{i=1}^m(y^i - h_{\theta}(x^i))x_{j}^{i}$$  
 
 

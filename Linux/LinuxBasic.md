@@ -31,4 +31,5 @@ VBoxManage showhdinfo "H:\VirtualBox VMs\Ubuntu_14.04\Ubuntu_14.04.vdi"
 set/a 1024*1024*1024
 //扩展虚拟硬盘空间，最后的数字替换成上面计算出的硬盘空间大小。
 VBoxManage modifymedium "H:\VirtualBox VMs\Ubuntu_14.04\Ubuntu_14.04.vdi" --resizebyte 107374182400
+copy directory:
 

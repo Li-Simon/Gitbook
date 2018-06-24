@@ -167,5 +167,9 @@
 * [ ] 要学会搭建自己的工具库，这样遇到问题了一丛自己的库中马上找到工具，迅速搭建起来解决框架。
 * [ ] 也就是Tianrong说的求解器吧
 
+20180624
+
+自动驾驶的例子http://www.feiguyunai.com/index.php/2018/06/21/python-tensorflow-keras-autocar01/
+
 
 

@@ -171,5 +171,7 @@
 
 自动驾驶的例子[http://www.feiguyunai.com/index.php/2018/06/21/python-tensorflow-keras-autocar01/](http://www.feiguyunai.com/index.php/2018/06/21/python-tensorflow-keras-autocar01/)
 
-http://www.feiguyunai.com/
+[http://www.feiguyunai.com/](http://www.feiguyunai.com/)
+
+https://www.leiphone.com/news/201703/2MCSRGD5XpPNbK8c.html
 

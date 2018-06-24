@@ -169,7 +169,7 @@
 
 20180624
 
-自动驾驶的例子http://www.feiguyunai.com/index.php/2018/06/21/python-tensorflow-keras-autocar01/
+自动驾驶的例子[http://www.feiguyunai.com/index.php/2018/06/21/python-tensorflow-keras-autocar01/](http://www.feiguyunai.com/index.php/2018/06/21/python-tensorflow-keras-autocar01/)
 
-
+http://www.feiguyunai.com/
 

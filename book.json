@@ -2,5 +2,5 @@
 	"plugins": ["katex"]
 }
 {
-  "plugins": ["tags"]
+	"plugins": ["tags"]
 }

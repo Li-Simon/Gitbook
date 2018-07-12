@@ -191,4 +191,7 @@ YAML - yaml
 $$\hat f$$
 $$\frac{\partial J(\theta)}{\partial \theta_{j}} = -\frac{1}{m}\sum_{i=1}^m(y^i - h_{\theta}(x^i))x_{j}^{i}$$  
 
+http://www.aleacubase.com/cudalab/cudalab_usage-math_formatting_on_markdown.html
+https://www.zybuluo.com/codeep/note/163962#3%E5%A6%82%E4%BD%95%E8%BE%93%E5%85%A5%E6%8B%AC%E5%8F%B7%E5%92%8C%E5%88%86%E9%9A%94%E7%AC%A6
+
 

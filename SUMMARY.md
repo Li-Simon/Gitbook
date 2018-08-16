@@ -74,6 +74,5 @@
     * [Linux下软件安装](Linux/Linux下软件安装.md)
 * [第十三章 读书笔记](读书笔记/README.md)
     * [程序员修炼之道](读书笔记/程序员修炼之道.md)
-* [Tags](tags.md)
 * [结束](end/README.md)
 

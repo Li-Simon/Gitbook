@@ -1,4 +1,3 @@
 {
-	"plugins": ["katex"],
-	"plugins": ["tags"]
+	"plugins": ["katex"]
 }

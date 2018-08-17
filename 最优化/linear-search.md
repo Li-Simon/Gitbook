@@ -1,3 +1,4 @@
+#Linear Search Methods
 the steepest descent algorithm proceeds as follows: at each step, starting from the point $$x^{(k)}$$,we conduct a line search in the direction $$-\nabla f(x^{(k)})$$, until a minimizer, $$x^{(k+1)}$$, is found.  
 $$\alpha _{k} = arg min_{\alpha \ge 0} f(x_{(k)} - \alpha  \nabla f(x^{(k)})) $$  
 Proposition 8.1： if $$x^{(k)}$$ is the steepest descent sequence for f: $$R^n$$-&gt;R， then for each k the vector $$x^{(k+1)} - x^{(k)}$$ is orthogonal to the vector $$x^{(k+2)} - x^{(k+1)}$$  

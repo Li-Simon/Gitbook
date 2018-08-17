@@ -9,7 +9,7 @@ $$f(x) = \frac{1}{2}x^T\mathrm{Q}x - b^Tx $$
 Gradient:$$g^{(k)} = \nabla f(x^{(k)}) = Qx - b$$  
 so $$x^{(k+1)} = x^{(k)} - \alpha _{k}g^{(k)}$$  
 where:  
-$$\alpha _{k} = arg min_{\alpha \ge 0} f(x_{(k)} - \alpha  g^{(k)}) \\ = arg min_{\alpha \ge 0} (\frac{1}{2}(x^{k} - \alpha  g^{(k)})^TQ(x^{k} - \alpha  g^{(k)}) - (x^{k} - \alpha  g^{(k)})^Tb) $$  
+$$\alpha _{k} = arg min_{\alpha \ge 0} f(x_{(k)} - \alpha  g^{(k)})  = arg min_{\alpha \ge 0} (\frac{1}{2}(x^{k} - \alpha  g^{(k)})^TQ(x^{k} - \alpha  g^{(k)}) - (x^{k} - \alpha  g^{(k)})^Tb) $$  
 Hence:  
 $$\alpha _{k} = \frac{g^{(k)T}g^{(k)}}{g^{(k)T}Qg^{(k)}}$$
 

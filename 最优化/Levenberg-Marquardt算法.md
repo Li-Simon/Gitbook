@@ -13,27 +13,8 @@ $$x_{t+1} = x_t - (J^TJ + \lambda diag(J^TJ))^{-1}J^Tr$$
 如果使用$$\lambda = \lambda_0/v$$使得cost fucntion下降，然后我们就把$$\lambda_0/v$$作为新的$$\lambda$$  
 当$$\lambda = 0$$时，就是高斯-牛顿法，当$$\lambda$$趋于无穷时，就是梯度下降法。如果使用$$\lambda/v$$没有是损失函数下降，使用$$\lambda$$导致损失函数下降，那么我们就继续使用$$\lambda$$做为阻尼项。
 
-Begin  
-$$k := 0; x:=x_0; v: = 2; A := J(x)^TJ(x) g := J(x)^Tf(x)\\
-\qquad u:=\tau*max(a_{ii}) \\
-\qquad found: = (||g||_{\infty} \leq \epsilon _{1})\\
-while (not found) and (k < k_{max})\\
-\qquad k := k+1; solve-> (A + uI)h_{lm} = -g\\
-\qquad if \quad ||h_{lm}|| \leq \epsilon (||x|| + \epsilon _{2})\\
-\qquad \qquad found := true\\
-\qquad else: \\
-\qquad \qquad x_{new} := x + h_{lm}\\
-\qquad \rho: = (F(x) - F(x+h_{dl})/(L(0) - L(h_{dl})))\\
-\qquad if \quad \rho \geq 0\\
-\qquad \qquad x:=x_{new}; g:=J(x)^Tf(x)\\
-\qquad \qquad A := J(x)^TJ(x) g := J(x)^Tf(x)\\
-\qquad \qquad found:= (||g||_{\infty} \leq \epsilon _{1})\\
-\qquad \qquad u:= u*max(1/3, 1-(2\rho -1)^3); v:=2\\
-\qquad else：\\
-\qquad \qquad u:=u*v, v:=2*v$$  
-End
-
-
+  
+![](/assets/L_M_Algo.gif)
 
 ```py
     def LM_Solver(self):

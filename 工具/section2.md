@@ -53,7 +53,7 @@ no such file fontsettings.js,在上一节有讲怎么处理。
    }
    ```
 4. 运行安装 gitbook install就安装好了（安装很慢，一个小时\),可以换个地方安装，只要把book.json换个地方，再在这个folder安装gitbook install，然后把node\_modules 拷到你书籍所在的folder就可以。
-Katex支持的https://khan.github.io/KaTeX/docs/supported.html
+Katex支持的公式https://khan.github.io/KaTeX/docs/supported.html
 
 # 中文在cmd中乱码的问题：
 

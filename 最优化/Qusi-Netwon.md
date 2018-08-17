@@ -25,18 +25,18 @@ $$f(x_k - \beta ^m d_k) \geq f(x_k) - \delta \beta ^m g_k^Td_k$$
 我们知道，在牛顿法中，我们需要求解二阶导数矩阵--Hassian阵，当变量很多时，求解Hassian阵势比较费时间的，Qusi-Netwon法主要是在构造Hassian阵上下功夫，它是通过构造一个近似的Hassian阵，或者Hassian阵的逆，而不是解析求解或者利用差分法来求解这个Hassian阵。构造的Hassian阵通过迭代而改变。  
 比较出名的Qusi-Netwon方法有BFGS\(以Charles George Broyden, Roger Fletcher, Donald Goldfarb and David Shanno命名\)  
 在牛顿法中，k步搜寻步长与方向是$$p_k$$，满足下面方程  
-$$B_kp_k = -\nabla f(x_k)\tag{1.1}$$  
+$$B_kp_k = -\nabla f(x_k)$$  
 $$B_k$$就是近似的Hassian 阵。下面我们讨论$$B_k$$如何变化，  
 我们要求$$B_k$$的更新满足quasi-Netwon条件  
-$$B_{k+1}(x_{k+1} - x_k) = \nabla f(x_{K+1} - \nabla f(x_{K})\tag{1.2}$$  
+$$B_{k+1}(x_{k+1} - x_k) = \nabla f(x_{K+1} - \nabla f(x_{K})$$  
 这个条件就是简单的求$$f(x)$$的二阶导数。  
 令：  
 $$y_k = \nabla f(x_{k+1}) - \nabla f(x_{k})$$， $$s_k = x_{k+1} - x_k$$, 因此$$B_{k+1}$$满足$$B_{k+1}s_k = y_k$$  
 这就是割线方程（the secant equation）, The curvature condition $$s_k^Ty_k > 0$$需要满足。  
 k步的Hassian阵以如下方式更新，  
-$$B_{k+1} = B_k + U_k + V_k\tag{1.3}$$  
+$$B_{k+1} = B_k + U_k + V_k$$  
 为了保持$$B_{k+1}$$的正定性以及对称性。$$B_{k+1}$$可以取如下形式：  
-$$B_{k+1} = B_k + \alpha uu^T + \beta vv^T\tag{1.4}$$  
+$$B_{k+1} = B_k + \alpha uu^T + \beta vv^T$$  
 选择$$u = y_k$$,$$v=B_ks_k$$,为了满足割线方程（the secant condition），我们得到：  
 $$\alpha = \frac{1}{y_k^Ts_k}\\$$  
 $$\beta = \frac{1}{s_k^TB_ks_k}\\$$  

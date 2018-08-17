@@ -38,8 +38,8 @@ $$B_{k+1} = B_k + U_k + V_k$$
 为了保持$$B_{k+1}$$的正定性以及对称性。$$B_{k+1}$$可以取如下形式：  
 $$B_{k+1} = B_k + \alpha uu^T + \beta vv^T$$  
 选择$$u = y_k$$,$$v=B_ks_k$$,为了满足割线方程（the secant condition），我们得到：  
-$$\alpha = \frac{1}{y_k^Ts_k}\\$$  
-$$\beta = \frac{1}{s_k^TB_ks_k}\\$$  
+$$\alpha = \frac{1}{y_k^Ts_k}$$  
+$$\beta = \frac{1}{s_k^TB_ks_k}$$  
 最终我们得到Hassian阵的更新方程：  
 $$B_{k+1} = B_{k} + \frac{y_ky_k^T}{y_k^Ts_k} - \frac{B_ks_ks_k^TB_k^T}{s_k^TB_ks_k}$$
 

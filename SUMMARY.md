@@ -74,5 +74,13 @@
     * [Linux下软件安装](Linux/Linux下软件安装.md)
 * [第十三章 读书笔记](读书笔记/README.md)
     * [程序员修炼之道](读书笔记/程序员修炼之道.md)
+* [第十四章 最优化](最优化/README.md)
+    * [Levenberg-Marquardt算法](Levenberg-Marquardt算法.md)
+    * [Qusi-Netwon 拟牛顿法](Qusi-Netwon.md)
+    * [信赖域方法](信赖域方法.md)
+    * [参数调节](参数调节.md)
+    * [ResiNN](resinn.md)
+    * [linear search](linear-search.md)
+    * [Learning To Rank LTR](learning-to-rank-ltr.md)
 * [结束](end/README.md)
 

@@ -3,11 +3,11 @@
 [Levenberg-Marquardt](https://en.wikipedia.org/wiki/Levenberg–Marquardt_algorithm)  
 方法用于求解非线性最小二乘问题，结合了梯度下降法和高斯-牛顿法。  
 其主要改变是在Hessian阵中加入对角线项,加这一样可以保证Hassian阵是正定的。当然，这是一种L2正则化方式。  
-$$x_{t+1} = x_t - (H + \lambda I_n)^{-1}g\tag{4.15}$$,  
-$$x_{t+1} = x_t - (J^TJ + \lambda I_n)^{-1}J^Tr\tag{4.16}$$  
+$$x_{t+1} = x_t - (H + \lambda I_n)^{-1}g$$,  
+$$x_{t+1} = x_t - (J^TJ + \lambda I_n)^{-1}J^Tr$$  
 L-M算法的不足点。  
 当$$\lambda$$很大时，$$J^TJ + \lambda I_n$$根本没用，Marquardt为了让梯度小的方向移动的快一些，来防止小梯度方向的收敛，把中间的单位矩阵换成了$$diag(J^TJ)$$,因此迭代变成：  
-$$x_{t+1} = x_t - (J^TJ + \lambda diag(J^TJ))^{-1}J^Tr\tag{4.16}$$
+$$x_{t+1} = x_t - (J^TJ + \lambda diag(J^TJ))^{-1}J^Tr$$
 
 阻尼项（damping parameter）$$\lambda$$的选择，Marquardt 推荐一个初始值$$\lambda_0$$与因子$$v > 1$$，开始时，$$\lambda = \lambda_0$$,然后计算cost functions,第二次计算$$\lambda = \lambda_0/v$$,如果两者cost function都比初始点高，然后我们就增大阻尼项，通过乘以v,直到我们发现当$$\lambda = \lambda_0v^k$$时，cost function下降。  
 如果使用$$\lambda = \lambda_0/v$$使得cost fucntion下降，然后我们就把$$\lambda_0/v$$作为新的$$\lambda$$  

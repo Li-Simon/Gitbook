@@ -34,9 +34,10 @@ srcFile.close()
 ```
 
 还需要保存一份Jupyter笔记，用于python代码的实验：
-###调用graphviz库来实现可视化
-必须通过conda install python-graphviz安装graphviz
 
+### 调用graphviz库来实现可视化
+
+必须通过conda install python-graphviz安装graphviz
 
 ```py
 import graphviz 
@@ -54,8 +55,8 @@ dot_data = tree.export_graphviz(clf, out_file=None,
                          filled=True, rounded=True,  
                          special_characters=True)
 graph = graphviz.Source(dot_data)  
-graph 
+graph
 ```
 
-
+结果图：![](/assets/graphviz_iris.png)
 

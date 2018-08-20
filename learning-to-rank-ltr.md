@@ -1,2 +1,0 @@
-# Learning To Rank LTR
-

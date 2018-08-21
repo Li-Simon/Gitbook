@@ -15,3 +15,5 @@ https://www.cnblogs.com/Lam7/p/6109872.html
 
 #Error: Error with command "svgexport"
 在cmd中安装：npm install svgexport -g
+##生成pdf
+gitbook pdf ./ ./ML2.pdf

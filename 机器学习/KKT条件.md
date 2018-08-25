@@ -28,4 +28,8 @@ $$\mathbf{\lambda^*}$$为拉格朗日乘子向量，$$\mathbf{u^*}$$是iKKT乘�
 定义如下矩阵：  
 $$L(\mathbf{x},\mathbf{\lambda},\mathbf{u}) = F(\mathbf{x}) + \mathbf{\lambda}\mathbf{H}(\mathbf{x})+ \mathbf{u}\mathbf{G}(\mathbf{x})$$  
 $$F(\mathbf{x})$$是f在$$\mathbf{x}$$处的Hassian矩阵；  
-$$\mathbf{\lambda}\mathbf{H}(\mathbf{x})$$
+$$\mathbf{\lambda}\mathbf{H}(\mathbf{x}) = \lambda _1H_1(\mathbf{x}) + ... + \lambda _mH_m(\mathbf{x})$$  
+$$\mathbf{u}\mathbf{G}(\mathbf{x}) = u_1G_1(\mathbf{x}) + ... + u_pG_p(\mathbf{x})$$  
+其中$$G_k(\mathbf{x})$$是$$g_k$$处的Hassian矩阵。  
+
+

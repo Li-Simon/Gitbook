@@ -31,5 +31,25 @@ $$F(\mathbf{x})$$是f在$$\mathbf{x}$$处的Hassian矩阵；
 $$\mathbf{\lambda}\mathbf{H}(\mathbf{x}) = \lambda _1H_1(\mathbf{x}) + ... + \lambda _mH_m(\mathbf{x})$$  
 $$\mathbf{u}\mathbf{G}(\mathbf{x}) = u_1G_1(\mathbf{x}) + ... + u_pG_p(\mathbf{x})$$  
 其中$$G_k(\mathbf{x})$$是$$g_k$$处的Hassian矩阵。  
+起作用约束所定义曲面的切线空间：
+$$T(\mathbf{x^*}) = (y \in R^n: Dh(x^*)y)=0,Dg_j(x^*)y)=0, j \in J(x^*) $$.  
+定理： 二阶必要条件：
+如果$$\mathbf{x^*}$$是上面讨论的优化问题的极小点，那么存在$$\mathbf{\lambda^*} \in R^m, \mathbf{u^*} \in R^p$$使得：  
+1. $$ \kern{4 em}\mathbf{u^*} \ge 0$$,
+2. $$\kern{4 em}Df(\mathbf{x^*}) + \mathbf{\lambda^*}Dh(\mathbf{x^*}) + \mathbf{u^*}Dg(\mathbf{x^*})  = \mathbf{0^T}$$  
+3. $$\kern{4 em}\mathbf{u^{*T}}\mathbf{g(x*)} = 0$$   
+4.对所有$$\mathbf{y} \in T(\mathbf{x^*}, \mathbf{u^*}), \mathbf{y} \ne 0$$，都有$$\mathbf{y^T}L(\mathbf{x},\mathbf{\lambda},\mathbf{u})\mathbf{y} > 0$$  
+定理： 二阶充分条件：  
+假设$$f, \mathbf{g}, \mathbf{h} \in C^2, \mathbf{x^*} \in R^n$$是一个可行点， 存在向量$$\mathbf{\lambda^*} \in R^m, \mathbf{u^*} \in R^p$$使得：   
+1. $$ \kern{4 em}\mathbf{u^*} \ge 0$$,
+2. $$\kern{4 em}Df(\mathbf{x^*}) + \mathbf{\lambda^*}Dh(\mathbf{x^*}) + \mathbf{u^*}Dg(\mathbf{x^*})  = \mathbf{0^T}$$  
+3. $$\kern{4 em}\mathbf{u^{*T}}\mathbf{g(x*)} = 0$$   
+4.对所有$$\mathbf{y} \in T(\mathbf{x^*}, \mathbf{u^*}), \mathbf{y} \ne 0$$，都有$$\mathbf{y^T}L(\mathbf{x},\mathbf{\lambda},\mathbf{u})\mathbf{y} > 0$$   
+那么$$\mathbf{x^*}$$是优化问题   
+$$\kern{4 em}s.t. \kern{2 em} \mathbf h(\mathbf{x}) = \mathbf{0}$$   
+$$\kern{4 em}s.t. \kern{2 em} \mathbf g(\mathbf{x}) \le \mathbf{0}$$  
+的严格局部极小点，  
+$$T(\mathbf{x^*}) = (y \in R^n: Dh(x^*)y)=0,Dg_j(x^*)y)=0, j \in J(x^*) $$.  
+其中： $$\kern{4 em} J(\mathbf {x^*,\mathbf {u^*}}) = (j: g_j(\mathbf{x^*})=0),\mathbf {u^*} > 0$$ 
 
 

@@ -58,7 +58,7 @@
     * [模板类与模板函数](C++/模板类与模板函数.md)
     * [COM](C++/COM连接点.md)
     * [驱动](C++/驱动.md)
-* [第八章 Kaggle](Kaggle/README.md)
+* [第九章 Kaggle](Kaggle/README.md)
     * [Titanic](Kaggle/Titanic.md)
 * [结束](end/README.md)
 

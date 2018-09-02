@@ -116,5 +116,5 @@ plot_categories(train, cat = 'Embarked', target = 'Survived')
 sex = pd.Series( np.where( train.Sex == 'male' , 1 , 0 ) , name = 'Sex' )
 ```
 
-通过pandas产生一个新的数组，
+通过pandas产生一个新的数组，它是把原来sex中的male转化成1，其它的sex类别转化成0.
 

@@ -118,3 +118,15 @@ sex = pd.Series( np.where( train.Sex == 'male' , 1 , 0 ) , name = 'Sex' )
 
 通过pandas产生一个新的数组，它是把原来sex中的male转化成1，其它的sex类别转化成0.
 
+### 对类标签添加前缀
+
+```py
+embarked = pd.get_dummies( train.Embarked , prefix='Embarked' )
+```
+
+原来Embarked的类标签是C， Q，S。现在添加了前缀Embarked\_，并且把原来的一个类分成了三个类。
+
+![](/assets/python_get_dummies.png)
+
+
+

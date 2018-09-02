@@ -13,9 +13,6 @@ Ticket: Ticket number
 Fare: Fare  
 Cabin: Cabin  
 Embarked: Port of embarkation  
-使用SVM在Titanic数据上，训练集效果依次是线性SVM，GBDT,LR,RF,DT,KNN。最诡异的是，有事测试集上准确率比训练集上高。
-
-![](/assets/Titanic_Training_Result.png)
 
 ## 常用的数据清洗技巧
 
@@ -164,7 +161,8 @@ print model.score(train_X, train_Y),model.score(test_X, test_Y)
 
 0.8305274971941639 0.8851674641148325
 ```
-当你选定一个模型后，就根据这个模型，进行相应的参数输入，最基本的包括输入(X,Y)，其它的就是模型参数的设定，这个你可以根据sklearn的API进行设置。当然有目的性的调参考验的就是你的理论功底了。
+
+当你选定一个模型后，就根据这个模型，进行相应的参数输入，最基本的包括输入\(X,Y\)，其它的就是模型参数的设定，这个你可以根据sklearn的API进行设置。当然有目的性的调参考验的就是你的理论功底了。
 
 ### 总的效果
 
@@ -202,6 +200,10 @@ DataSet_test = pd.concat([imputed_test, embarked_test, sex_test, test.Pclass, te
 test_X = DataSet_test[0:418]
 test_Y = test_Y.Survived
 ```
+##最终结果
+使用SVM在Titanic数据上，训练集效果依次是线性SVM，GBDT,LR,RF,DT,KNN。最诡异的是，有事测试集上准确率比训练集上高。
+
+![](/assets/Titanic_Training_Result.png)
 
 
 

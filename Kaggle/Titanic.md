@@ -22,7 +22,8 @@ Embarked: Port of embarkation
 ### 导入数据
 
 ```py
-train = pd.read_csv("C:\Data\Group\ShareFolder\Kaggle\Titanic\\train.csv")
+test = pd.read_csv("C:\Data\Group\ShareFolder\Kaggle\Titanic\\test.csv")
+test_Y = pd.read_csv("C:\Data\Group\ShareFolder\Kaggle\Titanic\\gender_submission.csv")
 ```
 
 ### 导入库函数
@@ -127,6 +128,80 @@ embarked = pd.get_dummies( train.Embarked , prefix='Embarked' )
 原来Embarked的类标签是C， Q，S。现在添加了前缀Embarked\_，并且把原来的一个类分成了三个类。
 
 ![](/assets/python_get_dummies.png)
+
+### 缺失值填充
+
+通过均值来填充
+
+```py
+imputed = pd.DataFrame()
+imputed[ 'Age' ] = train.Age.fillna( train.Age.mean() )
+imputed[ 'Fare' ] = train.Fare.fillna( train.Fare.mean() )
+imputed[ 'Pclass' ] = train.Pclass.fillna( train.Pclass.mean() )
+```
+
+### 数据拼接
+
+```py
+DataSet = pd.concat([imputed, embarked, sex, train.Pclass, train.SibSp, train.Parch],axis = 1)
+```
+
+DataSet.shape就是\(891,10\)
+
+### 构造训练数据
+
+```py
+train_X = DataSet[0:891]
+train_Y = train.Survived
+```
+
+### 模型选择与训练
+
+```py
+model = RandomForestClassifier(max_depth=3, max_features='auto',n_estimators=100)
+model.fit(train_X, train_Y)
+print model.score(train_X, train_Y),model.score(test_X, test_Y)
+
+0.8305274971941639 0.8851674641148325
+```
+当你选定一个模型后，就根据这个模型，进行相应的参数输入，最基本的包括输入(X,Y)，其它的就是模型参数的设定，这个你可以根据sklearn的API进行设置。当然有目的性的调参考验的就是你的理论功底了。
+
+### 总的效果
+
+```py
+import warnings
+warnings.filterwarnings('ignore')
+# Handle table-like data and matrices
+import numpy as np
+import pandas as pd
+
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.naive_bayes import GaussianNB
+from sklearn.svm import SVC, LinearSVC
+from sklearn.ensemble import RandomForestClassifier , GradientBoostingClassifier
+
+# Modelling Helpers
+from sklearn.preprocessing import Imputer , Normalizer , scale
+from sklearn.cross_validation import train_test_split , StratifiedKFold
+from sklearn.feature_selection import RFECV
+import  xgboost as xgb
+
+test = pd.read_csv("C:\Data\Group\ShareFolder\Kaggle\Titanic\\test.csv")
+test_Y = pd.read_csv("C:\Data\Group\ShareFolder\Kaggle\Titanic\\gender_submission.csv")
+
+imputed_test = pd.DataFrame()
+imputed_test[ 'Age' ] = test.Age.fillna( train.Age.mean() )
+imputed_test[ 'Fare' ] = test.Fare.fillna( train.Fare.mean() )
+imputed_test[ 'Pclass' ] = test.Pclass.fillna( train.Pclass.mean() )
+embarked_test = pd.get_dummies(test.Embarked, prefix = 'Embarked')
+sex_test = pd.Series( np.where( test.Sex == 'male' , 1 , 0 ) , name = 'Sex' )
+DataSet_test = pd.concat([imputed_test, embarked_test, sex_test, test.Pclass, test.SibSp, test.Parch],axis = 1)
+
+test_X = DataSet_test[0:418]
+test_Y = test_Y.Survived
+```
 
 
 

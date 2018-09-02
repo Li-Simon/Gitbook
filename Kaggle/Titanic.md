@@ -19,9 +19,17 @@ Embarked: Port of embarkation
 
 ## 常用的数据清洗技巧
 
-导入库函数
+### 导入数据
 
 ```py
+train = pd.read_csv("C:\Data\Group\ShareFolder\Kaggle\Titanic\\train.csv")
+```
+
+### 导入库函数
+
+```py
+import warnings
+warnings.filterwarnings('ignore')
 # Handle table-like data and matrices
 import numpy as np
 import pandas as pd
@@ -50,6 +58,47 @@ import seaborn as sns
 mpl.style.use( 'ggplot' )
 sns.set_style( 'white' )
 pylab.rcParams[ 'figure.figsize' ] = 8 , 6
+```
+
+### 数据的统计属性
+
+```py
+train.shape ##数据的维度
+train.head ##显示所有数据
+```
+
+#### 相关系数与统计属性
+
+
+###关联系数，分布，类别图
+```py
+def plot_correlation_map( df ):
+    corr = train.corr()
+    _ , ax = plt.subplots( figsize =( 12 , 10 ) )
+    cmap = sns.diverging_palette( 220 , 10 , as_cmap = True )
+    _ = sns.heatmap(
+        corr, 
+        cmap = cmap,
+        square=True, 
+        cbar_kws={ 'shrink' : .9 }, 
+        ax=ax, 
+        annot = True, 
+        annot_kws = { 'fontsize' : 12 }
+    ) 
+def plot_distribution( df , var , target , **kwargs ):
+    row = kwargs.get( 'row' , None )
+    col = kwargs.get( 'col' , None )
+    facet = sns.FacetGrid( df , hue=target , aspect=4 , row = row , col = col )
+    facet.map( sns.kdeplot , var , shade= True )
+    facet.set( xlim=( 0 , df[ var ].max() ) )
+    facet.add_legend()
+def plot_categories(fd, cat, target, **kwargs):
+    row = kwargs.get('row', None)
+    col = kwargs.get('col', None)
+    facet = sns.FacetGrid(fd, row = row, col = col)
+    facet.map(sns.barplot, cat, target)
+    facet.add_legend()
+     
 ```
 
 

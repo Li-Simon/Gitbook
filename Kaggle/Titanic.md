@@ -100,7 +100,7 @@ def plot_categories(fd, cat, target, **kwargs):
     facet = sns.FacetGrid(fd, row = row, col = col)
     facet.map(sns.barplot, cat, target)
     facet.add_legend()
-    
+
 plot_correlation_map(train)
 plot_distribution( train , var = 'Age' , target = 'Survived' , row = 'Sex' )
 plot_categories(train, cat = 'Embarked', target = 'Survived')
@@ -109,4 +109,12 @@ plot_categories(train, cat = 'Embarked', target = 'Survived')
 ### plot\_correlation\_map\(train\)
 
 ![](/assets/output_7_0.png)
+
+### 类标签数字化
+
+```py
+sex = pd.Series( np.where( train.Sex == 'male' , 1 , 0 ) , name = 'Sex' )
+```
+
+通过pandas产生一个新的数组，
 

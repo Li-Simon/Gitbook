@@ -12,7 +12,7 @@ Parch: Number of parents/children aboard
 Ticket: Ticket number  
 Fare: Fare  
 Cabin: Cabin  
-Embarked: Port of embarkation  
+Embarked: Port of embarkation
 
 ## 常用的数据清洗技巧
 
@@ -187,8 +187,17 @@ from sklearn.cross_validation import train_test_split , StratifiedKFold
 from sklearn.feature_selection import RFECV
 import  xgboost as xgb
 
+train = pd.read_csv("C:\Data\Group\ShareFolder\Kaggle\Titanic\\train.csv")
 test = pd.read_csv("C:\Data\Group\ShareFolder\Kaggle\Titanic\\test.csv")
 test_Y = pd.read_csv("C:\Data\Group\ShareFolder\Kaggle\Titanic\\gender_submission.csv")
+
+imputed_train = pd.DataFrame()
+imputed_train[ 'Age' ] = train.Age.fillna( train.Age.mean() )
+imputed_train[ 'Fare' ] = train.Fare.fillna( train.Fare.mean() )
+imputed_train[ 'Pclass' ] = train.Pclass.fillna( train.Pclass.mean() )
+embarked_traint = pd.get_dummies(train.Embarked, prefix = 'Embarked')
+sex_train= pd.Series( np.where( train.Sex == 'male' , 1 , 0 ) , name = 'Sex' )
+DataSet_train = pd.concat([imputed_train, embarked_traint, sex_train, train.Pclass, train.SibSp, train.Parch],axis = 1)
 
 imputed_test = pd.DataFrame()
 imputed_test[ 'Age' ] = test.Age.fillna( train.Age.mean() )
@@ -199,12 +208,14 @@ sex_test = pd.Series( np.where( test.Sex == 'male' , 1 , 0 ) , name = 'Sex' )
 DataSet_test = pd.concat([imputed_test, embarked_test, sex_test, test.Pclass, test.SibSp, test.Parch],axis = 1)
 
 test_X = DataSet_test[0:418]
-test_Y = test_Y.Survived
+train_X = DataSet_train[0:891]
+train_Y = train.Survived
+train_X.shape,train_Y.shape,test_X.shape,test_Y.shape
 ```
-##最终结果
+
+## 最终结果
+
 使用SVM在Titanic数据上，训练集效果依次是线性SVM，GBDT,LR,RF,DT,KNN。最诡异的是，有事测试集上准确率比训练集上高。  
-对于随机森林RF，会发现，一开始随着树的深度增加，RF整体的准确率会上升，也就是说，RF需要准确性高的（或者说bias小的）分类器做基函数，对于GBDT，发现随深度增加，准确率下降，也就是GBDT需要深度浅，variance很小的树作为分类器，这符合他们的原理。即RF基于bias小的基分类器，通过增加树的数目来降低variance，boosting基于variance小的基分类器，通过boost来降低bias。
+对于随机森林RF，会发现，一开始随着树的深度增加，RF整体的准确率会上升，也就是说，RF需要准确性高的（或者说bias小的）分类器做基函数，对于GBDT，发现随深度增加，准确率下降，也就是GBDT需要深度浅，variance很小的树作为分类器，这符合他们的原理。即RF基于bias小的基分类器，通过增加树的数目来降低variance，boosting基于variance小的基分类器，通过boost来降低bias。  
 ![](/assets/Titanic_Training_Result.png)
-
-
 

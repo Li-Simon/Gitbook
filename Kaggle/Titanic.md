@@ -67,10 +67,10 @@ train.shape ##数据的维度
 train.head ##显示所有数据
 ```
 
-#### 相关系数与统计属性
+#### 相关系数与统计属性![](/assets/python_describe_corr.png)
 
+### 关联系数，分布，类别图
 
-###关联系数，分布，类别图
 ```py
 def plot_correlation_map( df ):
     corr = train.corr()
@@ -98,7 +98,6 @@ def plot_categories(fd, cat, target, **kwargs):
     facet = sns.FacetGrid(fd, row = row, col = col)
     facet.map(sns.barplot, cat, target)
     facet.add_legend()
-     
 ```
 
 

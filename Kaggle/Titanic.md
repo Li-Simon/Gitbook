@@ -85,6 +85,7 @@ def plot_correlation_map( df ):
         annot = True, 
         annot_kws = { 'fontsize' : 12 }
     ) 
+
 def plot_distribution( df , var , target , **kwargs ):
     row = kwargs.get( 'row' , None )
     col = kwargs.get( 'col' , None )
@@ -92,13 +93,20 @@ def plot_distribution( df , var , target , **kwargs ):
     facet.map( sns.kdeplot , var , shade= True )
     facet.set( xlim=( 0 , df[ var ].max() ) )
     facet.add_legend()
+
 def plot_categories(fd, cat, target, **kwargs):
     row = kwargs.get('row', None)
     col = kwargs.get('col', None)
     facet = sns.FacetGrid(fd, row = row, col = col)
     facet.map(sns.barplot, cat, target)
     facet.add_legend()
+    
+plot_correlation_map(train)
+plot_distribution( train , var = 'Age' , target = 'Survived' , row = 'Sex' )
+plot_categories(train, cat = 'Embarked', target = 'Survived')
 ```
 
+### plot\_correlation\_map\(train\)
 
+![](/assets/output_7_0.png)
 

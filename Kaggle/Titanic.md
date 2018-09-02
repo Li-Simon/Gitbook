@@ -19,6 +19,7 @@ Embarked: Port of embarkation
 ### 导入数据
 
 ```py
+train = pd.read_csv("C:\Data\Group\ShareFolder\Kaggle\Titanic\\train.csv")
 test = pd.read_csv("C:\Data\Group\ShareFolder\Kaggle\Titanic\\test.csv")
 test_Y = pd.read_csv("C:\Data\Group\ShareFolder\Kaggle\Titanic\\gender_submission.csv")
 ```

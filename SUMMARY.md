@@ -62,5 +62,6 @@
     * [Titanic](Kaggle/Titanic.md)
 * [第十章 面试](面试/README.md)
     * [基本ML问题](面试/基本ML问题.md)
+    * [常规算法问题](面试/常规算法问题.md)
 * [结束](end/README.md)
 

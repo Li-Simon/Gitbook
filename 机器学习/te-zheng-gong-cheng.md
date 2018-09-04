@@ -50,15 +50,12 @@ $$\kern{4 em}MIC:I(X,Y)=\sum_{y \in Y}\sum_{x \in X}p(x,y)\log(\frac{p(x,y)}{p(x
 $$\kern{4 em} a_{j,k} = ||\mathbf{X_j} - \mathbf{X_k}||,\kern{2 em}j,k=1,2,...,n$$  
 $$\kern{4 em} b_{j,k} = ||\mathbf{Y_j} - \mathbf{Y_k}||,\kern{2 em}j,k=1,2,...,n$$
 $$||*||$$是欧氏距离。取所有的双中心距离。  
-$$\kern{4 em}\mathbf{A_{j,k}} := a_{j,k} - \hat a_{.j}- \hat a_{k.} + \hat a_{..}$$  
-$$\kern{4 em}\mathbf{B_{j,k}} := b_{j,k} - \hat b_{.j}- \hat b_{k.} + \hat b_{..}$$  
-
-
-
-
-
-
-
+$$\kern{4 em}\mathbf{A_{j,k}} := a_{j,k} - \hat a_{j.}- \hat a_{.k} + \hat a_{..}$$  
+$$\kern{4 em}\mathbf{B_{j,k}} := b_{j,k} - \hat b_{j.}- \hat b_{.k} + \hat b_{..}$$    
+$$\hat a_{j.}$$是j-th row的平均，$$\hat a_{.k}$$是k-th column的平均，$$\hat a_{..}$$是全局平均。  
+定义The squared sample distance covariance：  
+$$\kern{4 em} dCov^2_n(X,Y) := \frac{1}{n^2}\displaystyle \sum_{j=1}^n\displaystyle \sum_{k=1}^nA_{jk}B_{jk}$$    
+虽然MIC与距离相关系数能处理具有线性与非线性关系的变量之间的相关性，但是Pearson还是不可替代的，第一，Pearson系数计算速度快；第二，相对于其它两种取值在[0,1],Pearson取值[-1,1],正负表关系的正负，绝对值表示强度。前提就是两个变量是线性相关的。  
 ### 特征工程小结
 
 * 特征工程：利用数据领域的相关知识来创建能够使机器学习算法达到最佳性能的特征的过程。

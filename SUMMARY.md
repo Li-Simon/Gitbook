@@ -60,7 +60,7 @@
     * [驱动](C++/驱动.md)
 * [第九章 Kaggle](Kaggle/README.md)
     * [Titanic](Kaggle/Titanic.md)
-* [第十章 面试](面试/README.md)
+* [第十章 问题](面试/README.md)
     * [基本ML问题](面试/基本ML问题.md)
     * [常规算法问题](面试/常规算法问题.md)
 * [结束](end/README.md)

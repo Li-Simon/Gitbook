@@ -58,7 +58,7 @@
     * [特征工程](机器学习/te-zheng-gong-cheng.md)
 * [第八章 推荐系统](推荐系统/README.md)
     * [推荐系统概述](推荐系统/推荐系统概述.md)
-    * [FM(Factorization Machines)](推荐系统/FM(Factorization Machines).md)
+    * [FM(Factorization Machines)](推荐系统/FM(Factorization Machines)
     * [Learning To Rank LTR](推荐系统/learning-to-rank-ltr.md)
 * [第九章 Kaggle](Kaggle/README.md)
     * [Titanic](Kaggle/Titanic.md)

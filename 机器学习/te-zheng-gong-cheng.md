@@ -43,6 +43,8 @@ Pearson相关系数(取值在[-1,1]之间，大于0是正相关，小于0是负�
 #####互信息(MIC)
 $$\kern{4 em}MIC:I(X,Y)=\sum_{y \in Y}\sum_{x \in X}p(x,y)\log(\frac{p(x,y)}{p(x)p(y)})$$  
 对于线性与非线性关系的数据都实用。  
+#####距离相关系数（Distance Correlation）
+为了克服Pearson相关系数只对具有线性关系的变量起作用而引入。
 
 
 ### 特征工程小结

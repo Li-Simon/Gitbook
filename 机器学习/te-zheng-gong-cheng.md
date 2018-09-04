@@ -22,10 +22,12 @@
 ## NLP 特征工程
 
 ![](/assets/NLP_Feature_Project.png)
+特征工程可以参考[这篇文章](机器学习算法工程师速查表大全)
 
 ```
 http://blog.kaggle.com/2016/07/21/approaching-almost-any-machine-learning-problem-abhishek-thakur/
 ```
+
 
 
 

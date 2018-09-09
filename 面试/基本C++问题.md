@@ -32,5 +32,7 @@ size of myints: 5
 sizeof(myints): 20
 ```
 
+####String 类
+[string](http://rsljdkt.iteye.com/blog/774188)
 
 

@@ -15,7 +15,7 @@
 sizeof对数组，得到整个数组所占空间的大小。  
 sizeof对指针，得到指针本身所占空间的大小。
 ####class与struct区别
-Class成员变量默认private,而struct成员变量默认为public.  
+Class成员变量或者成员函数默认private,而struct成员变量默认为public.  
 
 ```cpp
 #include <iostream>

@@ -33,6 +33,6 @@ sizeof(myints): 20
 ```
 
 ####String 类
-[string](http://rsljdkt.iteye.com/blog/774188)
+[string](http://rsljdkt.iteye.com/blog/774188)的构造、拷贝构造、析构、赋值、输出、比较、字符串加、长度、子串
 
 

@@ -64,3 +64,38 @@ sizeof(myints): 20
 针对数组空间效率不高的问题，人们有设计实现了多种动态数组，比如STL中的vector,为了避免浪费，我们首先为数组开辟较小的空间，然后往数组中添加数据，当数据的数目超过数字的容量时，我们再重新分配一个更大的空间（STL中vector每次扩容时，新的容量都是前一次的两倍），把之前的数据复制到新的数组中，再把之前的内存释放，这样就减小内存的浪费。每次扩容都需要大量的额外操作，因此尽量减小改变数组容量大小的次数。  
 简单设计Vector：一开始，新建一个大小为N的数组（弄成数组是保证内存是连续的），当vector中的元素内存超出开始的数组内存大小时，就新建一个大小为2N的数值，把原来的数组copy到新的数组，再释放原来的内存。用这种节奏来创建更大的数组来容纳更多的vector。
 
+
+
+```cpp
+void CList::ReplaceEmpty(char str[], int length)
+{
+	if(str == NULL || length <=0)
+		return;
+	int count = 0;
+	int num = 0;
+	while(str[num] != '\0')
+	{
+		if(str[num] == ' ')
+			count++;
+		num++;
+	}
+	int newStringLength = num + 2*count;
+	int newNum = newStringLength;
+	if(newStringLength >= length)
+		return;
+	for(int n = num; n >= 0; n--)
+	{
+		if(str[n] == ' ')
+		{
+			str[newNum--] = '0';
+			str[newNum--] = '2';
+			str[newNum--] = '%';
+		}
+		else
+			str[newNum--] = str[n];
+	}
+}
+```
+
+
+

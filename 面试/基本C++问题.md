@@ -115,3 +115,83 @@ void CList::ReplaceEmpty(char str[], int length)
 前序中，第一个点就是根结点，根据根结点的值，在中序中找到根结点的值，则根结点之前的是坐子树，根结点之后的是右子树。 根据中序排列中左子树的大小（长度）L，在前序排列中找到左子树（从1到L），因此对于左子树，又得到了前序和中序排列。对右子树也可以得到前序与中序排列。由此递归实现。  
 ![](/assets/preOrder_inOrder_2.png)
 
+```cpp
+BinaryTreeNode* CTree::ConstructBinaryTree(int* preorderS,int* preorderEnd, int* inorderS, int* inorderEnd)
+{
+	int rootValue = preorderS[0];
+	int* rootNode = inorderS;
+	
+	while(rootNode <= inorderEnd && *rootNode != rootValue) //find root in inorder
+	{
+		++rootNode;
+	}
+	int LTLen = rootNode - inorderS;
+	BinaryTreeNode* RootTree = new BinaryTreeNode();
+	RootTree->m_nValue = rootValue;
+	if(LTLen >0)
+	{
+		RootTree->m_pLeft = ConstructBinaryTree(preorderS+1, preorderS+LTLen, inorderS, rootNode-1);
+	}
+	if(LTLen < preorderEnd - preorderS)
+	{
+		RootTree->m_pRight = ConstructBinaryTree(preorderS+LTLen + 1, preorderEnd, rootNode+1, inorderEnd);
+	}
+	return RootTree;
+}
+
+void CTree::PreOrderPrint(BinaryTreeNode* BTree)
+{
+	if(BTree != NULL)//print root first
+	{
+		m_preorder.push_back(BTree->m_nValue);
+		cout<<BTree->m_nValue<<endl;
+	}
+	if(BTree->m_pLeft != NULL)
+	{
+		PreOrderPrint(BTree->m_pLeft);
+	}
+	if(BTree->m_pRight != NULL)
+	{
+		PreOrderPrint(BTree->m_pRight);
+	}	
+}
+
+void CTree::InOrderPrint(BinaryTreeNode* BTree)
+{
+	if(BTree->m_pLeft != NULL)
+	{
+		InOrderPrint(BTree->m_pLeft);
+	}
+	if(BTree != NULL)//print root second
+	{
+		m_preorder.push_back(BTree->m_nValue);
+		cout<<BTree->m_nValue<<endl;
+	}
+	if(BTree->m_pRight != NULL)
+	{
+		InOrderPrint(BTree->m_pRight);
+	}	
+}
+
+void CTree::PostOrderPrint(BinaryTreeNode* BTree)
+{
+	if(BTree->m_pLeft != NULL)
+	{
+		PostOrderPrint(BTree->m_pLeft);
+	}
+
+	if(BTree->m_pRight != NULL)
+	{
+		PostOrderPrint(BTree->m_pRight);
+	}	
+
+	if(BTree != NULL)//print root last
+	{
+		m_postorder.push_back(BTree->m_nValue);
+		cout<<BTree->m_nValue<<endl;
+	}
+}
+```
+
+
+

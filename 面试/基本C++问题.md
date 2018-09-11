@@ -246,9 +246,54 @@ T CStackDeque<T>::deleteHead()
 }
 void main()
 {
-	CStackDeque<int> queue;
-	queue.appendTail(1);
-	int value = queue.deleteHead();
+    CStackDeque<int> queue;
+    queue.appendTail(1);
+    int value = queue.deleteHead();
+}
+```
+
+###排序算法
+核心是在数组中选择一个值，重新排列数组，使得该值左边的元素都小于该值，右边的元素都大于该值。分成两组后，再继续这种操作，以此递归下去，最终得到全排序。  
+
+```cpp
+int CSort::Partition(int data[], int length, int start, int end)
+{
+       if(start >= end)
+             return start;
+       if(data == NULL || start <0 || end > length || length <= 0)
+             throw new exception("Invidate parameters!");
+       int small = start;
+       srand((unsigned)time(NULL));
+       int randInt = rand()%(end - start);
+       int value = data[start + randInt];
+       cout<<"Value: "<<value<<endl;
+       swap(data[start+randInt],data[end]);
+       for(int index = start; index < end; index++)
+       {
+             if(data[index] < value)
+             {
+                    swap(data[index], data[small]);
+                    small++;
+             }
+       }
+       swap(data[small], data[end]);
+       return small;
+}
+
+void CSort::QucikSort(int data[], int length, int start, int end)
+{
+	if(end <= start)
+		return;
+
+	int index = Partition(data,length,start,end);
+	if(index>start)
+	{
+		QucikSort(data,length,start, index-1);
+	}
+	if(index < end)
+	{
+		QucikSort(data, length, index + 1 ,end);
+	}
 }
 ```
 

@@ -195,4 +195,7 @@ void CTree::PostOrderPrint(BinaryTreeNode* BTree)
 
 ###栈与队列
 栈：先进后出，压入push,弹出pop
+队列：后进先出，压入push,弹出pop
+
+
 

@@ -300,7 +300,7 @@ void CSort::QucikSort(int data[], int length, int start, int end)
 ```
 
 ###与，或，异或
-2、负数的二进制表示 
+负数的二进制表示 
 举例： 
 -5 在计算机中表达为：11111111 11111111 11111111 11111011。转换为十六进制：0xFFFFFFFB。 
 -1在计算机中如何表示： 

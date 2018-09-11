@@ -208,41 +208,47 @@ template <class T>
 class CStackDeque
 {
 public:
-	CStackDeque(void){};
-	~CStackDeque(void){};
-	void appendTail(const T& node);
-	T deleteHead();
+    CStackDeque(void){};
+    ~CStackDeque(void){};
+    void appendTail(const T& node);
+    T deleteHead();
 
 private:
-	stack<T> m_stack1;
-	stack<T> m_stack2;
+    stack<T> m_stack1;
+    stack<T> m_stack2;
 };
 
 template<class T>
 void CStackDeque<T>::appendTail(const T& node)
 {
-	m_stack1.push(node);
+    m_stack1.push(node);
 }
 
 template<class T>
 T CStackDeque<T>::deleteHead()
 {
-	if(m_stack2.size() <= 0)
-	{
-		while(m_stack1.size() > 0)
-		{
-			T& node = m_stack1.top();
-			m_stack1.pop();
-			m_stack2.push(node);
-		}
-	}
+    if(m_stack2.size() <= 0)
+    {
+        while(m_stack1.size() > 0)
+        {
+            T& node = m_stack1.top();
+            m_stack1.pop();
+            m_stack2.push(node);
+        }
+    }
 
-	if(m_stack2.size() <= 0)
-		throw new exception("queue is empty!");
+    if(m_stack2.size() <= 0)
+        throw new exception("queue is empty!");
 
-	T node2 = m_stack2.top();
-	m_stack2.pop();
-	return node2;
+    T node2 = m_stack2.top();
+    m_stack2.pop();
+    return node2;
+}
+void main()
+{
+	CStackDeque<int> queue;
+	queue.appendTail(1);
+	int value = queue.deleteHead();
 }
 ```
 

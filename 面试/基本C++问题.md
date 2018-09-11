@@ -265,7 +265,7 @@ int CSort::Partition(int data[], int length, int start, int end)
              throw new exception("Invidate parameters!");
        int small = start;
        srand((unsigned)time(NULL));
-       int randInt = rand()%(end - start);
+       int randInt = rand()%(end - start);//random seed
        int value = data[start + randInt];
        cout<<"Value: "<<value<<endl;
        swap(data[start+randInt],data[end]);//all element start from start,

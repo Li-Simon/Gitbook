@@ -118,84 +118,133 @@ void CList::ReplaceEmpty(char str[], int length)
 ```cpp
 BinaryTreeNode* CTree::ConstructBinaryTree(int* preorderS,int* preorderEnd, int* inorderS, int* inorderEnd)
 {
-	int rootValue = preorderS[0];
-	int* rootNode = inorderS;
-	
-	while(rootNode <= inorderEnd && *rootNode != rootValue) //find root in inorder
-	{
-		++rootNode;
-	}
-	int LTLen = rootNode - inorderS;
-	BinaryTreeNode* RootTree = new BinaryTreeNode();
-	RootTree->m_nValue = rootValue;
-	if(LTLen >0)
-	{
-		RootTree->m_pLeft = ConstructBinaryTree(preorderS+1, preorderS+LTLen, inorderS, rootNode-1);
-	}
-	if(LTLen < preorderEnd - preorderS)
-	{
-		RootTree->m_pRight = ConstructBinaryTree(preorderS+LTLen + 1, preorderEnd, rootNode+1, inorderEnd);
-	}
-	return RootTree;
+    int rootValue = preorderS[0];
+    int* rootNode = inorderS;
+
+    while(rootNode <= inorderEnd && *rootNode != rootValue) //find root in inorder
+    {
+        ++rootNode;
+    }
+    int LTLen = rootNode - inorderS;
+    BinaryTreeNode* RootTree = new BinaryTreeNode();
+    RootTree->m_nValue = rootValue;
+    if(LTLen >0)
+    {
+        RootTree->m_pLeft = ConstructBinaryTree(preorderS+1, preorderS+LTLen, inorderS, rootNode-1);
+    }
+    if(LTLen < preorderEnd - preorderS)
+    {
+        RootTree->m_pRight = ConstructBinaryTree(preorderS+LTLen + 1, preorderEnd, rootNode+1, inorderEnd);
+    }
+    return RootTree;
 }
 
 void CTree::PreOrderPrint(BinaryTreeNode* BTree)
 {
-	if(BTree != NULL)//print root first
-	{
-		m_preorder.push_back(BTree->m_nValue);
-		cout<<BTree->m_nValue<<endl;
-	}
-	if(BTree->m_pLeft != NULL)
-	{
-		PreOrderPrint(BTree->m_pLeft);
-	}
-	if(BTree->m_pRight != NULL)
-	{
-		PreOrderPrint(BTree->m_pRight);
-	}	
+    if(BTree != NULL)//print root first
+    {
+        m_preorder.push_back(BTree->m_nValue);
+        cout<<BTree->m_nValue<<endl;
+    }
+    if(BTree->m_pLeft != NULL)
+    {
+        PreOrderPrint(BTree->m_pLeft);
+    }
+    if(BTree->m_pRight != NULL)
+    {
+        PreOrderPrint(BTree->m_pRight);
+    }    
 }
 
 void CTree::InOrderPrint(BinaryTreeNode* BTree)
 {
-	if(BTree->m_pLeft != NULL)
-	{
-		InOrderPrint(BTree->m_pLeft);
-	}
-	if(BTree != NULL)//print root second
-	{
-		m_preorder.push_back(BTree->m_nValue);
-		cout<<BTree->m_nValue<<endl;
-	}
-	if(BTree->m_pRight != NULL)
-	{
-		InOrderPrint(BTree->m_pRight);
-	}	
+    if(BTree->m_pLeft != NULL)
+    {
+        InOrderPrint(BTree->m_pLeft);
+    }
+    if(BTree != NULL)//print root second
+    {
+        m_preorder.push_back(BTree->m_nValue);
+        cout<<BTree->m_nValue<<endl;
+    }
+    if(BTree->m_pRight != NULL)
+    {
+        InOrderPrint(BTree->m_pRight);
+    }    
 }
 
 void CTree::PostOrderPrint(BinaryTreeNode* BTree)
 {
-	if(BTree->m_pLeft != NULL)
-	{
-		PostOrderPrint(BTree->m_pLeft);
-	}
+    if(BTree->m_pLeft != NULL)
+    {
+        PostOrderPrint(BTree->m_pLeft);
+    }
 
-	if(BTree->m_pRight != NULL)
-	{
-		PostOrderPrint(BTree->m_pRight);
-	}	
+    if(BTree->m_pRight != NULL)
+    {
+        PostOrderPrint(BTree->m_pRight);
+    }    
 
-	if(BTree != NULL)//print root last
-	{
-		m_postorder.push_back(BTree->m_nValue);
-		cout<<BTree->m_nValue<<endl;
-	}
+    if(BTree != NULL)//print root last
+    {
+        m_postorder.push_back(BTree->m_nValue);
+        cout<<BTree->m_nValue<<endl;
+    }
 }
 ```
 
-###栈与队列
-栈：先进后出，压入push,弹出pop
-队列：后进先出，压入push,弹出pop
+### 栈与队列
+
+栈：先进后出，压入push,弹出pop  
+队列：后进先出，压入push,弹出pop  
+用两个栈来实现队列。模板类的实现要在.h里面
+
+```cpp
+#pragma once
+#include <stack>
+using namespace std;
+
+template <class T>
+class CStackDeque
+{
+public:
+	CStackDeque(void){};
+	~CStackDeque(void){};
+	void appendTail(const T& node);
+	T deleteHead();
+
+private:
+	stack<T> m_stack1;
+	stack<T> m_stack2;
+};
+
+template<class T>
+void CStackDeque<T>::appendTail(const T& node)
+{
+	m_stack1.push(node);
+}
+
+template<class T>
+T CStackDeque<T>::deleteHead()
+{
+	if(m_stack2.size() <= 0)
+	{
+		while(m_stack1.size() > 0)
+		{
+			T& node = m_stack1.top();
+			m_stack1.pop();
+			m_stack2.push(node);
+		}
+	}
+
+	if(m_stack2.size() <= 0)
+		throw new exception("queue is empty!");
+
+	T node2 = m_stack2.top();
+	m_stack2.pop();
+	return node2;
+}
+```
 
 
 

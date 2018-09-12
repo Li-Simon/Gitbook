@@ -330,21 +330,38 @@ int CRecursion::CountNumber1(int n)
 
 ### 链表
 
+### 在O\(1\)时间内删除一个节点
+
+方法：通过用节点下一个节点来覆盖这个节点，因此不需要查询将被删除节点前面的所有节点。
+
+### 问题：
+
+如果你传入一个指针，实际上你传入的就是一个物理地址，对于链表而言，你不能在链表头接入一个元素，因为最终出来的时候，指针（的地址）一直没变，因此技术你在函数里面对指针进行赋值，但是出了函数，有没有效果了。
+
 一种会出错的删除做法：
 
 ```cpp
-if(pToBeDeleted->m_pNext != NULL)
+void CList::DeleteNode(ListNode* pListHead, ListNode* pToBeDeleted)
 {
-		
-	/*pToBeDeleted->m_value = pToBeDeleted->m_pNext->m_value;//出错的做法
-	pToBeDeleted->m_pNext = pToBeDeleted->m_pNext->m_pNext;
-        delete pToBeDeleted->m_pNext;*///因为删除了pToBeDeleted->m_pNext，因此索引到此，访问了空地址，程序会崩溃。正确的做法如下
+	if(!pListHead || !pToBeDeleted)
+		return;
 
-	ListNode* pNext = pToBeDeleted->m_pNext;//将要被删除的节点，在删除之前，复制它的值
-	pToBeDeleted->m_value = pToBeDeleted->m_pNext->m_value;
-	pToBeDeleted->m_pNext = pToBeDeleted->m_pNext->m_pNext;
-	delete pNext;
+	if(pToBeDeleted->m_pNext == NULL)
+	{
+		pToBeDeleted = NULL;
+	}
+	if(pToBeDeleted->m_pNext != NULL)
+	{
 		
+		/*pToBeDeleted->m_value = pToBeDeleted->m_pNext->m_value;/出错的做法
+		pToBeDeleted->m_pNext = pToBeDeleted->m_pNext->m_pNext;
+		delete pToBeDeleted->m_pNext;*///因为删除了pToBeDeleted->m_pNext，因此索引到此，访问了空地址，程序会崩溃。正确的做法如下
+		
+		ListNode* pNext = pToBeDeleted->m_pNext;//将要被删除的节点，在删除之前，复制它的值
+		pToBeDeleted->m_value = pToBeDeleted->m_pNext->m_value;
+		pToBeDeleted->m_pNext = pToBeDeleted->m_pNext->m_pNext;
+		delete pNext;
+	}
 }
 ```
 

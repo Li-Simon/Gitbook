@@ -216,10 +216,54 @@ train_X.shape,train_Y.shape,test_X.shape,test_Y.shape
 ## 最终结果
 
 使用SVM在Titanic数据上，训练集效果依次是线性SVM，GBDT,LR,RF,DT,KNN。最诡异的是，有事测试集上准确率比训练集上高。  
-对于随机森林RF，会发现，一开始随着树的深度增加，RF整体的准确率会上升，也就是说，RF需要准确性高的（或者说bias小的）分类器做基函数，对于GBDT，发现随深度增加，准确率下降，也就是GBDT需要深度浅，variance很小的树作为分类器，这符合他们的原理。即RF基于bias小的基分类器，通过增加树的数目来降低variance，boosting基于variance小的基分类器，通过boost来降低bias。    
+对于随机森林RF，会发现，一开始随着树的深度增加，RF整体的准确率会上升，也就是说，RF需要准确性高的（或者说bias小的）分类器做基函数，对于GBDT，发现随深度增加，准确率下降，也就是GBDT需要深度浅，variance很小的树作为分类器，这符合他们的原理。即RF基于bias小的基分类器，通过增加树的数目来降低variance，boosting基于variance小的基分类器，通过boost来降低bias。  
 但是有个问题是，RF在100颗树时效果最好，选择1000，10000都没有100的效果好。  
 ![](/assets/Titanic_Training_Result.png)
 
-##模型融合
-对多个模型的结果取平均（投票），作为最终的结果。比如拿SVM，LR，RF，GBDT的平均结果作为最终结果。  
+## 模型融合
+
+对多个模型的结果取平均（投票），作为最终的结果。比如拿SVM，LR，RF，GBDT的平均结果作为最终结果。
+
+
+###用几个模型筛选出较为重要的特征
+```py
+def get_top_n_features(titanic_train_data_X, titanic_train_data_Y, top_n_features):
+        # 随机森林
+        rf_est = RandomForestClassifier(random_state=42)
+        rf_param_grid = {'n_estimators': [500], 'min_samples_split': [2, 3], 'max_depth': [20]}
+        rf_grid = model_selection.GridSearchCV(rf_est, rf_param_grid, n_jobs=25, cv=10, verbose=1)
+        rf_grid.fit(titanic_train_data_X,titanic_train_data_Y)
+        #将feature按Importance排序
+        feature_imp_sorted_rf = pd.DataFrame({'feature': list(titanic_train_data_X), 'importance': rf_grid.best_estimator_.feature_importances_}).sort_values('importance', ascending=False)
+        features_top_n_rf = feature_imp_sorted_rf.head(top_n_features)['feature']
+        print('Sample 25 Features from RF Classifier')
+        print(str(features_top_n_rf[:25]))
+
+        # AdaBoost
+        ada_est = ensemble.AdaBoostClassifier(random_state=42)
+        ada_param_grid = {'n_estimators': [500], 'learning_rate': [0.5, 0.6]}
+        ada_grid = model_selection.GridSearchCV(ada_est, ada_param_grid, n_jobs=25, cv=10, verbose=1)
+        ada_grid.fit(titanic_train_data_X, titanic_train_data_Y)
+        #排序
+        feature_imp_sorted_ada = pd.DataFrame({'feature': list(titanic_train_data_X),'importance': ada_grid.best_estimator_.feature_importances_}).sort_values( 'importance', ascending=False)
+        features_top_n_ada = feature_imp_sorted_ada.head(top_n_features)['feature']
+
+        # ExtraTree
+        et_est = ensemble.ExtraTreesClassifier(random_state=42)
+        et_param_grid = {'n_estimators': [500], 'min_samples_split': [3, 4], 'max_depth': [15]}
+        et_grid = model_selection.GridSearchCV(et_est, et_param_grid, n_jobs=25, cv=10, verbose=1)
+        et_grid.fit(titanic_train_data_X, titanic_train_data_Y)
+        #排序
+        feature_imp_sorted_et = pd.DataFrame({'feature': list(titanic_train_data_X), 'importance': et_grid.best_estimator_.feature_importances_}).sort_values('importance', ascending=False)
+        features_top_n_et = feature_imp_sorted_et.head(top_n_features)['feature']
+        print('Sample 25 Features from ET Classifier:')
+        print(str(features_top_n_et[:25]))
+
+        # 将三个模型挑选出来的前features_top_n_et合并
+        features_top_n = pd.concat([features_top_n_rf, features_top_n_ada, features_top_n_et], ignore_index=True).drop_duplicates()
+
+        return features_top_n
+```
+
+
 

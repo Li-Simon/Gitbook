@@ -370,6 +370,8 @@ void CList::DeleteNode(ListNode* pListHead, ListNode* pToBeDeleted)
 ```
 void CCArray::ReorderOddEven(int* data, int length, bool (*Func)(int))
 {
+	if(data==NULL || length <= 0)
+		return;
 	int* pBegin = data;
 	int* pEnd = data + length - 1;
 

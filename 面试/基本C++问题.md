@@ -299,16 +299,54 @@ void CSort::QucikSort(int data[], int length, int start, int end)
 }
 ```
 
-###与，或，异或
-负数的二进制表示 
-举例： 
--5 在计算机中表达为：11111111 11111111 11111111 11111011。转换为十六进制：0xFFFFFFFB。 
--1在计算机中如何表示： 
-先取1的原码：00000000 00000000 00000000 00000001 
-得反码： 11111111 11111111 11111111 11111110 
-得补码： 11111111 11111111 11111111 11111111 
-可见，－1在计算机里用二进制表达就是全1。16进制为：0xFFFFFFFF。 
-注：十六进制前缀是0x。
-![](/assets/And_or.png)
+### 与，或，异或
+
+负数的二进制表示  
+举例：  
+-5 在计算机中表达为：11111111 11111111 11111111 11111011。转换为十六进制：0xFFFFFFFB。  
+-1在计算机中如何表示：  
+先取1的原码：00000000 00000000 00000000 00000001  
+得反码： 11111111 11111111 11111111 11111110  
+得补码： 11111111 11111111 11111111 11111111  
+可见，－1在计算机里用二进制表达就是全1。16进制为：0xFFFFFFFF。  
+注：十六进制前缀是0x。  
+![](/assets/And_or_xor.png)
+
+#### 计算二进制中1的个数
+
+```cpp
+int CRecursion::CountNumber1(int n)
+{
+    int count = 0;
+    while(n)
+    {
+        if(n&1)
+            count++;
+        n = n>>1;
+    }
+    return count;
+}
+```
+
+### 链表
+
+一种会出错的删除做法：
+
+```cpp
+if(pToBeDeleted->m_pNext != NULL)
+	{
+		
+		/*pToBeDeleted->m_value = pToBeDeleted->m_pNext->m_value;//出错的做法
+		pToBeDeleted->m_pNext = pToBeDeleted->m_pNext->m_pNext;
+		delete pToBeDeleted->m_pNext;*///因为删除了pToBeDeleted->m_pNext，因此索引到此，访问了空地址，程序会崩溃。正确的做法如下
+
+		ListNode* pNext = pToBeDeleted->m_pNext;//将要被删除的节点，在删除之前，复制它的值
+		pToBeDeleted->m_value = pToBeDeleted->m_pNext->m_value;
+		pToBeDeleted->m_pNext = pToBeDeleted->m_pNext->m_pNext;
+		delete pNext;
+		
+	}
+```
+
 
 

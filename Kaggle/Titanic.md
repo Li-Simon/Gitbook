@@ -220,3 +220,6 @@ train_X.shape,train_Y.shape,test_X.shape,test_Y.shape
 但是有个问题是，RF在100颗树时效果最好，选择1000，10000都没有100的效果好。  
 ![](/assets/Titanic_Training_Result.png)
 
+##模型融合
+对多个模型的结果取平均（投票），作为最终的结果。比如拿SVM，LR，RF，GBDT的平均结果作为最终结果。  
+

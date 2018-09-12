@@ -343,25 +343,67 @@ int CRecursion::CountNumber1(int n)
 ```cpp
 void CList::DeleteNode(ListNode* pListHead, ListNode* pToBeDeleted)
 {
-	if(!pListHead || !pToBeDeleted)
-		return;
+    if(!pListHead || !pToBeDeleted)
+        return;
 
-	if(pToBeDeleted->m_pNext == NULL)
+    if(pToBeDeleted->m_pNext == NULL)
+    {
+        pToBeDeleted = NULL;
+    }
+    if(pToBeDeleted->m_pNext != NULL)
+    {
+
+        /*pToBeDeleted->m_value = pToBeDeleted->m_pNext->m_value;/出错的做法
+        pToBeDeleted->m_pNext = pToBeDeleted->m_pNext->m_pNext;
+        delete pToBeDeleted->m_pNext;*///因为删除了pToBeDeleted->m_pNext，因此索引到此，访问了空地址，程序会崩溃。正确的做法如下
+
+        ListNode* pNext = pToBeDeleted->m_pNext;//将要被删除的节点，在删除之前，复制它的值
+        pToBeDeleted->m_value = pToBeDeleted->m_pNext->m_value;
+        pToBeDeleted->m_pNext = pToBeDeleted->m_pNext->m_pNext;
+        delete pNext;
+    }
+}
+```
+
+奇偶
+
+```
+void CCArray::ReorderOddEven(int* data, int length, bool (*Func)(int))
+{
+	int* pBegin = data;
+	int* pEnd = data + length - 1;
+
+	while(pBegin < pEnd)
 	{
-		pToBeDeleted = NULL;
+		while(!Func(*pBegin))
+		{
+			pBegin++;
+		}
+
+		while(Func(*pEnd))
+		{
+			pEnd--;
+		}
+
+		int temp = *pEnd;
+		*pEnd = *pBegin;
+		*pBegin = temp;
 	}
-	if(pToBeDeleted->m_pNext != NULL)
+}
+void main()
+{
+	const int length = 6;
+	int data[] = {4,1,5,3,6,7};
+	CCArray* test_arr = new CCArray();
+	test_arr->ReorderOddEven(data, length, IsEven);//函数指针的调用
+	for(int i = 0; i < length; i++)
 	{
-		
-		/*pToBeDeleted->m_value = pToBeDeleted->m_pNext->m_value;/出错的做法
-		pToBeDeleted->m_pNext = pToBeDeleted->m_pNext->m_pNext;
-		delete pToBeDeleted->m_pNext;*///因为删除了pToBeDeleted->m_pNext，因此索引到此，访问了空地址，程序会崩溃。正确的做法如下
-		
-		ListNode* pNext = pToBeDeleted->m_pNext;//将要被删除的节点，在删除之前，复制它的值
-		pToBeDeleted->m_value = pToBeDeleted->m_pNext->m_value;
-		pToBeDeleted->m_pNext = pToBeDeleted->m_pNext->m_pNext;
-		delete pNext;
+		cout<<data[i]<<endl;
 	}
+}
+bool IsEven(int value)
+{
+	return (value&1) == 0;
 }
 ```
 

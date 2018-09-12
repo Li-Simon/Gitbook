@@ -334,18 +334,18 @@ int CRecursion::CountNumber1(int n)
 
 ```cpp
 if(pToBeDeleted->m_pNext != NULL)
-	{
+{
 		
-		/*pToBeDeleted->m_value = pToBeDeleted->m_pNext->m_value;//出错的做法
-		pToBeDeleted->m_pNext = pToBeDeleted->m_pNext->m_pNext;
-		delete pToBeDeleted->m_pNext;*///因为删除了pToBeDeleted->m_pNext，因此索引到此，访问了空地址，程序会崩溃。正确的做法如下
+	/*pToBeDeleted->m_value = pToBeDeleted->m_pNext->m_value;//出错的做法
+	pToBeDeleted->m_pNext = pToBeDeleted->m_pNext->m_pNext;
+        delete pToBeDeleted->m_pNext;*///因为删除了pToBeDeleted->m_pNext，因此索引到此，访问了空地址，程序会崩溃。正确的做法如下
 
-		ListNode* pNext = pToBeDeleted->m_pNext;//将要被删除的节点，在删除之前，复制它的值
-		pToBeDeleted->m_value = pToBeDeleted->m_pNext->m_value;
-		pToBeDeleted->m_pNext = pToBeDeleted->m_pNext->m_pNext;
-		delete pNext;
+	ListNode* pNext = pToBeDeleted->m_pNext;//将要被删除的节点，在删除之前，复制它的值
+	pToBeDeleted->m_value = pToBeDeleted->m_pNext->m_value;
+	pToBeDeleted->m_pNext = pToBeDeleted->m_pNext->m_pNext;
+	delete pNext;
 		
-	}
+}
 ```
 
 

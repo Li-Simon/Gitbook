@@ -365,7 +365,7 @@ void CList::DeleteNode(ListNode* pListHead, ListNode* pToBeDeleted)
 }
 ```
 
-奇偶
+####对数组中奇偶数据分类排序
 
 ```
 void CCArray::ReorderOddEven(int* data, int length, bool (*Func)(int))

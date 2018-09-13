@@ -1,7 +1,6 @@
 # Windows C++
 ##进程间相互通讯（IPC）  
-[参考](https://blog.csdn.net/s_lisheng/article/details/74278765)
-
+[参考](https://blog.csdn.net/s_lisheng/article/details/74278765)  
 1. 管道：速度慢，容量有限，只有父子进程之间能通讯  
 2. FIFO:任何进程间能通讯，但是速度慢  
 3. 消息队列：容量收到限制，且要注意第一次读的时候，要考虑上一次没有读完数据的问题  

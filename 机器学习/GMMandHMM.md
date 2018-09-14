@@ -41,4 +41,9 @@ $$\kern{4 em} \theta^{(i+1)} = arg \max_\theta Q(\theta, \theta^{(i)})$$
 完全数据的对数似然函数$$\log P(Y,Z|\theta)$$关于给定观测数据Y和当前参数$$\theta$$下对未观察数据Z的条件概率分布$$\log P(Z|Y,\theta^{(i)})$$的期望成为Q函数，即：  
 $$\kern{4 em}Q(\theta, \theta^{(i)}) = E_z[\log P(Y,Z|\theta)|Y,\theta^{(i)}]$$
 ##高斯混合模型
+高斯混合模型是指的具有如下形式的概率分布模型：  
+$$\kern{4 em}P(y|\theta) = \displaystyle \sum _{k=1}^K \alpha_k\phi(y|\theta_k)$$  
+其中$$\alpha_k$$是系数$$\alpha_k \ge 0, \displaystyle \sum _{k=1}^K \alpha_k = 1$$;$$\phi(y|\theta_k)$$是高斯分布函数，$$\theta_k = (u_k,\sigma^2_k)$$,  
+$$\kern{4 em}P(y|\theta) = \frac{1}{\sqrt{2\pi}\sigma_k}exp(-\frac{(y-u_k)^2}{2\sigma_k^2})$$  
+称为第k个分模型。  
 ##隐马尔科夫模型

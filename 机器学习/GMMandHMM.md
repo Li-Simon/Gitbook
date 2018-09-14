@@ -48,4 +48,15 @@ $$\kern{4 em}P(y|\theta) = \frac{1}{\sqrt{2\pi}\sigma_k}exp(-\frac{(y-u_k)^2}{2\
 称为第k个分模型。  
 ###高斯混合模型参数股记得EM算法
 可以用EM算法来求解GMM的参数$$\alpha_k,u_k,\sigma_k$$.  
+$$\gamma_{jk} = 1$$表示第j个观测来自第k个分模型，$$\gamma_{jk} = 0$$表示第j个观测不是来自第k个分模型。  
+有了观察数据$$y_j$$以及未观测数据$$\gamma_{jk}$$,则完全数据是：  
+$$\kern{4 em} (y_j,\gamma_{j1},\gamma_{j2},...,\gamma_{jK})，j=1,2,...,K$$  
+似然函数为：  
+$$\kern{4 em}P(y,\gamma|\theta) = \displaystyle \prod _{j=1}^NP(y_j,\gamma_{j1},\gamma_{j2},...,\gamma_{jK}|\theta)$$  
+$$\kern{8 em} = \displaystyle \prod _{k=1}^K\displaystyle \prod _{j=1}^N[\alpha_k\phi(y_j|\theta_k)]^{\gamma_{jk}}$$  
+$$\kern{8 em} = \displaystyle \prod _{k=1}^K\alpha_k^{n_k}\displaystyle \prod _{j=1}^N[\phi(y_j|\theta_k)]^{\gamma_{jk}}$$  
+$$\kern{8 em} = \displaystyle \prod _{k=1}^K\alpha_k^{n_k}\displaystyle \prod _{j=1}^N[\frac{1}{\sqrt{2\pi}\sigma_k}\exp(-\frac{(y-u_k)^2}{2\sigma_k^2})]^{\gamma_{jk}}$$   
+式中$$\displaystyle \sum _{j=1}^N\gamma_{jk} = n_k， \displaystyle \sum _{k=1}^Kn_k = N$$。  
+转化为完全数据的对数似然函数。
+
 ##隐马尔科夫模型

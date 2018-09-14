@@ -50,7 +50,7 @@ $$\kern{4 em}P(y|\theta) = \frac{1}{\sqrt{2\pi}\sigma_k}exp(-\frac{(y-u_k)^2}{2\
 可以用EM算法来求解GMM的参数$$\alpha_k,u_k,\sigma_k$$.  
 $$\gamma_{jk} = 1$$表示第j个观测来自第k个分模型，$$\gamma_{jk} = 0$$表示第j个观测不是来自第k个分模型。  
 有了观察数据$$y_j$$以及未观测数据$$\gamma_{jk}$$,则完全数据是：  
-$$\kern{4 em} (y_j,\gamma_{j1},\gamma_{j2},...,\gamma_{jK})，j=1,2,...,K$$  
+$$\kern{4 em} (y_j,\gamma_{j1},\gamma_{j2},...,\gamma_{jK}),j=1,2,...,K$$  
 似然函数为：  
 $$\kern{4 em}P(y,\gamma|\theta) = \displaystyle \prod _{j=1}^NP(y_j,\gamma_{j1},\gamma_{j2},...,\gamma_{jK}|\theta)$$  
 $$\kern{8 em} = \displaystyle \prod _{k=1}^K\displaystyle \prod _{j=1}^N[\alpha_k\phi(y_j|\theta_k)]^{\gamma_{jk}}$$  

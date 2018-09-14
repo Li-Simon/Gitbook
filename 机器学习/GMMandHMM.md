@@ -9,6 +9,7 @@ $$\kern{4 em} P(y|\theta) = \sum_zP(y,z|\theta) = \sum_zP(z|\theta)P(y|z,\theta)
 $$\kern{7 em}  = \pi p^y(1-p)^{1-y} + (1-\pi)q^y(1-q)^{1-y}$$  
 $$\Theta = (\pi, p, q)$$是模型参数，随机变量y的数据可以观察，随机变量z的数据不可以观察。  
 将可观察数据表示为$$Y=(Y_1,Y_2,...,Y_n)^T$$，为观测数据表示为$$\kern{4 em} Z=(Z_1,Z_2,..,Z_n)^T$$.则观察数据的似然函数是：  
-$$\kern{4 em} P(Y|\theta) = \sum _ZP(Z|\theta)P(Y|Z,theta)$$
+$$\kern{4 em} P(Y|\theta) = \sum _ZP(Z|\theta)P(Y|Z,\theta)$$  
+$$\kern{7 em}  = \displaystyle \prod _{j=1}^n[\pi p^y(1-p)^{1-y} + (1-\pi)q^y(1-q)^{1-y}]$$  
 ##高斯混合模型
 ##隐马尔科夫模型

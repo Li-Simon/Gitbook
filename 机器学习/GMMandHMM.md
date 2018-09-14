@@ -31,11 +31,14 @@ $$\kern{4 em}p^{(i+1)} = \frac{\displaystyle \sum _{j=1}^n(1 - u^{(i+1)})y_j}{\d
 输出： 模型参数$$\theta$$.  
 (1)选择参数的初始值$$\theta^{(0)}$$,开始迭代；  
 (2)E步：记$$\theta^{(i)}$$为第i次迭代参数$$\theta$$的估计值，在第i+1次迭代的E步，计算：  
-$$\kern{4 em}Q(\theta, \theta^{(i)}) = E_z[\log P(Y,Z|\theta)|Y,\theta^{(i)}] = \displaystyle \sum_z P(Y,Z|\theta^{(i)})\log P(Y,Z|\theta)$$  
+$$\kern{4 em}Q(\theta, \theta^{(i)}) = E_z[\log P(Y,Z|\theta)|Y,\theta^{(i)}] = \displaystyle \sum_z P(Z|Y,\theta^{(i)})\log P(Y,Z|\theta)$$  
 这里，$$P(Y,Z|\theta^{(i)})$$是在给定
 观测数据Y和当前的参数估计$$\theta^{(i)}$$下隐变量数据Z的条件概率分布：  
 (3)M步：求使$$Q(\theta, \theta^{(i)})$$极大化的$$\theta$$,确定第i+1次迭代的参数的估计值$$\theta^{(i+1)}$$:   
 $$\kern{4 em} \theta^{(i+1)} = arg \max_\theta Q(\theta, \theta^{(i)})$$  
 (4)重复第(2)(3)步，直到收敛。    
+#####Q函数
+完全数据的对数似然函数$$\log P(Y,Z|\theta)$$关于给定观测数据Y和当前参数$$\theta$$下对未观察数据Z的条件概率分布$$\log P(Z|Y,\theta^{(i)})$$的期望成为Q函数，即：  
+$$\kern{4 em}Q(\theta, \theta^{(i)}) = E_z[\log P(Y,Z|\theta)|Y,\theta^{(i)}]$$
 ##高斯混合模型
 ##隐马尔科夫模型

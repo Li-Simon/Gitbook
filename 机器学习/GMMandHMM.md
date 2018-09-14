@@ -56,7 +56,7 @@ $$\kern{4 em}P(y,\gamma|\theta) = \displaystyle \prod _{j=1}^NP(y_j,\gamma_{j1},
 $$\kern{8 em} = \displaystyle \prod _{k=1}^K\displaystyle \prod _{j=1}^N[\alpha_k\phi(y_j|\theta_k)]^{\gamma_{jk}}$$  
 $$\kern{8 em} = \displaystyle \prod _{k=1}^K\alpha_k^{n_k}\displaystyle \prod _{j=1}^N[\phi(y_j|\theta_k)]^{\gamma_{jk}}$$  
 $$\kern{8 em} = \displaystyle \prod _{k=1}^K\alpha_k^{n_k}\displaystyle \prod _{j=1}^N[\frac{1}{\sqrt{2\pi}\sigma_k}\exp(-\frac{(y-u_k)^2}{2\sigma_k^2})]^{\gamma_{jk}}$$   
-式中$$\displaystyle \sum _{j=1}^N\gamma_{jk} = n_k， \displaystyle \sum _{k=1}^Kn_k = N$$。  
+式中$$\displaystyle \sum _{j=1}^N\gamma_{jk} = n_k,\displaystyle \sum _{k=1}^Kn_k = N$$。  
 转化为完全数据的对数似然函数。
 
 ##隐马尔科夫模型

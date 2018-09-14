@@ -83,5 +83,8 @@ $$\kern{8 em} \pi = (\pi_i)$$
 其中：  
 $$\kern{8 em} \pi_i = P(i_1 = q_i), i=1,2,...,N$$  
 是在时刻t=1处于状态$$q_i$$的概率。  
+马尔科夫模型$$\lambda$$可以用三元符号来表示：
+$$\kern{8 em} \lambda = (A,B,\pi)$$    
+
 
   

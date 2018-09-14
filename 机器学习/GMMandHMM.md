@@ -46,4 +46,6 @@ $$\kern{4 em}P(y|\theta) = \displaystyle \sum _{k=1}^K \alpha_k\phi(y|\theta_k)$
 其中$$\alpha_k$$是系数$$\alpha_k \ge 0, \displaystyle \sum _{k=1}^K \alpha_k = 1$$;$$\phi(y|\theta_k)$$是高斯分布函数，$$\theta_k = (u_k,\sigma^2_k)$$,  
 $$\kern{4 em}P(y|\theta) = \frac{1}{\sqrt{2\pi}\sigma_k}exp(-\frac{(y-u_k)^2}{2\sigma_k^2})$$  
 称为第k个分模型。  
+###高斯混合模型参数股记得EM算法
+可以用EM算法来求解GMM的参数$$\alpha_k,u_k,\sigma_k$$.  
 ##隐马尔科夫模型

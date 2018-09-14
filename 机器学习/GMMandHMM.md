@@ -26,6 +26,16 @@ $$\kern{4 em}\pi^{(i+1)} = \frac{1}{n}\displaystyle \sum _{j=1}^nu^{(i+1)} $$
 $$\kern{4 em}p^{(i+1)} = \frac{\displaystyle \sum _{j=1}^nu^{(i+1)}y_j}{\displaystyle \sum _{j=1}^nu^{(i+1)} }$$  
 在抛硬币C的前提下(1-来自抛B的概率)，根据抛C得到正面的频率得到P(C正面出现的概率)
 $$\kern{4 em}p^{(i+1)} = \frac{\displaystyle \sum _{j=1}^n(1 - u^{(i+1)})y_j}{\displaystyle \sum _{j=1}^n(1 - u^{(i+1)})}$$  
-
+##（EM算法）
+输入：观察变量数据Y，隐变量数据Z，联合分布$$P(Y,Z|\theta)$$,条件分布$$P(Z|Y,\theta)$$;  
+输出： 模型参数$$\theta$$.  
+(1)选择参数的初始值$$\theta^{(0)}$$,开始迭代；  
+(2)E步：记$$\theta^{(i)}$$为第i次迭代参数$$\theta$$的估计值，在第i+1次迭代的E步，计算：  
+$$\kern{4 em}Q(\theta, \theta^{(i)}) = E_z[\log P(Y,Z|\theta)|Y,\theta^{(i)}] = \displaystyle \sum_z P(Y,Z|\theta^{(i)})\log P(Y,Z|\theta)$$  
+这里，$$P(Y,Z|\theta^{(i)})$$是在给定
+观测数据Y和当前的参数估计$$\theta^{(i)}$$下隐变量数据Z的条件概率分布：  
+(3)M步：求使$$Q(\theta, \theta^{(i)})$$极大化的$$\theta$$,确定第i+1次迭代的参数的估计值$$\theta^{(i+1)}$$:   
+$$\kern{4 em} \theta^{(i+1)} = arg \max_\theta Q(\theta, \theta^{(i)})$$  
+(4)重复第(2)(3)步，直到收敛。    
 ##高斯混合模型
 ##隐马尔科夫模型

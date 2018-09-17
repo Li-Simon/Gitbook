@@ -144,4 +144,4 @@ $$\kern{4 em} P(O|\lambda)=\sum_IP(O,I|\lambda)$$
 给定模型$$\lambda$$，定义到时刻t部分观测序列为$$O=o_1,o_2,...,o_T$$且状态为$$q_i$$的概率为前向概率。记作：  
 $$\kern{4 em} \alpha_t(i) = P(o_1,o_2,...,o_t,i_t=q_i|\lambda)$$  
 有了前向概率就可以通过递归的方法来计算任何一个观测序列的概率。就如下图所示：  ![](/assets/HMM_Forward_Algo.png)
-
+上面就是状态数目为5，时间T=4的图。

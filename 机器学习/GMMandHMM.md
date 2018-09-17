@@ -140,4 +140,11 @@ $$\kern{4 em} \alpha_t(i) = P(o_1,o_2,...,o_t,i_t=q_i|\lambda)$$
 $$\kern{4 em} \alpha_t = (\alpha_t(1),\alpha_t(2),...,\alpha_t(N))^T$$  
 初始状态是$$\pi$$,转移矩阵是A，因此时刻t的概率分布是一个NxM的矩阵，也就是N个状态，每个状态有M个分立值，计算如下：问题是怎么降低运算复杂度？$$N^T$$的复杂度是$$O(N^{2.373}\log T)$$
 ![](/assets/HMM_FW_Formula.png)
+###后向概率
+$$\kern{4 em} \beta_t(i) = P(o_{t+1},o_{t+2},...,o_T|i_t=q_i,\lambda)$$  
+定义$$\kern{4 em} \beta_T(i) = 1, i=1,2,...,N$$  
+对$$t=T-1,T-2,...,1$$有：  
+$$\kern{4 em} \beta_t(i) = \displaystyle \sum_{j=1}^Na_{ij}b_j(o_{t+1})\beta_{t+1}(j), i=1,2,...,N$$  
+$$\kern{4 em} \beta_t = A^{T-t}\displaystyle \prod_{j=t+1}^TxB[o_j], t=T-1,T-2,...,1$$  
+$$\kern{4 em} \beta_t= (\beta_t(1),\beta_t(2),...,\beta_t(N))^T$$  
 

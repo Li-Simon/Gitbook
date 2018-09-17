@@ -187,5 +187,29 @@ $$\kern{4 em}Q(\lambda,\hat\lambda) = \displaystyle \sum_{I}\log P(O,I|\lambda)P
 其中,$$\hat \lambda$$是隐马尔科夫模型参数的当前估计值，$$\lambda$$是要极大化的马尔科夫模型参数。  
 $$\kern{4 em} P(O,I|\lambda) =\pi_{i_1}b_{i_1}(o_1)b_{i_2}(o_2)...b_{i_T}(o_T)\pi_{i_1}a_{i_1i_2}a_{i_2i_3}...a_{i_{T-1}i_T}$$  
 于是函数$$Q(\lambda,\hat\lambda)$$可以写成：  
-$$\kern{4 em}Q(\lambda,\hat\lambda) = \displaystyle \sum_{I}\log \pi_{i_1}P(O,I|\lambda) + \displaystyle \sum_{I}(\displaystyle \sum_{t=1}^{T-1}\log a_{i_ti_{t+1}})P(O,I|\hat \lambda) + \displaystyle \sum_{I}(\displaystyle \sum_{t=1}^{T-1}\log b_{i_t}(o_t))P(O,I|\hat \lambda)$$  
+$$\kern{4 em}Q(\lambda,\hat\lambda) = \displaystyle \sum_{I}\log \pi_{i_1}P(O,I|\hat\lambda) + \displaystyle \sum_{I}(\displaystyle \sum_{t=1}^{T-1}\log a_{i_ti_{t+1}})P(O,I|\hat \lambda) + \displaystyle \sum_{I}(\displaystyle \sum_{t=1}^{T-1}\log b_{i_t}(o_t))P(O,I|\hat \lambda)$$  
 式中求和都是对所有训练数据的序列总长度T进行的。  
+3. EM算法的M步：极大化Q函数$$Q(\lambda,\hat\lambda)$$求模型参数A,B,$$\lambda$$。极大化，满足梯度为0，也就对A，B,$$\lambda$$中的元素分别求导令其为0。  
+在$$Q(\lambda,\hat\lambda)$$中的三项中，分别只包含了$$\pi,a_{ij},b_j(k)$$,因此求解起来比较方便。此外，我们还可以利用概率和为1的限定条件，也就是利用拉格朗日乘子来进行计算。 
+对$$Q(\lambda,\hat\lambda)$$的第一项，我们求$$\lambda$$:  
+$$\kern{8 em}\displaystyle \sum_{I}\log \pi_{i_1}P(O,I|\hat\lambda) = \displaystyle \sum_{i=1}^N\log \pi_{i}P(O,i_1 = i|\hat\lambda)$$  
+因为$$\pi_i$$满足约束条件$$\displaystyle \sum_{i=1}^N\pi_{i}=1$$,利用拉格朗日乘子，写出拉格朗日函数：   
+$$\kern{8 em}\displaystyle \sum_{i=1}^N\log \pi_{i}P(O,i_1 = i|\hat\lambda) + \gamma(\displaystyle \sum_{i=1}^N\pi_{i}-1)$$  
+对其求偏导并令其为0：  
+$$\kern{8 em} \frac{\partial}{\partial \pi_i}[\displaystyle \sum_{i=1}^N\log \pi_{i}P(O,i_1 = i|\hat\lambda) + \gamma(\displaystyle \sum_{i=1}^N\pi_{i}-1)] = 0$$  
+得到：  
+$$\kern{8 em} P(O,i_1 = i|\hat\lambda) + \gamma \pi_i = 0$$  
+对i求和得到$$\gamma$$:  
+$$\kern{8 em} \gamma = -P(O|\hat\lambda) $$  
+代入上上式，得到：  
+$$\kern{8 em} \pi_i = \frac{P(O,i_1 = i|\hat\lambda) }{P(O|\hat\lambda)}$$    
+对$$Q(\lambda,\hat\lambda)$$的第二项，我们求$$a_{ij}$$:  
+$$\kern{4 em} \displaystyle \sum_{I}(\displaystyle \sum_{t=1}^{T-1}\log a_{i_ti_{t+1}})P(O,I|\hat \lambda) = \displaystyle \sum_{i=1}^{N}\displaystyle \sum_{j=1}^{T-N}\displaystyle \sum_{t=1}^{T-1}\log a_{ij}P(O,i_t=i,i_{t+1}=j|\hat \lambda)$$  
+利用约束条件$$\displaystyle \sum_{i=1}^{N}a_{ij} = 1$$，利用拉格朗日乘子可以得到：  
+$$\kern{8 em} a_{ij}= \frac{\sum_{t=1}^{T-1}P(O,i_t=i,i_{t+1}=j|\hat \lambda) }{\sum_{t=1}^{T-1}P(O,i_t=i|\hat \lambda)}$$    
+对$$Q(\lambda,\hat\lambda)$$的第三项，我们求$$b_j(k)$$:  
+$$\kern{4 em}\displaystyle \sum_{I}(\displaystyle \sum_{t=1}^{T-1}\log b_{i_t}(o_t))P(O,I|\hat \lambda) = \displaystyle \sum_{j=1}^{N}\displaystyle \sum_{t=1}^{T}\log b_{j}(o_t))P(O,i_t=j|\hat \lambda)$$  
+利用$$\displaystyle \sum_{k=1}^{M}b_j(k)=1$$. 注意只有在$$o_t = v_k$$时，$$b_j(o_t)$$对$$b_j(k)$$的偏导数才不为0，以$$I(o_t=v_k)$$表示，求得：  
+$$\kern{4 em} b_j(k) = \frac{\displaystyle \sum_{t=1}^{T}P(O,i_t=j|\hat \lambda)I(o_t=v_k)}{\displaystyle \sum_{t=1}^{T}P(O,i_t=j|\hat \lambda)}$$   
+
+

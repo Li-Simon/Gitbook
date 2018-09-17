@@ -174,4 +174,5 @@ $$\kern{8 em} \displaystyle \sum_{i=1}^{T-1}\xi_t(i,j)$$
 $$\kern{4 em} \hat a_{ij} = \frac{A_{ij}}{\displaystyle \sum_{j=1}^NA_{ij}}, i=1,2,..,N;j=1,2,...,N$$   
 $$\kern{4 em} \hat b_j(k) = \frac{B_{jk}}{\displaystyle \sum_{k=1}^MB_{jk}},j=1,2,..,N;k=1,2,...,M$$  
 初始状态概率$$\pi_i$$的估计值$$\hat\pi_i$$为S个样本中初始状态为$$q_i$$的频率。  
+人工标注的成本很高，因此就会利用非监督学习的方法。  
 ##Baum-Welch算法

@@ -211,5 +211,5 @@ $$\kern{8 em} a_{ij}= \frac{\sum_{t=1}^{T-1}P(O,i_t=i,i_{t+1}=j|\hat \lambda) }{
 $$\kern{4 em}\displaystyle \sum_{I}(\displaystyle \sum_{t=1}^{T-1}\log b_{i_t}(o_t))P(O,I|\hat \lambda) = \displaystyle \sum_{j=1}^{N}\displaystyle \sum_{t=1}^{T}\log b_{j}(o_t))P(O,i_t=j|\hat \lambda)$$  
 利用$$\displaystyle \sum_{k=1}^{M}b_j(k)=1$$. 注意只有在$$o_t = v_k$$时，$$b_j(o_t)$$对$$b_j(k)$$的偏导数才不为0，以$$I(o_t=v_k)$$表示，求得：  
 $$\kern{4 em} b_j(k) = \frac{\displaystyle \sum_{t=1}^{T}P(O,i_t=j|\hat \lambda)I(o_t=v_k)}{\displaystyle \sum_{t=1}^{T}P(O,i_t=j|\hat \lambda)}$$   
-
+$$\hat \lambda$$是当前$$(A,B,\pi)$$的估计值，因此可以通过迭代，得到$$(A,B,\pi)$$的收敛解。  
 

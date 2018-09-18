@@ -91,9 +91,9 @@ $$\kern{8 em} \displaystyle \sum_{i=1}^{T-1}\xi_t(i,j)$$
    假设给定训练数据只包含S个长度为T的观察序列$$(O_1,O_2,...,O_s)$$而没有对应的状态序列，目标是学习HMM模型$$\lambda = (A,B,\pi)$$的参数。我们将观测序列数据堪称观察数据O,状态序列数据看作不可观测的隐数据I,那么隐马尔科夫模型事实上是一个含有隐变量的概率模型：  
    $$\kern{8 em} P(O|\lambda) =\displaystyle \sum_{I}P(O|I,\lambda)P(I|\lambda) $$  
    他的参数学习可以由EM算法来实现。  
-6. 确定完全数据的对数似然函数   
+1. 确定完全数据的对数似然函数   
    所有观测数据写成$$O=(o_1,o_2,...,o_T)$$,所有隐数据写成$$I=(i_1,i_2,...,i_T)$$,完成数据是$$(O,I)=(o_1,o_2,...,o_T,i_1,i_2,...,i_T)$$.完全数据的对数似然函数是$$\log P(O,I|\lambda)$$  
-7. EM算法的E步，求Q函数$$Q(\lambda,\hat\lambda)$$  
+2.  EM算法的E步，求Q函数$$Q(\lambda,\hat\lambda)$$  
    $$\kern{4 em}Q(\lambda,\hat\lambda) = E_I[\log P(O,I|\lambda)|O,\hat \lambda]$$  
    $$\kern{4 em}Q(\lambda,\hat\lambda) = \displaystyle \sum_{I}\log P(O,I|\lambda)P(O,I|\hat\lambda)$$   
    其中,$$\hat \lambda$$是隐马尔科夫模型参数的当前估计值，$$\lambda$$是要极大化的马尔科夫模型参数。  
@@ -101,7 +101,7 @@ $$\kern{8 em} \displaystyle \sum_{i=1}^{T-1}\xi_t(i,j)$$
    于是函数$$Q(\lambda,\hat\lambda)$$可以写成：  
    $$\kern{4 em}Q(\lambda,\hat\lambda) = \displaystyle \sum_{I}\log \pi_{i_1}P(O,I|\hat\lambda) + \displaystyle \sum_{I}(\displaystyle \sum_{t=1}^{T-1}\log a_{i_ti_{t+1}})P(O,I|\hat \lambda) + \displaystyle \sum_{I}(\displaystyle \sum_{t=1}^{T-1}\log b_{i_t}(o_t))P(O,I|\hat \lambda)$$  
    式中求和都是对所有训练数据的序列总长度T进行的。  
-8. EM算法的M步：极大化Q函数$$Q(\lambda,\hat\lambda)$$求模型参数A,B,$$\lambda$$。极大化，满足梯度为0，也就对A，B,$$\lambda$$中的元素分别求导令其为0。  
+3. EM算法的M步：极大化Q函数$$Q(\lambda,\hat\lambda)$$求模型参数A,B,$$\lambda$$。极大化，满足梯度为0，也就对A，B,$$\lambda$$中的元素分别求导令其为0。  
    在$$Q(\lambda,\hat\lambda)$$中的三项中，分别只包含了$$\pi,a_{ij},b_j(k)$$,因此求解起来比较方便。此外，我们还可以利用概率和为1的限定条件，也就是利用拉格朗日乘子来进行计算。   
    对$$Q(\lambda,\hat\lambda)$$的第一项，我们求$$\lambda$$:  
    $$\kern{8 em}\displaystyle \sum_{I}\log \pi_{i_1}P(O,I|\hat\lambda) = \displaystyle \sum_{i=1}^N\log \pi_{i}P(O,i_1 = i|\hat\lambda)$$  

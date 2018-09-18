@@ -222,6 +222,6 @@ $$\hat \lambda$$是当前$$(A,B,\pi)$$的估计值，因此可以通过迭代，
 $$\kern{8 em} a_{ij}= \frac{\sum_{t=1}^{T-1}\xi_t(i,j)}{\sum_{t=1}^{T-1}\xi_t(i)}$$   
 $$\kern{8 em} b_j(k) = \frac{\displaystyle \sum_{t=1,o_t=v_k}^{T}\gamma_t(j)}{\displaystyle \sum_{t=1}^{T}\gamma_t(j)}$$      
 $$\kern{8 em} \pi_i = \gamma_1(i)$$    
-右端的值按照观测$$O=(o_1,o_2,...,o_T)$$和模型$$\lambda^{(n)} = (A^{(n)},B^{(n)},\pi^{(n)})$$,以及式中$$\xi_t(i,j)$$按照中定义进行计算。  
+右端的值按照观测$$O=(o_1,o_2,...,o_T)$$和模型$$\lambda^{(n)} = (A^{(n)},B^{(n)},\pi^{(n)})$$,以及式中$$\xi_t(i,j)$$按照中“一些概率与期望值”中定义进行计算。  
 (3)终止，得到模型参数$$\lambda^{(n+1)} = (A^{(n+1)},B^{(n+1)},\pi^{(n+1)})$$
 

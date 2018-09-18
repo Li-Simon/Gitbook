@@ -24,4 +24,4 @@ gitbook pdf ./ ./ML2.pdf
 ###同步
 在gitbook 客户端book->Repository Setting...中添加Gitbook中书的地址即可：
 https://github.com/Li-Simon/Gitbook.git
-一般是在Github中先创建一本书，然后再copy到本地。  
+一般是在gitbook中先创建一本书，然后再copy到本地。  

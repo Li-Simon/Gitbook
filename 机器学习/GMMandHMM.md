@@ -211,5 +211,17 @@ $$\kern{8 em} a_{ij}= \frac{\sum_{t=1}^{T-1}P(O,i_t=i,i_{t+1}=j|\hat \lambda) }{
 $$\kern{4 em}\displaystyle \sum_{I}(\displaystyle \sum_{t=1}^{T-1}\log b_{i_t}(o_t))P(O,I|\hat \lambda) = \displaystyle \sum_{j=1}^{N}\displaystyle \sum_{t=1}^{T}\log b_{j}(o_t))P(O,i_t=j|\hat \lambda)$$  
 利用$$\displaystyle \sum_{k=1}^{M}b_j(k)=1$$. 注意只有在$$o_t = v_k$$时，$$b_j(o_t)$$对$$b_j(k)$$的偏导数才不为0，以$$I(o_t=v_k)$$表示，求得：  
 $$\kern{4 em} b_j(k) = \frac{\displaystyle \sum_{t=1}^{T}P(O,i_t=j|\hat \lambda)I(o_t=v_k)}{\displaystyle \sum_{t=1}^{T}P(O,i_t=j|\hat \lambda)}$$   
-$$\hat \lambda$$是当前$$(A,B,\pi)$$的估计值，因此可以通过迭代，得到$$(A,B,\pi)$$的收敛解。  
+$$\hat \lambda$$是当前$$(A,B,\pi)$$的估计值，因此可以通过迭代，得到  $$(A,B,\pi)$$的收敛解。  
+
+###Baum-Welch算法
+输入：观测数据$$O=(o_1,o_2,...,o_T)$$;  
+输出：隐马尔科夫模型的参数  
+(1)初始化  
+对n=0,选取$$a_{ij}^{(0)},b_j(k)^{(0)},\pi_i^{(0)}$$得到模型$$\lambda^{(0)} = (A^{(0)},B^{(0)},\pi^{(0)})$$  
+(2).递推对n=1,2,..,  
+$$\kern{8 em} a_{ij}= \frac{\sum_{t=1}^{T-1}\xi_t(i,j)}{\sum_{t=1}^{T-1}\xi_t(i)}$$   
+$$\kern{8 em} b_j(k) = \frac{\displaystyle \sum_{t=1,o_t=v_k}^{T}\gamma_t(j)}{\displaystyle \sum_{t=1}^{T}\gamma_t(j)}$$      
+$$\kern{8 em} \pi_i = \gamma_1(i)$$    
+右端的值按照观测$$O=(o_1,o_2,...,o_T)$$和模型$$\lambda^{(n)} = (A^{(n)},B^{(n)},\pi^{(n)})$$,以及式中$$\xi_t(i,j)$$按照中定义进行计算。  
+(3)终止，得到模型参数$$\lambda^{(n+1)} = (A^{(n+1)},B^{(n+1)},\pi^{(n+1)})$$
 

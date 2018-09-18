@@ -61,24 +61,24 @@ $$\kern{4 em} P(i_t|i_{t-1},o_{t-1},...,i_{1},o_{1}) = P(i_t|i_{t-1}), t=1,2,...
    $$\kern{4 em} \beta_t = A^{T-t}\displaystyle \prod_{j=t+1}^TxB[o_j], t=T-1,T-2,...,1$$  
    $$\kern{4 em} \beta_t= (\beta_t(1),\beta_t(2),...,\beta_t(N))^T$$  
 ### 一些概率与期望值
-4. 给定模型$$\lambda$$以及观测O，在时刻t处于状态$$q_i$$的概率为：  
+(1) 给定模型$$\lambda$$以及观测O，在时刻t处于状态$$q_i$$的概率为：  
    $$\kern{4 em} \gamma_t(i)= P(i_t=q_i|O,\lambda) = \frac{P(i_t=q_i,O|\lambda)}{P(O|\lambda)}$$  
    因为$$\kern{4 em} \alpha_t(i)\beta_t(i) =P(i_t=q_i,O|\lambda)$$  
    所以： $$\kern{4 em} \gamma_t(i)=\frac{\alpha_t(i)\beta_t(i)}{\displaystyle \sum_{i=1}^N\alpha_t(i)\beta_t(i)}$$   
-   2.给定模型$$\lambda$$以及观测O，在时刻t处于状态$$q_i$$且在t+1时刻处以$$q_j$$的概率为：  
+(2)给定模型$$\lambda$$以及观测O，在时刻t处于状态$$q_i$$且在t+1时刻处以$$q_j$$的概率为：  
    $$\kern{4 em} \xi_t(i,j)= P(i_t=q_i,i_{t+1}=g_j|O,\lambda) $$  
    $$\kern{4 em} \xi_t(i,j) = \frac{P(i_t=q_i,i_{t+1}=g_j,O|\lambda)}{P(O|\lambda)}= \frac{P(i_t=q_i,i_{t+1}=g_j,O|\lambda)}{\displaystyle \sum_{i=1}^N\displaystyle \sum_{j=1}^NP(i_t=q_i,i_{t+1}=g_j,O|\lambda)}$$  
    而：  
    $$\kern{4 em} P(i_t=q_i,i_{t+1}=g_j,O|\lambda) = \alpha_t(i)a_{ij}b_j(o_{t+1})\beta_{t+1}(j)$$  
    所以：  
-   $$\kern{4 em} \xi_t(i,j) = \frac{\alpha_t(i)a_{ij}b_j(o_{t+1})\beta_{t+1}(j)}{\displaystyle \sum_{i=1}^N\displaystyle \sum_{j=1}^N\alpha_t(i)a_{ij}b_j(o_{t+1})\beta_{t+1}(j)}$$   
-5. 将$$\gamma_t(i),\xi_t(i,j)$$对不同时刻t求和，可以得到一些有用的期望：  
-   \(1\)在观测O下状态i出现的期望值：  
-   $$\kern{8 em} \displaystyle \sum_{i=1}^T\gamma_t(i)$$  
-   \(2\)在观测O下由状态i转移的期望值：  
-   $$\kern{8 em} \displaystyle \sum_{i=1}^{T-1}\gamma_t(i)$$  
-   \(3\)在观测O下由状态i转移到状态j的期望值：  
-   $$\kern{8 em} \displaystyle \sum_{i=1}^{T-1}\xi_t(i,j)$$  
+$$\kern{4 em} \xi_t(i,j) = \frac{\alpha_t(i)a_{ij}b_j(o_{t+1})\beta_{t+1}(j)}{\displaystyle \sum_{i=1}^N\displaystyle \sum_{j=1}^N\alpha_t(i)a_{ij}b_j(o_{t+1})\beta_{t+1}(j)}$$   
+(3)将$$\gamma_t(i),\xi_t(i,j)$$对不同时刻t求和，可以得到一些有用的期望：    
+(a)在观测O下状态i出现的期望值：       
+$$\kern{8 em} \displaystyle \sum_{i=1}^T\gamma_t(i)$$  
+(b)在观测O下由状态i转移的期望值：    
+$$\kern{8 em} \displaystyle \sum_{i=1}^{T-1}\gamma_t(i)$$  
+(c)在观测O下由状态i转移到状态j的期望值：    
+$$\kern{8 em} \displaystyle \sum_{i=1}^{T-1}\xi_t(i,j)$$  
 ## 学习算法
 ### 监督学习方法
    我们有观测序列和对应的状态序列$$[(O_1,I_1),(O_2,I_2),...,(O_S,I_S)]$$  

@@ -170,5 +170,6 @@ $$\kern{4 em} \delta_{t+1}(i) = \displaystyle \max_{1 \le j \le N}[\delta_t(j)a_
 $$\kern{4 em} i_T^* = \arg \displaystyle \max_{1 \le j \le N}\delta_{T}(i)$$   
 (4)最有路径回溯。对t=T-1,T-2,....,1  
 $$\kern{4 em} i_t^* = \psi_{t+1}(i_{t+1}^*)$$   
+求得最优路径$$I^* = (i_1^*,i_2^*,..,i_T^*)$$.
   
 

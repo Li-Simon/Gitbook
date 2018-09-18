@@ -25,24 +25,17 @@ $$\kern{8 em} \pi_i = P(i_1 = q_i), i=1,2,...,N$$
 马尔科夫模型$$\lambda$$可以用三元符号来表示：  
 $$\kern{8 em} \lambda = (A,B,\pi)$$  
 A,B,$$\pi$$称为马尔科夫模型的三要素。
-
 ### 马尔科夫模型的两个假设：
-
 \(1\)齐次马尔科夫假设。任一时刻只与前一时刻有关系  
 $$\kern{4 em} P(i_t|i_{t-1},o_{t-1},...,i_{1},o_{1}) = P(i_t|i_{t-1}), t=1,2,...,T$$  
 \(2\)观测独立性假设：任一时刻的观测只依赖于该时刻的马尔科夫链的状态，而与其他观测以及状态没有关系。  
  $$\kern{4 em} P(o_t|i_{T},o_{T},...,i_{t+1},o_{t+1},i_{t},i_{t-1},o_{t-1},i_{1},o_{1}) = P(o_t|i_{t})$$
-
 ### HMM的三个问题
-
 1. 概率计算问题:给定模型$$\lambda = (A,B,\pi)$$,和观测序列$$O=o_1,o_2,...,o_T$$,计算在模型$$\lambda$$下观测序列$$O$$出现的概率$$P(O|\lambda)$$。  
 2. 学习问题：已知观测序列$$O=o_1,o_2,...,o_T$$,估计模型$$\lambda = (A,B,\pi)$$,使得$$P(O|\lambda)$$最大。即用极大似然法的方法估计参数。   
 3. 预测问题（也称为解码（decoding）问题）：已知观测序列$$O=o_1,o_2,...,o_T$$和模型$$\lambda = (A,B,\pi)$$,求给定观测序列条件概率$$P(I|O)$$最大的序列$$I=(i_1,i_2,...,i_T)$$,即给定观测序列，求最有可能的对应的状态序列。  
-
 ### 概率计算问题
-
 #### 直接计算方法：
-
 问题：给定模型$$\lambda = (A,B,\pi)$$,和观测序列$$O=o_1,o_2,...,o_T$$,计算在模型$$\lambda$$下观测序列$$O$$出现的概率$$P(O|\lambda)$$。  
 对于状态序列$$I=(i_1,i_2,...,i_T)$$的概率是：$$P(I|\lambda)=\pi_{i_1}a_{i_1i_2}a_{i_2i_3}...a_{i_{T-1}i_T}$$,  
 对于上面这种状态序列，产生观测序列$$O=o_1,o_2,...,o_T$$的概率是：  
@@ -53,9 +46,7 @@ $$P(O,I|\lambda) = P(O|I,\lambda)P(I|\lambda)=b_{i_1}(o_1)b_{i_2}(o_2)...b_{i_T}
 $$\kern{4 em} P(O|\lambda)=\sum_IP(O,I|\lambda)$$  
 直接计算，时间复杂度是$$O(TN^T)$$.  
 为了降低计算的时间复杂度，引入了前向算法。
-
 ### 前向算法
-
 给定模型$$\lambda$$，定义到时刻t部分观测序列为$$O=o_1,o_2,...,o_T$$且状态为$$q_i$$的概率为前向概率。记作：  
 $$\kern{4 em} \alpha_t(i) = P(o_1,o_2,...,o_t,i_t=q_i|\lambda)$$  
 有了前向概率就可以通过递归的方法来计算任何一个观测序列的概率。就如下图所示：  ![](/assets/HMM_Forward_Algo.png)  
@@ -73,7 +64,6 @@ $$\kern{4 em} \beta_t= (\beta_t(1),\beta_t(2),...,\beta_t(N))^T$$
 ###一些概率与期望值
 1. 给定模型$$\lambda$$以及观测O，在时刻t处于状态$$q_i$$的概率为：  
 $$\kern{4 em} \gamma_t(i)= P(i_t=q_i|O,\lambda) = \frac{P(i_t=q_i,O|\lambda)}{P(O|\lambda)}$$  
-
 因为$$\kern{4 em} \alpha_t(i)\beta_t(i) =P(i_t=q_i,O|\lambda)$$  
 所以： $$\kern{4 em} \gamma_t(i)=\frac{\alpha_t(i)\beta_t(i)}{\displaystyle \sum_{i=1}^N\alpha_t(i)\beta_t(i)}$$   
 2.给定模型$$\lambda$$以及观测O，在时刻t处于状态$$q_i$$且在t+1时刻处以$$q_j$$的概率为：  
@@ -135,7 +125,6 @@ $$\kern{4 em}\displaystyle \sum_{I}(\displaystyle \sum_{t=1}^{T-1}\log b_{i_t}(o
 利用$$\displaystyle \sum_{k=1}^{M}b_j(k)=1$$. 注意只有在$$o_t = v_k$$时，$$b_j(o_t)$$对$$b_j(k)$$的偏导数才不为0，以$$I(o_t=v_k)$$表示，求得：  
 $$\kern{4 em} b_j(k) = \frac{\displaystyle \sum_{t=1}^{T}P(O,i_t=j|\hat \lambda)I(o_t=v_k)}{\displaystyle \sum_{t=1}^{T}P(O,i_t=j|\hat \lambda)}$$   
 $$\hat \lambda$$是当前$$(A,B,\pi)$$的估计值，因此可以通过迭代，得到  $$(A,B,\pi)$$的收敛解。  
-
 ###Baum-Welch算法
 输入：观测数据$$O=(o_1,o_2,...,o_T)$$;  
 输出：隐马尔科夫模型的参数  

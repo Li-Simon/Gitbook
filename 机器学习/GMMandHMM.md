@@ -144,6 +144,31 @@ $$\kern{4 em} \gamma_t(i)=\frac{\alpha_t(i)\beta_t(i)}{\displaystyle \sum_{i=1}^
 ###近似算法
 $$\kern{8 em} i_t^{*} = arg \displaystyle \max_{1\le i\le N}[\gamma_t(i)], t = 1,2,..,T$$    
  从而得到状态序列$$I^* = (i_1^*,i_2^*,..,i_T^*)$$。近似算法简单，但是会预测出一些实际上不发生的状态，比如转移矩阵等于0的两个相邻状态。尽管如此，近似算法还是有用的。  
-###维特比算法
+###维特比算法思想
  维特比算法是用动态规划解马尔科夫模型预测问题，即用动态规划求概率最大路径（最优路径），这时，一条路径对应一个状态序列。  
  根据动态规划原理，最优路径具有这样的特性：如果最优路径在时刻t通过节点$$i_t^*$$,那么这一路径从结点$$i_t^*$$到终点$$i_T^*$$ 的部分路径，对于从 $$i_t^*$$到$$i_T^*$$的所有可能部分路径来说，必须是最优的。因为假如不是这样，那么从$$i_t^*$$到$$i_T^*$$就有另外一条更好的部分路径存在，如果他和从$$i_t^*$$到$$i_T^*$$的部分路径连接起来，就会形成一条比原来的路径更优的路径，这是矛盾的。  
+ 根据这一原理，我们
+ 
+ 首先定义两个变量$$\delta,\psi$$,定义在时刻t状态为i的所有单个路径$$(i_1,i_2,...,i_t)$$中概率最大值为：  
+ $$\kern{4 em} \delta_t(i) = \displaystyle \max_{i_1,i_2,...,i_{t-1}}P(i_t=i,i_{t-1},i_{t-2},...,i_1,o_t,...,o_1|\lambda), i=1,2,..,N$$  
+ 由定义可以得到变量$$\delta$$的递推公式：  
+ $$\kern{4 em} \delta_{t+1}(i) = \displaystyle \max_{i_1,i_2,...,i_{t}}P(i_{t+1}=i,i_{t-1},i_{t-2},...,i_1,o_{t+1},...,o_1|\lambda)$$  
+ $$\kern{8 em} =  \displaystyle \max_{1 \le j \le N}[\delta_t(j)a_{ji}]b_i(o_{t+1}), i=1,2,..,N;t=1,2,...,T-1$$  
+ 定义在时刻t状态i的所有单个路径$$(i_1,i_2,...,i_{t-1},i)$$中概率最大的路径的第t-1个节点为：  
+ $$\kern{8 em} \psi_t(i) = \arg \displaystyle \max_{1 \le j \le N}[\delta_{t-1}(j)a_{ji}], i=1,2,..,N$$    
+###维特比算法
+输入：模型$$\lambda = (A,B,\pi)$$和观测数据$$O=(o_1,o_2,...,o_T)$$;  
+输出： 最优化路径$$I^* = (i_1^*,i_2^*,..,i_T^*)$$。  
+(1). 初始化  
+$$\kern{8 em} \delta_1(i) = \pi_i b_i(o_1), i=1,2,..,N$$  
+$$\kern{8 em} \psi_1(i) = 0, i=1,2,..,N$$   
+(2). 递推，对t=2,3,...,T  
+$$\kern{4 em} \delta_{t+1}(i) = \displaystyle \max_{1 \le j \le N}[\delta_t(j)a_{ji}]b_i(o_{t+1}), i=1,2,...,N$$   
+ $$\kern{4 em} \psi_t(i) = \arg\displaystyle \max_{1 \le j \le N}[\delta_{t-1}(j)a_{ji}], i=1,2,..,N$$   
+(3). 终止      
+ $$\kern{4 em} P^* = \displaystyle \max_{1 \le j \le N}\delta_{T}(i)$$   
+$$\kern{4 em} i_T^* = \arg \displaystyle \max_{1 \le j \le N}\delta_{T}(i)$$   
+(4)最有路径回溯。对t=T-1,T-2,....,1  
+$$\kern{4 em} i_t^* = \psi_{t+1}(i_{t+1}^*)$$   
+  
+

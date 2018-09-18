@@ -230,8 +230,9 @@ $$\kern{8 em} \pi_i = \gamma_1(i)$$
 $$\kern{4 em} \gamma_t(i)=\frac{\alpha_t(i)\beta_t(i)}{\displaystyle \sum_{i=1}^N\alpha_t(i)\beta_t(i)}$$  
 计算每一时刻t最可能出现的状态i,然后得到最有可能出现的序列。这就是近似算法.
 ###近似算法
-$$$$\kern{8 em} i_t^{*} = arg \displaystyle \max_{1\le i\le N}[\gamma_t(i)], t = 1,2,..,T$$  
-从而得到状态序列$$I^* = (i_1^*,i_2^*,..,i_T^*)$$
+$$\kern{8 em} i_t^{*} = arg \displaystyle \max_{1\le i\le N}[\gamma_t(i)], t = 1,2,..,T$$  
+从而得到状态序列$$I^* = (i_1^*,i_2^*,..,i_T^*)$$  
+近似算法简单，但是存在计算出
 
 
 

@@ -233,6 +233,3 @@ $$\kern{4 em} \gamma_t(i)=\frac{\alpha_t(i)\beta_t(i)}{\displaystyle \sum_{i=1}^
 $$\kern{8 em} i_t^{*} = arg \displaystyle \max_{1\le i\le N}[\gamma_t(i)], t = 1,2,..,T$$  
 从而得到状态序列$$I^* = (i_1^*,i_2^*,..,i_T^*)$$  
 近似算法简单，但是会预测出一些实际上不发生的状态，比如转移矩阵等于0的两个相邻状态。  
-
-
-

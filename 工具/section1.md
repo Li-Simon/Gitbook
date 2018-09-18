@@ -20,3 +20,7 @@ gitbook pdf ./ ./ML2.pdf
 
 ###换行
 一行之后加两个以上的空格。
+
+###同步
+在gitbook 客户端book->Repository Setting...中添加Gitbook中书的地址即可：
+https://github.com/Li-Simon/Gitbook.git

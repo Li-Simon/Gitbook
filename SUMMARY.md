@@ -23,6 +23,7 @@
   * [快速排序与二叉树](算法/快速排序与二叉树.md)
   * [医学图像重建算法](算法/医学图像重建算法.md)
 * [第六章 最优化](最优化/README.md)
+  * [最优化的优缺点及其改进方案](算法/最优化的优缺点及其改进方案.md)
   * [Levenberg-Marquardt算法](最优化/Levenberg-Marquardt算法.md)
   * [Qusi-Netwon 拟牛顿法](最优化/Qusi-Netwon.md)
   * [信赖域方法](最优化/信赖域方法.md)

@@ -42,9 +42,8 @@ $$\kern{12 em} =p(\theta^{(i)}\alpha_{i,j}Q_{i,j}$$
 $$\kern{12 em} =p(\theta^{(j)}P_{j,i}$$  
 因此，通过上面方法构造出来的马尔科夫链满足细致平衡条件。  
 ##MCMC的使用场景
-
-
-
+[MCMC——Metropolis-Hasting算法](https://www.cnblogs.com/xbinworld/p/4266146.html)
+[MCMC——Gibbs Sampling算法](https://www.cnblogs.com/xbinworld/p/4266146.html)
 
 
 

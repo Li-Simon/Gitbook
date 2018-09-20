@@ -1,3 +1,3 @@
-# My Awesome Book
+# 最优化方法
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+这章主要讨论常见的最优化方法，以及优化技巧与不同方法的优缺点。

@@ -41,6 +41,7 @@ $$\kern{12 em} =p(\theta^{(j)}\min(\frac{p(\theta^{(i)})}{p(\theta^{(j)})},1)Q_{
 $$\kern{12 em} =p(\theta^{(i)}\alpha_{i,j}Q_{i,j}$$  
 $$\kern{12 em} =p(\theta^{(j)}P_{j,i}$$  
 因此，通过上面方法构造出来的马尔科夫链满足细致平衡条件。  
+##MCMC的使用场景
 
 
 

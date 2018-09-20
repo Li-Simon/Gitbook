@@ -37,9 +37,9 @@ $$\kern{8 em} q(\theta = \theta^{(t)}|\theta^{(t-1)}) = q(\theta = \theta^{(t-1)
 $$\kern{8 em} p(\theta^{(i)}P_{i,j} = p(\theta^{(i)}\alpha_{i,j}Q_{i,j}$$    
 $$\kern{12 em} =p(\theta^{(i)}\min(1, \frac{p(\theta^{(j)})}{p(\theta^{(i)})})Q_{i,j}$$  
 $$\kern{12 em} =\min(p(\theta^{(i)}Q_{i,j}, p(\theta^{(j)}Q_{i,j})$$  
-$$\kern{12 em} =p(\theta^{(j)}\min(\frac{p(\theta^{(i)})}{p(\theta^{(j)})},1)Q_{j,1}$$  
+$$\kern{12 em} =p(\theta^{(j)}\min(\frac{p(\theta^{(i)})}{p(\theta^{(j)})},1)Q_{j,i}$$  
 $$\kern{12 em} =p(\theta^{(i)}\alpha_{i,j}Q_{i,j}$$  
-$$\kern{12 em} =p(\theta^{(j)}P_{j,1}$$  
+$$\kern{12 em} =p(\theta^{(j)}P_{j,i}$$  
 因此，通过上面方法构造出来的马尔科夫链满足细致平衡条件。  
 
 

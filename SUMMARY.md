@@ -63,6 +63,7 @@
     * [特征工程](机器学习/te-zheng-gong-cheng.md)
     * [CRF](机器学习/crf.md)
 * [第八章 推荐系统](推荐系统/README.md)
+    * [计算广告学概论](推荐系统/计算广告学概论.md)
     * [推荐系统概述](推荐系统/推荐系统概述.md)
     * [FM(Factorization Machines),FFM](推荐系统/FM,FFM.md)
     * [Learning To Rank LTR](推荐系统/learning-to-rank-ltr.md)

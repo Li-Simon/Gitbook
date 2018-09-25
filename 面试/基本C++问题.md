@@ -365,57 +365,127 @@ void CList::DeleteNode(ListNode* pListHead, ListNode* pToBeDeleted)
 }
 ```
 
-####对数组中奇偶数据分类排序
+#### 对数组中奇偶数据分类排序
 
 ```
 void CCArray::ReorderOddEven(int* data, int length, bool (*Func)(int))
 {
-	if(data==NULL || length <= 0)
-		return;
-	int* pBegin = data;
-	int* pEnd = data + length - 1;
+    if(data==NULL || length <= 0)
+        return;
+    int* pBegin = data;
+    int* pEnd = data + length - 1;
 
-	while(pBegin < pEnd)
-	{
-		while(!Func(*pBegin))
-		{
-			pBegin++;
-		}
+    while(pBegin < pEnd)
+    {
+        while(!Func(*pBegin))
+        {
+            pBegin++;
+        }
 
-		while(Func(*pEnd))
-		{
-			pEnd--;
-		}
+        while(Func(*pEnd))
+        {
+            pEnd--;
+        }
 
-		int temp = *pEnd;
-		*pEnd = *pBegin;
-		*pBegin = temp;
-	}
+        int temp = *pEnd;
+        *pEnd = *pBegin;
+        *pBegin = temp;
+    }
 }
 void main()
 {
-	const int length = 6;
-	int data[] = {4,1,5,3,6,7};
-	CCArray* test_arr = new CCArray();
-	test_arr->ReorderOddEven(data, length, IsEven);//函数指针的调用
-	for(int i = 0; i < length; i++)
-	{
-		cout<<data[i]<<endl;
-	}
+    const int length = 6;
+    int data[] = {4,1,5,3,6,7};
+    CCArray* test_arr = new CCArray();
+    test_arr->ReorderOddEven(data, length, IsEven);//函数指针的调用
+    for(int i = 0; i < length; i++)
+    {
+        cout<<data[i]<<endl;
+    }
 }
 bool IsEven(int value)
 {
-	return (value&1) == 0;
+    return (value&1) == 0;
 }
 ```
-###为啥要用C++智能指针
+
+### 为啥要用C++智能指针
+
 1. 内存泄漏：是指操作系统将空间分配给你，但是那个空间被你申请后并没有被使用，并且没有相应的释放语句。也就是该空间不再被任何指针或引用所引用，成为一个幽灵空间，操作系统以为你在控制它，但其实你并没有控制它。  
 2. 重复释放： 程序通过free或delete语句释放已经不属于该程序的空间。这是很危险的，因为第二次free的空间已经被别的程序所使用。所以C++中把这种错误当成了致命错误。  
-栈上的空间是由系统分配的。堆上的空间是由用户自己分配的。通过new创建，free释放。  
+   栈上的空间是由系统分配的。堆上的空间是由用户自己分配的。通过new创建，free释放。  
 
-####C++什么时候该使用new?该注意什么来防止内存泄漏？
-####打印1到最大的n位数，比如n=2,怎打印1到99.
+#### C++什么时候该使用new?该注意什么来防止内存泄漏？
 
+#### 打印1到最大的n位数，比如n=2,怎打印1到99.
+
+```cpp
+void PrintToMaxofNDigits(int n);//输入要打印的位数
+void PrintNumber(char* number);//打印字符串
+bool Increment(char* number);//每次增加1看是否越界
+void CRecursion::PrintToMaxofNDigits(int n)
+{
+	if(n <= 0)
+		return;
+
+	char *number = new char[n+1];
+	memset(number,'0',n);
+	number[n] = '\0';
+	while(!Increment(number))
+	{
+		PrintNumber(number);
+	}
+	delete []number;
+}
+
+bool CRecursion::Increment(char* number)
+{
+	bool isOverFlow = false;
+	int numLength = strlen(number);
+	int nTakeOver = 0;
+	for(int i = numLength - 1; i >=0; i--)
+	{
+		int nSum = number[i] -'0' + nTakeOver;
+		if(i == numLength -1)
+			nSum++;
+
+		if(nSum >= 10)
+		{
+			if(i == 0)
+			{
+				isOverFlow = true;
+			}
+			else
+			{
+				number[i] = nSum - 10 + '0';
+				nTakeOver = 1;
+			}
+		}
+		else
+		{
+			number[i] = nSum + '0';
+			break;
+		}
+	}
+	return isOverFlow;
+}
+
+void CRecursion::PrintNumber(char* number)
+{
+	bool isBeginning0 = true;
+	int nLength = strlen(number);
+	for(int i = 0; i < nLength; ++i)
+	{
+		if(isBeginning0 && number[i] != '0')
+			isBeginning0 = false;
+		if(!isBeginning0)
+		{
+			printf("%c",number[i]);
+		}
+	}
+	printf("\n");
+}
+```
 
 
 

@@ -425,67 +425,101 @@ void PrintNumber(char* number);//打印字符串
 bool Increment(char* number);//每次增加1看是否越界
 void CRecursion::PrintToMaxofNDigits(int n)
 {
-	if(n <= 0)
-		return;
+    if(n <= 0)
+        return;
 
-	char *number = new char[n+1];
-	memset(number,'0',n);
-	number[n] = '\0';
-	while(!Increment(number))
-	{
-		PrintNumber(number);
-	}
-	delete []number;
+    char *number = new char[n+1];
+    memset(number,'0',n);
+    number[n] = '\0';
+    while(!Increment(number))
+    {
+        PrintNumber(number);
+    }
+    delete []number;
 }
 
 bool CRecursion::Increment(char* number)
 {
-	bool isOverFlow = false;
-	int numLength = strlen(number);
-	int nTakeOver = 0;
-	for(int i = numLength - 1; i >=0; i--)
-	{
-		int nSum = number[i] -'0' + nTakeOver;
-		if(i == numLength -1)
-			nSum++;
+    bool isOverFlow = false;
+    int numLength = strlen(number);
+    int nTakeOver = 0;
+    for(int i = numLength - 1; i >=0; i--)
+    {
+        int nSum = number[i] -'0' + nTakeOver;
+        if(i == numLength -1)
+            nSum++;
 
-		if(nSum >= 10)
-		{
-			if(i == 0)
-			{
-				isOverFlow = true;
-			}
-			else
-			{
-				number[i] = nSum - 10 + '0';
-				nTakeOver = 1;
-			}
-		}
-		else
-		{
-			number[i] = nSum + '0';
-			break;
-		}
-	}
-	return isOverFlow;
+        if(nSum >= 10)
+        {
+            if(i == 0)
+            {
+                isOverFlow = true;
+            }
+            else
+            {
+                number[i] = nSum - 10 + '0';
+                nTakeOver = 1;
+            }
+        }
+        else
+        {
+            number[i] = nSum + '0';
+            break;
+        }
+    }
+    return isOverFlow;
 }
 
 void CRecursion::PrintNumber(char* number)
 {
-	bool isBeginning0 = true;
-	int nLength = strlen(number);
-	for(int i = 0; i < nLength; ++i)
-	{
-		if(isBeginning0 && number[i] != '0')
-			isBeginning0 = false;
-		if(!isBeginning0)
-		{
-			printf("%c",number[i]);
-		}
-	}
-	printf("\n");
+    bool isBeginning0 = true;
+    int nLength = strlen(number);
+    for(int i = 0; i < nLength; ++i)
+    {
+        if(isBeginning0 && number[i] != '0')
+            isBeginning0 = false;
+        if(!isBeginning0)
+        {
+            printf("%c",number[i]);
+        }
+    }
+    printf("\n");
 }
 ```
-printf("%c",number[i]);打印字符
+
+printf\("%c",number\[i\]\);打印字符
+
+```cpp
+void CRecursion::PrintToMaxofNDigitsRecu(int n)
+{
+	if(n <= 0)
+		return;
+
+	char* number = new char[n+1];
+	number[n] = '\0';
+	for(int i =0; i < 10; i++)
+	{
+		number[0] = i+'0';
+		PrintToMaxofNDigitsRecursively(number, n, 0);
+	}
+	delete[] number;
+}
+
+void CRecursion::PrintToMaxofNDigitsRecursively(char* number, int length, int index)
+{
+	if(index == length -1)
+	{
+		PrintNumber(number);
+		return;
+	}
+
+	for(int i = 0; i < 10; i++)
+	{
+		number[index+1] = i + '0';
+		PrintToMaxofNDigitsRecursively(number, length, index + 1);
+	}
+}
+```
+
 
 

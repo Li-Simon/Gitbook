@@ -525,7 +525,7 @@ void CRecursion::PrintToMaxofNDigitsRecursively(char* number, int length, int in
 
 #### 输入两颗二叉树A和B，判断B是不是A的子结构。
 
-通过递归实现。
+通过递归实现。如果两个头节点相同，则比较两者的左右子树。如果不相同，则把A的左右子树当成树，看他们是否含有B。
 
 ```cpp
 bool CTree::HasSubtree(BinaryTreeNode* pRoot1, BinaryTreeNode* pRoot2)

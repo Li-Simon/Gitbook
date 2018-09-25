@@ -487,39 +487,84 @@ void CRecursion::PrintNumber(char* number)
 }
 ```
 
-printf\("%c",number\[i\]\);打印字符
+printf\("%c",number\[i\]\);打印字符  
 接下来是递归算法：  
 通过递归，打印只针对于个位数，也就是index == length -1的位置。
 
 ```cpp
 void CRecursion::PrintToMaxofNDigitsRecu(int n)
 {
-	if(n <= 0)
-		return;
+    if(n <= 0)
+        return;
 
-	char* number = new char[n+1];
-	number[n] = '\0';
-	for(int i =0; i < 10; i++)
-	{
-		number[0] = i+'0';
-		PrintToMaxofNDigitsRecursively(number, n, 0);
-	}
-	delete[] number;
+    char* number = new char[n+1];
+    number[n] = '\0';
+    for(int i =0; i < 10; i++)
+    {
+        number[0] = i+'0';
+        PrintToMaxofNDigitsRecursively(number, n, 0);
+    }
+    delete[] number;
 }
 
 void CRecursion::PrintToMaxofNDigitsRecursively(char* number, int length, int index)
 {
-	if(index == length -1)
+    if(index == length -1)
+    {
+        PrintNumber(number);
+        return;
+    }
+
+    for(int i = 0; i < 10; i++)
+    {
+        number[index+1] = i + '0';
+        PrintToMaxofNDigitsRecursively(number, length, index + 1);
+    }
+}
+```
+
+#### 输入两颗二叉树A和B，判断B是不是A的子结构。
+
+通过递归实现。
+
+```cpp
+bool CTree::HasSubtree(BinaryTreeNode* pRoot1, BinaryTreeNode* pRoot2)
+{
+	bool result;
+	if(pRoot2 == NULL)
+		return true;
+	if(pRoot1 == NULL)
+		return false;
+
+	if(pRoot1->m_nValue == pRoot2->m_nValue)
 	{
-		PrintNumber(number);
-		return;
+		result = DoesTree1HaveTree1(pRoot1, pRoot2);
+	}
+	if(!result)
+	{
+		result = DoesTree1HaveTree1(pRoot1->m_pLeft, pRoot2);
+	}
+	if(!result)
+	{
+		result = DoesTree1HaveTree1(pRoot1->m_pRight, pRoot2);
+	}
+	return result;
+}
+
+bool CTree::DoesTree1HaveTree1(BinaryTreeNode* pRoot1, BinaryTreeNode* pRoot2)
+{
+	bool result;
+	if(pRoot2 == NULL)
+		return true;
+	if(pRoot1 == NULL)
+		return false;
+
+	if(pRoot1->m_nValue != pRoot2->m_nValue)
+	{
+		return false;
 	}
 
-	for(int i = 0; i < 10; i++)
-	{
-		number[index+1] = i + '0';
-		PrintToMaxofNDigitsRecursively(number, length, index + 1);
-	}
+	return DoesTree1HaveTree1(pRoot1->m_pLeft, pRoot2->m_pLeft)&&DoesTree1HaveTree1(pRoot1->m_pRight, pRoot2->m_pRight);
 }
 ```
 

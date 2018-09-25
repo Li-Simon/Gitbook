@@ -488,7 +488,8 @@ void CRecursion::PrintNumber(char* number)
 ```
 
 printf\("%c",number\[i\]\);打印字符
-接下来是递归算法：
+接下来是递归算法：  
+通过递归，打印只针对于个位数，也就是index == length -1的位置。
 
 ```cpp
 void CRecursion::PrintToMaxofNDigitsRecu(int n)

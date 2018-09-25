@@ -486,6 +486,6 @@ void CRecursion::PrintNumber(char* number)
 	printf("\n");
 }
 ```
-
+printf("%c",number[i]);打印字符
 
 

@@ -488,6 +488,7 @@ void CRecursion::PrintNumber(char* number)
 ```
 
 printf\("%c",number\[i\]\);打印字符
+接下来是递归算法：
 
 ```cpp
 void CRecursion::PrintToMaxofNDigitsRecu(int n)

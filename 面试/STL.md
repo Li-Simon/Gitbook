@@ -15,7 +15,8 @@ STL中体现了泛型程序设计的思想，泛型是一种软件的复用技�
 仿函数(functor)又称为函数对象(function object)，其实就是重载了()操作符的struct，没有什么特别的地方。  
 ####迭代适配器(adaptor)
 ####空间配置器(allocator)
-其中主要工作包括1.对象的创建与销毁，2.内存的获取与释放  
+其中主要工作包括1.对象的创建与销毁，2.内存的获取与释放 
+[STL底层数据结构实现](http://www.cnblogs.com/hustlijian/p/3611424.html) 
 ##data structure
 ###array
 ###vector

@@ -7,30 +7,19 @@ Boost库包含150多个库，其中就有线性代数库uBLAS，Boost是STL的�
 STL中体现了泛型程序设计的思想，泛型是一种软件的复用技术。
 
 ### STL的六大组件：
-
-#### 容器（Container）
-
+##### 容器（Container）
 是一种数据结构，如list,vector,deques,以模板的方法提供，为了访问容器中的数据，可以使用由容器类输出的迭代器。  
 顺序容器：vector,lsit,deque,string.  
 关联容器：set,multiset, map, mulmap,hash\_set,hash\_map,hash\_multiset,hash\_multimap  
 杂项： stack,queue,valarray,bitset
-
-#### 迭代器\(Iterator\)
-
+##### 迭代器\(Iterator\)
 提供了访问容器中对象的方法，例如，可以使用一堆迭代器指定list或vector中的一定范围的对象。迭代器如同一个指针。事实上，C++指针也是一种迭代器。但是迭代器也可以是那些定义了operator\*\(\)以及其它类似于指针的操作符地方的类对象。
-
-#### 算法\(algorithm\)
-
+##### 算法\(algorithm\)
 是用来操作容器中数据的模板函数。列例如，STL中的sort\(\)来对一个vector中的数据进行排序。用find\(\)来搜索一个list中的对象，函数本身与他们操作的数据的结构和类型无关，因此他们可以在从简单数组到高级复杂容器的任何数据结构上使用。
-
-#### 仿函数\(Function object\)
-
+##### 仿函数\(Function object\)
 仿函数\(functor\)又称为函数对象\(function object\)，其实就是重载了\(\)操作符的struct，没有什么特别的地方。
-
-#### 迭代适配器\(adaptor\)
-
-#### 空间配置器\(allocator\)
-
+##### 迭代适配器\(adaptor\)
+##### 空间配置器\(allocator\)
 其中主要工作包括1.对象的创建与销毁，2.内存的获取与释放  
 [STL底层数据结构实现](http://www.cnblogs.com/hustlijian/p/3611424.html)  
 [容器的基本特征](https://blog.csdn.net/weixin_41162823/article/details/79759081)  

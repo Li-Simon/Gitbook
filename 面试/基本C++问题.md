@@ -530,81 +530,81 @@ void CRecursion::PrintToMaxofNDigitsRecursively(char* number, int length, int in
 ```cpp
 bool CTree::HasSubtree(BinaryTreeNode* pRoot1, BinaryTreeNode* pRoot2)
 {
-	bool result;
-	if(pRoot2 == NULL)
-		return true;
-	if(pRoot1 == NULL)
-		return false;
+    bool result;
+    if(pRoot2 == NULL)
+        return true;
+    if(pRoot1 == NULL)
+        return false;
 
-	if(pRoot1->m_nValue == pRoot2->m_nValue)
-	{
-		result = DoesTree1HaveTree1(pRoot1, pRoot2);
-	}
-	if(!result)
-	{
-		result = DoesTree1HaveTree1(pRoot1->m_pLeft, pRoot2);
-	}
-	if(!result)
-	{
-		result = DoesTree1HaveTree1(pRoot1->m_pRight, pRoot2);
-	}
-	return result;
+    if(pRoot1->m_nValue == pRoot2->m_nValue)
+    {
+        result = DoesTree1HaveTree1(pRoot1, pRoot2);
+    }
+    if(!result)
+    {
+        result = DoesTree1HaveTree1(pRoot1->m_pLeft, pRoot2);
+    }
+    if(!result)
+    {
+        result = DoesTree1HaveTree1(pRoot1->m_pRight, pRoot2);
+    }
+    return result;
 }
 
 bool CTree::DoesTree1HaveTree1(BinaryTreeNode* pRoot1, BinaryTreeNode* pRoot2)
 {
-	bool result;
-	if(pRoot2 == NULL)
-		return true;
-	if(pRoot1 == NULL)
-		return false;
+    bool result;
+    if(pRoot2 == NULL)
+        return true;
+    if(pRoot1 == NULL)
+        return false;
 
-	if(pRoot1->m_nValue != pRoot2->m_nValue)
-	{
-		return false;
-	}
+    if(pRoot1->m_nValue != pRoot2->m_nValue)
+    {
+        return false;
+    }
 
-	return DoesTree1HaveTree1(pRoot1->m_pLeft, pRoot2->m_pLeft)&&DoesTree1HaveTree1(pRoot1->m_pRight, pRoot2->m_pRight);
+    return DoesTree1HaveTree1(pRoot1->m_pLeft, pRoot2->m_pLeft)&&DoesTree1HaveTree1(pRoot1->m_pRight, pRoot2->m_pRight);
 }
 ```
 
-####输入两个整数序列，第一个是栈的压入序列，第二个是不是栈的弹出序列
+#### 输入两个整数序列，第一个是栈的压入序列，第二个是不是栈的弹出序列
+
 比如压入序列是1，2，3，4，5;则4，5，3，2，1是可能的弹出序列，而4，3，5，1，2不是弹出序列。
 
 ```cpp
 bool CTree::IsPopOrder(const int* pPush, const int* pPop, int nLength)
 {
-	stack<int> stackData;
-	const int* pNextPush = pPush;
-	const int* pNextPop = pPop;
-	int pushLength = 0;
-	while(pushLength < nLength)
-	{
-		int topData = *pNextPop;
-		while(*pNextPush != topData)
-		{
-			if(pNextPush == NULL)//no this element in the push list
-				return false;
-			stackData.push(*pNextPush);
-			pNextPush++;
-			pushLength++;
-		}
-		pNextPush++;
-		pushLength++;
-		pNextPop++;
-	}
-	while(!stackData.empty())
-	{
-		if(stackData.top() != *pNextPop)
-		{
-			return false;	
-		}
-		stackData.pop();
-		pNextPop++;
-	}
-	return true;
+    stack<int> stackData;
+    const int* pNextPush = pPush;
+    const int* pNextPop = pPop;
+    int pushLength = 0;
+    while(pushLength < nLength)
+    {
+        int topData = *pNextPop;
+        while(*pNextPush != topData)
+        {
+            if(pNextPush == NULL)//no this element in the push list
+                return false;
+            stackData.push(*pNextPush);
+            pNextPush++;
+            pushLength++;
+        }
+        pNextPush++;
+        pushLength++;
+        pNextPop++;
+    }
+    while(!stackData.empty())
+    {
+        if(stackData.top() != *pNextPop)
+        {
+            return false;    
+        }
+        stackData.pop();
+        pNextPop++;
+    }
+    return true;
 }
-
 ```
 
 

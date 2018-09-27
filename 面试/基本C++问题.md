@@ -1,4 +1,20 @@
 # 基本C++问题
+###字符串指针赋值问题
+如果指针没有分配空间，则会出现0xC0000005: Access violation writing location
+
+```cpp
+void main(int n)
+{
+	//char pStr[] = "abc";//right
+	//char pStr[4] = "abc";//right
+        //char pStr[3] = "abc";//wrong,need >=4
+	char* pStr = "abc"; //wrong, 没有分配空间，
+	char temp = 'b';
+	pStr[0] = temp;
+	printf("%s\n",pStr);
+}
+```
+
 
 ### sizeof
 

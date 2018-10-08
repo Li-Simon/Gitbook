@@ -67,7 +67,7 @@
     * [推荐系统概述](推荐系统/推荐系统概述.md)
     * [FM(Factorization Machines),FFM](推荐系统/FM,FFM.md)
     * [Learning To Rank LTR](推荐系统/learning-to-rank-ltr.md)
-* [第九章 Kaggle](Kaggle/README.md)
+* [第九章 项目工作](Kaggle/README.md)
     * [Titanic](Kaggle/Titanic.md)
     * [Residual NN](Kaggle/ResiNN.md)
     * [Fast项目](Kaggle/Fast项目.md)

@@ -71,6 +71,7 @@
     * [Titanic](Kaggle/Titanic.md)
     * [Residual NN](Kaggle/ResiNN.md)
     * [Fast项目](Kaggle/Fast项目.md)
+    * [Miura项目](Kaggle/Miura项目.md)
 * [第十章 问题](面试/README.md)
     * [基本ML问题](面试/基本ML问题.md)
     * [模型评估问题](面试/模型评估问题.md)

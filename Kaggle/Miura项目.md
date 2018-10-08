@@ -10,6 +10,8 @@
 ###牛顿法
 ###quasi-Netwon法
 ####BFGS
-####FDP
+####DFP
 ##线性搜索
 ##Trust-region方法
+###L-M算法
+###Dog-Leg算法

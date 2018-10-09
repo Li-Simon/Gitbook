@@ -85,13 +85,19 @@ Training Step: 1000  | total loss: 6.41052 | time: 88.615s
 ![](/assets/RNN_HeKaiming_result1.png)  
 存在这种随着网络层数增加，会出现如下两个问题：  
 1.梯度消失或者爆炸，导致训练难以收敛。这个问题可以通过norimalized initialization 和intermediate normalization layers解决。  
-2.随着深度增加，模型的训练误差与测试误差会迅速下滑，这不是overfit造成的。这种现象在CIFAR-10和ImageNet中都有提及。  
-####模型的改进（Simons）
+2.随着深度增加，模型的训练误差与测试误差会迅速下滑，这不是overfit造成的。这种现象在CIFAR-10和ImageNet中都有提及。
+
+##### Residual NN模型效果：
+![](/assets/ResiNN_HeKaiming_Result2.png)
+
+#### 模型的改进（Simons）
+
 是否可以通过逐渐加深网络来实现浅层的网络而具有强大的功能。具体步骤就是：  
-1. 一个浅层的网络进行end-end的训练，训练到一定程度的时候，进行第二步
+1. 一个浅层的网络进行end-end的训练，训练到一定程度的时候，进行第二步  
 2. 沿用第一步的权重，通过以Residual Block来微调网络，减小误差，优化方法是SGD，但是我们要保证，每增加一层网络，总的模型的效果会更好。  
-3. 循环第二步，直到结果符合我们期望的为止(误差到noise层)  
+3. 循环第二步，直到结果符合我们期望的为止\(误差到noise层\)  
 理论上，这类似于机器学习中的Adaboost，是否可以分析它的误差会指数衰减？希望能像ML算法一样，能有数学理论来分析深度学习。通过理论指导，像搭积木一样来构建深度神经网络。
+
 ## 三大神经网络
 
 ### CNN
@@ -108,4 +114,3 @@ Training Step: 1000  | total loss: 6.41052 | time: 88.615s
 
 
 
- 

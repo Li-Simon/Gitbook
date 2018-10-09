@@ -19,7 +19,7 @@
 batch size大小5.  
 一个epcoh\(训练完28260张图\)的时间是600s,即10分钟左右。
 
-```python
+```py
 #batch_size =5
 #learn_rate = 0.0001
 net = tflearn.input_data(shape=[None, 48, 48, 1])

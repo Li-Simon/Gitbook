@@ -94,7 +94,7 @@ Residual Block的设计如下：
 ##### Residual-NN的实现
 
 Residual Block的设计如下：
-
+![](/assets/ResidualNNStructure.png) 
 ##### Residual NN模型效果：
 
 ![](/assets/ResiNN_HeKaiming_Result2.png)  

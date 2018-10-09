@@ -89,7 +89,7 @@ Training Step: 1000  | total loss: 6.41052 | time: 88.615s
 
 ##### Residual NN模型效果：
 ![](/assets/ResiNN_HeKaiming_Result2.png)
-
+Resi-NN能解决以往随着模型加深训练与测试误差变大的现象。  
 #### 模型的改进（Simons）
 
 是否可以通过逐渐加深网络来实现浅层的网络而具有强大的功能。具体步骤就是：  

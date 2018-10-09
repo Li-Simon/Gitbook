@@ -79,6 +79,7 @@ Training Step: 1000  | total loss: 6.41052 | time: 88.615s
 
 ## Residual NN
 Residual Block的设计如下：  
+
 #### Residual NN提出来的背景：
 
 随着网络变深，训练误差与测试误差得提高了。这是违反我们的训练的初衷的，因为即使我们把26层后面的网络变成恒等映射，效果也不会变差。  

@@ -86,6 +86,7 @@ Training Step: 1000  | total loss: 6.41052 | time: 88.615s
 存在这种随着网络层数增加，会出现如下两个问题：  
 1.梯度消失或者爆炸，导致训练难以收敛。这个问题可以通过norimalized initialization 和intermediate normalization layers解决。  
 2.随着深度增加，模型的训练误差与测试误差会迅速下滑，这不是overfit造成的。这种现象在CIFAR-10和ImageNet中都有提及。
+#####Residual-NN的实现
 
 ##### Residual NN模型效果：
 ![](/assets/ResiNN_HeKaiming_Result2.png)

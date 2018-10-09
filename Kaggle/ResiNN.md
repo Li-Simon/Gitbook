@@ -92,7 +92,6 @@ Residual Block的设计如下：
 2.随着深度增加，模型的训练误差与测试误差会迅速下滑，这不是overfit造成的。这种现象在CIFAR-10和ImageNet中都有提及。
 
 ##### Residual-NN的实现
-
 Residual Block的设计如下：
 ![](/assets/ResidualNNStructure.png) 
 ##### Residual NN模型效果：

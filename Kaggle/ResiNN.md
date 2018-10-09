@@ -72,11 +72,11 @@ Training Step: 1000  | total loss: 6.41052 | time: 88.615s
 ### 效果
 通过我们的ResidualNN,我们能很大的降低我们模型得到的图像与实际拍摄到的图像之间的差别，也就是在Max2x2。(RMS怎么定义忘记了？)
 ![](/assets/ResidualNN_result_figure.png)
-
+原因是，我们输入的图像已经很接近输出的图像，因此，我们只需要训练残差就可以了。  
 ## 图像与信号处理
 
 ## Residual NN
-
+####Residual NN提出来的背景：
 ## 三大神经网络
 
 ### CNN

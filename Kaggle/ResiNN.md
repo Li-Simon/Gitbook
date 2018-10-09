@@ -86,7 +86,7 @@ Training Step: 1000  | total loss: 6.41052 | time: 88.615s
 存在这种随着网络层数增加，会出现如下两个问题：  
 1.梯度消失或者爆炸，导致训练难以收敛。这个问题可以通过norimalized initialization 和intermediate normalization layers解决。  
 2.随着深度增加，模型的训练误差与测试误差会迅速下滑，这不是overfit造成的。这种现象在CIFAR-10和ImageNet中都有提及。  
-####模型的改进
+####模型的改进（Simons）
 是否可以通过逐渐加深网络来实现浅层的网络而具有强大的功能。具体步骤就是：  
 1. 一个浅层的网络进行end-end的训练，训练到一定程度的时候，进行第二步
 2. 沿用第一步的权重，通过以Residual Block来微调网络，减小误差，优化方法是SGD，但是我们要保证，每增加一层网络，总的模型的效果会更好。  

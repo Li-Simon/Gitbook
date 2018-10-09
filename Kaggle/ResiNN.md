@@ -69,10 +69,9 @@ net = tflearn.conv_2d(net, 1, 1)
 Training Step: 1000  | total loss: 6.41052 | time: 88.615s
 ```
 
-
-### 训练时间
-
 ### 效果
+
+![](/assets/ResidualNN_result_figure.png)
 
 ## 图像与信号处理
 

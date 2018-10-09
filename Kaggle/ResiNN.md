@@ -70,7 +70,7 @@ Training Step: 1000  | total loss: 6.41052 | time: 88.615s
 ```
 
 ### 效果
-通过我们的ResidualNN,我们能很大的降低
+通过我们的ResidualNN,我们能很大的降低我们模型得到的图像与实际拍摄到的图像之间的差别，也就是在Max2x2
 ![](/assets/ResidualNN_result_figure.png)
 
 ## 图像与信号处理

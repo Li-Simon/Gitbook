@@ -17,9 +17,23 @@
 图像大小：48\*48,  
 数据集：一共31400张图片，训练集90%,一共28260张图，测试集10%,一共3140张图  
 batch size大小5.  
-一个epcoh\(训练完28260张图\)的时间是600s,也就是10分钟左右。 
+一个epcoh\(训练完28260张图\)的时间是600s,也就是10分钟左右。
 
-![](/assets/ResidualNN_training.png)
+![](/assets/ResidualNN_training.png)               一个比较好的网络是：
+
+```py
+#batch_size =5
+#learn_rate = 0.0001
+net = tflearn.input_data(shape=[None, 48, 48, 1])
+net = tflearn.conv_2d(net, 64, 1)
+net = tflearn.residual_block(net, 2, 64)
+net = tflearn.residual_block(net, 1, 64)
+net = tflearn.conv_2d(net, 64, 1)
+net = tflearn.residual_block(net, 1, 64)
+net = tflearn.residual_block(net, 2, 64)
+net = tflearn.conv_2d(net, 1, 1)
+Training Step: 1000  | total loss: 6.41052 | time: 88.615s
+```
 
 ### 网络选择
 

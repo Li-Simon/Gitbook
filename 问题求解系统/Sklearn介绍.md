@@ -18,15 +18,15 @@
    1. grid search,cross validation
 6. Preprocessing
    1. 预处理，特征提取
-   
-##[User Guide](http://scikit-learn.org/stable/user_guide.html)
-细节的东西我们可以看scikit-learn的User Guide。
-User Guide包含如下几大模块：  
-1. Supervised learning
-2. Unsupervised learning
-3. Model selection and evaluation
-4. Dataset transformations
-5. Dataset loading utilities
-6. Computing with scikit-learn
 
+## [User Guide](http://scikit-learn.org/stable/user_guide.html)
+
+细节的东西我们可以看scikit-learn的User Guide。  
+User Guide包含如下几大模块：  
+1. Supervised learning  
+2. Unsupervised learning  
+3. Model selection and evaluation  
+4. Dataset transformations  
+5. Dataset loading utilities  
+6. Computing with scikit-learn
 

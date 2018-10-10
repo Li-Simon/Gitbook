@@ -128,7 +128,8 @@ $$\kern{4 em} x_{L}= x_l + \displaystyle \sum_{i=l}^{L-1}F(x_i,W_i)$$
 因此对于误差反向传播：  
 $$\frac{\partial \epsilon}{\partial x_l} = \frac{\partial \epsilon}{\partial x_L}\frac{\partial x_L}{\partial x_l} = \frac{\partial \epsilon}{\partial x_L}(1+\frac{\partial }{\partial x_l}\displaystyle \sum_{i=l}^{L-1}F(x_i,W_i))$$  
 因为$$\frac{\partial }{\partial x_l}\displaystyle \sum_{i=l}^{L-1}F(x_i,W_i)$$不会常等于-1,因此梯度不会消失，即使当权重非常小的时候。  
-因此信号对于正向与反向传播，可以直接的从一个单元传到另外一个单元。条件就是skip connection 函数h,激活函数f是恒等映射。函数h是恒等映射时保证梯度不消失或者爆炸的关键。       
+因此信号对于正向与反向传播，可以直接的从一个单元传到另外一个单元。条件就是skip connection 函数h,激活函数f是恒等映射。函数h是恒等映射时保证梯度不消失或者爆炸的关键。 
+他们使用的mini-batch是128，用了2GPUs,权重衰减是0.0001，动量是0.9，权重初始化了。详细的可以看上面给的论文链接。权重每30个epoch变成原来的十分之一。          
 ##### Residual NN模型效果：
 
 ![](/assets/ResiNN_HeKaiming_Result2.png)  

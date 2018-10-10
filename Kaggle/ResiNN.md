@@ -105,7 +105,11 @@ Training Step: 1000  | total loss: 6.41052 | time: 88.615s
 
 ##### Residual-NN的实现
 Residual Block的设计如下：
-![](/assets/ResidualNNStructure.png) 
+![](/assets/ResidualNNStructure.png)   
+对于每一个Residual Units：  
+$$\kern{4 em} y_l = h(x_l) + F(x_l,W_l)$$  
+$$\kern{4 em} x_{l+1}= f(y_l)$$  
+其中函数h一般取恒等映射$$h(x_l) = x_l$$，f是激活函数，取ReLU。F的残差函数。  
 ##### Residual NN模型效果：
 
 ![](/assets/ResiNN_HeKaiming_Result2.png)  

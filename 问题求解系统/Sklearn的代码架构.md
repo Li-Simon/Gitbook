@@ -55,8 +55,10 @@ print(isinstance(May,Child))         # True
 print(isinstance(May,Person))        # True
 print(isinstance(Peter,Child))       # False
 print(isinstance(Peter,Person))      # True
-print(issubclass(Child,Person))      # True   
+print(issubclass(Child,Person))      # True
 ```
 
 class Child\(Person\)表示Child继承于Person，任何类最终都可以追溯到根类object，这与Java,C\#是一样的。
+
+\#\#\#
 

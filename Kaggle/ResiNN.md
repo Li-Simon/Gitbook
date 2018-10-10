@@ -112,7 +112,7 @@ Training Step: 1000  | total loss: 6.41052 | time: 88.615s
 2.随着深度增加，模型的训练误差与测试误差会迅速下滑，这不是overfit造成的。这种现象在CIFAR-10和ImageNet中都有提及。
 
 ##### Residual-NN的实现
-
+[参考He Kaiming的这篇文章](https://arxiv.org/pdf/1603.05027v2.pdf)  
 Residual Block的设计如下：  
 ![](/assets/ResidualNNStructure.png)  
 对于每一个Residual Units：  

@@ -135,7 +135,7 @@ $$\frac{\partial \epsilon}{\partial x_l} = \frac{\partial \epsilon}{\partial x_L
 ##### Residual NN模型效果：
 
 ![](/assets/ResiNN_HeKaiming_Result2.png)  
-Resi-NN能解决以往随着模型加深训练与测试误差变大的现象。与其它网络的结果比较。
+Resi-NN能解决以往随着模型加深训练与测试误差变大的现象。与其它网络的结果比较。  
 ![](/assets/ResiNN_ResultsCompare.png)
 
 #### 模型的改进（Simons）

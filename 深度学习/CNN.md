@@ -122,6 +122,7 @@ Dense Blocks之间通过pooling与convolution来改变图像尺寸。
 
 ##问题集
 1. 为什么1x1的卷积核可以用来降维？  
+1、降维（ dimension reductionality ）。比如，一张500 * 500且厚度depth为100 的图片在20个filter上做1*1的卷积，那么结果的大小为500*500*20。2、加入非线性。卷积层之后经过激励层，1*1的卷积在前一层的学习表示上添加了非线性激励（ non-linear activation ），提升网络的表达能力；
 
 
 

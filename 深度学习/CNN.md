@@ -88,11 +88,12 @@ AlexNet的优点，
 特点：  
 1. 不适用全连接层，而是用平均池化代替全连接层，减小模型的参数数量,这种想法来自于NIN。  
 2. 采用一种高效的机器视觉深度神经网络结构，称为"Inception",这种模块化结构方便增加与修改，现在inception版本到了V6/V7。GoogLeNet中采用了9个inception模块。  
-3. 为了避免梯度小时，网络额外增加了2个辅助的softmax用于向前传导梯度。  
-  
+3. 为了避免梯度小时，网络额外增加了2个辅助的softmax用于向前传导梯度。
 
-GoogLeNet中的Inception
+GoogLeNet中的Inception  
 ![](/assets/GoogLeNetInception.png)  
+GoogLeNet的参数 :可以看出里面用7x7的平均池代替了全连接。   ![](/assets/GoogLeNetParameters.png)
+
 ![](/assets/VGG.png)
 
 ## Residual Net

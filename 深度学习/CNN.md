@@ -84,6 +84,8 @@ AlexNet的优点，
 
 
 ## GoogLeNet
+特点：  
+1. 不适用全连接层，而是用平均池化代替
 ![](/assets/VGG.png)
 
 ## Residual Net

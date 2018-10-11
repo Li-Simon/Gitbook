@@ -1,5 +1,6 @@
 #CNN
 CNN主要是处理空间数据，比如图像数据。CNN主要包含LetNet-5,AlexNet,GoogLeNet,VGG,Residual Net,Dense Net。  
+CNN核心：局部感受野，权值共享，时间或空间亚采样这三种思想来保证某种程度的平移，尺度，形变不变性。  
 ####CNN相对于全连接网络的好处
 减少模型参数数量，减少计算时间。  
 ####CNN的卷积核与特征提取

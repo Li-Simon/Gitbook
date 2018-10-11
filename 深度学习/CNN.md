@@ -2,7 +2,7 @@
 
 CNN主要是处理空间数据，比如图像数据。CNN主要包含LetNet-5,AlexNet,GoogLeNet,VGG,Residual Net,Dense Net。  
 CNN核心：局部感受野，权值共享，时间或空间亚采样这三种思想来保证某种程度的平移，尺度，形变不变性。  
-介绍每种模型的时候，要说明这种模型的优点，最好能阐述为啥会有这种优点。  
+介绍每种模型的时候，要说明这种模型的优点，最好能阐述为啥会有这种优点。
 
 ### CNN基础
 
@@ -70,22 +70,29 @@ if (this->layer_param_.pooling_param().pool() == PoolingParameter_PoolMethod_MAX
 
 ## AlexNet
 
-![](/assets/AlexNet structure.png)
-AlexNet的优点，
+![](/assets/AlexNet structure.png)  
+AlexNet的优点，  
 1. 使用ReLU作为激活函数，消除了sigmoid,tanh造成的梯度消失问题。同时也减小了激活函数的计算量。  
-2. 百万数据和多GPU训练减小了计算时间。
-3. 局部相应归一化(LRN,Local Response Normalization)  
-4. 重叠池化，也就是pooling的尺寸小于步长。   
-5. 通过数据增强(裁剪，平移，尺度变换，水平翻转，加随机光照)与Dropout降低过拟合  
+2. 百万数据和多GPU训练减小了计算时间。  
+3. 局部相应归一化\(LRN,Local Response Normalization\)  
+4. 重叠池化，也就是pooling的尺寸小于步长。  
+5. 通过数据增强\(裁剪，平移，尺度变换，水平翻转，加随机光照\)与Dropout降低过拟合
 
 ## VGG
+
 相对于以前的网络而言，VGG与GoogLeNet的网络变得更深了。VGGNet在整个网络中使用3x3的小感受野，以步长1进行逐像素卷积，因此两个3x3卷积相当于一个5x5,三个3x3卷积核相当于一个7x7的卷积核，这样大大减小了模型的参数个数。  使用了小尺寸的卷积核，增加了网络深度并不会带来明显的参数膨胀，却能在更深的网络中获得更高的精度。  
 ![](/assets/VGG_structure.png)
 
-
 ## GoogLeNet
+
 特点：  
-1. 不适用全连接层，而是用平均池化代替
+1. 不适用全连接层，而是用平均池化代替全连接层，减小模型的参数数量,这种想法来自于NIN。  
+2. 采用一种高效的机器视觉深度神经网络结构，称为"Inception",这种模块化结构方便增加与修改，现在inception版本到了V6/V7。  
+3. 为了避免梯度小时，网络额外增加了2个辅助的softmax用于向前传导梯度。  
+  
+
+GoogLeNet中的Inception
+![](/assets/GoogLeNetInception.png)  
 ![](/assets/VGG.png)
 
 ## Residual Net

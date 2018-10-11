@@ -69,6 +69,8 @@ if (this->layer_param_.pooling_param().pool() == PoolingParameter_PoolMethod_MAX
 
 ## Residual Net
 
+详见第九章项目工作，Residual NN.
+
 ## Dense Net
 
 

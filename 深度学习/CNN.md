@@ -3,7 +3,7 @@
 CNN主要是处理空间数据，比如图像数据。CNN主要包含LetNet-5,AlexNet,GoogLeNet,VGG,Residual Net,Dense Net。  
 CNN核心：局部感受野，权值共享，时间或空间亚采样这三种思想来保证某种程度的平移，尺度，形变不变性。  
 介绍每种模型的时候，要说明这种模型的优点，最好能阐述为啥会有这种优点。  
-为什么1x1的卷积核可以用来降维？  
+
 
 ### CNN基础
 
@@ -119,4 +119,9 @@ Dense net主要通过建立不同层之间的直接连续，充分利用了featu
 Dense Blocks之间通过pooling与convolution来改变图像尺寸。   
 
 ![](/assets/DenseBlocksWithPooling.png)
+
+##问题集
+1. 为什么1x1的卷积核可以用来降维？  
+
+
 

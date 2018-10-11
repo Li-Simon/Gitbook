@@ -32,3 +32,9 @@ S2层为 pooling 层，也可以说是池化或者特征映射的过程，拥有
 #### CNN的pooling的作用
 降维与信息提取。
 
+##AlexNet
+##VGG
+##GoogLeNet
+##Residual Net
+##Dense Net
+

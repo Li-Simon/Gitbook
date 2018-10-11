@@ -58,7 +58,6 @@ if (this->layer_param_.pooling_param().pool() == PoolingParameter_PoolMethod_MAX
     max_idx_.Reshape(bottom[0]->num(), channels_, pooled_height_,pooled_width_);
   }
 ```
-
 源码中有一个max\_idx\_的变量，这个变量就是记录最大值所在位置的，因为在反向传播中要用到，那么假设前向传播和反向传播的过程就如下图所示
 
 ### ImageNet top5 record history

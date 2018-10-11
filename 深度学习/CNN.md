@@ -71,6 +71,12 @@ if (this->layer_param_.pooling_param().pool() == PoolingParameter_PoolMethod_MAX
 ## AlexNet
 
 ![](/assets/AlexNet structure.png)
+AlexNet的优点，
+1. 使用ReLU作为激活函数，消除了sigmoid,tanh造成的梯度消失问题。同时也减小了激活函数的计算量。  
+2. 百万数据和多GPU训练减小了计算时间。
+3. 局部相应归一化(LRN,Local Response Normalization)  
+4. 重叠池化，也就是pooling的尺寸小于步长。   
+5. 通过数据增强(裁剪，平移，尺度变换，水平翻转，加随机光照)与Dropout降低过拟合  
 
 ## VGG
 

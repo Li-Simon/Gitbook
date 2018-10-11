@@ -33,6 +33,7 @@ S2层为 pooling 层，也可以说是池化或者特征映射的过程，拥有
 降维与信息提取。
 ####下采样与上采样的误差怎么传递与反向？
 [卷积神经网络(CNN)反向传播算法](https://www.cnblogs.com/pinard/p/6494810.html)
+[CNN中一些特殊环节的反向传播](https://blog.csdn.net/qq_21190081/article/details/72871704)
 ##AlexNet
 ##VGG
 ##GoogLeNet

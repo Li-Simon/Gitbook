@@ -106,12 +106,19 @@ GoogLeNet的参数 :可以看出里面用7x7的平均池代替了全连接。
 详见第九章项目工作，Residual NN.
 
 ## Dense Net
+
 DenseNet的示意图，主要表现实任意两层间可以有short connection。  
 在ResNets中，只在相邻两层有skip connection.在激活函数是恒等函数的前提下，有：  
 $$\kern{8 em}x_l = H_l(x_{l-1}) + x_{l-1}$$  
 对于Dense Net,l层可以与0，1，...,l-1中任意多层相连。因此有：  
 $$\kern{8 em}x_l = H_l(x_0,x_1,...,x_{l-1})$$  
-DenseNet的一个优点是网络更窄，参数更少，大一部分原因是得益于这种dense block的设计，后面有提到在dense block中每个卷积层的输出feature map数量都很小(小于100)，而不像其他网络一样动不动就是几百上千的宽度。同样这种连接方式使得特征和梯度的传递更加有效，网络也更容易训练。前面提到过梯度消失问题是网络深度越深的时候越容易出现，原因就是输入信息和梯度信息在很多层之间传递导致的，而现在这种dense connection相当于每一层都直接连接input和loss,因此就可以减轻梯度消失现象，这样更深网络不是问题。    
+DenseNet的一个优点是网络更窄，参数更少，大一部分原因是得益于这种dense block的设计，后面有提到在dense block中每个卷积层的输出feature map数量都很小\(小于100\)，而不像其他网络一样动不动就是几百上千的宽度。同样这种连接方式使得特征和梯度的传递更加有效，网络也更容易训练。前面提到过梯度消失问题是网络深度越深的时候越容易出现，原因就是输入信息和梯度信息在很多层之间传递导致的，而现在这种dense connection相当于每一层都直接连接input和loss,因此就可以减轻梯度消失现象，这样更深网络不是问题。  
 Dense net主要通过建立不同层之间的直接连续，充分利用了feature，进一步减轻了梯度消失问题，加深了网络深度，而且训练效果非常好。另外利用bottlenech layer,translation layer以及较小的growth rate使得网络变窄，参数减小，有效抑制了过拟合，同时减小了计算量。  
-![](/assets/DenseNet-Structure.png)  
+![](/assets/DenseNet-Structure.png)
+
+
+
+Block 
+
+![](/assets/DenseBlocksWithPooling.png)
 

@@ -51,9 +51,9 @@ $$\kern{8 em} c_t = f_t*c_{t-1} + i_t*\sigma_c(W_cx_t + b_c)$$
 $$\kern{8 em} h_t = o_t*\sigma_h(c_t)$$  
 和上面的公式比较，发现只是把$$h_{t-1}$$换成了$$c_{t-1}$$，即三个门的输入都改成了\[$$x_t,c_{t-1}$$\],因为是从cell state里取得信息，所以叫窥视管\(peephole\)。  
 把这两种结构结合起来，可以用如下图描述：
-
+![](/assets/LSTM_Structure.png)
 ![](/assets/LSTM_Structure1.png)  
-![](/assets/LSTM_Structure.png)  
+  
 图中连着门的那些虚线都市peephole。三个输入都是\[$$x_t,h_{t-1},c_{t-1}$$\]
 
 ## [GRU](https://blog.csdn.net/zhangxb35/article/details/70060295)

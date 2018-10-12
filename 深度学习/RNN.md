@@ -56,7 +56,7 @@ $$\kern{8 em} h_t = o_t*\sigma_h(c_t)$$
 图中连着门的那些虚线都市peephole。三个输入都是\[$$x_t,h_{t-1},c_{t-1}$$\]
 
 ## [GRU](https://blog.csdn.net/zhangxb35/article/details/70060295)
-
+参考[循环神经网络(RNN, Recurrent Neural Networks)介绍](https://blog.csdn.net/heyongluoyao8/article/details/48636251)  
 GRU这个结构2014年才出现，结构与LSTM类似，效果一样，但是精简一些，参数更少。公式如下：  
 $$\kern{8 em} z_t = \sigma(W_zx_t + U_zh_{t-1})$$  
 $$\kern{8 em} r_t = \sigma(W_rx_t + U_rh_{t-1})$$  

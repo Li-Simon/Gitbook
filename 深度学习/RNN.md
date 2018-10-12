@@ -69,5 +69,5 @@ $$r_t$$是reset gate，决定candidate activation时，是否要放弃以前的a
 $$\hat h_t$$是candidate activation，接收\[$$x_t,h_{t-1}$$\]  
 $$h_t$$是activation，是GRU的隐层，接收\[$$h_{t-1},\hat h_{t}$$\].  
 
-![](/assets/GRU_Struct.png)
-
+![](/assets/GRU_Struct.png)   
+从LSTM和GRU的公式里面可以看出，都会有门操作，决定是否保留上时刻的状态和是否接收此时刻的外部输入，LSTM是用遗忘门和输入门来做到的，GRU则是只用一个更新门($$z_t$$)。  

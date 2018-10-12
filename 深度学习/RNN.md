@@ -27,4 +27,11 @@ $$\kern{8 em} = -\displaystyle \sum_{t} \log p_{model}(y^{(t)}|(x^{(1)},x^{(2)},
 ![](/assets/RNN_DesignPattern_3.png)
 
 ##LSTM
+由于Vanilla RNN具有梯度消失问题，对长关系的依赖的建模能力不够强大，也就是很长时刻以前的输入，对现在的网络影响非常小，后向传播那些梯度也很难影响很早以前的输入，即会出现题都消失的问题。而LSTM通过构建一些门，让网络能记住那些非常重要的信息，而这个核心的结构就是cell state。比如遗忘门，来选择性清空过去的记忆和更新较新的信息。   
+两种常见的LSTM结构。第一种是带遗忘门的Traditional LSTM。公式如下：  
+$$\kern{8 em} f_t = \sigma_g(W_fx_t + U_fh_{t-1} + b_f)$$    
+$$\kern{8 em} i_t = \sigma_g(W_ix_t + U_ih_{t-1} + b_i)$$    
+$$\kern{8 em} o_t = \sigma_g(W_ox_t + U_oh_{t-1} + b_o)$$    
+$$\kern{8 em} c_t = f_t*c_{t-1} + i_t*\sigma_c(W_cx_t + U_ch_{t-1} + b_c)$$    
+$$\kern{8 em} h_t = o_t*\sigma_h(c_f)$$    
 ##GRU

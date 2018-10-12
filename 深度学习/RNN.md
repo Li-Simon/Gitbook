@@ -52,11 +52,12 @@ $$\kern{8 em} h_t = o_t*\sigma_h(c_t)$$
 和上面的公式比较，发现只是把$$h_{t-1}$$换成了$$c_{t-1}$$，即三个门的输入都改成了\[$$x_t,c_{t-1}$$\],因为是从cell state里取得信息，所以叫窥视管\(peephole\)。  
 把这两种结构结合起来，可以用如下图描述：
 
-![](/assets/LSTM_Structure1.png)   
+![](/assets/LSTM_Structure1.png)  
 ![](/assets/LSTM_Structure.png)  
 图中连着门的那些虚线都市peephole。三个输入都是\[$$x_t,h_{t-1},c_{t-1}$$\]
 
 ## GRU
+
 GRU这个结构2014年才出现，结构与LSTM类似，效果一样，但是精简一些，参数更少。公式如下：  
 $$\kern{8 em} z_t = \sigma(W_zx_t + U_zh_{t-1})$$  
 $$\kern{8 em} r_t = \sigma(W_rx_t + U_rh_{t-1})$$  
@@ -64,8 +65,9 @@ $$\kern{8 em} \hat h_t = \tanh(Wx_t + U(r_t*h_{t-1}))$$
 $$\kern{8 em} h_t = (1-z_t)*h_{t-1} + z_t*\hat h_t$$  
 四行的解释如下：  
 $$z_t$$是update gate，更新activation时的逻辑门。  
-$$r_t$$是reset gate，决定candidate activation时，是否要放弃以前的activate $$h_t$$
-$$\hat h_t$$是candidate activation，接收[$$x_t,h_{t-1}$$]  
-$$h_t$$是activation，是GRU的隐层，接收[$$h_{t-1},\hat h_{t}$$] 
-![](/assets/GRU_Structure.png)
+$$r_t$$是reset gate，决定candidate activation时，是否要放弃以前的activate $$h_t$$  
+$$\hat h_t$$是candidate activation，接收\[$$x_t,h_{t-1}$$\]  
+$$h_t$$是activation，是GRU的隐层，接收\[$$h_{t-1},\hat h_{t}$$\].  
+
+![](/assets/GRU_Struct.png)
 

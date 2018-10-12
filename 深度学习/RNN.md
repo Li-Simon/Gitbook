@@ -41,7 +41,8 @@ $$\kern{8 em} c_t = f_t*c_{t-1} + i_t*\sigma_c(W_cx_t + U_ch_{t-1} + b_c)$$
 $$\kern{8 em} h_t = o_t*\sigma_h(c_t)$$  
 前三行是三个门，分别是遗忘门f,输入门i,输出门o,输入都是$$x_t,h_{t-1}$$,只是参数不同，然后要经过一个激活函数把值缩放到\[0,1\]之间，第四行$$c_t$$是cell state,由上一时刻的$$c_{t-1}$$和输入得到,两者相互独立。如果遗忘门$$f_t$$取0的话，那么上一时刻的状态就会全部被清空，然后只关注此时刻的输入。输入门$$i_t$$决定是否接收此时刻的输入，最后输出门$$o_t$$决定是否输出cell state。  
 $$\kern{8 em}\hat c = \sigma_c(W_cx_t + U_ch_{t-1} + b_c)$$  
-因此有$$c_t = f_t*c_{t-1} + i_t*\hat c$$.
+因此有$$c_t = f_t*c_{t-1} + i_t*\hat c$$.  
+这样一来cell state的更新来源就明显了，一部分是上时刻的自己，一部分是new memory content，而且两个来源是相互独立地由两个门控制的。遗忘门控制是否记住以前的那些特征，输入们决定是否接受当前的输入。后面可以看到GRU其实把这两个门合二为一了。  
 第二种是带遗忘门的Peephole LSTM，公式如下：  
 $$\kern{8 em} f_t = \sigma_g(W_fx_t + U_fc_{t-1} + b_f)$$  
 $$\kern{8 em} i_t = \sigma_g(W_ix_t + U_ic_{t-1} + b_i)$$  

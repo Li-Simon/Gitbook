@@ -50,10 +50,9 @@ $$\kern{8 em} o_t = \sigma_g(W_ox_t + U_oc_{t-1} + b_o)$$
 $$\kern{8 em} c_t = f_t*c_{t-1} + i_t*\sigma_c(W_cx_t + b_c)$$  
 $$\kern{8 em} h_t = o_t*\sigma_h(c_t)$$  
 和上面的公式比较，发现只是把$$h_{t-1}$$换成了$$c_{t-1}$$，即三个门的输入都改成了\[$$x_t,c_{t-1}$$\],因为是从cell state里取得信息，所以叫窥视管\(peephole\)。  
-把这两种结构结合起来，可以用如下图描述：
+把这两种结构结合起来，可以用如下图描述：  
 ![](/assets/LSTM_Structure.png)
-![](/assets/LSTM_Structure1.png)  
-  
+
 图中连着门的那些虚线都市peephole。三个输入都是\[$$x_t,h_{t-1},c_{t-1}$$\]
 
 ## [GRU](https://blog.csdn.net/zhangxb35/article/details/70060295)
@@ -67,9 +66,12 @@ $$\kern{8 em} h_t = (1-z_t)*h_{t-1} + z_t*\hat h_t$$
 $$z_t$$是update gate，更新activation时的逻辑门。  
 $$r_t$$是reset gate，决定candidate activation时，是否要放弃以前的activate $$h_t$$  
 $$\hat h_t$$是candidate activation，接收\[$$x_t,h_{t-1}$$\]  
-$$h_t$$是activation，是GRU的隐层，接收\[$$h_{t-1},\hat h_{t}$$\].  
+$$h_t$$是activation，是GRU的隐层，接收\[$$h_{t-1},\hat h_{t}$$\].
 
-![](/assets/GRU_Struct.png)   
-从LSTM和GRU的公式里面可以看出，都会有门操作，决定是否保留上时刻的状态和是否接收此时刻的外部输入，LSTM是用遗忘门和输入门来做到的，GRU则是只用一个更新门($$z_t$$)。   
+![](/assets/GRU_LSTM_Structure.png)
+
+  
+从LSTM和GRU的公式里面可以看出，都会有门操作，决定是否保留上时刻的状态和是否接收此时刻的外部输入，LSTM是用遗忘门和输入门来做到的，GRU则是只用一个更新门\($$z_t$$\)。  
 这种设计有两种解释，一种解释是说，网络是能很容易记住长依赖问题。即前面很久之前出现过一个重要的特征，如果遗忘门或者更新门选择不重写内部的memory，那么网络就会一直记住之前的重要特征，那么会对当前或者未来继续产生影响。另一点是，这种设计可以不同状态之间提供一条捷径，那么梯度回传的时候不会消失的太快，因此减缓了梯度消失带来的训练难问题。  
-LSTM 和GRU的不同点。首先LSTM有一个输出门来控制memory content的曝光程度，而GRU则是直接输出。另外一点是要更新的new memory content的来源不同，$$\hat h_t$$会通过重置门控制从$$h_{t-1}$$中得到信息的力度，而$$\hat c_t$$则没有，而是直接输入$$h_{t-1}$$。  
+LSTM 和GRU的不同点。首先LSTM有一个输出门来控制memory content的曝光程度，而GRU则是直接输出。另外一点是要更新的new memory content的来源不同，$$\hat h_t$$会通过重置门控制从$$h_{t-1}$$中得到信息的力度，而$$\hat c_t$$则没有，而是直接输入$$h_{t-1}$$。
+

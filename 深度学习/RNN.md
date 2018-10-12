@@ -1,6 +1,9 @@
-#RNN
-循环神经网络主要用于序列模型，为了捕获CNN捕获不了的序列的长程关联。LSTM的提出是为了弥补传统RNN梯度消失的问题，GRU是为了弥补LSTM的 ..  
-##RNN
+# RNN
+
+循环神经网络主要用于序列模型，为了捕获CNN捕获不了的序列的长程关联。LSTM的提出是为了弥补传统RNN梯度消失的问题，GRU是为了弥补LSTM的 ..
+
+## RNN
+
 ### 循环神经网络
 
 循环神经网络中一些重要的设计模式包含如下几种：  
@@ -8,41 +11,51 @@
 RNN的输入到隐藏的连接由权值矩阵U参数化，隐藏到隐藏的循环由权重矩阵W参数化，隐藏到输出层的连接由权重矩阵V参数化。$$L^{(t)}$$是损失函数。  
 ![](/assets/RNN_General.png)  
 前向传播公式：假设激活函数是tanh，我们有如下的更新方程：  
-$$\kern{8 em} \mathbf{a}^{(t)} = \mathbf{b} + \mathbf{W}\mathbf{h}^{(t-1)} + \mathbf{U}x^{(t)}$$    
-$$\kern{8 em} \mathbf{h}^{(t)} = \tanh(\mathbf{a})$$    
-$$\kern{8 em} \mathbf{o}^{(t)} = \mathbf{c} + \mathbf{V}\mathbf{h}^{(t)} $$    
-$$\kern{8 em} \mathbf{\hat y}^{(t)} = softmax(\mathbf{o}^{(t)})$$    
+$$\kern{8 em} \mathbf{a}^{(t)} = \mathbf{b} + \mathbf{W}\mathbf{h}^{(t-1)} + \mathbf{U}x^{(t)}$$  
+$$\kern{8 em} \mathbf{h}^{(t)} = \tanh(\mathbf{a})$$  
+$$\kern{8 em} \mathbf{o}^{(t)} = \mathbf{c} + \mathbf{V}\mathbf{h}^{(t)} $$  
+$$\kern{8 em} \mathbf{\hat y}^{(t)} = softmax(\mathbf{o}^{(t)})$$  
 其中$$\mathbf{b},\mathbf{c}$$是偏置向量,$$\mathbf{U},\mathbf{V},\mathbf{W}$$是权重矩阵。  
 这一循环网络将一个输入序列映射到相同长度的输出序列。与$$\mathbf{x}$$序列配对的$$\mathbf{y}$$的总的损失就是所有时间步的损失之和。例如，$${L}^{(t)}$$为给定的$$x^{(1)},x^{(2)},...,x^{(t)}$$后$$y^{(t)}$$的负对数似然，则：  
 $$\kern{8 em} L((x^{(1)},x^{(2)},...,x^{(\tau)}),(y^{(1)},y^{(2)},...,y^{(\tau)})) = \displaystyle \sum_{t} L^{(t)}$$  
 $$\kern{8 em} = -\displaystyle \sum_{t} \log p_{model}(y^{(t)}|(x^{(1)},x^{(2)},...,x^{(t)})$$  
-其中$$p_{model}(y^{(t)}|(x^{(1)},x^{(2)},...,x^{(t)})$$需要读取模型输出向量$$\mathbf{\hat y}^{(t)}$$对应于$$\mathbf{y}^{(t)}$$的项。
-应用于展开图且代价为$$O(\tau)$$的反向传播算法是通过时间反向传播(back-propagation through time, BPTT)。  
+其中$$p_{model}(y^{(t)}|(x^{(1)},x^{(2)},...,x^{(t)})$$需要读取模型输出向量$$\mathbf{\hat y}^{(t)}$$对应于$$\mathbf{y}^{(t)}$$的项。  
+应用于展开图且代价为$$O(\tau)$$的反向传播算法是通过时间反向传播\(back-propagation through time, BPTT\)。  
 \(2\)每个时间步都产生一个输出，只有当前时刻的输出到下个时刻的隐藏单元之间有循环连接的循环网络。如下图所示：  
-该图中，RNN被训练将特定输出值放入o中，并且o是被允许传播到未来的唯一信息。此处没有从h前向传播的直接连接。之前的h仅通过产生的预测间接地连接到当前。o通常缺乏过去的重要信息，除非它非常高维并且内容丰富。这使得该图中的RNN不那么强大，但是它更容易训练，因为每个时间步可以与其他时间步分离训练，允许训练期间更多的并行化。  
+该图中，RNN被训练将特定输出值放入o中，并且o是被允许传播到未来的唯一信息。此处没有从h前向传播的直接连接。之前的h仅通过产生的预测间接地连接到当前。o通常缺乏过去的重要信息，除非它非常高维并且内容丰富。这使得该图中的RNN不那么强大，但是它更容易训练，因为每个时间步可以与其他时间步分离训练，允许训练期间更多的并行化。
 
 ![](/assets/RNN_DesignPattern_2.png)  
 \(3\)隐藏单元之间存在循环连接，但读取整个序列后产生单个输出的循环网络，如下图所示：  
-这样的网络可以用于概括序列并产生用于进一步处理的固定大小的表示。在结束处可能存在目标，或者通过更下游模块的反向传播来获得输出$$o^{(t)}$$上的梯度。
+这样的网络可以用于概括序列并产生用于进一步处理的固定大小的表示。在结束处可能存在目标，或者通过更下游模块的反向传播来获得输出$$o^{(t)}$$上的梯度。  
 ![](/assets/RNN_DesignPattern_3.png)
 
-##LSTM
-由于Vanilla RNN具有梯度消失问题，对长关系的依赖的建模能力不够强大，也就是很长时刻以前的输入，对现在的网络影响非常小，后向传播那些梯度也很难影响很早以前的输入，即会出现题都消失的问题。而LSTM通过构建一些门，让网络能记住那些非常重要的信息，而这个核心的结构就是cell state。比如遗忘门，来选择性清空过去的记忆和更新较新的信息。   
+## LSTM
+
+由于Vanilla RNN具有梯度消失问题，对长关系的依赖的建模能力不够强大，也就是很长时刻以前的输入，对现在的网络影响非常小，后向传播那些梯度也很难影响很早以前的输入，即会出现题都消失的问题。而LSTM通过构建一些门，让网络能记住那些非常重要的信息，而这个核心的结构就是cell state。比如遗忘门，来选择性清空过去的记忆和更新较新的信息。  
 两种常见的LSTM结构。  
 第一种是带遗忘门的Traditional LSTM。公式如下：  
-$$\kern{8 em} f_t = \sigma_g(W_fx_t + U_fh_{t-1} + b_f)$$    
-$$\kern{8 em} i_t = \sigma_g(W_ix_t + U_ih_{t-1} + b_i)$$    
-$$\kern{8 em} o_t = \sigma_g(W_ox_t + U_oh_{t-1} + b_o)$$    
-$$\kern{8 em} c_t = f_t*c_{t-1} + i_t*\sigma_c(W_cx_t + U_ch_{t-1} + b_c)$$    
-$$\kern{8 em} h_t = o_t*\sigma_h(c_t)$$   
-前三行是三个门，分别是遗忘门f,输入门i,输出门o,输入都是$$x_t,h_{t-1}$$,只是参数不同，然后要经过一个激活函数把值缩放到[0,1]之间，第四行$$c_t$$是cell state,由上一时刻的$$c_{t-1}$$和输入得到,两者相互独立。如果遗忘门$$f_t$$取0的话，那么上一时刻的状态就会全部被清空，然后只关注此时刻的输入。输入门$$i_t$$决定是否接收此时刻的输入，最后输出门$$o_t$$决定是否输出cell state。  
-第二种是带遗忘门的Peephole LSTM，公式如下：  
-$$\kern{8 em} f_t = \sigma_g(W_fx_t + U_fc_{t-1} + b_f)$$    
-$$\kern{8 em} i_t = \sigma_g(W_ix_t + U_ic_{t-1} + b_i)$$    
-$$\kern{8 em} o_t = \sigma_g(W_ox_t + U_oc_{t-1} + b_o)$$    
-$$\kern{8 em} c_t = f_t*c_{t-1} + i_t*\sigma_c(W_cx_t + b_c)$$    
+$$\kern{8 em} f_t = \sigma_g(W_fx_t + U_fh_{t-1} + b_f)$$  
+$$\kern{8 em} i_t = \sigma_g(W_ix_t + U_ih_{t-1} + b_i)$$  
+$$\kern{8 em} o_t = \sigma_g(W_ox_t + U_oh_{t-1} + b_o)$$  
+$$\kern{8 em} c_t = f_t*c_{t-1} + i_t*\sigma_c(W_cx_t + U_ch_{t-1} + b_c)$$  
 $$\kern{8 em} h_t = o_t*\sigma_h(c_t)$$  
-和上面的公式比较，发现只是把$$h_{t-1}$$换成了$$c_{t-1}$$，即三个门的输入都改成了[$$x_t,c_{t-1}$$],因为是从cell state里取得信息，所以叫窥视管(peephole)。  
+前三行是三个门，分别是遗忘门f,输入门i,输出门o,输入都是$$x_t,h_{t-1}$$,只是参数不同，然后要经过一个激活函数把值缩放到\[0,1\]之间，第四行$$c_t$$是cell state,由上一时刻的$$c_{t-1}$$和输入得到,两者相互独立。如果遗忘门$$f_t$$取0的话，那么上一时刻的状态就会全部被清空，然后只关注此时刻的输入。输入门$$i_t$$决定是否接收此时刻的输入，最后输出门$$o_t$$决定是否输出cell state。  
+$$\kern{8 em}\hat c = \sigma_c(W_cx_t + U_ch_{t-1} + b_c)$$  
+因此有$$c_t = f_t*c_{t-1} + i_t*\hat c$$.
+第二种是带遗忘门的Peephole LSTM，公式如下：  
+$$\kern{8 em} f_t = \sigma_g(W_fx_t + U_fc_{t-1} + b_f)$$  
+$$\kern{8 em} i_t = \sigma_g(W_ix_t + U_ic_{t-1} + b_i)$$  
+$$\kern{8 em} o_t = \sigma_g(W_ox_t + U_oc_{t-1} + b_o)$$  
+$$\kern{8 em} c_t = f_t*c_{t-1} + i_t*\sigma_c(W_cx_t + b_c)$$  
+$$\kern{8 em} h_t = o_t*\sigma_h(c_t)$$  
+和上面的公式比较，发现只是把$$h_{t-1}$$换成了$$c_{t-1}$$，即三个门的输入都改成了\[$$x_t,c_{t-1}$$\],因为是从cell state里取得信息，所以叫窥视管\(peephole\)。  
 把这两种结构结合起来，可以用如下图描述：  
 
-##GRU
+![](/assets/LSTM_Structure1.png) 
+![](/assets/LSTM_Structure.png)  
+图中连着门的那些虚线都市peephole。三个输入都是\[$$x_t,h_{t-1},c_{t-1}$$\]
+
+## GRU
+
+
+

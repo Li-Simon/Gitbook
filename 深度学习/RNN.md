@@ -56,7 +56,7 @@ $$\kern{8 em} h_t = o_t*\sigma_h(c_t)$$
 ![](/assets/LSTM_Structure.png)  
 图中连着门的那些虚线都市peephole。三个输入都是\[$$x_t,h_{t-1},c_{t-1}$$\]
 
-## GRU
+## [GRU](https://blog.csdn.net/zhangxb35/article/details/70060295)
 
 GRU这个结构2014年才出现，结构与LSTM类似，效果一样，但是精简一些，参数更少。公式如下：  
 $$\kern{8 em} z_t = \sigma(W_zx_t + U_zh_{t-1})$$  

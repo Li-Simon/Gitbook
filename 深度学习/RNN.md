@@ -77,7 +77,6 @@ LSTM 和GRU的不同点。首先LSTM有一个输出门来控制memory content的
 
 ## Clockwork RNNs
 CW-RNNs，时钟频率驱动循环神经网络
-
 ![](/assets/CW_RNN_LSTM_result.png)
 上图中，绿色实线是预测结果，蓝色散点是真实结果。每个模型都是对前半部分进行学习，然后预测后半部分。LSTMs模型类似滑动平均，但是CW-RNNs效果更好。其中三个模型的输入层、隐藏层、输出层的节点数都相同，并且只有一个隐藏层，权值都使用均值为0，标准差为0.1的高斯分布进行初始化，隐藏层的初始状态都为0，每一个模型都使用Nesterov-style  momentum SGD(Stochastic Gradient Descent，随机梯度下降算法)进行学习与优化
 

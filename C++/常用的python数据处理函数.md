@@ -300,7 +300,7 @@ country iso2 iso3 province
 Another
 ```
 
-另外一个场景是，我们对同一个数据集的不同columns进行合并，也就是对标签进行合并。index就是样本标号。  
+另外一个场景是，我们对同一个数据集的不同columns进行合并，也就是对标签进行合并。index就是样本标号。
 
 ```py
 In [32]: df1 = pd.DataFrame({'col1': ['col10', 'col11', 'col12', 'col13'],
@@ -330,6 +330,6 @@ col1 col2 col3 col4 Col4 col2 col6
 6 NaN NaN NaN NaN Col46 col26 col66
 7 NaN NaN NaN NaN Col47 col27 col67
 ```
-
+####Database Style Concatenations Using the merge Command
 
 

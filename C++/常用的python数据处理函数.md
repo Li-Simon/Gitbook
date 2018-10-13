@@ -300,5 +300,36 @@ country iso2 iso3 province
 Another
 ```
 
+另外一个场景是，我们对同一个数据集的不同columns进行合并，也就是对标签进行合并。index就是样本标号。  
+
+```py
+In [32]: df1 = pd.DataFrame({'col1': ['col10', 'col11', 'col12', 'col13'],
+...: 'col2': ['col20', 'col21', 'col22', 'col23'],
+...: 'col3': ['col30', 'col31', 'col32', 'col33'],
+...: 'col4': ['col40', 'col41', 'col42', 'col43']},
+...: index=[0, 1, 2, 3])
+
+In [33]: df1
+Out[33]:
+col1 col2 col3 col4
+0 col10 col20 col30 col40
+1 col11 col21 col31 col41
+2 col12 col22 col32 col42
+3 col13 col23 col33 col43
+In [34]: df4 = pd.DataFrame({'col2': ['col22', 'col23', 'col26', 'col27'],
+...: 'Col4': ['Col42', 'Col43', 'Col46', 'Col47'],
+...: 'col6': ['col62', 'col63', 'col66', 'col67']},
+...: index=[2, 3, 6, 7])
+In [37]: pd.concat([df1,df4], axis=1)
+Out[37]:
+col1 col2 col3 col4 Col4 col2 col6
+0 col10 col20 col30 col40 NaN NaN NaN
+1 col11 col21 col31 col41 NaN NaN NaN
+2 col12 col22 col32 col42 Col42 col22 col62
+3 col13 col23 col33 col43 Col43 col23 col63
+6 NaN NaN NaN NaN Col46 col26 col66
+7 NaN NaN NaN NaN Col47 col27 col67
+```
+
 
 

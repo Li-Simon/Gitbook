@@ -330,6 +330,10 @@ col1 col2 col3 col4 Col4 col2 col6
 6 NaN NaN NaN NaN Col46 col26 col66
 7 NaN NaN NaN NaN Col47 col27 col67
 ```
-####Database Style Concatenations Using the merge Command
 
+#### Database Style Concatenations Using the merge Command
+
+The most familiar way to concatenate data \(for those acquainted with relational databases\) is using the join operation provided by the databases. Pandas provides a database friendly set of join operations for dataframes. These operations are optimized for high performance and are often the preferred method for joining disparate dataframes. Joining by columns: This is the most natural way of joining two dataframes. In this method, we have two dataframes sharing a common column and we can join the two dataframes using that column. The pandas library has a full range of join operations \(inner, outer, left, right, etc.\) and we will demonstrate the use of inner join in this sub-section. You can easily figure out how to do the rest of join operations by
+
+checking out the pandas documentation. For this example, we will break our original cities data into two different dataframes, one having the city information and the other having the country information. Then, we can join them using one of the shared common columns.
 

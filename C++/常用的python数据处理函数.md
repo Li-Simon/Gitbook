@@ -338,3 +338,19 @@ The most familiar way to concatenate data \(for those acquainted with relational
 
  For this example, we will break our original cities data into two different dataframes, one having the city information and the other having the country information. Then, we can join them using one of the shared common columns.
 
+######Lasso输出系数
+
+
+```py
+    def train(self):
+        x_train, y_train, x_test, y_test = self.load_data()
+        lasso = Lasso(random_state=0)
+        alphas = np.logspace(-4, -0.5, 30)
+        estimator = GridSearchCV(lasso, dict(alpha=alphas))
+        estimator.fit(x_train, y_train)
+        lasso.fit(x_train, y_train)
+        print "coef_ = ", lasso.coef_
+        return estimator
+
+```
+

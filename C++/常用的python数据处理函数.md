@@ -76,7 +76,7 @@ city city_ascii lat lng pop country \
 
 #### Slicing and Dicing
 
-数据切片，提取特定标签的数据。  
+数据切片，提取特定标签的数据。
 
 ```py
 In [12]: series_es = city_data.lat//提取lat标签的数据
@@ -110,6 +110,20 @@ Out[23]:
 5 32.850000
 6 34.866000
 Name: lat, dtype: float64
+```
+
+##### iloc
+
+提取多少行\(数据样本数目\)，多少列\(标签数目\)。比如提取前4个标签的前5行数据。  
+```py
+In [28]: city_data.iloc[:5,:4]
+Out[28]:
+city city_ascii lat lng
+0 Qal eh-ye Now Qal eh-ye 34.983000 63.133300
+1 Chaghcharan Chaghcharan 34.516701 65.250001
+2 Lashkar Gah Lashkar Gah 31.582998 64.360000
+3 Zaranj Zaranj 31.112001 61.886998
+4 Tarin Kowt Tarin Kowt 32.633298 65.866699
 ```
 
 

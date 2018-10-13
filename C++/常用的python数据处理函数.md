@@ -174,7 +174,7 @@ Out[59]: numpy.ndarray
 ```
 
 ##### Missing Data and the fillna Function
-
+填补缺失值。  
 ```py
 In [65]: df.iloc[4,2] = NA
 In [66]: df

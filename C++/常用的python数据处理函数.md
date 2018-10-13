@@ -61,9 +61,9 @@ df = pd.read\_sql\(query, conn\)
 
 #### Head and Tail
 
-head提供dataframe前面几行数据，tail提供dataframe倒数几行数据。  
+head提供dataframe前面几行数据，tail提供dataframe倒数几行数据。
 
-```
+```py
 In [11]: city_data.tail()
 Out[11]:
 city city_ascii lat lng pop country \
@@ -72,6 +72,34 @@ city city_ascii lat lng pop country \
 7319 Chitungwiza Chitungwiza -18.000001 31.100003 331071.0 Zimbabwe
 7320 Harare Harare -17.817790 31.044709 1557406.5 Zimbabwe
 7321 Bulawayo Bulawayo -20.169998 28.580002 697096.0 Zimbabwe
+```
+
+#### Slicing and Dicing
+
+数据切片，提取特定标签的数据。  
+
+```py
+In [12]: series_es = city_data.lat//提取lat标签的数据
+In [13]: type(series_es)
+Out[13]: pandas.core.series.Series
+In [14]: series_es[1:10:2]
+Out[14]:
+1 34.516701
+3 31.112001
+5 32.850000
+7 36.729999
+9 34.650000
+Name: lat, dtype: float64
+In [15]: series_es[:7]
+Out[15]:
+0 34.983000
+1 34.516701
+2 31.582998
+3 31.112001
+4 32.633298
+5 32.850000
+6 34.866000
+Name: lat, dtype: float64
 ```
 
 

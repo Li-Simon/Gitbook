@@ -114,7 +114,8 @@ Name: lat, dtype: float64
 
 ##### iloc
 
-提取多少行\(数据样本数目\)，多少列\(标签数目\)。比如提取前4个标签的前5行数据。  
+提取多少行\(数据样本数目\)，多少列\(标签数目\)。比如提取前4个标签的前5行数据。
+
 ```py
 In [28]: city_data.iloc[:5,:4]
 Out[28]:
@@ -125,6 +126,29 @@ city city_ascii lat lng
 3 Zaranj Zaranj 31.112001 61.886998
 4 Tarin Kowt Tarin Kowt 32.633298 65.866699
 ```
-#####带判断的搜索
+
+##### 带判断的搜索
+
+select cities that have population of more than 10 million and select columns that start with the letter l:
+
+```py
+In [56]: city_data[city_data['pop'] >
+10000000][city_data.columns[pd.Series(city_data.columns).str.
+startswith('l')]]
+Out[53]:
+lat lng
+360 -34.602502 -58.397531
+1171 -23.558680 -46.625020
+2068 31.216452 121.436505
+3098 28.669993 77.230004
+3110 19.016990 72.856989
+3492 35.685017 139.751407
+4074 19.442442 -99.130988
+4513 24.869992 66.990009
+5394 55.752164 37.615523
+6124 41.104996 29.010002
+7071 40.749979 -73.980017
+```
+
 
 

@@ -251,9 +251,9 @@ Out[85]:
 4 1.009850e+04
 ```
 
+Describe用来出数据的所有统计属性。  
+Pandas also provides us with another very handy function called describe. This function will calculate the most important statistics for numerical data in one go so that we don’t have to use individual functions.
 
-Pandas also provides us with another very handy function called describe. This function will calculate
-the most important statistics for numerical data in one go so that we don’t have to use individual functions.
 ```py
 In [86]: city_data[columns_numeric].describe()
 Out[86]:
@@ -267,7 +267,6 @@ min -89.982894 -179.589979 -9.900000e+01
 75% 43.575448 73.103628 2.001726e+05
 max 82.483323 179.383304 2.200630e+07
 ```
-
 
 
 

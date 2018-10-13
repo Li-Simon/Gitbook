@@ -57,6 +57,7 @@ df = pd.read\_sql\(query, conn\)
 
 ###Data Access
 ####Head and Tail
+head提供dataframe前面几行数据，tail提供dataframe倒数几行数据。  
 
 
 

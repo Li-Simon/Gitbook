@@ -2,8 +2,10 @@
 
 ## pandas
 
-### 处理结构化数据(Data Retrieval)DataFrame
-####List of Dictionaries to DataFrame
+### 处理结构化数据\(Data Retrieval\)DataFrame
+
+#### List of Dictionaries to DataFrame
+
 ```py
 In[27]: import pandas as pd
 In[28]: d = [{'city':'Delhi',"data":1000},
@@ -55,9 +57,22 @@ conn = pymssql.connect\(server=server, user=user, password=password, database=da
 query = "select \* from some\_table"  
 df = pd.read\_sql\(query, conn\)
 
-###Data Access
-####Head and Tail
+### Data Access
+
+#### Head and Tail
+
 head提供dataframe前面几行数据，tail提供dataframe倒数几行数据。  
+
+```
+In [11]: city_data.tail()
+Out[11]:
+city city_ascii lat lng pop country \
+7317 Mutare Mutare -18.970019 32.650038 216785.0 Zimbabwe
+7318 Kadoma Kadoma -18.330006 29.909947 56400.0 Zimbabwe
+7319 Chitungwiza Chitungwiza -18.000001 31.100003 331071.0 Zimbabwe
+7320 Harare Harare -17.817790 31.044709 1557406.5 Zimbabwe
+7321 Bulawayo Bulawayo -20.169998 28.580002 697096.0 Zimbabwe
+```
 
 
 

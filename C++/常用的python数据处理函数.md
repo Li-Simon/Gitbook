@@ -174,7 +174,9 @@ Out[59]: numpy.ndarray
 ```
 
 ##### Missing Data and the fillna Function
-填补缺失值。  
+
+填补缺失值。
+
 ```py
 In [65]: df.iloc[4,2] = NA
 In [66]: df
@@ -200,7 +202,46 @@ A B C
 6 -0.783522 0.167165 -0.426007
 7 0.498378 -0.950698 2.342104
 ```
-#####Descriptive Statistics Functions 统计属性
+
+##### Descriptive Statistics Functions 统计属性
+
+```py
+In [76]: columns_numeric = ['lat','lng','pop']
+In [78]: city_data[columns_numeric].mean()
+Out[78]:
+lat 20.662876
+lng 10.711914
+pop 265463.071633
+dtype: float64
+
+In [79]: city_data[columns_numeric].sum()
+Out[79]:
+lat 1.512936e+05
+lng 7.843263e+04
+pop 1.943721e+09
+dtype: float64
+
+In [80]: city_data[columns_numeric].count()
+Out[80]:
+lat 7322
+lng 7322
+pop 7322
+dtype: int64
+
+In [81]: city_data[columns_numeric].median()
+Out[81]:
+lat 26.792730
+lng 18.617509
+pop 61322.750000
+dtype: float64
+
+In [83]: city_data[columns_numeric].quantile(0.8)
+Out[83]:
+lat 46.852480
+lng 89.900018
+pop 269210.000000
+dtype: float64
+```
 
 
 

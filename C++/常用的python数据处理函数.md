@@ -152,7 +152,7 @@ lat lng
 
 ### Data Operations
 
-Using the values attribute of the output dataframe, we can treat it in the same way as a numpy array.利用值属性，我们可以为dataframe填充数据，做缺失值处理。  
+Using the values attribute of the output dataframe, we can treat it in the same way as a numpy array.利用值属性，我们可以为dataframe填充数据，做缺失值处理。
 
 ```py
 In [55]: df = pd.DataFrame(np.random.randn(8, 3),
@@ -173,5 +173,33 @@ In [59]: type(nparray)
 Out[59]: numpy.ndarray
 ```
 
-缺失值处理
+##### Missing Data and the fillna Function
+
+```py
+In [65]: df.iloc[4,2] = NA
+In [66]: df
+Out[66]:
+A B C
+0 -0.271131 0.084627 -1.707637
+1 1.895796 0.590270 -0.505681
+2 -0.628760 -1.623905 1.143701
+3 0.005082 1.316706 -0.792742
+4 0.135748 -0.274006 NaN
+5 1.068555 0.669145 0.128079
+6 -0.783522 0.167165 -0.426007
+7 0.498378 -0.950698 2.342104
+In [70]: df.fillna (0)
+Out[70]:
+A B C
+0 -0.271131 0.084627 -1.707637
+1 1.895796 0.590270 -0.505681
+2 -0.628760 -1.623905 1.143701
+3 0.005082 1.316706 -0.792742
+4 0.135748 -0.274006 0.000000
+5 1.068555 0.669145 0.128079
+6 -0.783522 0.167165 -0.426007
+7 0.498378 -0.950698 2.342104
+```
+
+
 

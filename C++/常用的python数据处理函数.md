@@ -241,7 +241,33 @@ lat 46.852480
 lng 89.900018
 pop 269210.000000
 dtype: float64
+
+In [85]: city_data[columns_numeric].sum(axis = 1)
+Out[85]:
+0 3.095116e+03
+1 1.509977e+04
+2 2.016419e+05
+3 4.994400e+04
+4 1.009850e+04
 ```
+
+
+Pandas also provides us with another very handy function called describe. This function will calculate
+the most important statistics for numerical data in one go so that we don’t have to use individual functions.
+```py
+In [86]: city_data[columns_numeric].describe()
+Out[86]:
+lat lng pop
+count 7322.000000 7322.000000 7.322000e+03
+mean 20.662876 10.711914 2.654631e+05
+std 29.134818 79.044615 8.287622e+05
+min -89.982894 -179.589979 -9.900000e+01
+25% -0.324710 -64.788472 1.734425e+04
+50% 26.792730 18.617509 6.132275e+04
+75% 43.575448 73.103628 2.001726e+05
+max 82.483323 179.383304 2.200630e+07
+```
+
 
 
 

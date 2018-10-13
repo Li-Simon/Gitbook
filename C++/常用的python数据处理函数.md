@@ -129,7 +129,8 @@ city city_ascii lat lng
 
 ##### 带判断的搜索
 
-select cities that have population of more than 10 million and select columns that start with the letter l:
+select cities that have population of more than 10 million and select columns that start with the letter l:
+
 ```py
 In [56]: city_data[city_data['pop'] >
 10000000][city_data.columns[pd.Series(city_data.columns).str.

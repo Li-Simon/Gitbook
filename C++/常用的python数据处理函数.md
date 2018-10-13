@@ -267,6 +267,33 @@ min -89.982894 -179.589979 -9.900000e+01
 75% 43.575448 73.103628 2.001726e+05
 max 82.483323 179.383304 2.200630e+07
 ```
+###Concatenating Dataframes
+由于我们需要处理的数据通常有多个，因此我们需要合并这些数据。pandas提供了很多函数来支持数据的合并。  
+####Concatenating Using the concat method
+合并两组，每组随机选择3个样本。  
+```py
+In [25]: city_data1 = city_data.sample(3)
+In [26]: city_data2 = city_data.sample(3)
+In [29]: city_data_combine = pd.concat([city_data1,city_data2])
+In [30]: city_data_combine
+Out[30]:
+city city_ascii lat lng pop \
+4255 Groningen Groningen 53.220407 6.580001 198941.0
+5171 Tambov Tambov 52.730023 41.430019 296207.5
+4204 Karibib Karibib -21.939003 15.852996 6898.0
+4800 Focsani Focsani 45.696551 27.186547 92636.5
+1183 Pleven Pleven 43.423769 24.613371 110445.5
+7005 Indianapolis Indianapolis 39.749988 -86.170048 1104641.5
+country iso2 iso3 province
+4255 Netherlands NL NLD Groningen
+5171 Russia RU RUS Tambov
+4204 Namibia NaN NAM Erongo
+4800 Romania RO ROU Vrancea
+1183 Bulgaria BG BGR Pleven
+7005 United States of America US USA Indiana
+Another
+```
+
 
 
 

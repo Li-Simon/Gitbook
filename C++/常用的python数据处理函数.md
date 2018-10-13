@@ -56,5 +56,7 @@ query = "select \* from some\_table"
 df = pd.read\_sql\(query, conn\)
 
 ###Data Access
+####Head and Tail
+
 
 

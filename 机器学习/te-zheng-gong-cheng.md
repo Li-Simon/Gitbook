@@ -86,5 +86,9 @@ $$\kern{4 em} dCov^2_n(X,Y) := \frac{1}{n^2}\displaystyle \sum_{j=1}^n\displayst
 http://blog.kaggle.com/2016/07/21/approaching-almost-any-machine-learning-problem-abhishek-thakur/
 ```
 
+##Feature extraction and engineering
+##Feature scaling
+##Feature selection
+
 
 

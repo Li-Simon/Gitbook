@@ -20,12 +20,12 @@
 1. 相关性：一般用皮尔逊相关系数来定义。  
 2. 方差法：去掉值变化不大的特征，因为可以把这些特征看成常数值，他们对分类或者回归结果影响不大。
 
-###特征选择
+### 特征选择
 
 1. Filter方法：自变量与目标变量之间的关联
    1. Pearson相关系数
    2. 卡方检测
-   3. 信息增益，互信息(MIC)
+   3. 信息增益，互信息\(MIC\)
 2. Wrapper方法：通过目标函数来决定是否加入一个变量
    1. 迭代：产生特征子集，评价
    2. 完全搜索
@@ -35,27 +35,33 @@
    1. 正则化L1，L2
    2. 决策树（熵-信息增益，基尼系数）
    3. 深度学习​
-   
 
-####Filter
-#####Pearson相关系数
-Pearson相关系数(取值在[-1,1]之间，大于0是正相关，小于0是负相关，等于0就没有相关性。只对具有线性相关性的变量有效，不能处理具有非线性关系的两组变量)  
-#####互信息(MIC)
+#### Filter
+
+##### Pearson相关系数
+
+Pearson相关系数\(取值在\[-1,1\]之间，大于0是正相关，小于0是负相关，等于0就没有相关性。只对具有线性相关性的变量有效，不能处理具有非线性关系的两组变量\)
+
+##### 互信息\(MIC\)
+
 $$\kern{4 em}MIC:I(X,Y)=\sum_{y \in Y}\sum_{x \in X}p(x,y)\log(\frac{p(x,y)}{p(x)p(y)})$$  
-对于线性与非线性关系的数据都实用。  
-#####距离相关系数（Distance Correlation）
+对于线性与非线性关系的数据都实用。
+
+##### 距离相关系数（Distance Correlation）
+
 为了克服Pearson相关系数只对具有线性关系的变量起作用而引入。  
 样本：$$(X_k,Y_k),k=1,2,...,n$$  
 定义距离矩阵：  
 $$\kern{4 em} a_{j,k} = ||\mathbf{X_j} - \mathbf{X_k}||,\kern{2 em}j,k=1,2,...,n$$  
-$$\kern{4 em} b_{j,k} = ||\mathbf{Y_j} - \mathbf{Y_k}||,\kern{2 em}j,k=1,2,...,n$$
+$$\kern{4 em} b_{j,k} = ||\mathbf{Y_j} - \mathbf{Y_k}||,\kern{2 em}j,k=1,2,...,n$$  
 $$||*||$$是欧氏距离。取所有的双中心距离。  
 $$\kern{4 em}\mathbf{A_{j,k}} := a_{j,k} - \hat a_{j.}- \hat a_{.k} + \hat a_{..}$$  
-$$\kern{4 em}\mathbf{B_{j,k}} := b_{j,k} - \hat b_{j.}- \hat b_{.k} + \hat b_{..}$$    
+$$\kern{4 em}\mathbf{B_{j,k}} := b_{j,k} - \hat b_{j.}- \hat b_{.k} + \hat b_{..}$$  
 $$\hat a_{j.}$$是j-th row的平均，$$\hat a_{.k}$$是k-th column的平均，$$\hat a_{..}$$是全局平均。  
 定义The squared sample distance covariance：  
-$$\kern{4 em} dCov^2_n(X,Y) := \frac{1}{n^2}\displaystyle \sum_{j=1}^n\displaystyle \sum_{k=1}^nA_{jk}B_{jk}$$    
-虽然MIC与距离相关系数能处理具有线性与非线性关系的变量之间的相关性，但是Pearson还是不可替代的，第一，Pearson系数计算速度快；第二，相对于其它两种取值在[0,1],Pearson取值[-1,1],正负表关系的正负，绝对值表示强度。前提就是两个变量是线性相关的。  
+$$\kern{4 em} dCov^2_n(X,Y) := \frac{1}{n^2}\displaystyle \sum_{j=1}^n\displaystyle \sum_{k=1}^nA_{jk}B_{jk}$$  
+虽然MIC与距离相关系数能处理具有线性与非线性关系的变量之间的相关性，但是Pearson还是不可替代的，第一，Pearson系数计算速度快；第二，相对于其它两种取值在\[0,1\],Pearson取值\[-1,1\],正负表关系的正负，绝对值表示强度。前提就是两个变量是线性相关的。
+
 ### 特征工程小结
 
 * 特征工程：利用数据领域的相关知识来创建能够使机器学习算法达到最佳性能的特征的过程。
@@ -86,10 +92,16 @@ $$\kern{4 em} dCov^2_n(X,Y) := \frac{1}{n^2}\displaystyle \sum_{j=1}^n\displayst
 http://blog.kaggle.com/2016/07/21/approaching-almost-any-machine-learning-problem-abhishek-thakur/
 ```
 
-##Feature extraction and engineering
-机器学习的本质是数据加算法，算法就是数学函数，方程与优化
-##Feature scaling
-##Feature selection
+## Feature extraction and engineering
+
+机器学习的本质是数据加算法，算法就是数学函数，方程与优化。
+###标准的机器学习pipeline  
+
+![](/assets/Machine_Learning_pipeline.png)
+
+## Feature scaling
+
+## Feature selection
 
 
 

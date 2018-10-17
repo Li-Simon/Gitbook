@@ -95,9 +95,10 @@ http://blog.kaggle.com/2016/07/21/approaching-almost-any-machine-learning-proble
 ## Feature extraction and engineering
 
 机器学习的本质是数据加算法，算法就是数学函数，方程与优化。
-###标准的机器学习pipeline  
 
-![](/assets/Machine_Learning_pipeline.png)
+### 标准的机器学习pipeline
+特征工程，标度与选择的pipeline  
+![](/assets/Machine_Learning_pipeline.png)![](/assets/FeatureEngineerPipeline.png)
 
 ## Feature scaling
 

@@ -91,17 +91,17 @@ $$\kern{4 em} dCov^2_n(X,Y) := \frac{1}{n^2}\displaystyle \sum_{j=1}^n\displayst
 ```
 http://blog.kaggle.com/2016/07/21/approaching-almost-any-machine-learning-problem-abhishek-thakur/
 ```
-
-## Feature extraction and engineering
+机器学习的本质是数据加算法，算法就是数学函数，方程与优化。
+![](/assets/Machine_Learning_pipeline.png)    
+### Feature extraction and engineering
 #### 标准的机器学习pipeline
-![](/assets/Machine_Learning_pipeline.png)   
 特征提取，标度，选择的pipeline。  
 ![](/assets/FeatureEngineerPipeline.png)  
-机器学习的本质是数据加算法，算法就是数学函数，方程与优化。特征提取和特征工程是整个机器学习pipeline中最重要的步骤。  
+特征提取和特征工程是整个机器学习pipeline中最重要的步骤。  
 特征工程就是通过特殊领域的知识与特殊的技能，把数据转化成特征。数据科学家把他们时间的80%花在特征工程上。花在模型搭建与评估上的时间相对的少，但是也是重要的。    
-## Feature scaling
+### Feature scaling
 
-## Feature selection
+### Feature selection
 
 
 

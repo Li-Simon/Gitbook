@@ -98,7 +98,7 @@ http://blog.kaggle.com/2016/07/21/approaching-almost-any-machine-learning-proble
 特征提取，标度，选择的pipeline。  
 ![](/assets/FeatureEngineerPipeline.png)  
 特征提取和特征工程是整个机器学习pipeline中最重要的步骤。  
-特征工程就是通过特殊领域的知识与特殊的技能，把数据转化成特征。数据科学家把他们时间的80%花在特征工程上。花在模型搭建与评估上的时间相对的少，但是也是重要的。    
+特征工程就是通过特殊领域的知识与特殊的技能，把数据转化成特征。数据科学家把他们时间的80%花在特征工程上。花在模型搭建与评估上的时间相对的少，但是也是重要的。深度学习(CNN,RNN,LSTM)区别于机器学习是其拥有机器学习没有的特征自动提取功能。      
 ### Feature scaling
 
 ### Feature selection

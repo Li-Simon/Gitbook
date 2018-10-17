@@ -94,7 +94,7 @@ http://blog.kaggle.com/2016/07/21/approaching-almost-any-machine-learning-proble
 
 ## Feature extraction and engineering
 
-机器学习的本质是数据加算法，算法就是数学函数，方程与优化。
+机器学习的本质是数据加算法，算法就是数学函数，方程与优化。特征提取和特征工程是整个机器学习pipeline中最重要的步骤。  
 
 ### 标准的机器学习pipeline
 特征工程，标度与选择的pipeline  

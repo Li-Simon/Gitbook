@@ -116,6 +116,11 @@ LDA\(Latent Dirichlet Allocation\)作用在TF-IDF矩阵上，分解成document-t
 
 ![](/assets/TFIDF-LDA.png)
 利用LDA把tf-idf矩阵分解成两个主题T1,T2,可以看出0，1，4成一类，2，3，5成一类。  
+####图像数据
+Canny edge detection算法；from skimage.feature import canny。  
+Object Detection:HOG(Histogram of Oriented gradients)  
+from skimage.feature import hog
+
 ### Feature scaling
 
 ### Feature selection

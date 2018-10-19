@@ -91,23 +91,31 @@ $$\kern{4 em} dCov^2_n(X,Y) := \frac{1}{n^2}\displaystyle \sum_{j=1}^n\displayst
 ```
 http://blog.kaggle.com/2016/07/21/approaching-almost-any-machine-learning-problem-abhishek-thakur/
 ```
-机器学习的本质是数据加算法，算法就是数学函数，方程与优化。
-![](/assets/Machine_Learning_pipeline.png)    
+
+机器学习的本质是数据加算法，算法就是数学函数，方程与优化。  
+![](/assets/Machine_Learning_pipeline.png)
+
 ### Feature extraction and engineering
+
 #### 标准的机器学习pipeline
+
 特征提取，标度，选择的pipeline。  
 ![](/assets/FeatureEngineerPipeline.png)  
 特征提取和特征工程是整个机器学习pipeline中最重要的步骤。  
-特征工程就是通过特殊领域的知识与特殊的技能，把数据转化成特征。数据科学家把他们时间的80%花在特征工程上。花在模型搭建与评估上的时间相对的少，但是也是重要的。深度学习(CNN,RNN,LSTM)区别于机器学习是其拥有机器学习没有的特征自动提取功能。  
-One-Hot编码在类别数据中工作的非常好，但是当类别很多时会造成灾难，此时需要Bin-Counting Scheme.， Feature Hashing Scheme.  
-####文本数据处理
+特征工程就是通过特殊领域的知识与特殊的技能，把数据转化成特征。数据科学家把他们时间的80%花在特征工程上。花在模型搭建与评估上的时间相对的少，但是也是重要的。深度学习\(CNN,RNN,LSTM\)区别于机器学习是其拥有机器学习没有的特征自动提取功能。  
+One-Hot编码在类别数据中工作的非常好，但是当类别很多时会造成灾难，此时需要Bin-Counting Scheme.， Feature Hashing Scheme.
+
+#### 文本数据处理
+
 Bag of Words Model.对次进行统计  
 Bag of N-Grams Model，对N个连续的词进行统计，比如两个或三个，Bi-Grams, Tri-Grams. 在NLP中，Tri-Grams就已经足够了。  
-词袋模型只考虑词的统计特性，但是有些词在所有文本中本身就具有高的频率，因此就有了TF-IDF model(Term Frequency-Inverse Document Frequency)  
+词袋模型只考虑词的统计特性，但是有些词在所有文本中本身就具有高的频率，因此就有了TF-IDF model\(Term Frequency-Inverse Document Frequency\)  
 $$\kern{4 em} tfidf(w,D)=tf(w,D)*idf(w,D)=ff(w,D)*\log(\frac{C}{df(w)})$$  
-tf-idf(w,D)是词w在文本D中TF-IDF分数。tf(w,D)表示词w在文档D中的频率，idf(w,D)是词w的逆文档频率，C是该语料库中的文本数。TF-IDF模型可以用来做为文本关键词提取。以及文本相似性计算(一般用余弦相似性)，因此可以用来做聚类，适用于无监督学习。  
-LDA(Latent Dirichlet Allocation)作用在TF-IDF矩阵上，分解成document-topic matrix与topic-term matrix。            
-   
+tf-idf\(w,D\)是词w在文本D中TF-IDF分数。tf\(w,D\)表示词w在文档D中的频率，idf\(w,D\)是词w的逆文档频率，C是该语料库中的文本数。TF-IDF模型可以用来做为文本关键词提取。以及文本相似性计算\(一般用余弦相似性\)，因此可以用来做聚类，适用于无监督学习。  
+LDA\(Latent Dirichlet Allocation\)作用在TF-IDF矩阵上，分解成document-topic matrix与topic-term matrix。  
+
+![](/assets/TFIDF-LDA.png)
+利用LDA把tf-idf矩阵分解成两个主题T1,T2,可以看出0，1，4成一类，2，3，5成一类。  
 ### Feature scaling
 
 ### Feature selection

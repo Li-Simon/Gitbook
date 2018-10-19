@@ -102,7 +102,11 @@ http://blog.kaggle.com/2016/07/21/approaching-almost-any-machine-learning-proble
 One-Hot编码在类别数据中工作的非常好，但是当类别很多时会造成灾难，此时需要Bin-Counting Scheme.， Feature Hashing Scheme.  
 ####文本数据处理
 Bag of Words Model.对次进行统计  
-Bag of N-Grams Model，对N个连续的词进行统计，比如两个或三个，Bi-Grams, Tri-Grams. 在NLP中，Tri-Grams就已经足够了。       
+Bag of N-Grams Model，对N个连续的词进行统计，比如两个或三个，Bi-Grams, Tri-Grams. 在NLP中，Tri-Grams就已经足够了。  
+词袋模型只考虑词的统计特性，但是有些词在所有文本中本身就具有高的频率，因此就有了TF-IDF model(Term Frequency-Inverse Document Frequency)  
+$$\kern{4 em} tfidf(w,D)=tf(w,D)*idf(w,D)=ff(w,D)*\log(\frac{C}{df(w)})$$  
+tf-idf(w,D)是词w在文本D中TF-IDF分数。tf(w,D)表示词w在文档D中的频率，idf(w,D)是词w的逆文档频率，C是该语料库中的文本数。TF-IDF模型可以用来做为文本关键词提取，文本相似性比较(一般用余弦相似性)。          
+   
 ### Feature scaling
 
 ### Feature selection

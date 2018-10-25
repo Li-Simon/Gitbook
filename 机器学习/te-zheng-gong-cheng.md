@@ -130,6 +130,13 @@ True Positive(TP)：实际是正例并且我们分类成正例的样本数。
 False Positive(FP)：实际是负例但是我们分类成正例的样本数。  
 True Negative(FN):实际是负例并且我们分类成也是负例的样本数。  
 False Negative(FN):实际是正例但是我们分类成也是负例的样本数。  
+####Accuracy
+$$Accuracy = \frac{TP+TN}{TP+FP+TN+FN}$$  
+####Precision 
+只针对于正样本或者误分为正样本的样本，在不均衡样本中比较有用，比如人群中癌症阳性的比列很小，因此如果预测人群众没有患癌则获得的accuracy很高，但是precision是0.    
+$$Precision = \frac{TP}{TP+FP}$$  
+
+
 
 
 

@@ -138,7 +138,10 @@ $$\kern{4 em}Precision = \frac{TP}{TP+FP}$$
 ####Recall
 $$\kern{4 em}Recall = \frac{TP}{Tp+FN}$$
 ####F1 Score
-$$\kern{4 em}F1 Score = \frac{2*Precision*Recall}{Precision+Recall}$$
+$$\kern{4 em}F1 Score = \frac{2*Precision*Recall}{Precision+Recall}$$   
+###超参数finetune
+两种方法：Grid 搜索与随机搜索。  
+
 
 
 

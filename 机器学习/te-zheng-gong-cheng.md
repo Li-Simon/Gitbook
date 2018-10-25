@@ -125,5 +125,12 @@ from skimage.feature import hog
 
 ### Feature selection
 
+###准确率与召回率
+True Positive(TP)：实际是正例并且我们分类成正例的样本数。  
+False Positive(FP)：实际是负例但是我们分类成正例的样本数。  
+True Negative(FN):实际是负例并且我们分类成也是负例的样本数。  
+False Negative(FN):实际是正例但是我们分类成也是负例的样本数。  
+
+
 
 

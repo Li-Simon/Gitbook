@@ -8,7 +8,7 @@
 * SentiWordNet Lexicon
 * VADER Lexicon
 * AFINN Lexicon是最简单与最流行的lexicons.
-
+###文本分类系统的搭建
 ![](/assets/textClassification.png)
 
 

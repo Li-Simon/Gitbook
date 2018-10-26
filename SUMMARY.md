@@ -25,6 +25,7 @@
     * [推荐系统概述](推荐系统/推荐系统概述.md)
     * [FM(Factorization Machines),FFM](推荐系统/FM,FFM.md)
     * [Learning To Rank LTR](推荐系统/learning-to-rank-ltr.md)
+    * [Problem Solver Systems](推荐系统/ProbelmSolvingSystem.md)
 * [第五章 算法](算法/README.md)
     * [第一节 插值](算法/section1.md)
     * [第二节 最长递增子序列](算法/最长递增子序列.md)

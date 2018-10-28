@@ -11,5 +11,8 @@
 ###文本分类系统的搭建
 ![](/assets/textClassification.png)
 
+####Sihouette Score
+K-means找到最佳clusters数目的标准。  
+
 
 

@@ -82,6 +82,7 @@
     * [RNN](深度学习/RNN.md)
 * [第九章 项目工作](Kaggle/README.md)
     * [Titanic](Kaggle/Titanic.md)
+    * [Customer Segmentation](Kaggle/CustomerSegmentation.md)
     * [Residual NN](Kaggle/ResiNN.md)
     * [Fast项目](Kaggle/Fast项目.md)
     * [Miura项目](Kaggle/Miura项目.md)

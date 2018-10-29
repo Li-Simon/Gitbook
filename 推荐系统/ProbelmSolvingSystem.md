@@ -13,6 +13,6 @@
 
 ####Sihouette Score
 K-means找到最佳clusters数目的标准。  
-
+Kernel里面有详细的教程与讨论。
 
 

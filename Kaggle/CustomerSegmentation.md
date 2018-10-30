@@ -173,7 +173,7 @@ for n_clusters in range_n_clusters:
 
     # 2nd Plot showing the actual clusters formed
     feature1 = 1
-    feature2 = 0
+    feature2 = 2
     colors = cm.nipy_spectral(cluster_labels.astype(float) / n_clusters)
     ax2.scatter(X[:, feature1], X[:, feature2], marker='.', s=30, lw=0, alpha=0.7,
                 c=colors, edgecolor='k')
@@ -198,8 +198,11 @@ for n_clusters in range_n_clusters:
 
 plt.show()
 ```
+聚类图如下。  
+![](/assets/Kmeans_CustomerSegmentation.png)
 
-## ![](/assets/Kmeans_CustomerSegmentation.png)
+
+## 
 
 ## Effective Cross Selling
 

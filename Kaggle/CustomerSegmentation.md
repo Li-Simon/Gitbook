@@ -34,7 +34,7 @@ print cs_df.shape,'\n',customer_history_df.head(5)
 4     12820.0      3.0    942.34         59
 
 ```
-groupby("CustomerID")的作用就是根据CustomerID进行聚类，
+groupby("CustomerID").sum().reset_index()的作用就是根据CustomerID进行聚类，再对同一CustomerID的amount进行求和。
 ## 
 
 ## Effective Cross Selling

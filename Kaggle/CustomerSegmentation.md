@@ -32,9 +32,23 @@ print cs_df.shape,'\n',customer_history_df.head(5)
 2     12748.0      1.0  33719.73       4596
 3     12749.0      4.0   4090.88        199
 4     12820.0      3.0    942.34         59
-
 ```
-groupby("CustomerID").sum().reset_index()的作用就是根据CustomerID进行聚类，再对同一CustomerID的amount进行求和。
+
+groupby\("CustomerID"\).sum\(\).reset\_index\(\)的作用就是根据CustomerID进行聚类，再对同一CustomerID的amount进行求和。
+
+对数化这是那个指标
+
+```py
+from sklearn import preprocessing
+customer_history_df['recency_log'] = customer_history_df['recency'].apply(math.log)
+customer_history_df['amount_log'] = customer_history_df['amount'].apply(math.log)
+customer_history_df['frequency_log'] = customer_history_df['frequency'].apply(math.log)
+feature_vector = ['recency_log','amount_log','frequency_log']
+X_subset = customer_history_df[feature_vector].as_matrix()
+scaler = preprocessing.StandardScaler().fit(X_subset)
+X_scaled = scaler.transform(X_subset)
+```
+
 ## 
 
 ## Effective Cross Selling

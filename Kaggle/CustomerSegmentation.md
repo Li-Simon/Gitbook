@@ -198,6 +198,7 @@ for n_clusters in range_n_clusters:
 
 plt.show()
 ```
+对于聚类要注意这个指标：silhouette score  
 聚类图如下。  
 ![](/assets/Kmeans_CustomerSegmentation.png)
 

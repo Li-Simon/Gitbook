@@ -167,6 +167,8 @@ for n_clusters in range(3,6,2):
 traces是一个list，通过append来添加元素，把y,name,cls添加到traces里面。  
 plotly的使用可以参看[官方教程](https://plot.ly/python/box/), plotly是一个完全开源的项目。  
 
+np.percentile\(y0, cutoff\_quantile\)表示取从小到大，在cutoff\_quantile%处的值，cutoff_quantile为百分位值。  
+
 ```py
 import plotly as py
 import plotly.graph_objs as go

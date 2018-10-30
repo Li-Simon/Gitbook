@@ -49,7 +49,22 @@ scaler = preprocessing.StandardScaler().fit(X_subset)
 X_scaled = scaler.transform(X_subset)
 ```
 
-## 
+要注意，如下两种表达方式是一样的。
+
+```py
+recency_log_1 = customer_history_df['recency'].apply(math.log)
+recency_log_2 = customer_history_df.recency.apply(math.log)
+```
+然后做直方图，也就是统计amount_log在每个值区间的出现的概率。  
+```py
+X = customer_history_df.amount_log
+n, bins, patchs = plt.hist(X,1000,facecolor='green',alpha = 0.75)
+plt.xlabel('Log of Sales Amount')
+plt.ylabel('Probality')
+plt.title(r'Histogram of Log Transformed Customer Monetary Value')
+plt.grid(True)
+plt.show()
+```
 
 ## Effective Cross Selling
 

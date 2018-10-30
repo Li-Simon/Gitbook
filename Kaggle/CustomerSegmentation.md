@@ -17,6 +17,7 @@
    3. Frequency:客户购物的频率
    4. Monetary value:客户一共花了多少钱
 
+groupby\("CustomerID"\).sum\(\).reset\_index\(\)的作用就是根据CustomerID进行聚类，再对同一CustomerID的amount进行求和。
 ```py
 customer_monetary_val = cs_df[['CustomerID','amount']].groupby("CustomerID").sum().reset_index()
 customer_history_df = customer_history_df.merge(customer_monetary_val, how='outer')
@@ -33,8 +34,6 @@ print cs_df.shape,'\n',customer_history_df.head(5)
 3     12749.0      4.0   4090.88        199
 4     12820.0      3.0    942.34         59
 ```
-
-groupby\("CustomerID"\).sum\(\).reset\_index\(\)的作用就是根据CustomerID进行聚类，再对同一CustomerID的amount进行求和。
 
 对数化这是那个指标
 
@@ -55,7 +54,9 @@ X_scaled = scaler.transform(X_subset)
 recency_log_1 = customer_history_df['recency'].apply(math.log)
 recency_log_2 = customer_history_df.recency.apply(math.log)
 ```
-然后做直方图，也就是统计amount_log在每个值区间的出现的概率。用n,bins，patchs接收返回的数据。  
+
+然后做直方图，也就是统计amount\_log在每个值区间的出现的概率。用n,bins，patchs接收返回的数据。
+
 ```py
 X = customer_history_df.amount_log
 n, bins, patchs = plt.hist(X,1000,facecolor='green',alpha = 0.75)
@@ -65,6 +66,27 @@ plt.title(r'Histogram of Log Transformed Customer Monetary Value')
 plt.grid(True)
 plt.show()
 ```
+画RFM图，进行聚类。
+
+```py
+from mpl_toolkits.mplot3d import Axes3D
+
+fig = plt.figure(figsize=(8,6))
+ax = fig.add_subplot(111,projection='3d')
+
+xs = customer_history_df.recency_log
+ys = customer_history_df.frequency_log
+zs = customer_history_df.amount_log
+ax.scatter(xs,ys,zs,s=5)
+
+ax.set_xlabel('Recency')
+ax.set_ylabel('Frequency')
+ax.set_zlabel('Monetary')
+```
+
+## 
+
+## 
 
 ## Effective Cross Selling
 

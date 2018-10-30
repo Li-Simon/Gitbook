@@ -262,4 +262,4 @@ for a rule which statrs{beer->diaper}
 $$\kern{4 em}confidence(beer,diaper) = \frac{supp(beer and diaper)}{supp(beer)}$$   
 Lift:  the lift of rule {X->Y}  
 $$\kern{4 em}lift(X->Y) = \frac{supp(X U Y)}{supp(X)*supp(Y)}$$   
-Frequent itemset: Frequent itemsets are itemsets whose support is greater than a user defined support threshold.
+Frequent itemset: Frequent itemsets are itemsets whose support is greater than a user defined support threshold.  

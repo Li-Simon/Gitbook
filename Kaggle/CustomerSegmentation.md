@@ -164,9 +164,8 @@ for n_clusters in range(3,6,2):
 聚类图如下。  
 ![](/assets/Kmeans_customer_segmentation.png)  
 然后对不同的特征画进行分析，画最小值，最大值，25%，中值，75%。  
-traces是一个list，通过append来添加元素，把y,name,cls添加到traces里面。  
-
-
+traces是一个list，通过append来添加元素，把y,name,cls添加到traces里面。    
+plotly的使用可以参看[官方教程](https://plot.ly/python/box/)  
 ```py
 import plotly as py
 import plotly.graph_objs as go

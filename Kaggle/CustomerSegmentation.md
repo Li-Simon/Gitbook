@@ -55,7 +55,7 @@ X_scaled = scaler.transform(X_subset)
 recency_log_1 = customer_history_df['recency'].apply(math.log)
 recency_log_2 = customer_history_df.recency.apply(math.log)
 ```
-然后做直方图，也就是统计amount_log在每个值区间的出现的概率。  
+然后做直方图，也就是统计amount_log在每个值区间的出现的概率。用n,bins，patchs接收返回的数据。  
 ```py
 X = customer_history_df.amount_log
 n, bins, patchs = plt.hist(X,1000,facecolor='green',alpha = 0.75)

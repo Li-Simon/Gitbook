@@ -144,7 +144,7 @@ for n_clusters in range(3,6,2):
     feature2 = 2
     ax2.scatter(X[:, feature1], X[:, feature2], marker='.', s=30, lw=0, alpha=0.7,
                 c=colors, edgecolor='k')
-    
+
     centers = clusterer.cluster_centers_
     ax2.scatter(centers[:, feature1], centers[:, feature2], marker='o',
                 c="white", alpha=1, s=200, edgecolor='k')
@@ -158,13 +158,15 @@ for n_clusters in range(3,6,2):
                   "with n_clusters = %d" % n_clusters),
                  fontsize=14, fontweight='bold')
     #plt.show()
-
 ```
 
 对于聚类要注意这个指标：silhouette score  
 聚类图如下。  
-![](/assets/Kmeans_customer_segmentation.png)
+![](/assets/Kmeans_customer_segmentation.png)  
 然后对不同的特征画进行分析，画最小值，最大值，25%，中值，75%。  
+traces是一个list，通过append来添加元素，把y,name,cls添加到traces里面。  
+
+
 ```py
 import plotly as py
 import plotly.graph_objs as go
@@ -229,8 +231,6 @@ layout = go.Layout(
 fig = go.Figure(data=traces, layout=layout)
 py.offline.iplot(fig)
 ```
-
-
 
 ## Effective Cross Selling
 

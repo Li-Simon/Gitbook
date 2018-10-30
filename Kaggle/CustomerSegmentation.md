@@ -164,7 +164,6 @@ for n_clusters in range(3,6,2):
 对于聚类要注意这个指标：silhouette score  
 聚类图如下。  
 ![](/assets/Kmeans_customer_segmentation.png)
-
 然后对不同的特征画进行分析，画最小值，最大值，25%，中值，75%。  
 ```py
 import plotly as py

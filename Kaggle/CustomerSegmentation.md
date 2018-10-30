@@ -254,8 +254,9 @@ py.offline.iplot(fig)
    
 ###concepts
 Itemset：存在的物品组合，比如{A,B,C,...,X}  
-Support:特定组合物品组合占所有交易的比列。
-n = number of transactions with beer and diaper; N = total transactions;  
+Support:特定组合物品组合占所有交易的比列。  
+n = number of transactions with beer and diaper;     
+N = total transactions;  
 $$\kern{4 em}supp(beer,diaper) = \frac{n}{N}$$  
 Confidence：一种规则的置信度。  
 for a rule which statrs{beer->diaper}    

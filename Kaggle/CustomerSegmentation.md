@@ -85,7 +85,9 @@ ax.set_xlabel('Recency')
 ax.set_ylabel('Frequency')
 ax.set_zlabel('Monetary')
 ```
+
 用KMeans来进行聚类
+
 ```py
 from __future__ import print_function
 
@@ -195,10 +197,9 @@ for n_clusters in range_n_clusters:
                  fontsize=14, fontweight='bold')
 
 plt.show()
-
 ```
 
-## 
+## ![](/assets/Kmeans_CustomerSegmentation.png)
 
 ## Effective Cross Selling
 

@@ -202,8 +202,6 @@ plt.show()
 ![](/assets/Kmeans_CustomerSegmentation.png)
 
 
-## 
-
 ## Effective Cross Selling
 
 ### 问题与技术路线

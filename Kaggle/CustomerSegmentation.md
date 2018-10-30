@@ -165,6 +165,74 @@ for n_clusters in range(3,6,2):
 聚类图如下。  
 ![](/assets/Kmeans_customer_segmentation.png)
 
+然后对不同的特征画进行分析，画最小值，最大值，25%，中值，75%。  
+```py
+import plotly as py
+import plotly.graph_objs as go
+py.offline.init_notebook_mode()
+
+x_data = ['Cluster 1','Cluster 2','Cluster 3','Cluster 4', 'Cluster 5']
+cutoff_quantile = 100
+field_to_plot = 'recency'
+
+y0 = customer_history_df[customer_history_df['num_cluster5_labels']==0][field_to_plot].values
+y0 = y0[y0<np.percentile(y0, cutoff_quantile)]
+y1 = customer_history_df[customer_history_df['num_cluster5_labels']==1][field_to_plot].values
+y1 = y1[y1<np.percentile(y1, cutoff_quantile)]
+y2 = customer_history_df[customer_history_df['num_cluster5_labels']==2][field_to_plot].values
+y2 = y2[y2<np.percentile(y2, cutoff_quantile)]
+y3 = customer_history_df[customer_history_df['num_cluster5_labels']==3][field_to_plot].values
+y3 = y3[y3<np.percentile(y3, cutoff_quantile)]
+y4 = customer_history_df[customer_history_df['num_cluster5_labels']==4][field_to_plot].values
+y4 = y4[y4<np.percentile(y4, cutoff_quantile)]
+y_data = [y0,y1,y2,y3,y4]
+
+colors = ['rgba(93, 164, 214, 0.5)', 'rgba(255, 144, 14, 0.5)', 'rgba(44, 160, 101, 0.5)', 'rgba(255, 65, 54, 0.5)', 'rgba(207, 114, 255, 0.5)', 'rgba(127, 96, 0, 0.5)']
+traces = []
+
+for xd, yd, cls in zip(x_data, y_data, colors):
+        traces.append(go.Box(
+            y=yd,
+            name=xd,
+            boxpoints=False,
+            jitter=0.5,
+            whiskerwidth=0.2,
+            fillcolor=cls,
+            marker=dict(
+                size=2,
+            ),
+            line=dict(width=1),
+        ))
+
+layout = go.Layout(
+    title='Difference in sales {} from cluster to cluster'.format(field_to_plot),
+    yaxis=dict(
+        autorange=True,
+        showgrid=True,
+        zeroline=True,
+        dtick=50,
+        gridcolor='black',
+        gridwidth=0.1,
+        zerolinecolor='rgb(255, 255, 255)',
+        zerolinewidth=2,
+    ),
+    margin=dict(
+        l=40,
+        r=30,
+        b=80,
+        t=100,
+    ),
+    paper_bgcolor='white',
+    plot_bgcolor='white',
+    showlegend=False
+)
+
+fig = go.Figure(data=traces, layout=layout)
+py.offline.iplot(fig)
+```
+
+
+
 ## Effective Cross Selling
 
 ### 问题与技术路线

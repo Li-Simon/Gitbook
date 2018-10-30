@@ -251,6 +251,12 @@ py.offline.iplot(fig)
 4. 怎么实现我们的目的？
    1. 关联规则挖掘\(Association Rule-Mining\)
    2. FP Growth算法
-
-
+   
+###concepts
+Itemset：存在的物品组合，比如{A,B,C,...,X}  
+Support:特定组合物品组合占所有交易的比列。  
+$$supp(beer,diaper) = \frac{number of transactions with beer and diaper}{total transactions}$$  
+Confidence：一种规则的置信度。  
+for a rule which statrs{beer->diaper}    
+$$confidence(beer,diaper) = \frac{supp(beer and diaper)}{supp(beer)}$$ 
 

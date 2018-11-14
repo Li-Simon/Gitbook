@@ -14,6 +14,6 @@ $$In(V_i)$$是$$V_i$$的入链集合，代表有多少其它网页链接它；$$
 $$\kern{8 em} S(V_i) = \sum_{j \in In(V_i)}(\frac{1}{Out(V_j)}S(V_j))$$  
 为了防止有些网页的权值为0，则加入一个阻尼项。   
 $$\kern{8 em} S(V_i) = (1-d) + d\sum_{j \in In(V_i)}(\frac{1}{Out(V_j)}S(V_j))$$   
-单篇文章提取关键词的算法TextRank的原理与PageRank一致，因为是借鉴PageRank算法的。  
+不需要借助语料库，单篇文章提取关键词的算法TextRank的原理与PageRank一致，因为是借鉴PageRank算法的。  
 
 

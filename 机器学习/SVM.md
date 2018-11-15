@@ -29,6 +29,7 @@ $$\kern{4 em} s.t. \kern{2 em}y_i(\mathbf{wx_i} + b) \ge 1, i = 1,2...,N$$
 
 参考文献：
 
-1. 
+1. July · pluskid， 支持向量机通俗导论： https://raw.githubusercontent.com/liuzheng712/Intro2SVM/master/Intro2SVM.pdf
+
 
 

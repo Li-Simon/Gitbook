@@ -10,7 +10,7 @@ SVM算法是为了求得一个分割超平面$$\mathbf{wx} + b = 0$$ 使得所�
 $$\kern{4 em}\displaystyle \max_{\mathbf{w, b}} \gamma$$  
 $$\kern{4 em} s.t. \kern{2 em}y_i(\frac{\mathbf{wx_i}}{||\mathbf{w}||} + \frac{b}{||\mathbf{w}||}) \ge \gamma$$  
 转化为函数间隔：  
-$$\kern{4 em}\displaystyle max_{\mathbf{w, b}} \frac{\gamma}{||w||}$$  
+$$\kern{4 em}\displaystyle max_{\mathbf{w, b}} \gamma$$  
 $$\kern{4 em} s.t. \kern{2 em}y_i(\mathbf{wx_i} + b) \ge ||w||\gamma = \hat \gamma$$   
 为了简化计算， 我们取$$\hat \gamma = 1$$  
 因此问题转化为：  

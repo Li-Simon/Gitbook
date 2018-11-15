@@ -7,7 +7,7 @@ SVM算法是为了求得一个分割超平面$$\mathbf{wx} + b = 0$$ 使得所�
 首先我们定义几何距离和函数距离：  
 几何距离：  $$\gamma_i = y_i(\frac{\mathbf{wx_i}}{||\mathbf{w}||} + \frac{b}{||\mathbf{w}||})$$  
 除以$$||w||$$是因为x,b同时乘以一个因子，超平面不变。  
-![](/assets/SVM_Distance.png)
+![](/assets/SVM_Support_Vector.png)
 
 函数间距：$$\gamma_i = y_i(\mathbf{wx_i} + b)$$  
 我们要使: $$\gamma_i \ge \gamma$$. 对任何的样本点i都成立， 并求得$$\gamma$$的最大值。 故上面的问题可以用如下数学来刻画：  

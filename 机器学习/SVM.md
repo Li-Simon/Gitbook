@@ -1,4 +1,4 @@
-# SVM
+* [ ] # SVM
 
 ## 线性可分二分类问题
 
@@ -24,4 +24,8 @@ $$\kern{4 em} s.t. \kern{2 em}y_i(\mathbf{wx_i} + b) \ge 1, i = 1,2...,N$$
 $$\kern{4 em}\displaystyle \min_{\mathbf{w, b}} \frac{1}{2}||w||^2$$  
 $$\kern{4 em} s.t. \kern{2 em}y_i(\mathbf{wx_i} + b) \ge 1, i = 1,2...,N$$  
 问题转化成带约束的优化问题（在这里是凸优化问题）。带等式的约束问题可以通过引入拉格朗日乘子求解，带不等式约束的问题可以引入KKT乘子求解。下面我们先来讨论下带约束的凸优化问题。
+
+
+
+
 

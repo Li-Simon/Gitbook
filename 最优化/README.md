@@ -10,6 +10,8 @@
          1. BFGS
          2. DFP
          3. Brody类方法
+   3. Trust Region method
+   4. 
 
 
 

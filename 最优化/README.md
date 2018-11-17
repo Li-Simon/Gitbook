@@ -33,6 +33,8 @@ $$\kern{2 em}$$数值最优化方法也可以按照求解的问题来说，有�
          2. DFP
          3. Brody类方法
    3. Trust Region method
+      1. L-M算法
+      2. DogLeg算法
    4. 线性搜索法
    5. 凸优化
    6. 非凸优化

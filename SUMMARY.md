@@ -64,6 +64,8 @@
   * [机器学习原理](机器学习/机器学习原理.md)
   * [回归](机器学习/回归.md)
     * [多元回归分析](机器学习/多元回归分析.md)
+    * [正则线性模型](机器学习/正则线性模型.md)
+      * [Ridge回归,Lasso回归，Elastic回归，Early Stopping](机器学习/RegularizedRegression.md)
   * [分类](机器学习/分类.md)
     * [SVM，KKT条件与核函数方法](机器学习/SVMreadme.md)
       * [SVM](机器学习/SVM.md)

@@ -45,7 +45,7 @@
 * [第六章 最优化](最优化/README.md)
   * [无约束最优化问题](最优化/无约束最优化问题.md)
     * [linear search](最优化/linear-search.md)
-    * [最速下降法](最优化/最优化算法.md)
+    * [梯度下降法](最优化/最优化算法.md)
     * [牛顿法](最优化/牛顿法.md)
     * [Levenberg-Marquardt算法](最优化/Levenberg-Marquardt算法.md)
     * [Qusi-Netwon 拟牛顿法](最优化/Qusi-Netwon.md)

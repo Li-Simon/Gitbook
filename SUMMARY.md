@@ -26,7 +26,7 @@
     * [计算广告学概论](推荐系统/计算广告学概论.md)
     * [推荐系统概述](推荐系统/推荐系统概述.md)
     * [FM(Factorization Machines),FFM](推荐系统/FM,FFM.md)
-    * [SVD](推荐系统/推荐系统SVD.md)
+    * [SVD在推荐系统的应用](推荐系统/推荐系统SVD.md)
     * [Learning To Rank LTR](推荐系统/learning-to-rank-ltr.md)
     * [Problem Solver Systems](推荐系统/ProbelmSolvingSystem.md)
 * [第五章 算法](算法/README.md)

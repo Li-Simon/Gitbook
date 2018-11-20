@@ -3,7 +3,7 @@
 大家这时候肯定会想，我们的评分矩阵里面一般会有很多缺失值，那要怎么去得到 U 和 M 呢？实际上，这两个矩阵是通过学习的方式得到的，而不是直接做矩阵分解。我们定义如下的损失函数：  
 $$\kern{4 em}E = \frac{1}{2}\sum_{i=1}^{n}\sum_{j=1}^{m}I_{ij}(V_{ij} - p(U_i,M_j))^2+\frac{k_u}{2}\sum_{i=1}^{n}\lVert U_i \rVert^2 + \frac{k_m}{2}\sum_{j=1}^{m}\lVert M_j \rVert^2$$   
 其中 $$p(U_i,M_j)$$ 表示我们对用户 i 对 物品 j 的评分预测：  
-$$\kern{8 em}p(U_i,M_j) = U_i^TM_j$$  
+$$\kern{4 em}p(U_i,M_j) = U_i^TM_j$$  
 
 梯度下降：  
 $$\kern{4 em}-\frac{\partial E}{\partial U_i} = \sum_{j=1}^{M}I_{ij}((V_{ij}-p(U_i,M_j))M_j) - k_uU_i $$  

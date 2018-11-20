@@ -2,7 +2,7 @@
 
 推荐系统在数学上就是一个超大规模稀疏矩阵的分解与重构问题，推荐实际上就是寻找User-Item矩阵中本该不为0而实际为0的矩阵元。
 
-推荐系统中的Matrix Factorization\(MF\)或者Dimensionality Reduction，实际上就是数学SVD，因此推荐系统中这些算法也称为SVD模型。  
+推荐系统中的Matrix Factorization\(MF\)或者Dimensionality Reduction，实际上就是数学SVD，因此推荐系统中这些算法也称为SVD模型。
 
 ### 矩阵分解
 
@@ -18,6 +18,7 @@ $$\kern{8 em} V = UM$$
 4. 隐变量个数怎么选择？
 5. 怎么加**显式反馈数据**（explicit feedbacks）和**隐式反馈**（implicit feedbacks）数据？
 6. 怎么设置损失函数？损失函数应该包括哪些项目？
+7. 怎么有效的为矩阵分块？矩阵分块实际上实现的就是聚类。
 
 
 

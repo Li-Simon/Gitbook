@@ -26,6 +26,8 @@
     * [计算广告学概论](推荐系统/计算广告学概论.md)
     * [基于内容的推荐算法](推荐系统/基于内容的推荐算法.md)
     * [协同过滤算法](推荐系统/协同过滤算法.md)
+        * [FM(Factorization Machines),FFM](推荐系统/FM,FFM.md)
+        * [SVD在推荐系统的应用](推荐系统/推荐系统SVD.md)
     * [关联规则挖掘算法](推荐系统/关联规则挖掘算法.md)
     * [FM(Factorization Machines),FFM](推荐系统/FM,FFM.md)
     * [SVD在推荐系统的应用](推荐系统/推荐系统SVD.md)

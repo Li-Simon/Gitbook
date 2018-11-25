@@ -5,12 +5,14 @@
 
 推荐系统中的Matrix Factorization\(MF\)或者Dimensionality Reduction，实际上就是数学SVD，因此推荐系统中这些算法也称为SVD模型。
 
-
-
-| 协同过滤推荐算法 | 基于记忆\(Memory-based CF\) | 基于用户\( User-based\) |
+| 1. 协同过滤推荐算法 | 基于记忆\(Memory-based CF\) | 基于用户\( User-based\) |
 | :--- | :--- | :--- |
 | CF:Collaborative Filtering |  | 基于wupin\(Item-based\) |
 |  | 基于模型\(Model-based CF\) | 隐因子模型，朴素贝叶斯分类 |
+| 2.基于内容的推荐算法\(CB:Content-Based\) | 基于信息检索 | TF-IDF |
+|  |  | 基于Rocchio的CB推荐算法 |
+|  |  | 基于决策树，基于线性分类，基于朴素贝叶斯，基于KNN |
+| 3.基于知识的推荐算法\(KB:Konwledge-based\) | 关联知识与关联规则挖掘 | Apriori |
 
 ### 矩阵分解
 

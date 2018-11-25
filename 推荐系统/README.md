@@ -9,7 +9,7 @@
 
 | 1. 协同过滤推荐算法 | 基于记忆\(Memory-based CF\) | 基于用户\( User-based\) |
 | :--- | :--- | :--- |
-| CF:Collaborative Filtering |  | 基于wupin\(Item-based\) |
+| CF:Collaborative Filtering |  | 基于物品\(Item-based\) |
 |  | 基于模型\(Model-based CF\) | 隐因子模型，朴素贝叶斯分类 |
 | 2.基于内容的推荐算法\(CB:Content-Based\) | 基于信息检索 | TF-IDF |
 |  |  | 基于Rocchio的CB推荐算法 |

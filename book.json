@@ -1,7 +1,7 @@
 {
 	"plugins": ["katex"],
 	"pdf": {
-    "pageNumbers": false,
+    "pageNumbers": true,
     "paperSize": "a4",
     "margin": {
       "right": 30,

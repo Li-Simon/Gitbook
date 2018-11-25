@@ -29,8 +29,6 @@
         * [SVD在推荐系统的应用](推荐系统/推荐系统SVD.md)
     * [基于内容的推荐算法](推荐系统/基于内容的推荐算法.md)
     * [关联规则挖掘算法](推荐系统/关联规则挖掘算法.md)
-    * [FM(Factorization Machines),FFM](推荐系统/FM,FFM.md)
-    * [SVD在推荐系统的应用](推荐系统/推荐系统SVD.md)
     * [Learning To Rank LTR](推荐系统/learning-to-rank-ltr.md)
     * [Problem Solver Systems](推荐系统/ProbelmSolvingSystem.md)
 * [第五章 算法](算法/README.md)

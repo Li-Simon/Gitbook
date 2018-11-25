@@ -10,7 +10,7 @@
 | 1. 协同过滤推荐算法 | 基于记忆\(Memory-based CF\) | 基于用户\( User-based\) |
 | :--- | :--- | :--- |
 | CF:Collaborative Filtering |  | 基于物品\(Item-based\) |
-|  | 基于模型\(Model-based CF\) | 隐因子模型，朴素贝叶斯分类 |
+|  | 基于模型\(Model-based CF\) | 隐因子模型\(SVD,PCA\)，朴素贝叶斯分类 |
 | 2.基于内容的推荐算法\(CB:Content-Based\) | 基于信息检索 | TF-IDF |
 |  |  | 基于Rocchio的CB推荐算法 |
 |  |  | 基于决策树，基于线性分类，基于朴素贝叶斯，基于KNN |
@@ -36,8 +36,6 @@ $$\kern{8 em} V = UM$$
 5. 怎么加**显式反馈数据**（explicit feedbacks）和**隐式反馈**（implicit feedbacks）数据？
 6. 怎么设置损失函数？损失函数应该包括哪些项目？
 7. 怎么有效的为矩阵分块？矩阵分块实际上实现的就是聚类。
-
-
 
 [^1]: 牛温佳 《用户网络行为画像》
 

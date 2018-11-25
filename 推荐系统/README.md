@@ -5,6 +5,13 @@
 
 推荐系统中的Matrix Factorization\(MF\)或者Dimensionality Reduction，实际上就是数学SVD，因此推荐系统中这些算法也称为SVD模型。
 
+
+
+| 协同过滤推荐算法 | 基于记忆\(Memory-based CF\) | 基于用户\( User-based\) |
+| :--- | :--- | :--- |
+| CF:Collaborative Filtering |  | 基于wupin\(Item-based\) |
+|  | 基于模型\(Model-based CF\) | 隐因子模型，朴素贝叶斯分类 |
+
 ### 矩阵分解
 
 U-I矩阵是一个大的稀疏矩阵，我们需要寻找矩阵的一个低秩分解，实际上就就是一个奇异值分解\(SVD\)。  
@@ -24,10 +31,6 @@ $$\kern{8 em} V = UM$$
 5. 怎么加**显式反馈数据**（explicit feedbacks）和**隐式反馈**（implicit feedbacks）数据？
 6. 怎么设置损失函数？损失函数应该包括哪些项目？
 7. 怎么有效的为矩阵分块？矩阵分块实际上实现的就是聚类。[^1]
-
-
-
-
 
 [^1]: 牛温佳 《用户网络行为画像》
 

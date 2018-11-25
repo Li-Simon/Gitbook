@@ -12,7 +12,7 @@
 | CF:Collaborative Filtering |  | 基于物品\(Item-based\)，相似度 |
 |  | 基于模型\(Model-based CF\) | 隐因子模型\(SVD,PCA\)，朴素贝叶斯分类 |
 | 2.基于内容的推荐算法\(CB:Content-Based\) | 基于信息检索 | TF-IDF |
-|  |  | 基于Rocchio的CB推荐算法 |
+| 基于用户的浏览记录，购买记录建立用户画像。基于物品的描述信息，提取物品特征，建立物品画像。 |  | 基于Rocchio的CB推荐算法 |
 |  |  | 基于决策树，基于线性分类，基于朴素贝叶斯，基于KNN |
 | 3.基于知识的推荐算法\(KB:Konwledge-based\) | 关联知识与关联规则挖掘 | Apriori |
 |  | 约束知识与约束推荐算法 | 约束推荐算法 |

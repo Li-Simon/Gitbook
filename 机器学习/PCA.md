@@ -9,7 +9,7 @@ $$\kern{8 em} X = UDV^T$$
 其中$$U^TU=I_D,VTV=I_N$$,D是MxD的对角矩阵。   
 $$\kern{8 em} XX^T = UDV^TVD^TU^T=UDD^TU^T$$  
 $$\kern{8 em} X^TX = VD^DU^TUDV^T=VD^TDV^T$$  
-是矩阵的本征值分解。因此可以通过上面两式来求解U，V。主要用到的是矩阵本征值，本征矢求解技巧。这都在矩阵计算(第五章)那一章讨论的内容。
+是矩阵的本征值分解。因此可以通过上面两式来求解U，V。主要用到的是矩阵本征值，本征矢求解技巧。这都在矩阵计算(第五章)那一章讨论的内容。 
 ## PCA
 我们可以通过SVD来实现PCA,具体就是只取X的SVD中的前M个其一分量。  
 $$\kern{8 em} X = UDV^T \approx U_MD_MV_M^T$$  

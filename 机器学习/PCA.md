@@ -12,8 +12,15 @@ $$\kern{8 em} X^TX = VD^DU^TUDV^T=VD^TDV^T$$
 是矩阵的本征值分解。因此可以通过上面两式来求解U，V。主要用到的是矩阵本征值，本征矢求解技巧。这都在矩阵计算(第五章)那一章讨论的内容。 
 对于我们的情况M=D, 因此  
 $$\kern{4 em}D^T=D$$ 
+令$$B = X^TX$$，对B做特征值分解，得到  
+$$\kern{4 em}B = V\Lambda V^T$$，
+假设$$\Lambda$$的矩阵元按如下方式排序：  
+$$\lambda_1 \ge \lambda_2 \ge ... \ge \lambda_M$$
 ## PCA
 我们可以通过SVD来实现PCA,具体就是只取X的SVD中的前M个其一分量。  
 $$\kern{8 em} X = UDV^T \approx U_MD_MV_M^T$$  
 其中$$U_M,D_M,V_M$$对于矩阵X的前M个奇异值分量。 
+取前d个奇异向量。选择t = 95%，使得。  
+$$\kern{4 em}\frac{}{} \ge t$$
+
 

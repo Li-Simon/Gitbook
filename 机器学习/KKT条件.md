@@ -59,7 +59,8 @@ $$\kern{4 em} s.t. \kern{2 em}y_i(\mathbf{wx_i} + b) \ge 1, i = 1,2...,N$$
 $$\kern{4 em}\mathbf{w^*x + b^*} = 0$$  
 分类决策函数:
 $$\kern{4 em} f(x) = sign(\mathbf{w^*x + b^*}) $$  
-
+引入拉格朗日函数，对每个不等式约束引入拉格朗日乘子$$\alpha_i \ge 0, i=1,2,3...,N$$：  
+$$\kern{4 em} L(w,b,\alpha) = \frac{1}{2}||w||^2 - $$  
 
 
 

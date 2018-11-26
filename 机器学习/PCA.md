@@ -9,10 +9,10 @@
 ## SVD
 
 对于任何一个MxD的矩阵X可以做如下分解：  
-$$\kern{8 em} X = UDV^T$$  
+$$\kern{4 em} X = UDV^T$$  
 其中$$U^TU=I_D,VTV=I_N$$,D是MxD的对角矩阵。  
-$$\kern{8 em} XX^T = UDV^TVD^TU^T=UDD^TU^T$$  
-$$\kern{8 em} X^TX = VD^DU^TUDV^T=VD^TDV^T$$  
+$$\kern{4 em} XX^T = UDV^TVD^TU^T=UDD^TU^T$$  
+$$\kern{4 em} X^TX = VD^DU^TUDV^T=VD^TDV^T$$  
 是矩阵的本征值分解。因此可以通过上面两式来求解U，V。主要用到的是矩阵本征值，本征矢求解技巧。这都在矩阵计算\(第五章\)那一章讨论的内容。  
 对于我们的情况M=D, 因此  
 $$\kern{4 em}D^T=D$$  

@@ -22,5 +22,7 @@ $$\kern{8 em} X = UDV^T \approx U_MD_MV_M^T$$
 其中$$U_M,D_M,V_M$$对于矩阵X的前M个奇异值分量。 
 取前d个奇异向量。选择一个比例t，一般取t = 95%，使得。  
 $$\kern{4 em}\frac{\displaystyle \sum_{i=1}^d \lambda_i}{\displaystyle \sum_{i=1}^M \lambda_i} \ge t$$   
-
+####PCA的好处
+1. 通过降维，使得样本的采样密度变大，这是降维的主要目的  
+2. 当数据收噪声影响时，小的特征值所对应的特征向量一般受噪声影响，因此去掉这些量在一定程度上能起到去噪的作用。  
 

@@ -63,7 +63,9 @@ $$\kern{4 em} f(x) = sign(\mathbf{w^*x + b^*}) $$
 $$\kern{4 em} L(w,b,\alpha) = \frac{1}{2}||w||^2 - \displaystyle \sum_{i=1}^N \alpha_iy_i(\mathbf{wx_i} + b) + \displaystyle \sum_{i=1}^N \alpha_i$$   
 其中$$\mathbf{\alpha} = (\alpha_1,\alpha_2,...,\alpha_N)^T$$为拉格朗日乘子向量。   
 根据拉格朗日对偶性，原始问题的对偶问题是极大极小问题：  
- $$\kern{4 em} \displaystyle \max_{\mathbf{\alpha}}\displaystyle \max_{\mathbf{w,b}}L(\mathbf{w,b,\alpha})$$   
+ $$\kern{4 em} \displaystyle \max_{\mathbf{\alpha}}\displaystyle \min_{\mathbf{w,b}}L(\mathbf{w,b,\alpha})$$   
+ 现对w,b求极小，再对$$\alpha$$求极大。  
+ (1)求$$\displaystyle \min_{\mathbf{w,b}}L(\mathbf{w,b,\alpha})$$。
 
 
 

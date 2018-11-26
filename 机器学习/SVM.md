@@ -25,7 +25,9 @@ $$\kern{4 em}\displaystyle \min_{\mathbf{w, b}} \frac{1}{2}||w||^2$$
 $$\kern{4 em} s.t. \kern{2 em}y_i(\mathbf{wx_i} + b) \ge 1, i = 1,2...,N$$  
 问题转化成带约束的优化问题（在这里是凸优化问题）。带等式的约束问题可以通过引入拉格朗日乘子求解，带不等式约束的问题可以引入KKT乘子求解。下面一节我们讨论带约束的凸优化问题。  
 ###线性不可分与软间隔最大化
-
+$$\kern{4 em}\displaystyle \min_{\mathbf{w, b}} \frac{1}{2}||w||^2 + C\displaystyle \sum_{i=1}^N \xi_i $$  
+$$\kern{4 em} s.t. \kern{2 em}y_i(\mathbf{wx_i} + b) \ge 1 - \xi_i, i = 1,2...,N$$  
+$$\kern{4 em} \xi_i \ge 0, i = 1,2...,N$$  
 ---
 
 参考文献：

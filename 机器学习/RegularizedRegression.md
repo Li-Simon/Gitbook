@@ -1,4 +1,8 @@
 #Regularized Regression
+这里讨论的还是线性系统，也就是预测函数：  
+$$ \kern{4 em} f(\mathbf{x}) = \beta_0 + \displaystyle \sum_{j=1}^px_{j}\beta_j$$  
+然后通过最小二乘求解数据的模型。通过加正则项来约束模型的复杂度或者参数范围。对于非线性模型，只是把模型$$f(\mathbf{x})$$换成你想要的非线性函数即可，比如N元M次多项式，选最简单的就是N元二次方程，这是最简单的非线性模型。  
+物理学中有一些很有意思的非线性回归模型，比如光的衍射成像，光通过特定结构的衍射，反射成像，求解这些模型，第一步是建model,也就是通过求解Maxwell方程，得到非线性方程组，第二步就是通过实验数据来求解模型中的参数，这些参数有两类，一类书几何参数，也就是设计到要处理问题的几何结构；第二类是物理参数，主要是描述系统材料属性的参数，比如折射率，反射率，光的波长等。  
 ## Ridge回归，Shrink与SVD
 
 $$ \kern{4 em}\hat \beta ^{ridge} =  \arg min_{\beta}{\displaystyle \sum_{i=1}^N(y_i -\beta_0-\displaystyle \sum_{j=1}^px_{ij}\beta_j)^2 + \lambda \displaystyle \sum_{j=1}^p\beta_j^2}$$  

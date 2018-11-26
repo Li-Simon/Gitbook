@@ -52,6 +52,11 @@ $$\kern{4 em}s.t. \kern{2 em} \mathbf g(\mathbf{x}) \le \mathbf{0}$$
 $$T(\mathbf{x^*}) = (y \in R^n: Dh(x^*)y)=0,Dg_j(x^*)y)=0, j \in J(x^*) $$.  
 其中： $$\kern{4 em} J(\mathbf {x^*,\mathbf {u^*}}) = (j: g_j(\mathbf{x^*})=0),\mathbf {u^*} > 0$$ 
 ##学习的对偶算法
+对于求极小问题：  
+$$\kern{4 em}\displaystyle \min_{\mathbf{w, b}} \frac{1}{2}||w||^2$$  
+$$\kern{4 em} s.t. \kern{2 em}y_i(\mathbf{wx_i} + b) \ge 1, i = 1,2...,N$$  
+
+
 
 
 

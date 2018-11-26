@@ -20,7 +20,7 @@ $$\lambda_1 \ge \lambda_2 \ge ... \ge \lambda_M$$
 我们可以通过SVD来实现PCA,具体就是只取X的SVD中的前M个其一分量。  
 $$\kern{8 em} X = UDV^T \approx U_MD_MV_M^T$$  
 其中$$U_M,D_M,V_M$$对于矩阵X的前M个奇异值分量。 
-取前d个奇异向量。选择t = 95%，使得。  
+取前d个奇异向量。选择一个比例t，一般取t = 95%，使得。  
 $$\kern{4 em}\frac{\displaystyle \sum_{i=1}^d \lambda_i}{\displaystyle \sum_{i=1}^M \lambda_i} \ge t$$
 
 

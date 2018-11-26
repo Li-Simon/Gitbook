@@ -68,6 +68,8 @@ $$\kern{4 em} L(w,b,\alpha) = \frac{1}{2}||w||^2 - \displaystyle \sum_{i=1}^N \a
  (1)求$$\displaystyle \min_{\mathbf{w,b}}L(\mathbf{w,b,\alpha})$$。对w,b求导并令其为0，得到:  
  $$\kern{4 em} \frac{\partial L(w,b,\alpha)}{\partial \mathbf{w}} = \mathbf{w} - \displaystyle \sum_{i=1}^N \alpha_iy_i(\mathbf{x_i}) = 0$$  
  $$\kern{4 em} \frac{\partial L(w,b,\alpha)}{\partial \mathbf{b}} = \displaystyle \sum_{i=1}^N \alpha_iy_i = 0$$  
+把上面两个式子代入拉格朗日函数，可以得到：  
+ 
 
 
 

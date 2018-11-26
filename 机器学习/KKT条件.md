@@ -76,19 +76,19 @@ $$\kern{4 em}\alpha_i \ge 0$$ ,i=1,2,...,N
 假设$$\mathbf{\alpha^*} = (\alpha_1^*,\alpha_2^*,...,\alpha_N^*)^T$$是对偶问题的解，则存在一个指标j使得$$\alpha_j >0$$，使得原问题的解$$\mathbf{w^*},b$$可由下面方程给出：  
 $$\kern{4 em} \mathbf{w^*} = \displaystyle \sum_{i=1}^N \alpha_i^*y_i(\mathbf{x_i})$$  
 $$\kern{4 em} b^* = y_j - \displaystyle \sum_{i=1}^N \alpha_i^*y_i(\mathbf{x_i*x_j})$$  
-由此得到分离超平面：
-$$\kern{4 em}\mathbf{w^*x + b^*} = 0$$  
-分类决策函数:
+由此得到分离超平面：  
+$$\kern{4 em}\mathbf{w^*x + b^*} = 0$$    
+分类决策函数:  
 $$\kern{4 em} f(x) = sign(\mathbf{w^*x + b^*}) $$  
-$$\kern{6 em} = sign(\displaystyle \sum_{i=1}^N \alpha_i^*y_i\mathbf{x_ix_j} + b^*) $$  
+$$\kern{6 em} = sign(\displaystyle \sum_{i=1}^N \alpha_i^*y_i\mathbf{x_ix_j} + b^*) $$    
 
 ### 线性不可分与软间隔最大化
 
-$$\kern{4 em}\displaystyle \min_{\mathbf{w, b}} \frac{1}{2}||w||^2 + C\displaystyle \sum_{i=1}^N \xi_i $$  
-$$\kern{4 em} s.t. \kern{2 em}y_i(\mathbf{wx_i} + b) \ge 1 - \xi_i$$, i = 1,2...,N  
-$$\kern{4 em} \xi_i \ge 0, i = 1,2...,N$$
+$$\kern{4 em}\displaystyle \min_{\mathbf{w, b}} \frac{1}{2}||w||^2 + C\displaystyle \sum_{i=1}^N \xi_i $$    
+$$\kern{4 em} s.t. \kern{2 em}y_i(\mathbf{wx_i} + b) \ge 1 - \xi_i$$, i = 1,2...,N    
+$$\kern{4 em} \xi_i \ge 0, i = 1,2...,N$$  
 
-通过构造拉格朗日函数求对偶函数。原问题的解是$$(w^*,\xi^*,b^*)$$,对偶问题的解是$$\mathbf{\alpha}$$。
+通过构造拉格朗日函数求对偶函数。原问题的解是$$(w^*,\xi^*,b^*)$$,对偶问题的解是$$\mathbf{\alpha}$$。  
 
 实际上与线性可分的求法是一致的,只是对应的$$\xi$$会多出一个拉格朗日乘子，在求解对偶问题的最优化时，多了一个约束。$$\mathbf{w^*}$$是唯一的，b不唯一。  
 

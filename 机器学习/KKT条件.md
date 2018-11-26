@@ -86,3 +86,5 @@ $$\kern{6 em} = sign(\displaystyle \sum_{i=1}^N \alpha_i^*y_i\mathbf{x_ix_j} + b
 
 
 
+
+

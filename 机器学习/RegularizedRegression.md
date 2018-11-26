@@ -1,4 +1,4 @@
-#Regularized Regression
+#线性系统的Regularized Regression
 这里讨论的还是线性系统，也就是预测函数：  
 $$ \kern{4 em} f(\mathbf{x}) = \beta_0 + \displaystyle \sum_{j=1}^px_{j}\beta_j$$  
 然后通过最小二乘求解数据的模型。通过加正则项来约束模型的复杂度或者参数范围。对于非线性模型，只是把模型$$f(\mathbf{x})$$换成你想要的非线性函数即可，比如N元M次多项式，选最简单的就是N元二次方程，这是最简单的非线性模型。  

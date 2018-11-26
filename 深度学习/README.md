@@ -1,4 +1,4 @@
-# 第八章 深度学习
+# 第六章 深度学习
 
 这一章主要讨论深度学习模型。主要包含CNN，RNN，DNN\(MLP\)。  
 CNN侧重于空间，主要用在图像分类模型，比如LeNet-5,AlexNet,VGG,GoogLeNet,Residual Net,Dense Net,Two path Net。  

@@ -60,7 +60,8 @@ $$\kern{4 em}\mathbf{w^*x + b^*} = 0$$
 分类决策函数:
 $$\kern{4 em} f(x) = sign(\mathbf{w^*x + b^*}) $$  
 引入拉格朗日函数，对每个不等式约束引入拉格朗日乘子$$\alpha_i \ge 0, i=1,2,3...,N$$：  
-$$\kern{4 em} L(w,b,\alpha) = \frac{1}{2}||w||^2 - \displaystyle \sum_{i=1}^N \alpha_iy_i(\mathbf{wx_i} + b) + \displaystyle \sum_{i=1}^N \alpha_i$$  
+$$\kern{4 em} L(w,b,\alpha) = \frac{1}{2}||w||^2 - \displaystyle \sum_{i=1}^N \alpha_iy_i(\mathbf{wx_i} + b) + \displaystyle \sum_{i=1}^N \alpha_i$$   
+其中$$\mathbf{\alpha} = (\alpha_1,\alpha_2,...,\alpha_N)^T$$为拉格朗日乘子向量。    
 
 
 

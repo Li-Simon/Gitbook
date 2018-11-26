@@ -69,7 +69,8 @@ $$\kern{4 em} L(w,b,\alpha) = \frac{1}{2}||w||^2 - \displaystyle \sum_{i=1}^N \a
  $$\kern{4 em} \frac{\partial L(w,b,\alpha)}{\partial \mathbf{w}} = \mathbf{w} - \displaystyle \sum_{i=1}^N \alpha_iy_i(\mathbf{x_i}) = 0$$  
  $$\kern{4 em} \frac{\partial L(w,b,\alpha)}{\partial \mathbf{b}} = \displaystyle \sum_{i=1}^N \alpha_iy_i = 0$$  
 把上面两个式子代入拉格朗日函数，可以得到：  
-$$\kern{4 em}\displaystyle \min_{\mathbf{w,b}}L(\mathbf{w,b,\alpha}) = -\frac{1}{2}\displaystyle \sum_{i=1}^N\displaystyle \sum_{j=1}^N\alpha_i\alpha_jy_iy_j(\mathbf{x_ix_j}) + \displaystyle \sum_{i=1}^N \alpha_i$$
+$$\kern{4 em}\displaystyle \min_{\mathbf{w,b}}L(\mathbf{w,b,\alpha}) = -\frac{1}{2}\displaystyle \sum_{i=1}^N\displaystyle \sum_{j=1}^N\alpha_i\alpha_jy_iy_j(\mathbf{x_ix_j}) + \displaystyle \sum_{i=1}^N \alpha_i$$  
+(2)求$$\displaystyle \min_{\mathbf{w,b}}L(\mathbf{w,b,\alpha})$$对$$\alpha$$的极大即是对偶问题。  
 
 
 

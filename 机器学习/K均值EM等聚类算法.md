@@ -19,7 +19,7 @@ $$\kern 2 em$$for j=1,2,...,m,do
 $$\kern 4 em$$ 样本点$$\mathbf{x_j}$$到与各均值$$\mathbf{u_i}$$的距离
 $$\kern 4 em$$ $$d_{ij} = ||\mathbf{x_j}-\mathbf{u_i}||_2$$    
 $$\kern 4 em$$根据距离确定样本点j所属于的类:$$\lambda_j = \arg \min d_{ji}$$ 
-$$\kern 4 em$$将$$\mathbf{x_j}$$划入所属的类$$C_{\lambda_j} =C_{\lambda_j}U(\mathbf{u_i})$$
+$$\kern 4 em$$将$$\mathbf{x_j}$$划入所属的类$$C_{\lambda_j} =C_{\lambda_j}+\mathbf{u_i}$$
 $$\kern 4 em$$
 
 

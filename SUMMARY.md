@@ -103,7 +103,6 @@
   * [Residual NN](Kaggle/ResiNN.md)
   * [Fast项目](Kaggle/Fast项目.md)
   * [Miura项目](Kaggle/Miura项目.md)
-  * [问题求解系统](Kaggle/问题求解系统.md)
   * [任务](Kaggle/ToDo.md)
   * [深度学习的发展脉络](Kaggle/深度学习的发展脉络.md)
 * [第九章 问题求解系统](问题求解系统/README.md)

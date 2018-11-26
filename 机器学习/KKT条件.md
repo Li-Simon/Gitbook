@@ -80,5 +80,9 @@ $$\kern{4 em} b^* = y_j - \displaystyle \sum_{i=1}^N \alpha_i^*y_i(\mathbf{x_i*x
 $$\kern{4 em}\mathbf{w^*x + b^*} = 0$$  
 分类决策函数:
 $$\kern{4 em} f(x) = sign(\mathbf{w^*x + b^*}) $$  
+$$\kern{6 em} = sign(\displaystyle \sum_{i=1}^N \alpha_i^*y_i\mathbf{x_ix_j} + b^*) $$  
+
+
+
 
 

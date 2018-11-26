@@ -10,7 +10,7 @@ k-means对噪声和离群值非常敏感，所以有了k-medoids和k-medians。
 k-means只用于numerical类型数据，不适用于categorical类型数据，所以k-modes。   
 k-means不能解决非凸（non-convex）数据，所以有了kernel k-means
 
-###算法流程
+###K-Means算法流程
 输入：样本集D=($$\mathbf{x_1,x_2,...,x_m}$$),聚类数目k.  
 从D中随机选取k个样本点作为中心，($$\mathbf{u_1,u_2,...,u_k}$$)  
 repeat:

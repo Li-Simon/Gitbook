@@ -55,6 +55,10 @@ $$T(\mathbf{x^*}) = (y \in R^n: Dh(x^*)y)=0,Dg_j(x^*)y)=0, j \in J(x^*) $$.
 对于求极小问题：  
 $$\kern{4 em}\displaystyle \min_{\mathbf{w, b}} \frac{1}{2}||w||^2$$  
 $$\kern{4 em} s.t. \kern{2 em}y_i(\mathbf{wx_i} + b) \ge 1, i = 1,2...,N$$  
+由此得到分离超平面：
+$$\kern{4 em}\mathbf{w^*x + b^*} = 0$$  
+分类决策函数:
+$$\kern{4 em} f(x) = sign(\mathbf{w^*x + b^*}) $$  
 
 
 

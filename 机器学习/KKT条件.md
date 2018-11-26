@@ -51,5 +51,7 @@ $$\kern{4 em}s.t. \kern{2 em} \mathbf g(\mathbf{x}) \le \mathbf{0}$$
 的严格局部极小点，  
 $$T(\mathbf{x^*}) = (y \in R^n: Dh(x^*)y)=0,Dg_j(x^*)y)=0, j \in J(x^*) $$.  
 其中： $$\kern{4 em} J(\mathbf {x^*,\mathbf {u^*}}) = (j: g_j(\mathbf{x^*})=0),\mathbf {u^*} > 0$$ 
+##学习的对偶算法
+
 
 

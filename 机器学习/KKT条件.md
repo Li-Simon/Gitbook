@@ -55,10 +55,7 @@ $$T(\mathbf{x^*}) = (y \in R^n: Dh(x^*)y)=0,Dg_j(x^*)y)=0, j \in J(x^*) $$.
 对于求极小问题：  
 $$\kern{4 em}\displaystyle \min_{\mathbf{w, b}} \frac{1}{2}||w||^2$$  
 $$\kern{4 em} s.t. \kern{2 em}y_i(\mathbf{wx_i} + b) \ge 1, i = 1,2...,N$$  
-由此得到分离超平面：
-$$\kern{4 em}\mathbf{w^*x + b^*} = 0$$  
-分类决策函数:
-$$\kern{4 em} f(x) = sign(\mathbf{w^*x + b^*}) $$  
+
 引入拉格朗日函数，对每个不等式约束引入拉格朗日乘子$$\alpha_i \ge 0, i=1,2,3...,N$$：  
 $$\kern{4 em} L(w,b,\alpha) = \frac{1}{2}||w||^2 - \displaystyle \sum_{i=1}^N \alpha_iy_i(\mathbf{wx_i} + b) + \displaystyle \sum_{i=1}^N \alpha_i$$   
 其中$$\mathbf{\alpha} = (\alpha_1,\alpha_2,...,\alpha_N)^T$$为拉格朗日乘子向量。   
@@ -79,4 +76,9 @@ $$\kern{4 em}\alpha_i \ge 0$$ ,i=1,2,...,N
 假设$$\mathbf{\alpha^*} = (\alpha_1^*,\alpha_2^*,...,\alpha_N^*)^T$$是对偶问题的解，则存在一个指标j使得$$\alpha_j >0$$，使得原问题的解$$\mathbf{w^*},b$$可由下面方程给出：  
 $$\kern{4 em} \mathbf{w^*} = \displaystyle \sum_{i=1}^N \alpha_i^*y_i(\mathbf{x_i})$$  
 $$\kern{4 em} b^* = y_j - \displaystyle \sum_{i=1}^N \alpha_i^*y_i(\mathbf{x_i*x_j})$$  
+由此得到分离超平面：
+$$\kern{4 em}\mathbf{w^*x + b^*} = 0$$  
+分类决策函数:
+$$\kern{4 em} f(x) = sign(\mathbf{w^*x + b^*}) $$  
+
 

@@ -13,7 +13,6 @@
   * [OOP](C++/oop.md)
   * [模板类与模板函数](C++/模板类与模板函数.md)
   * [COM](C++/COM连接点.md)
-  * [驱动](C++/驱动.md)
   * [常用的python数据处理函数](C++/常用的python数据处理函数.md)
 * [第三章 问题求解系统](问题求解系统/README.md)
   * [Sklearn介绍](问题求解系统/Sklearn介绍.md)

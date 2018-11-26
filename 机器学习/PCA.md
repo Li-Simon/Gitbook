@@ -34,5 +34,5 @@ $$\kern{4 em}\frac{\displaystyle \sum_{i=1}^d \lambda_i}{\displaystyle \sum_{i=1
 
 
 
-[^1]: 周志华《机器学习》
+[^1]: Enter footnote here.
 

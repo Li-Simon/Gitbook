@@ -72,7 +72,7 @@ $$\kern{4 em} L(w,b,\alpha) = \frac{1}{2}||w||^2 - \displaystyle \sum_{i=1}^N \a
 $$\kern{4 em}\displaystyle \min_{\mathbf{w,b}}L(\mathbf{w,b,\alpha}) = -\frac{1}{2}\displaystyle \sum_{i=1}^N\displaystyle \sum_{j=1}^N\alpha_i\alpha_jy_iy_j(\mathbf{x_ix_j}) + \displaystyle \sum_{i=1}^N \alpha_i$$  
 (2)求$$\displaystyle \min_{\mathbf{w,b}}L(\mathbf{w,b,\alpha})$$对$$\alpha$$的极大即是对偶问题。  
 $$\kern{4 em}\displaystyle \max_{\mathbf{\alpha}}-\frac{1}{2}\displaystyle \sum_{i=1}^N\displaystyle \sum_{j=1}^N\alpha_i\alpha_jy_iy_j(\mathbf{x_ix_j}) + \displaystyle \sum_{i=1}^N \alpha_i$$   
-s.t. $$\kern{3 em}\sum_{i=1}^N \alpha_iy_i = 0$$ 
+s.t. $$\kern{3 em}\sum_{i=1}^N \alpha_iy_i = 0$$   
 $$\kern{4 em}\alpha_i \ge 0$$ ,i=1,2,...,N
 
 

@@ -75,12 +75,8 @@ $$\kern{4 em}\displaystyle \max_{\mathbf{\alpha}}-\frac{1}{2}\displaystyle \sum_
 s.t. $$\kern{3 em}\sum_{i=1}^N \alpha_iy_i = 0$$   
 $$\kern{4 em}\alpha_i \ge 0$$ ,i=1,2,...,N
 由于原始问题满足KKT条件，所以存在$$w^*,\alpha^*$$使得$$w^*$$是原始问题的解，$$\alpha^*$$是对偶问题的解。  
-定理：  
+####定理：由对偶问题求原始问题  
 假设$$\mathbf{\alpha^*} = (\alpha_1^*,\alpha_2^*,...,\alpha_N^*)^T$$是对偶问题的解，则存在一个指标j使得$$\alpha_j >0$$，使得原问题的解$$\mathbf{w^*},b$$可由下面方程给出：  
 $$\kern{4 em} \mathbf{w^*} = \displaystyle \sum_{i=1}^N \alpha_i^*y_i(\mathbf{x_i})$$  
 $$\kern{4 em} b^* = y_j - \displaystyle \sum_{i=1}^N \alpha_i^*y_i(\mathbf{x_i*x_j})$$  
-
-
-
-
 

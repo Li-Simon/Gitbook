@@ -14,22 +14,22 @@ k-means不能解决非凸（non-convex）数据，所以有了kernel k-means
 输入：样本集D=($$\mathbf{x_1,x_2,...,x_m}$$),聚类数目k.  
 从D中随机选取k个样本点作为中心，($$\mathbf{u_1,u_2,...,u_k}$$)  
 repeat:
-$$\kern 2 em$$令$$C_i = 0, (1 \le i \le k)$$
-$$\kern 2 em$$for j=1,2,...,m,do
-$$\kern 4 em$$ 样本点$$\mathbf{x_j}$$到与各均值$$\mathbf{u_i}$$的距离
-$$\kern 4 em$$ $$d_{ij} = ||\mathbf{x_j}-\mathbf{u_i}||_2$$    
-$$\kern 4 em$$根据距离确定样本点j所属于的类:$$\lambda_j = \arg \min d_{ji}$$ 
-$$\kern 4 em$$将$$\mathbf{x_j}$$划入所属的类$$C_{\lambda_j} =C_{\lambda_j}+\mathbf{u_i}$$
-$$\kern 2 em$$end for
-$$\kern 2 em$$for i=1,2,...,k,do
-$$\kern 4 em$$计算$$\kern{4 em} \mathbf{u_i'} = \frac{1}{|C_i|}\displaystyle \sum_{x \in C_i} \mathbf{x}$$  
-$$\kern 4 em$$if $$\mathbf{u_i' \ne u_i}$$
-$$\kern 6 em$$ $$\mathbf{u_i = u_i'}$$
-$$\kern 4 em$$else: 
-$$\kern 6 em$$not change
-$$\kern 2 em$$end for
-$$\kern 0 em$$until所有的均值向量都没有改变。
-$$\kern 0 em$$输出族划分C=($$C_1,C_2,...,C_k$$)
+$$\kern 2 em$$令$$C_i = 0, (1 \le i \le k)$$  
+$$\kern 2 em$$for j=1,2,...,m,do  
+$$\kern 4 em$$ 样本点$$\mathbf{x_j}$$到与各均值$$\mathbf{u_i}$$的距离  
+$$\kern 4 em$$ $$d_{ij} = ||\mathbf{x_j}-\mathbf{u_i}||_2$$      
+$$\kern 4 em$$根据距离确定样本点j所属于的类:$$\lambda_j = \arg \min d_{ji}$$   
+$$\kern 4 em$$将$$\mathbf{x_j}$$划入所属的类$$C_{\lambda_j} =C_{\lambda_j}+\mathbf{u_i}$$  
+$$\kern 2 em$$end for  
+$$\kern 2 em$$for i=1,2,...,k,do  
+$$\kern 4 em$$计算$$\kern{1 em} \mathbf{u_i'} = \frac{1}{|C_i|}\displaystyle \sum_{x \in C_i}  \mathbf{x}$$    
+$$\kern 4 em$$if $$\mathbf{u_i' \ne u_i}$$  
+$$\kern 6 em$$ $$\mathbf{u_i = u_i'}$$   
+$$\kern 4 em$$else:   
+$$\kern 6 em$$not change   
+$$\kern 2 em$$end for   
+$$\kern 0 em$$until所有的均值向量都没有改变。   
+$$\kern 0 em$$输出族划分C=($$C_1,C_2,...,C_k$$)   
 
 
 

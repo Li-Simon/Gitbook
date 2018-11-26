@@ -27,8 +27,9 @@ $$\kern 4 em$$if $$\mathbf{u_i' \ne u_i}$$
 $$\kern 6 em$$ $$\mathbf{u_i = u_i'}$$
 $$\kern 4 em$$else: 
 $$\kern 6 em$$not change
-$$\kern 4 em$$所有的均值向量都没有改变。
-$$\kern 2 em$$输出族划分C=($$C_1,C_2,...,C_k$$)
+$$\kern 2 em$$end for
+$$\kern 0 em$$until所有的均值向量都没有改变。
+$$\kern 0 em$$输出族划分C=($$C_1,C_2,...,C_k$$)
 
 
 

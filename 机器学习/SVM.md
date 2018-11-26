@@ -31,7 +31,7 @@ $$\kern{4 em}\displaystyle \min_{\mathbf{w, b}} \frac{1}{2}||w||^2 + C\displayst
 $$\kern{4 em} s.t. \kern{2 em}y_i(\mathbf{wx_i} + b) \ge 1 - \xi_i$$, i = 1,2...,N  
 $$\kern{4 em} \xi_i \ge 0, i = 1,2...,N$$
 
-通过构造拉格朗日函数求对偶函数。原问题的解是$$(w^*,\xi^*,b^*)$$,对偶问题的解是$$\mathbf{\alpha}$$。
+通过构造拉格朗日函数求对偶函数。原问题的解是$$(w^*,\xi^*,b^*)$$,对偶问题的解是$$\mathbf{\alpha^*}$$。
 
 参考文献：
 

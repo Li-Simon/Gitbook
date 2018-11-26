@@ -61,7 +61,9 @@ $$\kern{4 em}\mathbf{w^*x + b^*} = 0$$
 $$\kern{4 em} f(x) = sign(\mathbf{w^*x + b^*}) $$  
 引入拉格朗日函数，对每个不等式约束引入拉格朗日乘子$$\alpha_i \ge 0, i=1,2,3...,N$$：  
 $$\kern{4 em} L(w,b,\alpha) = \frac{1}{2}||w||^2 - \displaystyle \sum_{i=1}^N \alpha_iy_i(\mathbf{wx_i} + b) + \displaystyle \sum_{i=1}^N \alpha_i$$   
-其中$$\mathbf{\alpha} = (\alpha_1,\alpha_2,...,\alpha_N)^T$$为拉格朗日乘子向量。    
+其中$$\mathbf{\alpha} = (\alpha_1,\alpha_2,...,\alpha_N)^T$$为拉格朗日乘子向量。   
+根据拉格朗日对偶性，原始问题的对偶问题是极大极小问题：  
+ $$\kern{4 em} \displaystyle \max_{\mathbf{\alpha}}\displaystyle \max_{\mathbf{w,b}}L(\mathbf{w,b,\alpha})$$   
 
 
 

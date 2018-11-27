@@ -30,7 +30,6 @@
     * [最短路径Dijkstra算法](算法/最短路径Dijkstra算法.md)
     * [快速排序与二叉树](算法/快速排序与二叉树.md)
   * [插值](算法/section1.md)
-  * [医学图像重建算法](算法/医学图像重建算法.md)
 * [第四章 最优化](最优化/README.md)
   * [无约束最优化问题](最优化/无约束最优化问题.md)
     * [linear search](最优化/linear-search.md)

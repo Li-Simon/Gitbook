@@ -55,8 +55,7 @@ $$\kern{4 em}L(\beta) = L(\beta_0) + (\beta - \beta_0)^Tg + \frac{1}{2}(\beta - 
 $$\kern{4 em}\frac{\partial L(\beta)}{\partial \beta} = g + H(\beta - \beta_0) + \lambda\beta = 0$$  
 就得到：  
 $$\kern{4 em}\beta = (H + \lambda I_n)^{-1}H\beta_0 - (H + \lambda I_n)^{-1}g$$,
-
-
+算法流程如下：  
 ![](/assets/L_M_Algo.gif)
 
 ```py

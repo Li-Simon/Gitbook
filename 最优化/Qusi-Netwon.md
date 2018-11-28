@@ -17,10 +17,25 @@ $$\kern{4 em} f(x_k + \beta ^m d_k) \leq f(x_k) + \delta \beta ^m g_k^Td_k$$
 对于梯度上升，上面的方程变成：  
 $$\kern{4 em} f(x_k - \beta ^m d_k) \geq f(x_k) - \delta \beta ^m g_k^Td_k$$  
 由此确定下一个位置$$x_{k+1} = x_k - \alpha _k d_k$$
+###拟牛顿法的历史
+拟牛顿法是求解非线性优化问题最有效的方法之一，于20世纪50年代由美国Argonne国家实验室的物理学家W.C.Davidon所提出来。Davidon设计的这种算法在当时看来是非线性优化领域最具创造性的发明之一。不久R. Fletcher和M. J. D. Powell证实了这种新的算法远比其他方法快速和可靠，使得非线性优化这门学科在一夜之间突飞猛进。
 
-# Qusi-Netwon methods
+拟牛顿法的本质思想是改善牛顿法每次需要求解复杂的Hessian矩阵的逆矩阵的缺陷，它使用正定矩阵来近似Hessian矩阵的逆，从而简化了运算的复杂度。拟牛顿法和最速下降法一样只要求每一步迭代时知道目标函数的梯度。通过测量梯度的变化，构造一个目标函数的模型使之足以产生超线性收敛性。这类方法大大优于最速下降法，尤其对于困难的问题。另外，因为拟牛顿法不需要二阶导数的信息，所以有时比牛顿法更为有效。如今，优化软件中包含了大量的拟牛顿算法用来解决无约束，约束，和大规模的优化问题。  
+　　具体步骤：  
+　　拟牛顿法的基本思想如下。首先构造目标函数在当前迭代$$x_k$$的二次模型：  
+$$\kern{4 em} m_k(p) = f(x_k) + \bigtriangledown f(x_k)^Tp + \frac{p^TB_{k}p}{2}$$  
+$$\kern{4 em} p_k = - B^{-1}_{k}\bigtriangledown f(x_k)$$  
+这里$$B_k$$是一个对称正定矩阵，于是我们取这个二次模型的最优解作为搜索方向，并且得到新的迭代点：  
+$$\kern{4 em} x_{k+1} = x_{k} + \alpha_kp_k$$  
+其中我们要求步长$$\alpha_k$$满足Wolfe条件。这样的迭代与牛顿法类似，区别就在于用近似的Hesse矩阵$$B_k$$ 代替真实的Hesse矩阵。所以拟牛顿法最关键的地方就是每一步迭代中矩阵Bk 的更新。现在假设得到一个新的迭代$$x_k+1$$，并得到一个新的二次模型：
 
-# BFGS
+这个公式被称为割线方程。常用的拟牛顿法有DFP算法和BFGS算法。  
+[最优化方法：牛顿迭代法和拟牛顿迭代法](https://blog.csdn.net/pipisorry/article/details/24574293)
+
+
+## Qusi-Netwon methods
+
+### BFGS
 
 我们知道，在牛顿法中，我们需要求解二阶导数矩阵--Hassian阵，当变量很多时，求解Hassian阵势比较费时间的，Qusi-Netwon法主要是在构造Hassian阵上下功夫，它是通过构造一个近似的Hassian阵，或者Hassian阵的逆，而不是解析求解或者利用差分法来求解这个Hassian阵。构造的Hassian阵通过迭代而改变。  
 比较出名的Qusi-Netwon方法有BFGS\(以Charles George Broyden, Roger Fletcher, Donald Goldfarb and David Shanno命名\)  

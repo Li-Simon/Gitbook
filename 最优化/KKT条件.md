@@ -46,6 +46,7 @@ $$F(\mathbf{x})$$是f在$$\mathbf{x}$$处的Hassian矩阵；
 &emsp;&emsp;3. $$\mathbf{u^{*T}}\mathbf{g(x*)} = 0$$   
 &emsp;&emsp;4.对所有$$\mathbf{y} \in T(\mathbf{x^*}, \mathbf{u^*}), \mathbf{y} \ne 0$$，都有$$\mathbf{y^T}L(\mathbf{x},\mathbf{\lambda},\mathbf{u})\mathbf{y} > 0$$   
 那么$$\mathbf{x^*}$$是优化问题   
+&emsp;&emsp;$$ minimize f(\mathbf{x})$$  
 &emsp;&emsp;$$s.t. \kern{2 em} \mathbf h(\mathbf{x}) = \mathbf{0}$$   
 &emsp;&emsp;$$s.t. \kern{2 em} \mathbf g(\mathbf{x}) \le \mathbf{0}$$  
 的严格局部极小点，  

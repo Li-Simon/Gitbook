@@ -1,4 +1,5 @@
 #L-M算法
+方法用于求解非线性最小二乘问题，结合了梯度下降法和高斯-牛顿法。因此我们先简单介绍梯度下降法与Gauss-Netwon法。  
 ##[梯度下降法](https://en.wikipedia.org/wiki/Gradient_descent)  
 把损失函数展开到一阶。  
 &emsp;&emsp;$$f(x + \alpha \mathbf{d} ) = f(x_0) + \alpha f'(x_0) \mathbf{d} + O({\alpha}^2)$$  

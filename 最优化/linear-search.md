@@ -1,4 +1,24 @@
 #Linear Search Methods
+## 线性搜索与Armijo准则
+
+符号约定：  
+$$\kern{4 em} g_k: \nabla f(x_k)$$,即目标函数关于k次迭代值$$x_k$$的导数  
+$$\kern{4 em} G_k: G(x_k) = \nabla ^2f(x_k)$$,即Hassian矩阵  
+$$\kern{4 em} d_k: $$第k次迭代的步长因子，在最速下降算法中，有$$d_k = -g_k$$  
+$$\kern{4 em} \alpha_k$$:第k次迭代的步长因子，有$$x_{k+1} = x_k + \alpha_k d_k$$  
+在精确线性搜索中，步长因子$$\alpha _k$$由下面的因子确定：  
+$$\kern{4 em} \alpha _k = arg min _{\alpha} f(x_k + \alpha d_k)$$  
+而对于非精确线性搜索，选取的$$\alpha _k$$只要使得目标函数f得到可接受的下降量，即：  
+$$\kern{4 em} \Delta f(x_k) = f(x_k) - f(x_k + \alpha _k d_k)$$  
+Armijo 准则用于非精确线性搜索中步长因子$$\alpha$$的确定，内容如下：  
+Armijo 准则：  
+已知当前位置$$x_k$$和优化方向$$d_k$$，参数$$\beta \in (0,1), \delta \in (0,0.5)$$.令步长因子$$\kern{4 em} \alpha _k = \beta ^{m_k}$$,其中$$m_k$$为满足下列不等式的最小非负整数m:  
+$$\kern{4 em} f(x_k + \beta ^m d_k) \leq f(x_k) + \delta \beta ^m g_k^Td_k$$  
+由此确定下一个位置$$x_{k+1} = x_k + \alpha _k d_k$$  
+对于梯度上升，上面的方程变成：  
+$$\kern{4 em} f(x_k - \beta ^m d_k) \geq f(x_k) - \delta \beta ^m g_k^Td_k$$  
+由此确定下一个位置$$x_{k+1} = x_k - \alpha _k d_k$$
+##最速下降法
 the steepest descent algorithm proceeds as follows: at each step, starting from the point $$x^{(k)}$$,we conduct a line search in the direction $$-\nabla f(x^{(k)})$$, until a minimizer, $$x^{(k+1)}$$, is found.  
 $$\alpha _{k} = arg min_{\alpha \ge 0} f(x_{(k)} - \alpha  \nabla f(x^{(k)})) $$  
 Proposition 8.1： if $$x^{(k)}$$ is the steepest descent sequence for f: $$R^n$$-&gt;R， then for each k the vector $$x^{(k+1)} - x^{(k)}$$ is orthogonal to the vector $$x^{(k+2)} - x^{(k+1)}$$  

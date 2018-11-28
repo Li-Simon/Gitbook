@@ -32,6 +32,7 @@
       * [牛顿法](最优化/牛顿法.md)
       * [拟牛顿法](最优化/Qusi-Netwon.md)
     * [信赖域方法](最优化/信赖域方法.md)
+      * [高斯-牛顿法](最优化/Gauss_Netwon.md)
       * [Levenberg-Marquardt算法](最优化/Levenberg-Marquardt算法.md)
       * [Dogleg算法](最优化/Dogleg算法.md)
     * [共轭梯度法](最优化/共轭梯度法.md)

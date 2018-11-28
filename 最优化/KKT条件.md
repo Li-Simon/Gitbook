@@ -22,9 +22,9 @@ KKT条件：某个点是局部技校点所满足的一阶必要条件。
 &emsp;&emsp;$$\kern{4 em}Df(\mathbf{x^*}) + \mathbf{\lambda^*}Dh(\mathbf{x^*}) + \mathbf{u^*}Dg(\mathbf{x^*})  = \mathbf{0^T}$$   
 &emsp;&emsp;$$\mathbf{u^{*T}}\mathbf{g(x*)} = 0$$   
 $$\mathbf{\lambda^*}$$为拉格朗日乘子向量，$$\mathbf{u^*}$$是iKKT乘子向量，其元素分别成为拉格朗日乘子，KKT乘子。  
-####充分条件
+###充分条件
 上面讲了局部极小的必要条件，这里我们讨论局部极小的充分条件。 然后我们就利用KKT条件去求不等式约束问题。  
-二阶充分必要条件;  
+####二阶充分必要条件;  
 定义如下矩阵：  
 &emsp;&emsp;$$L(\mathbf{x},\mathbf{\lambda},\mathbf{u}) = F(\mathbf{x}) + \mathbf{\lambda}\mathbf{H}(\mathbf{x})+ \mathbf{u}\mathbf{G}(\mathbf{x})$$  
 $$F(\mathbf{x})$$是f在$$\mathbf{x}$$处的Hassian矩阵；  

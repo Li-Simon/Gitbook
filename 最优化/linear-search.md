@@ -2,56 +2,58 @@
 ## 线性搜索与Armijo准则
 
 符号约定：  
-$$\kern{4 em} g_k: \nabla f(x_k)$$,即目标函数关于k次迭代值$$x_k$$的导数  
-$$\kern{4 em} G_k: G(x_k) = \nabla ^2f(x_k)$$,即Hassian矩阵  
-$$\kern{4 em} d_k: $$第k次迭代的步长因子，在最速下降算法中，有$$d_k = -g_k$$  
-$$\kern{4 em} \alpha_k$$:第k次迭代的步长因子，有$$x_{k+1} = x_k + \alpha_k d_k$$  
+&emsp;&emsp;$$ g_k: \nabla f(x_k)$$,即目标函数关于k次迭代值$$x_k$$的导数  
+&emsp;&emsp;$$ G_k: G(x_k) = \nabla ^2f(x_k)$$,即Hassian矩阵  
+&emsp;&emsp;$$ d_k: $$第k次迭代的步长因子，在最速下降算法中，有$$d_k = -g_k$$  
+&emsp;&emsp;$$\kern{4 em} \alpha_k$$:第k次迭代的步长因子，有$$x_{k+1} = x_k + \alpha_k d_k$$  
 在精确线性搜索中，步长因子$$\alpha _k$$由下面的因子确定：  
-$$\kern{4 em} \alpha _k = arg min _{\alpha} f(x_k + \alpha d_k)$$  
+&emsp;&emsp;$$ \alpha _k = arg min _{\alpha} f(x_k + \alpha d_k)$$  
 而对于非精确线性搜索，选取的$$\alpha _k$$只要使得目标函数f得到可接受的下降量，即：  
-$$\kern{4 em} \Delta f(x_k) = f(x_k) - f(x_k + \alpha _k d_k)$$  
+&emsp;&emsp;$$ \Delta f(x_k) = f(x_k) - f(x_k + \alpha _k d_k)$$  
 Armijo 准则用于非精确线性搜索中步长因子$$\alpha$$的确定，内容如下：  
 Armijo 准则：  
 已知当前位置$$x_k$$和优化方向$$d_k$$，参数$$\beta \in (0,1), \delta \in (0,0.5)$$.令步长因子$$\kern{4 em} \alpha _k = \beta ^{m_k}$$,其中$$m_k$$为满足下列不等式的最小非负整数m:  
-$$\kern{4 em} f(x_k + \beta ^m d_k) \leq f(x_k) + \delta \beta ^m g_k^Td_k$$  
+&emsp;&emsp;$$ f(x_k + \beta ^m d_k) \leq f(x_k) + \delta \beta ^m g_k^Td_k$$  
 由此确定下一个位置$$x_{k+1} = x_k + \alpha _k d_k$$  
 对于梯度上升，上面的方程变成：  
-$$\kern{4 em} f(x_k - \beta ^m d_k) \geq f(x_k) - \delta \beta ^m g_k^Td_k$$  
+&emsp;&emsp;$$ f(x_k - \beta ^m d_k) \geq f(x_k) - \delta \beta ^m g_k^Td_k$$  
 由此确定下一个位置$$x_{k+1} = x_k - \alpha _k d_k$$
 ##最速下降法
 the steepest descent algorithm proceeds as follows: at each step, starting from the point $$x^{(k)}$$,we conduct a line search in the direction $$-\nabla f(x^{(k)})$$, until a minimizer, $$x^{(k+1)}$$, is found.  
-$$\alpha _{k} = arg min_{\alpha \ge 0} f(x_{(k)} - \alpha  \nabla f(x^{(k)})) $$  
+&emsp;&emsp;$$\alpha _{k} = arg min_{\alpha \ge 0} f(x_{(k)} - \alpha  \nabla f(x^{(k)})) $$  
 Proposition 8.1： if $$x^{(k)}$$ is the steepest descent sequence for f: $$R^n$$-&gt;R， then for each k the vector $$x^{(k+1)} - x^{(k)}$$ is orthogonal to the vector $$x^{(k+2)} - x^{(k+1)}$$  
-Proposition 8.2：if $$x^{(k)}$$ is the steepest descent sequence for f: $$R^n$$-&gt;R and if $$\nabla f(x^{(k)}) \ne 0$$, then   $$\kern{4 em} f(x^{(k+1)}) < f(x^{(k)})$$  
+Proposition 8.2：if $$x^{(k)}$$ is the steepest descent sequence for f: $$R^n$$-&gt;R and if $$\nabla f(x^{(k)}) \ne 0$$, then     
+&emsp;&emsp;$$\kern{4 em} f(x^{(k+1)}) < f(x^{(k)})$$  
 Stopping criterion：  
-$$\kern{4 em} \frac{|f(x^{(k+1)}) - f(x^{(k)})|}{||f(x^{(k)})||} < \epsilon $$  
+&emsp;&emsp;$$ \frac{|f(x^{(k+1)}) - f(x^{(k)})|}{||f(x^{(k)})||} < \epsilon $$  
 Example: Quadratic function of the form:  
-$$\kern{4 em} f(x) = \frac{1}{2}x^T\mathrm{Q}x - b^Tx $$  
+&emsp;&emsp;$$ f(x) = \frac{1}{2}x^T\mathrm{Q}x - b^Tx $$  
 Gradient:$$g^{(k)} = \nabla f(x^{(k)}) = Qx - b$$  
-so $$\kern{4 em} x^{(k+1)} = x^{(k)} - \alpha _{k}g^{(k)}$$  
+so   
+&emsp;&emsp;$$ x^{(k+1)} = x^{(k)} - \alpha _{k}g^{(k)}$$  
 where:  
-$$\kern{4 em} \alpha _{k} = arg min_{\alpha \ge 0} f(x_{(k)} - \alpha  g^{(k)})  = arg min_{\alpha \ge 0} (\frac{1}{2}(x^{k} - \alpha  g^{(k)})^TQ(x^{k} - \alpha  g^{(k)}) - (x^{k} - \alpha  g^{(k)})^Tb) $$  
+&emsp;&emsp;$$ \alpha _{k} = arg min_{\alpha \ge 0} f(x_{(k)} - \alpha  g^{(k)})  = arg min_{\alpha \ge 0} (\frac{1}{2}(x^{k} - \alpha  g^{(k)})^TQ(x^{k} - \alpha  g^{(k)}) - (x^{k} - \alpha  g^{(k)})^Tb) $$  
 Hence:  
-$$\kern{4 em} \alpha _{k} = \frac{g^{(k)T}g^{(k)}}{g^{(k)T}Qg^{(k)}}$$
+&emsp;&emsp;$$ \alpha _{k} = \frac{g^{(k)T}g^{(k)}}{g^{(k)T}Qg^{(k)}}$$
 
 Covergence properties:  
 Define:   
-$$\kern{4 em} V(x) = f(x) + \frac{1}{2}x^{*T}Qx^{*} = \frac{1}{2}(x-x^*)^TQ(x-x^*)$$  
+&emsp;&emsp;$$ V(x) = f(x) + \frac{1}{2}x^{*T}Qx^{*} = \frac{1}{2}(x-x^*)^TQ(x-x^*)$$  
 With:$$x^* = Q^{-1}b$$  
 Lemma 8.1 The iterative algorithm   
-$$\kern{4 em} x^{(k+1)} = x^{(k)} - \alpha _{k}g^{(k)}$$  
+&emsp;&emsp;$$ x^{(k+1)} = x^{(k)} - \alpha _{k}g^{(k)}$$  
 with $$g^{(k)} = Qx^{(k)} - b$$ satisfies   
-$$\kern{4 em} V(x^{(k+1)}) = (1 - \gamma _{k})V(x^{(k)})$$,  
+&emsp;&emsp;$$ V(x^{(k+1)}) = (1 - \gamma _{k})V(x^{(k)})$$,  
 where, if $$g^{(k)} = 0$$ then $$\gamma _{k} = 1$$, and if $$g^{(k)} \ne 0$$ then:  
-$$\kern{4 em} \gamma _{k} = \alpha _{k}\frac{g^{(k)T}Qg^{(k)}}{g^{(k)T}Q^{-1}g^{(k)}}(2\frac{g^{(k)T}g^{(k)}}{g^{(k)T}Qg^{(k)}} - \alpha _{k})$$  
+&emsp;&emsp;$$ \gamma _{k} = \alpha _{k}\frac{g^{(k)T}Qg^{(k)}}{g^{(k)T}Q^{-1}g^{(k)}}(2\frac{g^{(k)T}g^{(k)}}{g^{(k)T}Qg^{(k)}} - \alpha _{k})$$  
 Submit $$\alpha _{k}$$ into $$\gamma _{k}$$, then  
 $$\kern{4 em} \gamma _{k} = \frac{(g^{(k)T}g^{(k)})^2}{(g^{(k)T}Qg^{(k)})(g^{(k)T}Q^{-1}g^{(k)})}$$
 
 Theorem 8.1 Let $$x^{(k)}$$ be the sequence resulting from a gradient algorithm  $$x^{(k+1)} = x^{(k)} - \alpha _{k}g^{(k)}$$. Let $$\gamma _{k}$$ be as defined in Lemma 8.1, and suppose that $$\gamma _{k} > 0$$ for all k, then $$x^{(k)}$$ converges to $$x^{*}$$ for any initial condition $$x^{(0)}$$ if and only if:  
-$$\kern{4 em} \sum _{x=0}^{\infty } \gamma _{k} = \infty $$
+&emsp;&emsp;$$ \sum _{x=0}^{\infty } \gamma _{k} = \infty $$
 
 Theorem 8.2 In the steepest descent algorithm, we have   
-$$\kern{4 em} x^{(k)}$$ -&gt;$$x^{*}$$ for any $$x^{(0)}$$
+&emsp;&emsp;$$ x^{(k)}$$ -&gt;$$x^{*}$$ for any $$x^{(0)}$$
 
 Theorem 8.3 For the fixed step size gradient algorithm, $$x^{(k)}$$ -&gt;$$x^{*}$$ for any $$x^{(0)}$$
 
@@ -59,9 +61,9 @@ if and only if $$0 < \alpha < \frac{2}{\lambda _{max}(Q)}$$
 
 Convergence Rate:  
 Theorem 8.4 In the method of steepest descent applied to the quadratic function, at every step k, we have :  
-$$\kern{4 em} V(x^{(k+1)}) \le (\frac{\lambda _{max}(Q) - \lambda _{min}(Q) }{\lambda _{max}(Q) })V(x^{(k)})$$.  
+&emsp;&emsp;$$V(x^{(k+1)}) \le (\frac{\lambda _{max}(Q) - \lambda _{min}(Q) }{\lambda _{max}(Q) })V(x^{(k)})$$.  
 Let:  
-$$\kern{4 em} r = \frac{\lambda _{max}(Q)}{\lambda _{min}(Q)} = ||Q||||Q^{-1}||$$ the so-called condition number of Q.  
+&emsp;&emsp;$$ r = \frac{\lambda _{max}(Q)}{\lambda _{min}(Q)} = ||Q||||Q^{-1}||$$ the so-called condition number of Q.  
 Then, it follows from Theorem 8.4 that $$V(x^{(k+1)}) \le (1 - \frac{1}{r})V(x^{(k)})$$. We refer to $$1 - \frac{1}{r}$$ as the convergence ratio. If r = 1, then $$\lambda _{max}(Q) = \lambda _{min}(Q) $$, corresonding to circular contours of f.  You can using the convergence ratio r to judge the speed of convergence.  
 Definition 8.1 Given a sequence $$x^{(k)}$$ thst converges to $$x^*$$, that is, $$lim _{k ->\infty}||x^{(k)} - x^{*}|| = 0$$, we say that the order of convergence is o, where $$p \in R$$, 
 if $$0 \lt lim_{k -> \infty} \frac{x^{(k+1)} - x^{*}}{||x^{(k)} - x^{*}||^p} < \infty$$,   

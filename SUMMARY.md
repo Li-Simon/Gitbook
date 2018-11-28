@@ -34,6 +34,7 @@
       * [共轭梯度法](最优化/共轭梯度法.md)
     * [信赖域方法](最优化/信赖域方法.md)
       * [Levenberg-Marquardt算法](最优化/Levenberg-Marquardt算法.md)
+      * [Dogleg算法](最优化/Dogleg算法.md)
   * [有约束最优化问题](最优化/有约束最优化问题.md)
     * [拉格朗日乘子法](最优化/拉格朗日乘子法.md)
     * [Karush-Kuhn-Tucker条件](最优化/KKT条件.md)

@@ -22,9 +22,9 @@ KKT条件：某个点是局部技校点所满足的一阶必要条件。
 &emsp;&emsp;$$\kern{4 em}Df(\mathbf{x^*}) + \mathbf{\lambda^*}Dh(\mathbf{x^*}) + \mathbf{u^*}Dg(\mathbf{x^*})  = \mathbf{0^T}$$   
 &emsp;&emsp;$$\mathbf{u^{*T}}\mathbf{g(x*)} = 0$$   
 $$\mathbf{\lambda^*}$$为拉格朗日乘子向量，$$\mathbf{u^*}$$是iKKT乘子向量，其元素分别成为拉格朗日乘子，KKT乘子。  
-###充分条件
+##充分条件
 上面讲了局部极小的必要条件，这里我们讨论局部极小的充分条件。 然后我们就利用KKT条件去求不等式约束问题。  
-####二阶充分必要条件;  
+###二阶充分必要条件;  
 定义如下矩阵：  
 &emsp;&emsp;$$L(\mathbf{x},\mathbf{\lambda},\mathbf{u}) = F(\mathbf{x}) + \mathbf{\lambda}\mathbf{H}(\mathbf{x})+ \mathbf{u}\mathbf{G}(\mathbf{x})$$  
 $$F(\mathbf{x})$$是f在$$\mathbf{x}$$处的Hassian矩阵；  
@@ -33,13 +33,13 @@ $$F(\mathbf{x})$$是f在$$\mathbf{x}$$处的Hassian矩阵；
 其中$$G_k(\mathbf{x})$$是$$g_k$$处的Hassian矩阵。  
 起作用约束所定义曲面的切线空间：
 &emsp;&emsp;$$T(\mathbf{x^*}) = (y \in R^n: Dh(x^*)y)=0,Dg_j(x^*)y)=0, j \in J(x^*) $$.  
-定理： 二阶必要条件：
+####定理： 二阶必要条件：
 如果$$\mathbf{x^*}$$是上面讨论的优化问题的极小点，那么存在$$\mathbf{\lambda^*} \in R^m, \mathbf{u^*} \in R^p$$使得：  
 &emsp;&emsp;1. $$ \mathbf{u^*} \ge 0$$,
 &emsp;&emsp;2. $$Df(\mathbf{x^*}) + \mathbf{\lambda^*}Dh(\mathbf{x^*}) + \mathbf{u^*}Dg(\mathbf{x^*})  = \mathbf{0^T}$$  
 &emsp;&emsp;3. $$\mathbf{u^{*T}}\mathbf{g(x*)} = 0$$   
 &emsp;&emsp;4.对所有$$\mathbf{y} \in T(\mathbf{x^*}, \mathbf{u^*}), \mathbf{y} \ne 0$$，都有$$\mathbf{y^T}L(\mathbf{x},\mathbf{\lambda},\mathbf{u})\mathbf{y} > 0$$  
-定理： 二阶充分条件：  
+####定理： 二阶充分条件：  
 假设$$f, \mathbf{g}, \mathbf{h} \in C^2, \mathbf{x^*} \in R^n$$是一个可行点， 存在向量$$\mathbf{\lambda^*} \in R^m, \mathbf{u^*} \in R^p$$使得：   
 &emsp;&emsp;1. $$ \mathbf{u^*} \ge 0$$,
 &emsp;&emsp;2. $$Df(\mathbf{x^*}) + \mathbf{\lambda^*}Dh(\mathbf{x^*}) + \mathbf{u^*}Dg(\mathbf{x^*})  = \mathbf{0^T}$$  

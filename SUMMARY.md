@@ -59,7 +59,7 @@
   * [回归](机器学习/回归.md)
     * [多元回归分析](机器学习/多元回归分析.md)
     * [正则线性模型](机器学习/正则线性模型.md)
-      * [Ridge回归,Lasso回归，Elastic回归，Early Stopping](机器学习/RegularizedRegression.md)
+      * [L1,L2正则化](机器学习/RegularizedRegression.md)
   * [聚类](机器学习/聚类.md)
     * [K均值](机器学习/K均值EM等聚类算法.md)
     * [高斯混合模型](机器学习/高斯混合模型.md)

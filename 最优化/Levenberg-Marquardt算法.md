@@ -1,4 +1,9 @@
 #L-M算法
+##梯度下降法
+[梯度下降法](https://en.wikipedia.org/wiki/Gradient_descent)  
+把损失函数展开到一阶。  
+$$\kern{4 em}f(x + \alpha \mathbf{d} ) = f(x_0) + \alpha f'(x_0) \mathbf{d} + O({\alpha}^2)$$  
+$$x_{t+1} = x_t -\alpha f'(x_t)$$,
 ##牛顿法
 [牛顿法](https://en.wikipedia.org/wiki/Newton's\_method\_in\_optimization)
 把cost function进行展开到二阶：  

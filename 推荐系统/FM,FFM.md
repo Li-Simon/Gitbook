@@ -29,10 +29,10 @@ $$p_{u,k},q_{i,k}$$通过如下方式求解：
 
 ##非负矩阵分解
 $$N*p$$数据矩阵$$\mathbf{X}$$近似表示为：  
-$$\mathbf{X} \approx \mathbf{WH}$$  
-其中:$$\mathbf{W} \in R^{N x r}, \mathbf{H} \in R^{r x p},r \le max(N,p)$$,我们假定$$x_{ij},w_{ik},h_{kj} \ge 0$$.  
+&emsp;&emsp;$$\mathbf{X} \approx \mathbf{WH}$$  
+其中:$$\mathbf{W} \in R^{N x r}, \mathbf{H} \in R^{r x p},r \le max(N,p)$$,我们假定&emsp;&emsp;$$x_{ij},w_{ik},h_{kj} \ge 0$$.  
 矩阵$$\mathbf{W},\mathbf{H}$$通过最大化下面似然函数确定：  
-$$\kern{4 em} L(\mathbf{W},\mathbf{H}) = \displaystyle \sum _{i=1}^N\displaystyle \sum _{j=1}^p[x_{ij}\log(\mathbf{W}\mathbf{H})_{ij}-(\mathbf{W}\mathbf{H})_{ij}]$$  
+&emsp;&emsp;$$ L(\mathbf{W},\mathbf{H}) = \displaystyle \sum _{i=1}^N\displaystyle \sum _{j=1}^p[x_{ij}\log(\mathbf{W}\mathbf{H})_{ij}-(\mathbf{W}\mathbf{H})_{ij}]$$  
 这个从一个$$x_{ij}$$满足均值为$$(\mathbf{W}\mathbf{H})_{ij}$$的泊松分布的模型的似然函数。  
 通过梯度下降法可以求解。 
 

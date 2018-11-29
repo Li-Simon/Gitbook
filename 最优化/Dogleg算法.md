@@ -18,9 +18,9 @@ else:
 &emsp;&emsp;$$ h_{dl} = \alpha h_{sd} + \beta(h_{gn} - \alpha h_{sd})$$  
 选择$$\beta$$ 使得$$||h_{dl}|| = \Delta$$  
 在L-M算法中我们定义了增益因子，  
-$$\kern{4 em} \rho = (F(x) - F(x+h_{dl})/(L(0) - L(h_{dl})))$$  
+&emsp;&emsp;$$ \rho = (F(x) - F(x+h_{dl})/(L(0) - L(h_{dl})))$$  
 其中L是线性模型  
-$$\kern{4 em} L(h) = \frac{1}{2}||f(x) + J(x)h||^2$$  
+&emsp;&emsp;$$ L(h) = \frac{1}{2}||f(x) + J(x)h||^2$$  
 在L-M我们通过$$\rho$$来控制阻尼因子，在dog-leg算法中，我们通过它来控制步长  
 Dog Leg Method
 

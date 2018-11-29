@@ -105,7 +105,9 @@ Let $$s(x) = r_{i}(x)\frac{\partial ^2 r_i}{\partial x_j \partial x_k}(x)$$
 So the Hessian matrix as   
 &emsp;&emsp;$$ F(x) = 2(J(x)^TJ(x) + S(x))$$.  
 Therefore, Newton's method applied to the nonlinear least-squares problems is given by  
-&emsp;&emsp;$$x^{(k+1)} = x^{(k)} - (J(x)^TJ(x) + S(x))^{-1}J(x)^Tr(x)$$. In some case, s\(x\) can ne ignored because its components are negligibly small. In this case, the above Newtons's algorithm reduces to what is commonly called the Gauss-Newtons method:$$x^{(k+1)} = x^{(k)} - (J(x)^TJ(x))^{-1}J(x)^Tr(x)$$.  
+&emsp;&emsp;$$x^{(k+1)} = x^{(k)} - (J(x)^TJ(x) + S(x))^{-1}J(x)^Tr(x)$$.   
+In some case, s\(x\) can ne ignored because its components are negligibly small. In this case, the above Newtons's algorithm reduces to what is commonly called the Gauss-Newtons method:  
+&emsp;&emsp;$$x^{(k+1)} = x^{(k)} - (J(x)^TJ(x))^{-1}J(x)^Tr(x)$$.  
 A potential problem with the Gauss-Newton method is that the matri $$J(x)^TJ(x)$$ may not be positive definite. As described before, this problem can be overcome using a Levenberg-Marquardt modification:  
 &emsp;&emsp;$$ x^{(k+1)} = x^{(k)} - (J(x)^TJ(x) + u_k I)^{-1}J(x)^Tr(x)$$.
 

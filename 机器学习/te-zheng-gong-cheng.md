@@ -40,7 +40,7 @@ Pearson相关系数\(取值在\[-1,1\]之间，大于0是正相关，小于0是�
 
 ##### 互信息\(MIC\)
 
-$$\kern{4 em}MIC:I(X,Y)=\sum_{y \in Y}\sum_{x \in X}p(x,y)\log(\frac{p(x,y)}{p(x)p(y)})$$  
+&emsp;&emsp;$$MIC:I(X,Y)=\sum_{y \in Y}\sum_{x \in X}p(x,y)\log(\frac{p(x,y)}{p(x)p(y)})$$  
 对于线性与非线性关系的数据都实用。
 
 ##### 距离相关系数（Distance Correlation）
@@ -48,8 +48,8 @@ $$\kern{4 em}MIC:I(X,Y)=\sum_{y \in Y}\sum_{x \in X}p(x,y)\log(\frac{p(x,y)}{p(x
 为了克服Pearson相关系数只对具有线性关系的变量起作用而引入。  
 样本：$$(X_k,Y_k),k=1,2,...,n$$  
 定义距离矩阵：  
-&emsp;&emsp;$$ a_{j,k} = ||\mathbf{X_j} - \mathbf{X_k}||,\kern{2 em}j,k=1,2,...,n$$  
-&emsp;&emsp;$$  b_{j,k} = ||\mathbf{Y_j} - \mathbf{Y_k}||,\kern{2 em}j,k=1,2,...,n$$  
+&emsp;&emsp;$$ a_{j,k} = ||\mathbf{X_j} - \mathbf{X_k}||,j,k=1,2,...,n$$  
+&emsp;&emsp;$$  b_{j,k} = ||\mathbf{Y_j} - \mathbf{Y_k}||,j,k=1,2,...,n$$  
 $$||*||$$是欧氏距离。取所有的双中心距离。  
 &emsp;&emsp;$$ \mathbf{A_{j,k}} := a_{j,k} - \hat a_{j.}- \hat a_{.k} + \hat a_{..}$$  
 &emsp;&emsp;$$ \mathbf{B_{j,k}} := b_{j,k} - \hat b_{j.}- \hat b_{.k} + \hat b_{..}$$  

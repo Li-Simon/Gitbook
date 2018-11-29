@@ -33,26 +33,15 @@ STL中体现了泛型程序设计的思想，泛型是一种软件的复用技�
 
 ## data structure
 1. array
-2. array
-### array
-
-### vector
-
-### deque
-
-### list
-
-### stack
-
-### queue
-
-### set
-
-### map
-
-### pair
-
-## algorithms
-
+2. vector
+3. deque
+4. list
+5. stack
+6. queue
+7. set
+8. map
+9. pair 
+1
+algorithms
 
 

@@ -81,7 +81,7 @@ A,B,$$\pi$$称为马尔科夫模型的三要素。
 ## 学习算法
 ### 监督学习方法
    我们有观测序列和对应的状态序列$$[(O_1,I_1),(O_2,I_2),...,(O_S,I_S)]$$  
-   怎么可以通过统计方法来得到转移矩阵A，观测概率B，以及初始状态概率$$\pi$$   
+   怎么可以通过统计方法来得到转移矩阵A，观测概率B，以及初始状态概率$$\pi$$。     
 &emsp;&emsp;$$\hat a_{ij} = \frac{A_{ij}}{\displaystyle \sum_{j=1}^NA_{ij}}, i=1,2,..,N;j=1,2,...,N$$   
 &emsp;&emsp;$$\hat b_j(k) = \frac{B_{jk}}{\displaystyle \sum_{k=1}^MB_{jk}},j=1,2,..,N;k=1,2,...,M$$  
    初始状态概率$$\pi_i$$的估计值$$\hat\pi_i$$为S个样本中初始状态为$$q_i$$的频率。  
@@ -117,7 +117,7 @@ A,B,$$\pi$$称为马尔科夫模型的三要素。
    对$$Q(\lambda,\hat\lambda)$$的第二项，我们求$$a_{ij}$$:  
 &emsp;&emsp;$$ \displaystyle \sum_{I}(\displaystyle \sum_{t=1}^{T-1}\log a_{i_ti_{t+1}})P(O,I|\hat \lambda) = \displaystyle \sum_{i=1}^{N}\displaystyle \sum_{j=1}^{T-N}\displaystyle \sum_{t=1}^{T-1}\log a_{ij}P(O,i_t=i,i_{t+1}=j|\hat \lambda)$$  
    利用约束条件$$\displaystyle \sum_{i=1}^{N}a_{ij} = 1$$，利用拉格朗日乘子可以得到：  
-&emsp;&emsp;$$} a_{ij}= \frac{\sum_{t=1}^{T-1}P(O,i_t=i,i_{t+1}=j|\hat \lambda) }{\sum_{t=1}^{T-1}P(O,i_t=i|\hat \lambda)}$$  
+&emsp;&emsp;$$ a_{ij}= \frac{\sum_{t=1}^{T-1}P(O,i_t=i,i_{t+1}=j|\hat \lambda) }{\sum_{t=1}^{T-1}P(O,i_t=i|\hat \lambda)}$$  
    对$$Q(\lambda,\hat\lambda)$$的第三项，我们求$$b_j(k)$$:  
 &emsp;&emsp;$$\displaystyle \sum_{I}(\displaystyle \sum_{t=1}^{T-1}\log b_{i_t}(o_t))P(O,I|\hat \lambda) = \displaystyle \sum_{j=1}^{N}\displaystyle \sum_{t=1}^{T}\log b_{j}(o_t))P(O,i_t=j|\hat \lambda)$$  
    利用$$\displaystyle \sum_{k=1}^{M}b_j(k)=1$$. 注意只有在$$o_t = v_k$$时，$$b_j(o_t)$$对$$b_j(k)$$的偏导数才不为0，以$$I(o_t=v_k)$$表示，求得：  

@@ -23,7 +23,7 @@ the steepest descent algorithm proceeds as follows: at each step, starting from 
 &emsp;&emsp;$$\alpha _{k} = arg min_{\alpha \ge 0} f(x_{(k)} - \alpha  \nabla f(x^{(k)})) $$  
 Proposition 8.1： if $$x^{(k)}$$ is the steepest descent sequence for f: $$R^n$$-&gt;R， then for each k the vector $$x^{(k+1)} - x^{(k)}$$ is orthogonal to the vector $$x^{(k+2)} - x^{(k+1)}$$  
 Proposition 8.2：if $$x^{(k)}$$ is the steepest descent sequence for f: $$R^n$$-&gt;R and if $$\nabla f(x^{(k)}) \ne 0$$, then     
-&emsp;&emsp;$$\kern{4 em} f(x^{(k+1)}) < f(x^{(k)})$$  
+&emsp;&emsp;$$ f(x^{(k+1)}) < f(x^{(k)})$$  
 Stopping criterion：  
 &emsp;&emsp;$$ \frac{|f(x^{(k+1)}) - f(x^{(k)})|}{||f(x^{(k)})||} < \epsilon $$  
 Example: Quadratic function of the form:  

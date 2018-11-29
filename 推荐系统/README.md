@@ -32,7 +32,7 @@
 ### 矩阵分解
 
 U-I矩阵是一个大的稀疏矩阵，我们需要寻找矩阵的一个低秩分解，实际上就就是一个奇异值分解\(SVD\)。  
-$$\kern{8 em} V = UM$$  
+&emsp;&emsp;$$ V = UM$$  
 评分矩阵$$V \in \mathbb{R}^{n \times m}$$,SVD实际上就是去找到两个矩阵：$$U \in \mathbb{R}^{f \times n}$$，$$M \in \mathbb{R}^{f \times m}$$，其中矩阵U表示 User 和 feature 之间的联系，矩阵V表示 Item 和 feature 之间的联系。$$f \ll m, f \ll n$$。这样就完成了矩阵的分解。实际计算中，我们并不是通过常规的求本征值本征矢的SVD来做分解，而是通过最小二乘加正则约束来实现分解。
 
 ### SVD存在的问题

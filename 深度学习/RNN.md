@@ -70,10 +70,10 @@ GRU这个结构2014年才出现，结构与LSTM类似，效果一样，但是精
 &emsp;&emsp;$$ \hat h_t = \tanh(Wx_t + U(r_t*h_{t-1}))$$  
 &emsp;&emsp;$$h_t = (1-z_t)*h_{t-1} + z_t*\hat h_t$$  
 四行的解释如下：  
-$$z_t$$是update gate，更新activation时的逻辑门。  
-$$r_t$$是reset gate，决定candidate activation时，是否要放弃以前的activate $$h_t$$  
-$$\hat h_t$$是candidate activation，接收\[$$x_t,h_{t-1}$$\]  
-$$h_t$$是activation，是GRU的隐层，接收\[$$h_{t-1},\hat h_{t}$$\].
+&emsp;&emsp;$$z_t$$是update gate，更新activation时的逻辑门。  
+&emsp;&emsp;$$r_t$$是reset gate，决定candidate activation时，是否要放弃以前的activate $$h_t$$  
+&emsp;&emsp;$$\hat h_t$$是candidate activation，接收\[$$x_t,h_{t-1}$$\]  
+&emsp;&emsp;$$h_t$$是activation，是GRU的隐层，接收\[$$h_{t-1},\hat h_{t}$$\].
 
 ![](/assets/GRU_LSTM_Structure.png)
 

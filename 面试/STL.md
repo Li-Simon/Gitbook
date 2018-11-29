@@ -32,7 +32,8 @@ STL中体现了泛型程序设计的思想，泛型是一种软件的复用技�
 ![](/assets/container_unique_propetrties.png)
 
 ## data structure
-
+1. array
+2. array
 ### array
 
 ### vector

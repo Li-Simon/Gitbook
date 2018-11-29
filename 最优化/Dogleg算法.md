@@ -1,21 +1,21 @@
 #Dogleg算法
 Powell’s Dog Leg Method是一种信赖域方法  
 在Gauss-Netwon迭代中  
-$$\kern{4 em} J(x)h \simeq  -f(x)$$  
+&emsp;&emsp;$$ J(x)h \simeq  -f(x)$$  
 最陡的方向由下面公式给出：  
-$$\kern{4 em} h_{sd} = -g = -J(x)^Tf(x)$$  
+&emsp;&emsp;$$ h_{sd} = -g = -J(x)^Tf(x)$$  
 但是这只是给出了方向，而没有给出步长。  
 考虑线性模型  
-$$\kern{4 em} f(x + \alpha h_{sd}) \simeq f(x) + \alpha J(x)h_{sd}$$  
-$$\kern{4 em} F(x + \alpha h_{sd}) \simeq  \frac{1}{2}||f(x) + \alpha J(x)h_{sd}||^{2} 
+&emsp;&emsp;$$f(x + \alpha h_{sd}) \simeq f(x) + \alpha J(x)h_{sd}$$  
+&emsp;&emsp;$$ F(x + \alpha h_{sd}) \simeq  \frac{1}{2}||f(x) + \alpha J(x)h_{sd}||^{2} 
 = F(x) + \alpha h_{sd}^TJ(x)^{T}f(x) + \frac{1}{2}\alpha ^2 ||J(x)h_{sd}||^{2}$$  
 当$$\alpha$$取如下值得时候，以上函数取最小值  
-$$\kern{4 em} \alpha = - \frac{h_{sd}^TJ(x)^Tf(x)}{||J(x)h_{sd}||^{2}} = \frac{||g||^2}{||J(x)h_{sd}||^{2}}$$  
+&emsp;&emsp;$$ \alpha = - \frac{h_{sd}^TJ(x)^Tf(x)}{||J(x)h_{sd}||^{2}} = \frac{||g||^2}{||J(x)h_{sd}||^{2}}$$  
 现在有两个步长的选择 $$a = \alpha h_{sd}$$ 以及 $$b = h_{gn}$$,Powell建议在信赖域半价是$$\Delta$$的时候，步长可以如下选择  
 If $$||h_{gn}|| \leq \Delta, h_{dl} = h_{gn}$$  
-$$\kern{4 em} $$Elseif: $$||\alpha h_{sd}|| \geq \Delta, h_{dl} = (\Delta / ||h_{sd}||)h_{sd}$$  
+&emsp;&emsp;Elseif: $$||\alpha h_{sd}|| \geq \Delta, h_{dl} = (\Delta / ||h_{sd}||)h_{sd}$$  
 else:  
-$$\kern{4 em} h_{dl} = \alpha h_{sd} + \beta(h_{gn} - \alpha h_{sd})$$  
+&emsp;&emsp;$$ h_{dl} = \alpha h_{sd} + \beta(h_{gn} - \alpha h_{sd})$$  
 选择$$\beta$$ 使得$$||h_{dl}|| = \Delta$$  
 在L-M算法中我们定义了增益因子，  
 $$\kern{4 em} \rho = (F(x) - F(x+h_{dl})/(L(0) - L(h_{dl})))$$  

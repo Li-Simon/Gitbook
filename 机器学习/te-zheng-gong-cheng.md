@@ -48,14 +48,14 @@ $$\kern{4 em}MIC:I(X,Y)=\sum_{y \in Y}\sum_{x \in X}p(x,y)\log(\frac{p(x,y)}{p(x
 为了克服Pearson相关系数只对具有线性关系的变量起作用而引入。  
 样本：$$(X_k,Y_k),k=1,2,...,n$$  
 定义距离矩阵：  
-$$\kern{4 em} a_{j,k} = ||\mathbf{X_j} - \mathbf{X_k}||,\kern{2 em}j,k=1,2,...,n$$  
-$$\kern{4 em} b_{j,k} = ||\mathbf{Y_j} - \mathbf{Y_k}||,\kern{2 em}j,k=1,2,...,n$$  
+&emsp;&emsp;$$ a_{j,k} = ||\mathbf{X_j} - \mathbf{X_k}||,\kern{2 em}j,k=1,2,...,n$$  
+&emsp;&emsp;$$  b_{j,k} = ||\mathbf{Y_j} - \mathbf{Y_k}||,\kern{2 em}j,k=1,2,...,n$$  
 $$||*||$$是欧氏距离。取所有的双中心距离。  
-$$\kern{4 em}\mathbf{A_{j,k}} := a_{j,k} - \hat a_{j.}- \hat a_{.k} + \hat a_{..}$$  
-$$\kern{4 em}\mathbf{B_{j,k}} := b_{j,k} - \hat b_{j.}- \hat b_{.k} + \hat b_{..}$$  
+&emsp;&emsp;$$ \mathbf{A_{j,k}} := a_{j,k} - \hat a_{j.}- \hat a_{.k} + \hat a_{..}$$  
+&emsp;&emsp;$$ \mathbf{B_{j,k}} := b_{j,k} - \hat b_{j.}- \hat b_{.k} + \hat b_{..}$$  
 $$\hat a_{j.}$$是j-th row的平均，$$\hat a_{.k}$$是k-th column的平均，$$\hat a_{..}$$是全局平均。  
 定义The squared sample distance covariance：  
-$$\kern{4 em} dCov^2_n(X,Y) := \frac{1}{n^2}\displaystyle \sum_{j=1}^n\displaystyle \sum_{k=1}^nA_{jk}B_{jk}$$  
+&emsp;&emsp;$$  dCov^2_n(X,Y) := \frac{1}{n^2}\displaystyle \sum_{j=1}^n\displaystyle \sum_{k=1}^nA_{jk}B_{jk}$$  
 虽然MIC与距离相关系数能处理具有线性与非线性关系的变量之间的相关性，但是Pearson还是不可替代的，第一，Pearson系数计算速度快；第二，相对于其它两种取值在\[0,1\],Pearson取值\[-1,1\],正负表关系的正负，绝对值表示强度。前提就是两个变量是线性相关的。
 
 ### 特征工程小结
@@ -106,7 +106,7 @@ One-Hot编码在类别数据中工作的非常好，但是当类别很多时会�
 Bag of Words Model.对次进行统计  
 Bag of N-Grams Model，对N个连续的词进行统计，比如两个或三个，Bi-Grams, Tri-Grams. 在NLP中，Tri-Grams就已经足够了。  
 词袋模型只考虑词的统计特性，但是有些词在所有文本中本身就具有高的频率，因此就有了TF-IDF model\(Term Frequency-Inverse Document Frequency\)  
-$$\kern{4 em} tfidf(w,D)=tf(w,D)*idf(w,D)=f(w,D)*\log(\frac{C}{df(w)})$$  
+&emsp;&emsp;$$  tfidf(w,D)=tf(w,D)*idf(w,D)=f(w,D)*\log(\frac{C}{df(w)})$$  
 tf-idf\(w,D\)是词w在文本D中TF-IDF分数。tf\(w,D\)表示词w在文档D中的频率，idf\(w,D\)是词w的逆文档频率，C是该语料库中的文本数。TF-IDF模型可以用来做为文本关键词提取。以及文本相似性计算\(一般用余弦相似性\)，因此可以用来做聚类，适用于无监督学习。  
 LDA\(Latent Dirichlet Allocation\)作用在TF-IDF矩阵上，分解成document-topic matrix与topic-term matrix。  
 

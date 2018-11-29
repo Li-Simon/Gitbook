@@ -153,22 +153,22 @@ A,B,$$\pi$$称为马尔科夫模型的三要素。
 &emsp;&emsp;$$ \delta_t(i) = \displaystyle \max_{i_1,i_2,...,i_{t-1}}P(i_t=i,i_{t-1},i_{t-2},...,i_1,o_t,...,o_1|\lambda), i=1,2,..,N$$  
    由定义可以得到变量$$\delta$$的递推公式：  
 &emsp;&emsp;$$ \delta_{t+1}(i) = \displaystyle \max_{i_1,i_2,...,i_{t}}P(i_{t+1}=i,i_{t-1},i_{t-2},...,i_1,o_{t+1},...,o_1|\lambda)$$  
-   $$\kern{8 em} =  \displaystyle \max_{1 \le j \le N}[\delta_t(j)a_{ji}]b_i(o_{t+1}), i=1,2,..,N;t=1,2,...,T-1$$  
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$$=  \displaystyle \max_{1 \le j \le N}[\delta_t(j)a_{ji}]b_i(o_{t+1}), i=1,2,..,N;t=1,2,...,T-1$$  
    定义在时刻t状态i的所有单个路径$$(i_1,i_2,...,i_{t-1},i)$$中概率最大的路径的第t-1个节点为：  
-   $$\kern{8 em} \psi_t(i) = \arg \displaystyle \max_{1 \le j \le N}[\delta_{t-1}(j)a_{ji}], i=1,2,..,N$$
+&emsp;&emsp;$$ \psi_t(i) = \arg \displaystyle \max_{1 \le j \le N}[\delta_{t-1}(j)a_{ji}], i=1,2,..,N$$
 ### 维特比算法步骤
    输入：模型$$\lambda = (A,B,\pi)$$和观测数据$$O=(o_1,o_2,...,o_T)$$;  
    输出： 最优化路径$$I^* = (i_1^*,i_2^*,..,i_T^*)$$。  
    \(1\). 初始化  
-   $$\kern{8 em} \delta_1(i) = \pi_i b_i(o_1), i=1,2,..,N$$  
-   $$\kern{8 em} \psi_1(i) = 0, i=1,2,..,N$$  
+&emsp;&emsp;$$ \delta_1(i) = \pi_i b_i(o_1), i=1,2,..,N$$  
+&emsp;&emsp;$$ \psi_1(i) = 0, i=1,2,..,N$$  
    \(2\). 递推，对t=2,3,...,T  
-   $$\kern{4 em} \delta_{t+1}(i) = \displaystyle \max_{1 \le j \le N}[\delta_t(j)a_{ji}]b_i(o_{t+1}), i=1,2,...,N$$  
-   $$\kern{4 em} \psi_t(i) = \arg\displaystyle \max_{1 \le j \le N}[\delta_{t-1}(j)a_{ji}], i=1,2,..,N$$  
+&emsp;&emsp;$$\delta_{t+1}(i) = \displaystyle \max_{1 \le j \le N}[\delta_t(j)a_{ji}]b_i(o_{t+1}), i=1,2,...,N$$  
+&emsp;&emsp;$$\psi_t(i) = \arg\displaystyle \max_{1 \le j \le N}[\delta_{t-1}(j)a_{ji}], i=1,2,..,N$$  
    \(3\). 终止  
-   $$\kern{4 em} P^* = \displaystyle \max_{1 \le j \le N}\delta_{T}(i)$$  
-   $$\kern{4 em} i_T^* = \arg \displaystyle \max_{1 \le j \le N}\delta_{T}(i)$$  
+&emsp;&emsp;$$P^* = \displaystyle \max_{1 \le j \le N}\delta_{T}(i)$$  
+&emsp;&emsp;$$i_T^* = \arg \displaystyle \max_{1 \le j \le N}\delta_{T}(i)$$  
    \(4\)最优路径回溯。对t=T-1,T-2,....,1  
-   $$\kern{4 em} i_t^* = \psi_{t+1}(i_{t+1}^*)$$  
+ &emsp;&emsp;$$ i_t^* = \psi_{t+1}(i_{t+1}^*)$$  
    求得最优路径$$I^* = (i_1^*,i_2^*,..,i_T^*)$$.
 

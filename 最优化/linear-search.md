@@ -12,7 +12,7 @@
 &emsp;&emsp;$$ \Delta f(x_k) = f(x_k) - f(x_k + \alpha _k d_k)$$  
 Armijo 准则用于非精确线性搜索中步长因子$$\alpha$$的确定，内容如下：  
 Armijo 准则：  
-已知当前位置$$x_k$$和优化方向$$d_k$$，参数$$\beta \in (0,1), \delta \in (0,0.5)$$.令步长因子$$\kern{4 em} \alpha _k = \beta ^{m_k}$$,其中$$m_k$$为满足下列不等式的最小非负整数m:  
+已知当前位置$$x_k$$和优化方向$$d_k$$，参数$$\beta \in (0,1), \delta \in (0,0.5)$$.令步长因子&emsp;&emsp;$$ \alpha _k = \beta ^{m_k}$$,其中$$m_k$$为满足下列不等式的最小非负整数m:  
 &emsp;&emsp;$$ f(x_k + \beta ^m d_k) \leq f(x_k) + \delta \beta ^m g_k^Td_k$$  
 由此确定下一个位置$$x_{k+1} = x_k + \alpha _k d_k$$  
 对于梯度上升，上面的方程变成：  

@@ -14,26 +14,26 @@ $$\kern{4 em}x_{t+1} = x_t - H^{-1}g$$
 
 ##[高斯-牛顿法](https://en.wikipedia.org/wiki/Gauss–Newton_algorithm)  
 cost function可以表示成残差的形式：  
-$$\kern{4 em}L(x) = \sum_{i=1}^{m}r_i(x)^2$$  
+&emsp;&emsp;$$L(x) = \sum_{i=1}^{m}r_i(x)^2$$  
 根据牛顿法：  
-$$\kern{4 em}x_{t+1} = x_t - H^{-1}g$$,  
+&emsp;&emsp;$$x_{t+1} = x_t - H^{-1}g$$,  
 梯度表示为：  
-$$\kern{4 em}g_j=2 \sum _i r_i \frac{\partial r_i}{\partial x_j}$$  
+&emsp;&emsp;$$g_j=2 \sum _i r_i \frac{\partial r_i}{\partial x_j}$$  
 对方程\(4.9\)求二阶导，我们可以得到Hessian矩阵：  
-$$\kern{4 em}H_{jk} = 2\sum _i (\frac{\partial r_i}{\partial x_j}\frac{\partial r_i}{\partial x_k} + r_i\frac{\partial ^2 r_i}{\partial x_j \partial x_k})$$,  
+&emsp;&emsp;$$H_{jk} = 2\sum _i (\frac{\partial r_i}{\partial x_j}\frac{\partial r_i}{\partial x_k} + r_i\frac{\partial ^2 r_i}{\partial x_j \partial x_k})$$,  
 当残差$$r_i$$很小的时候,我们就可以去掉最后一项，因此  
-$$\kern{4 em}H_{jk} \approx  2 \sum _i J_{ij}J_{ik} \quad With \quad J_{ij} = \frac{\partial r_i}{\partial x_j}$$  
+&emsp;&emsp;$$H_{jk} \approx  2 \sum _i J_{ij}J_{ik} \quad With \quad J_{ij} = \frac{\partial r_i}{\partial x_j}$$  
 这样Hessian就是半正定了。  
 因此参数迭代公式\(4.10\)可以写成：  
-$$\kern{4 em}x_{t+1} = x_t - (J^TJ)^{-1}J^Tr$$,  
+&emsp;&emsp;$$x_{t+1} = x_t - (J^TJ)^{-1}J^Tr$$,  
 ##[Levenberg-Marquardt](https://en.wikipedia.org/wiki/Levenberg–Marquardt_algorithm)  
 方法用于求解非线性最小二乘问题，结合了梯度下降法和高斯-牛顿法。  
 其主要改变是在Hessian阵中加入对角线项,加这一样可以保证Hassian阵是正定的。当然，这是一种L2正则化方式。  
-$$\kern{4 em}x_{t+1} = x_t - (H + \lambda I_n)^{-1}g$$,  
-$$\kern{4 em}x_{t+1} = x_t - (J^TJ + \lambda I_n)^{-1}J^Tr$$  
+&emsp;&emsp;$$x_{t+1} = x_t - (H + \lambda I_n)^{-1}g$$,  
+&emsp;&emsp;$$x_{t+1} = x_t - (J^TJ + \lambda I_n)^{-1}J^Tr$$  
 L-M算法的不足点。  
 当$$\lambda$$很大时，$$J^TJ + \lambda I_n$$根本没用，Marquardt为了让梯度小的方向移动的快一些，来防止小梯度方向的收敛，把中间的单位矩阵换成了$$diag(J^TJ)$$,因此迭代变成：  
-$$\kern{4 em}x_{t+1} = x_t - (J^TJ + \lambda diag(J^TJ))^{-1}J^Tr$$
+&emsp;&emsp;$$x_{t+1} = x_t - (J^TJ + \lambda diag(J^TJ))^{-1}J^Tr$$
 
 阻尼项（damping parameter）$$\lambda$$的选择，Marquardt 推荐一个初始值$$\lambda_0$$与因子$$v > 1$$，开始时，$$\lambda = \lambda_0$$,然后计算cost functions,第二次计算$$\lambda = \lambda_0/v$$,如果两者cost function都比初始点高，然后我们就增大阻尼项，通过乘以v,直到我们发现当$$\lambda = \lambda_0v^k$$时，cost function下降。  
 如果使用$$\lambda = \lambda_0/v$$使得cost fucntion下降，然后我们就把$$\lambda_0/v$$作为新的$$\lambda$$  
@@ -43,23 +43,23 @@ $$\kern{4 em}x_{t+1} = x_t - (J^TJ + \lambda diag(J^TJ))^{-1}J^Tr$$
 
 如果我们假设数据中每一点的贡献是等权重，因此，我们有必要对每一项残差加一个权重，来归一化每一项残差。因此公式\(4-9\)可以变成，  
 cost function可以表示成残差的形式：  
-$$\kern{4 em}L(x) = \sum_{i=1}^{m}\lambda_i r_i(x)^2 = \sum_{i=1}^{m}\frac{1}{y_i^2} (y_i - f_i(x_i))^2 $$   
+&emsp;&emsp;$$L(x) = \sum_{i=1}^{m}\lambda_i r_i(x)^2 = \sum_{i=1}^{m}\frac{1}{y_i^2} (y_i - f_i(x_i))^2 $$   
 此时，Jacobia变成  
-$$\kern{4 em}H_{jk} \approx  2 \sum _i J_{ij}J_{ik} \quad With \quad J_{ij} = y_i \frac{\partial r_i}{\partial x_j}$$  
-$$\kern{4 em}J_S = \Sigma J,  \Sigma_{ij} = \frac{1}{y_i}\delta_{ij} $$
+&emsp;&emsp;$$H_{jk} \approx  2 \sum _i J_{ij}J_{ik} \quad With \quad J_{ij} = y_i \frac{\partial r_i}{\partial x_j}$$  
+&emsp;&emsp;$$J_S = \Sigma J,  \Sigma_{ij} = \frac{1}{y_i}\delta_{ij} $$
 
 # L2正则化与Levenberg-Marquardt算法
 
 我们在cost fucntion加上L2正则项  
-$$\kern{4 em}L(\beta) = \sum_{i=1}^{m}[y_i - f(x_i,\beta)]^2 + \lambda||\beta||^2$$  
+&emsp;&emsp;$$L(\beta) = \sum_{i=1}^{m}[y_i - f(x_i,\beta)]^2 + \lambda||\beta||^2$$  
 可以表示成：  
-$$\kern{4 em}L(\beta) = L(\beta_0) + (\beta - \beta_0)^T\nabla_\beta L(\beta_0) + \frac{1}{2}(\beta - \beta_0)^TH(\beta - \beta_0)+ \lambda||\beta||^2+O(\beta^3)$$  
+&emsp;&emsp;$$L(\beta) = L(\beta_0) + (\beta - \beta_0)^T\nabla_\beta L(\beta_0) + \frac{1}{2}(\beta - \beta_0)^TH(\beta - \beta_0)+ \lambda||\beta||^2+O(\beta^3)$$  
 求一阶导数：  
-$$\kern{4 em}L(\beta) = L(\beta_0) + (\beta - \beta_0)^Tg + \frac{1}{2}(\beta - \beta_0)^TH(\beta - \beta_0)+ \frac{1}{2}\lambda||\beta||^2+O(\beta^3)$$  
+&emsp;&emsp;$$L(\beta) = L(\beta_0) + (\beta - \beta_0)^Tg + \frac{1}{2}(\beta - \beta_0)^TH(\beta - \beta_0)+ \frac{1}{2}\lambda||\beta||^2+O(\beta^3)$$  
 令其为0：  
-$$\kern{4 em}\frac{\partial L(\beta)}{\partial \beta} = g + H(\beta - \beta_0) + \lambda\beta = 0$$  
+&emsp;&emsp;$$\frac{\partial L(\beta)}{\partial \beta} = g + H(\beta - \beta_0) + \lambda\beta = 0$$  
 就得到：  
-$$\kern{4 em}\beta = (H + \lambda I_n)^{-1}H\beta_0 - (H + \lambda I_n)^{-1}g$$,
+&emsp;&emsp;$$\beta = (H + \lambda I_n)^{-1}H\beta_0 - (H + \lambda I_n)^{-1}g$$,
 算法流程如下：  
 ![](/assets/L_M_Algo.gif)
 

@@ -129,7 +129,7 @@ Theorem 10.1 For any starting point $$x^{(0)}$$, the basic conjugate direction a
 ![](/assets/conjugate_terorem.png)
 
 Lemma 10.2 In the conjugate direction algorithm,   
-&emsp;&emsp;$$g^{(k+1)T}d^{(i)} = 0$$. For all k, $$0 \le k \le n-1$$, and $$0 \le i \le k$$.  
+$$g^{(k+1)T}d^{(i)} = 0$$. For all k, $$0 \le k \le n-1$$, and $$0 \le i \le k$$.  
 
 The conjugate gradient algorithm is summarized below.  
 1. Set k := 0; select the initial point $$x^{(0)}$$  

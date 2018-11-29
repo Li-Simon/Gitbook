@@ -11,9 +11,9 @@
 1. 链接数量。一个网页被越多的其它网页链接，说明这个网页越重要。  
 2. 链接质量。一个网页被一个越高权值的网页链接，也能表明这个网页越重要。贡献的权值等于这个网页的权值除以这个网页的出链数目。  
 $$In(V_i)$$是$$V_i$$的入链集合，代表有多少其它网页链接它；$$Out(V_i)$$是$$V_i$$的出链集合，也就是引用了哪些其它网页。  网页$$V_i$$的得分为：  
-$$\kern{8 em} S(V_i) = \sum_{j \in In(V_i)}(\frac{1}{Out(V_j)}S(V_j))$$  
+&emsp;&emsp;$$ S(V_i) = \sum_{j \in In(V_i)}(\frac{1}{Out(V_j)}S(V_j))$$  
 为了防止有些网页的权值为0，则加入一个阻尼项。   
-$$\kern{8 em} S(V_i) = (1-d) + d\sum_{j \in In(V_i)}(\frac{1}{Out(V_j)}S(V_j))$$   
+&emsp;&emsp;$$ S(V_i) = (1-d) + d\sum_{j \in In(V_i)}(\frac{1}{Out(V_j)}S(V_j))$$   
 不需要借助语料库，单篇文章提取关键词的算法TextRank的原理与PageRank一致，因为是借鉴PageRank算法的。  
 
 

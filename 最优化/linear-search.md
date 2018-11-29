@@ -47,7 +47,7 @@ with $$g^{(k)} = Qx^{(k)} - b$$ satisfies
 where, if $$g^{(k)} = 0$$ then $$\gamma _{k} = 1$$, and if $$g^{(k)} \ne 0$$ then:  
 &emsp;&emsp;$$ \gamma _{k} = \alpha _{k}\frac{g^{(k)T}Qg^{(k)}}{g^{(k)T}Q^{-1}g^{(k)}}(2\frac{g^{(k)T}g^{(k)}}{g^{(k)T}Qg^{(k)}} - \alpha _{k})$$  
 Submit $$\alpha _{k}$$ into $$\gamma _{k}$$, then  
-$$\kern{4 em} \gamma _{k} = \frac{(g^{(k)T}g^{(k)})^2}{(g^{(k)T}Qg^{(k)})(g^{(k)T}Q^{-1}g^{(k)})}$$
+&emsp;&emsp;$$\gamma _{k} = \frac{(g^{(k)T}g^{(k)})^2}{(g^{(k)T}Qg^{(k)})(g^{(k)T}Q^{-1}g^{(k)})}$$
 
 Theorem 8.1 Let $$x^{(k)}$$ be the sequence resulting from a gradient algorithm  $$x^{(k+1)} = x^{(k)} - \alpha _{k}g^{(k)}$$. Let $$\gamma _{k}$$ be as defined in Lemma 8.1, and suppose that $$\gamma _{k} > 0$$ for all k, then $$x^{(k)}$$ converges to $$x^{*}$$ for any initial condition $$x^{(0)}$$ if and only if:  
 &emsp;&emsp;$$ \sum _{x=0}^{\infty } \gamma _{k} = \infty $$

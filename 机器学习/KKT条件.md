@@ -41,9 +41,9 @@ $$\mathbf{\lambda^*}$$为拉格朗日乘子向量，$$\mathbf{u^*}$$是iKKT乘�
 &emsp;&emsp;4.对所有$$\mathbf{y} \in T(\mathbf{x^*}, \mathbf{u^*}), \mathbf{y} \ne 0$$，都有$$\mathbf{y^T}L(\mathbf{x},\mathbf{\lambda},\mathbf{u})\mathbf{y} > 0$$  
 定理： 二阶充分条件：  
 假设$$f, \mathbf{g}, \mathbf{h} \in C^2, \mathbf{x^*} \in R^n$$是一个可行点， 存在向量$$\mathbf{\lambda^*} \in R^m, \mathbf{u^*} \in R^p$$使得：   
-&emsp;&emsp;1. $$\mathbf{u^*} \ge 0$$,
-&emsp;&emsp;2. $$Df(\mathbf{x^*}) + \mathbf{\lambda^*}Dh(\mathbf{x^*}) + \mathbf{u^*}Dg(\mathbf{x^*})  = \mathbf{0^T}$$  
-&emsp;&emsp;3. $$\mathbf{u^{*T}}\mathbf{g(x*)} = 0$$   
+&emsp;&emsp;1. $$\mathbf{u^*} \ge 0$$,   
+&emsp;&emsp;2. $$Df(\mathbf{x^*}) + \mathbf{\lambda^*}Dh(\mathbf{x^*}) + \mathbf{u^*}Dg(\mathbf{x^*})  = \mathbf{0^T}$$    
+&emsp;&emsp;3. $$\mathbf{u^{*T}}\mathbf{g(x*)} = 0$$     
 &emsp;&emsp;4.对所有$$\mathbf{y} \in T(\mathbf{x^*}, \mathbf{u^*}), \mathbf{y} \ne 0$$，都有&emsp;&emsp;$$\mathbf{y^T}L(\mathbf{x},\mathbf{\lambda},\mathbf{u})\mathbf{y} > 0$$   
 那么$$\mathbf{x^*}$$是优化问题   
 &emsp;&emsp;s.t. &emsp;&emsp;$$\mathbf h(\mathbf{x}) = \mathbf{0}$$   

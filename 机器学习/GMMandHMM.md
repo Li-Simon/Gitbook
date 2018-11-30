@@ -58,7 +58,7 @@ A,B,$$\pi$$称为马尔科夫模型的三要素。
    对$$t=T-1,T-2,...,1$$有：  
 &emsp;&emsp;$$\beta_t(i) = \displaystyle \sum_{j=1}^Na_{ij}b_j(o_{t+1})\beta_{t+1}(j), i=1,2,...,N$$  
 &emsp;&emsp;$$\beta_t = A^{T-t}\displaystyle \prod_{j=t+1}^TxB[o_j], t=T-1,T-2,...,1$$  
-   $$\kern{4 em} \beta_t= (\beta_t(1),\beta_t(2),...,\beta_t(N))^T$$  
+&emsp;&emsp;$$ \beta_t= (\beta_t(1),\beta_t(2),...,\beta_t(N))^T$$  
 ### 一些概率与期望值
 (1) 给定模型$$\lambda$$以及观测O，在时刻t处于状态$$q_i$$的概率为：   
 &emsp;&emsp;$$ \gamma_t(i)= P(i_t=q_i|O,\lambda) = \frac{P(i_t=q_i,O|\lambda)}{P(O|\lambda)}$$  

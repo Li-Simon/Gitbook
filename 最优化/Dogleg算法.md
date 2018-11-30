@@ -43,9 +43,6 @@ while(not found) and $$k < k_{max}$$
 &emsp;&emsp;&emsp;&emsp;$$\Delta:= \Delta /2$$   
 &emsp;&emsp;found:= $$\Delta \le \epsilon_2(||x||+\epsilon)$$  
 
-  
-![](/assets/DogLeg_Algo.gif)
-
 ```py
     def Dogleg_Solver(self):
         init_para = np.ones((2, 1))

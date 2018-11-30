@@ -69,19 +69,14 @@ while(not found) and $$k < k_{max}$$
 &emsp; &emsp;&emsp;&emsp; found := true  
 &emsp;&emsp; else:  
 &emsp; &emsp;&emsp;&emsp; $$x_{new}:=x+h_{lm}$$  
-
-
-
-
-
-&emsp;&emsp;$$h_{sd}:=-\alpha g$$; solve $$J(x)h_{gn} \simeq -f(x)$$  
-&emsp;&emsp;  计算 $$h_{dl}$$  
-&emsp;&emsp; if $$||h_{dl}|| \le \epsilon(||x||+\epsilon_2)$$  
-&emsp; &emsp;&emsp;&emsp; found := true  
-
-
-
-![](/assets/L_M_Algo.gif)
+&emsp;&emsp; $$\rho := (F(x)-F(x+h_{lm})/(L(0)-L(h_{lm})))$$   
+&emsp;&emsp;if $$\rho \ge 0$$ 
+&emsp;&emsp;&emsp;&emsp;$$x:=x_{new};g:=J(x)^Tf(x)$$  
+&emsp;&emsp;&emsp;&emsp;$$A:=J^T(x)J(x);g:=J^T(x)f(x)$$
+&emsp;&emsp;&emsp;&emsp;found:= $$(||g||_{\infty} \le \epsilon_1)$$
+&emsp;&emsp;&emsp;&emsp;u:= $$u*\max(1/2,1-(2\rho-1)^3);v:=2$$  
+&emsp;&emsp;else:  
+&emsp;&emsp;&emsp;&emsp;$$u:= u*v; v = 2*v$$  
 
 ```py
     def LM_Solver(self):

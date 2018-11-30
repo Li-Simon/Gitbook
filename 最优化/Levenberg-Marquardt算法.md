@@ -61,22 +61,22 @@ cost function可以表示成残差的形式：
 就得到：  
 &emsp;&emsp;$$\beta = (H + \lambda I_n)^{-1}H\beta_0 - (H + \lambda I_n)^{-1}g$$,
 算法流程如下：  
-$$k:=0;x=x_0;v:=2;A:=J(x)^TJ(x); g:=J(x)^Tf(x);u:=\tau*\max(a_{ii})$$    
-found:= $$(||g||_{\infty} \le \epsilon_1)$$
-while(not found) and $$k < k_{max}$$  
-&emsp; &emsp;k:=k+1,计算$$h_{lm}$$根据$$(A+uI)h_{lm} = -g$$   
-&emsp;&emsp; if $$||h_{lm}||\le  \epsilon(||x||+\epsilon_2)$$  
-&emsp; &emsp;&emsp;&emsp; found := true  
-&emsp;&emsp; else:  
-&emsp; &emsp;&emsp;&emsp; $$x_{new}:=x+h_{lm}$$  
-&emsp;&emsp; $$\rho := (F(x)-F(x+h_{lm})/(L(0)-L(h_{lm})))$$   
-&emsp;&emsp;if $$\rho \ge 0$$ 
-&emsp;&emsp;&emsp;&emsp;$$x:=x_{new};g:=J(x)^Tf(x)$$  
-&emsp;&emsp;&emsp;&emsp;$$A:=J^T(x)J(x);g:=J^T(x)f(x)$$
-&emsp;&emsp;&emsp;&emsp;found:= $$(||g||_{\infty} \le \epsilon_1)$$
-&emsp;&emsp;&emsp;&emsp;u:= $$u*\max(1/2,1-(2\rho-1)^3);v:=2$$  
-&emsp;&emsp;else:  
-&emsp;&emsp;&emsp;&emsp;$$u:= u*v; v = 2*v$$  
+$$k:=0;x=x_0;v:=2;A:=J(x)^TJ(x); g:=J(x)^Tf(x);u:=\tau*\max(a_{ii})$$      
+found:= $$(||g||_{\infty} \le \epsilon_1)$$   
+while(not found) and $$k < k_{max}$$    
+&emsp; &emsp;k:=k+1,计算$$h_{lm}$$根据$$(A+uI)h_{lm} = -g$$     
+&emsp;&emsp; if $$||h_{lm}||\le  \epsilon(||x||+\epsilon_2)$$     
+&emsp; &emsp;&emsp;&emsp; found := true    
+&emsp;&emsp; else:    
+&emsp; &emsp;&emsp;&emsp; $$x_{new}:=x+h_{lm}$$     
+&emsp;&emsp; $$\rho := (F(x)-F(x+h_{lm})/(L(0)-L(h_{lm})))$$     
+&emsp;&emsp;if $$\rho \ge 0$$    
+&emsp;&emsp;&emsp;&emsp;$$x:=x_{new};g:=J(x)^Tf(x)$$    
+&emsp;&emsp;&emsp;&emsp;$$A:=J^T(x)J(x);g:=J^T(x)f(x)$$   
+&emsp;&emsp;&emsp;&emsp;found:= $$(||g||_{\infty} \le \epsilon_1)$$   
+&emsp;&emsp;&emsp;&emsp;u:= $$u*\max(1/2,1-(2\rho-1)^3);v:=2$$     
+&emsp;&emsp;else:     
+&emsp;&emsp;&emsp;&emsp;$$u:= u*v; v = 2*v$$    
 
 ```py
     def LM_Solver(self):

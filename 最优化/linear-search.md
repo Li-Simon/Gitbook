@@ -32,7 +32,8 @@ Gradient:$$g^{(k)} = \nabla f(x^{(k)}) = Qx - b$$
 so   
 &emsp;&emsp;$$ x^{(k+1)} = x^{(k)} - \alpha _{k}g^{(k)}$$  
 where:  
-&emsp;&emsp;$$ \alpha _{k} = arg min_{\alpha \ge 0} f(x_{(k)} - \alpha  g^{(k)})  = arg min_{\alpha \ge 0} (\frac{1}{2}(x^{k} - \alpha  g^{(k)})^TQ(x^{k} - \alpha  g^{(k)}) - (x^{k} - \alpha  g^{(k)})^Tb) $$  
+&emsp;&emsp;$$ \alpha _{k} = arg min_{\alpha \ge 0} f(x_{(k)} - \alpha  g^{(k)})  $$  
+&emsp;&emsp;&emsp;&emsp;$$= arg min_{\alpha \ge 0} (\frac{1}{2}(x^{k} - \alpha  g^{(k)})^TQ(x^{k} - \alpha  g^{(k)}) - (x^{k} - \alpha  g^{(k)})^Tb) $$  
 Hence:  
 &emsp;&emsp;$$ \alpha _{k} = \frac{g^{(k)T}g^{(k)}}{g^{(k)T}Qg^{(k)}}$$
 

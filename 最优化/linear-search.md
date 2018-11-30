@@ -134,11 +134,11 @@ $$g^{(k+1)T}d^{(i)} = 0$$. For all k, $$0 \le k \le n-1$$, and $$0 \le i \le k$$
 The conjugate gradient algorithm is summarized below.  
 1. Set k := 0; select the initial point $$x^{(0)}$$  
 2. &emsp;&emsp;$$ g^{(0)} = \nabla f(x^{(0)})$$. If $$g^{(0)} = 0$$, stop, else set $$d^{(0)} = -g^{(0)}$$.   
-3.&emsp;&emsp;$$\alpha _{k} = -\frac{g^{(k)T}d^{(k)}}{d^{(k)T}Qd^{(k)}}$$  
-4.&emsp;&emsp;$$ x^{(k+1)} = x^{(k)} + \alpha _k d^{(k)}$$  
-5.&emsp;&emsp;$$ g^{(k+1)} = \nabla f(x^{k+1})$$. If $$g^{(k+1)} = 0$$,stop.  
+3. &emsp;&emsp;$$\alpha _{k} = -\frac{g^{(k)T}d^{(k)}}{d^{(k)T}Qd^{(k)}}$$  
+4. &emsp;&emsp;$$ x^{(k+1)} = x^{(k)} + \alpha _k d^{(k)}$$  
+5. &emsp;&emsp;$$ g^{(k+1)} = \nabla f(x^{k+1})$$. If $$g^{(k+1)} = 0$$,stop.  
 6. &emsp;&emsp;$$\beta _{k} = -\frac{g^{(k+1)T}Qd^{(k)}}{d^{(k)T}Qd^{(k)}}$$   
-7.&emsp;&emsp;$$ d^{(k+1)} = -g^{(k+1)} + \beta _k d^{(k)}$$  
+7. &emsp;&emsp;$$ d^{(k+1)} = -g^{(k+1)} + \beta _k d^{(k)}$$  
 8. Set k:= k+1; go to step 3.  
 
 Proposition 10.1 In the conjugate gradient algorithm, the directions $$d^{(0)},d^{(1)},d^{(2)},...,d^{(n-1)}$$ 

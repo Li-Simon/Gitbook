@@ -25,7 +25,7 @@ else:
 Dog Leg Method:  
 $$k:=0;x=x_0;\Delta := \Delta_0; g:=J(x)^Tf(x)$$  
 found:= $$(||f(x)||_{\infty} \le \epsilon_3)$$or$$||g||_{\infty}\le \epsilon_1$$  
-while(not found) and $$k < k_max$$  
+while(not found) and $$k < k_{max}$$  
 &emsp; &emsp;k:=k+1,计算$$\alpha$$  
 &emsp;&emsp;$$h_{sd}:=-\alpha g$$; solve $$J(x)h_{gn} \simeq -f(x)$$  
 &emsp;&emsp;  计算 $$h_{dl}$$  

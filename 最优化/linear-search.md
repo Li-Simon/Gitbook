@@ -124,9 +124,7 @@ Basic conjugate Direction Algorithm. Given a start $$x^{(0)}$$, and Q-conjugate 
 &emsp;&emsp;$$ \alpha _k = -\frac{g^{(k)T}d^{(k)}}{d^{(k)T}Qd^{(k)}}$$  
 &emsp;&emsp;$$x^{(k+1)} = x^{(k)} + \alpha _k d^{(k)}$$
 
-Theorem 10.1 For any starting point $$x^{(0)}$$, the basic conjugate direction algorithm converges to the unique $$x^{*}$$ \(that solves Qx = b\) in n steps; that is, $$x^{(n)} = x^{*}$$
-
-![](/assets/conjugate_terorem.png)
+Theorem 10.1 For any starting point $$x^{(0)}$$, the basic conjugate direction algorithm converges to the unique $$x^{*}$$ \(that solves Qx = b\) in n steps; that is, $$x^{(n)} = x^{*}$$  
 
 Lemma 10.2 In the conjugate direction algorithm,   
 $$g^{(k+1)T}d^{(i)} = 0$$. For all k, $$0 \le k \le n-1$$, and $$0 \le i \le k$$.  

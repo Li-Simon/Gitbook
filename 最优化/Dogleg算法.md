@@ -22,26 +22,26 @@ else:
 其中L是线性模型  
 &emsp;&emsp;$$ L(h) = \frac{1}{2}||f(x) + J(x)h||^2$$  
 在L-M我们通过$$\rho$$来控制阻尼因子，在dog-leg算法中，我们通过它来控制步长  
-Dog Leg Method:  
-$$k:=0;x=x_0;\Delta := \Delta_0; g:=J(x)^Tf(x)$$  
-found:= $$(||f(x)||_{\infty} \le \epsilon_3)$$or$$||g||_{\infty}\le \epsilon_1$$  
-while(not found) and $$k < k_{max}$$  
-&emsp; &emsp;k:=k+1,计算$$\alpha$$  
-&emsp;&emsp;$$h_{sd}:=-\alpha g$$; solve $$J(x)h_{gn} \simeq -f(x)$$  
-&emsp;&emsp;  计算 $$h_{dl}$$  
-&emsp;&emsp; if $$||h_{dl}|| \le \epsilon(||x||+\epsilon_2)$$  
-&emsp; &emsp;&emsp;&emsp; found := true  
-&emsp; &emsp;else:
-&emsp; &emsp;&emsp;&emsp; $$x_{new}:=x+h_{dl}$$   
-&emsp;&emsp; $$\rho := (F(x)-F(x+h_{dl})/(L(0)-L(h_{dl})))$$   
-&emsp;&emsp;if $$\rho \ge 0$$  
-&emsp;&emsp;&emsp;&emsp;$$x:=x_{new};g:=J(x)^Tf(x)$$  
-&emsp;&emsp;&emsp;&emsp;found:= $$(||f(x)||_{\infty} \le \epsilon_3)$$or$$||g||_{\infty}\le \epsilon_1$$ 
-&emsp;&emsp;if $$\rho \ge 0.75$$  
-&emsp;&emsp;&emsp;&emsp;$$\Delta:= \max(\Delta, 3*||h_{dl}||)$$
-&emsp;&emsp;else if $$\rho \le 0.25$$  
-&emsp;&emsp;&emsp;&emsp;$$\Delta:= \Delta /2$$   
-&emsp;&emsp;found:= $$\Delta \le \epsilon_2(||x||+\epsilon)$$  
+Dog Leg Method:    
+$$k:=0;x=x_0;\Delta := \Delta_0; g:=J(x)^Tf(x)$$     
+found:= $$(||f(x)||_{\infty} \le \epsilon_3)$$or$$||g||_{\infty}\le \epsilon_1$$     
+while(not found) and $$k < k_{max}$$     
+&emsp; &emsp;k:=k+1,计算$$\alpha$$    
+&emsp;&emsp;$$h_{sd}:=-\alpha g$$; solve $$J(x)h_{gn} \simeq -f(x)$$     
+&emsp;&emsp;  计算 $$h_{dl}$$    
+&emsp;&emsp; if $$||h_{dl}|| \le \epsilon(||x||+\epsilon_2)$$     
+&emsp; &emsp;&emsp;&emsp; found := true     
+&emsp; &emsp;else:    
+&emsp; &emsp;&emsp;&emsp; $$x_{new}:=x+h_{dl}$$      
+&emsp;&emsp; $$\rho := (F(x)-F(x+h_{dl})/(L(0)-L(h_{dl})))$$      
+&emsp;&emsp;if $$\rho \ge 0$$     
+&emsp;&emsp;&emsp;&emsp;$$x:=x_{new};g:=J(x)^Tf(x)$$     
+&emsp;&emsp;&emsp;&emsp;found:= $$(||f(x)||_{\infty} \le \epsilon_3)$$or$$||g||_{\infty}\le \epsilon_1$$    
+&emsp;&emsp;if $$\rho \ge 0.75$$      
+&emsp;&emsp;&emsp;&emsp;$$\Delta:= \max(\Delta, 3*||h_{dl}||)$$    
+&emsp;&emsp;else if $$\rho \le 0.25$$     
+&emsp;&emsp;&emsp;&emsp;$$\Delta:= \Delta /2$$      
+&emsp;&emsp;found:= $$\Delta \le \epsilon_2(||x||+\epsilon)$$     
 
 ```py
     def Dogleg_Solver(self):

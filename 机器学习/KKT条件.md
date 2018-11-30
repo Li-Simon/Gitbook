@@ -70,7 +70,7 @@ $$\mathbf{\lambda^*}$$为拉格朗日乘子向量，$$\mathbf{u^*}$$是iKKT乘�
 (2)求$$\displaystyle \min_{\mathbf{w,b}}L(\mathbf{w,b,\alpha})$$对$$\alpha$$的极大即是对偶问题。  
 &emsp;&emsp;$$\displaystyle \max_{\mathbf{\alpha}}-\frac{1}{2}\displaystyle \sum_{i=1}^N\displaystyle \sum_{j=1}^N\alpha_i\alpha_jy_iy_j(\mathbf{x_ix_j}) + \displaystyle \sum_{i=1}^N \alpha_i$$   
 &emsp;&emsp;s.t. &emsp;&emsp;$$\sum_{i=1}^N \alpha_iy_i = 0$$   
-&emsp;&emsp;&emsp;&emsp;$$\alpha_i \ge 0$$ ,i=1,2,...,N
+&emsp;&emsp;&emsp;&emsp;$$\alpha_i \ge 0$$ ,i=1,2,...,N。    
 由于原始问题满足KKT条件，所以存在$$w^*,\alpha^*$$使得$$w^*$$是原始问题的解，$$\alpha^*$$是对偶问题的解。  
 ####定理：由对偶问题求原始问题  
 假设$$\mathbf{\alpha^*} = (\alpha_1^*,\alpha_2^*,...,\alpha_N^*)^T$$是对偶问题的解，则存在一个指标j使得$$\alpha_j >0$$，使得原问题的解$$\mathbf{w^*},b$$可由下面方程给出：  

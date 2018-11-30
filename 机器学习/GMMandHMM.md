@@ -43,7 +43,7 @@ A,B,$$\pi$$称为马尔科夫模型的三要素。
    因此I和O的联合概率是：  
   &emsp;&emsp;$$P(O,I|\lambda) = P(O|I,\lambda)P(I|\lambda)=b_{i_1}(o_1)b_{i_2}(o_2)...b_{i_T}(o_T)\pi_{i_1}a_{i_1i_2}a_{i_2i_3}...a_{i_{T-1}i_T}$$  
    对所有可能的I求和，得到：  
-&emsp;&emsp;$$\kern{4 em} P(O|\lambda)=\sum_IP(O,I|\lambda)$$  
+&emsp;&emsp;$$ P(O|\lambda)=\sum_IP(O,I|\lambda)$$  
 直接计算，时间复杂度是$$O(TN^T)$$.为了降低计算的时间复杂度，引入了前向算法。
 ### 前向算法
 给定模型$$\lambda$$，定义到时刻t部分观测序列为$$O=o_1,o_2,...,o_T$$且状态为$$q_i$$的概率为前向概率。记作：  

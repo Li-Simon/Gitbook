@@ -60,8 +60,8 @@ A,B,$$\pi$$称为马尔科夫模型的三要素。
 &emsp;&emsp;$$\beta_t = A^{T-t}\displaystyle \prod_{j=t+1}^TxB[o_j], t=T-1,T-2,...,1$$  
    $$\kern{4 em} \beta_t= (\beta_t(1),\beta_t(2),...,\beta_t(N))^T$$  
 ### 一些概率与期望值
-(1) 给定模型$$\lambda$$以及观测O，在时刻t处于状态$$q_i$$的概率为：  
-   $$\kern{4 em} \gamma_t(i)= P(i_t=q_i|O,\lambda) = \frac{P(i_t=q_i,O|\lambda)}{P(O|\lambda)}$$  
+(1) 给定模型$$\lambda$$以及观测O，在时刻t处于状态$$q_i$$的概率为：   
+&emsp;&emsp;$$ \gamma_t(i)= P(i_t=q_i|O,\lambda) = \frac{P(i_t=q_i,O|\lambda)}{P(O|\lambda)}$$  
    因为&emsp;&emsp;$$\alpha_t(i)\beta_t(i) =P(i_t=q_i,O|\lambda)$$  
    所以： &emsp;&emsp;$$ \gamma_t(i)=\frac{\alpha_t(i)\beta_t(i)}{\displaystyle \sum_{i=1}^N\alpha_t(i)\beta_t(i)}$$   
 (2)给定模型$$\lambda$$以及观测O，在时刻t处于状态$$q_i$$且在t+1时刻处以$$q_j$$的概率为：  

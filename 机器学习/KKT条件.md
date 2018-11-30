@@ -35,7 +35,7 @@ $$\mathbf{\lambda^*}$$为拉格朗日乘子向量，$$\mathbf{u^*}$$是iKKT乘�
 &emsp;&emsp;$$T(\mathbf{x^*}) = (y \in R^n: Dh(x^*)y)=0,Dg_j(x^*)y)=0, j \in J(x^*) $$.  
 定理： 二阶必要条件：
 如果$$\mathbf{x^*}$$是上面讨论的优化问题的极小点，那么存在$$\mathbf{\lambda^*} \in R^m, \mathbf{u^*} \in R^p$$使得：  
-&emsp;&emsp;1. $$\mathbf{u^*} \ge 0$$,
+&emsp;&emsp;1. $$\mathbf{u^*} \ge 0$$,   
 &emsp;&emsp;2. $$Df(\mathbf{x^*}) + \mathbf{\lambda^*}Dh(\mathbf{x^*}) + \mathbf{u^*}Dg(\mathbf{x^*})  = \mathbf{0^T}$$  
 &emsp;&emsp;3. $$\mathbf{u^{*T}}\mathbf{g(x*)} = 0$$   
 &emsp;&emsp;4.对所有$$\mathbf{y} \in T(\mathbf{x^*}, \mathbf{u^*}), \mathbf{y} \ne 0$$，都有$$\mathbf{y^T}L(\mathbf{x},\mathbf{\lambda},\mathbf{u})\mathbf{y} > 0$$  

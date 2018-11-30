@@ -17,7 +17,7 @@
 &emsp;&emsp;$$\hat \beta ^{ridge} =  \arg min_{\beta}{\displaystyle \sum_{i=1}^N(y_i -\beta_0-\displaystyle \sum_{j=1}^px_{ij}\beta_j)^2 + \lambda \displaystyle \sum_{j=1}^p\beta_j^2}$$  
 等价于:  
 &emsp;&emsp;$$\hat \beta ^{ridge} =  \arg min_{\beta}{\displaystyle \sum_{i=1}^N(y_i -\beta_0-\displaystyle \sum_{j=1}^px_{ij}\beta_j)^2} $$  
-&emsp;&emsp;$$ subject to:  \displaystyle \sum_{j=1}^p\beta_j^2 \le t$$.  
+&emsp;&emsp;s.t. &emsp; $$ \displaystyle \sum_{j=1}^p\beta_j^2 \le t$$.  
 上面的问题也等价于假定，$$y_i,\beta_i$$服从如下分布：  
 &emsp;&emsp;$$ y_i \in N(\beta_0 + x_i^T\beta,\sigma^2)$$  
 &emsp;&emsp;$$\beta_i \in N(0,\tau^2)$$  

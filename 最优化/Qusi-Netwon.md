@@ -58,7 +58,7 @@ DFP的矫正公式如下：
 &emsp;&emsp;$$H_{k+1} = H_{k} + \frac{H_{k}y_{k}y{_k}^TH_{k}}{y\_k^TH\_ky\_k} \quad s_{k}^Ty_{k}>0$$
 
 #Broyden族算法
-之前BFGS和DFP矫正都是由$$y_k$$和$$B_ks_k$$(或者$$s_k$$和$$H_ky_k$$组成的秩2矩阵。而Droyden族算法采用了BFGS和DFP校正公式的凸组合，如下：
+之前BFGS和DFP矫正都是由$$y_k$$和$$B_ks_k$$(或者$$s_k$$和$$H_ky_k$$组成的秩2矩阵。而Droyden族算法采用了BFGS和DFP校正公式的凸组合，如下：   
 &emsp;&emsp;$$ H_{k+1}^{\phi} = \phi _{k}H_{k+1}^{BFGS} + (1-\phi _{k})H_{k+1}^{DFP}$$   
 &emsp;&emsp;&emsp;&emsp;$$= H_k - \frac{H_ky_ky_k^TH_k}{y_k^TH_ky_k} +\frac{s_ks_k^T}{s_k^Ty_k} + \phi _{k} v_{k}v_{k}^T$$      
 其中$$\phi _{k} \in [0,1]$$，$$v_k$$由下式定义：      

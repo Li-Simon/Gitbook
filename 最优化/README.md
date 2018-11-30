@@ -4,11 +4,11 @@
 ##无约束与有约束问题
 最优化问题分为有约束优化问题与无约束优化问题。
 1. 无约束优化问题
-  minf(x)
+ &emsp;&emsp; $$\min f(x)$$
 2. 有约束优化问题
-   minf0(x)
-   s.t. fi(x)≤0, i=1,2,...,m
-   s.t. hi(x)=0, i=1,2,...,p
+ &emsp;&emsp; $$\min f_0(x)$$
+ &emsp;&emsp; s.t.&emsp;$$f_i(x)≤0, i=1,2,...,m$$
+ &emsp;&emsp; s.t.&emsp;$$h_i(x)=0, i=1,2,...,p$$
 一般我们把带约束问题转化为无约束优化问题进行求解。比如拉格朗日乘子法：  
 &emsp;&emsp; $$\min L(x,\lambda,v) = f_0(x) + \displaystyle \sum_{i=1}^m \lambda_if_i(x) + \displaystyle \sum_{i=1}^p v_i h_i(x)$$ 
 

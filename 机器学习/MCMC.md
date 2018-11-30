@@ -35,11 +35,11 @@ $$\theta^{(1)} \to \theta^{(2)} \to ...\theta^{(t)} \to$$
 &emsp;&emsp;$$q(\theta = \theta^{(t)}|\theta^{(t-1)}) = q(\theta = \theta^{(t-1)}|\theta^{(t)})$$
 接下来，我们需要证明Metropolis采样算法中构造的马尔科夫链满足细致平衡条件：  
 &emsp;&emsp;$$p(\theta^{(i)}P_{i,j} = p(\theta^{(i)}\alpha_{i,j}Q_{i,j}$$    
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$$=p(\theta^{(i)}\min(1, \frac{p(\theta^{(j)})}{p(\theta^{(i)})})Q_{i,j}$$  
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$$ =\min(p(\theta^{(i)}Q_{i,j}, p(\theta^{(j)}Q_{i,j})$$  
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$$=p(\theta^{(j)}\min(\frac{p(\theta^{(i)})}{p(\theta^{(j)})},1)Q_{j,i}$$  
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$$ =p(\theta^{(i)}\alpha_{i,j}Q_{i,j}$$  
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$$ =p(\theta^{(j)}P_{j,i}$$  
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$$=p(\theta^{(i)}\min(1, \frac{p(\theta^{(j)})}{p(\theta^{(i)})})Q_{i,j}$$  
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$$ =\min(p(\theta^{(i)}Q_{i,j}, p(\theta^{(j)}Q_{i,j})$$  
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$$=p(\theta^{(j)}\min(\frac{p(\theta^{(i)})}{p(\theta^{(j)})},1)Q_{j,i}$$  
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$$ =p(\theta^{(i)}\alpha_{i,j}Q_{i,j}$$  
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$$ =p(\theta^{(j)}P_{j,i}$$  
 因此，通过上面方法构造出来的马尔科夫链满足细致平衡条件。  
 ##MCMC的使用场景
 [MCMC——Metropolis-Hasting算法](https://www.cnblogs.com/xbinworld/p/4266146.html)  

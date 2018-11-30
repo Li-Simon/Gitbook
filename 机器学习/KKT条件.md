@@ -7,8 +7,8 @@
 一般形式的优化问题:  
 
 &emsp;&emsp;$$minimize f(\mathbf{x})$$  
-&emsp;&emsp;$$s.t. \kern{2 em} \mathbf h(\mathbf{x}) = \mathbf{0}$$   
-&emsp;&emsp;$$s.t. \kern{2 em} \mathbf g(\mathbf{x}) \le \mathbf{0}$$  
+&emsp;&emsp;s.t. &emsp;$$ \mathbf h(\mathbf{x}) = \mathbf{0}$$   
+&emsp;&emsp;s.t. &emsp;$$ \mathbf g(\mathbf{x}) \le \mathbf{0}$$  
 其中： $$f: R^n->R, \mathbf{h}: R^n->R^m, m \le n; \mathbf{g}: R^n->R^p;$$  
 针对这一问题，引入如下定义：  
 定义21.1. 对于一个不等式约束$$g_i(x) \le 0$$，如果在$$x^*$$处，$$g_i(x^*) = 0$$,那么称该不等式约束是$$x^*$$处的起作用约束。如果：$$g_i(x^*) \lt 0$$,那么称该不等式约束是$$x^*$$处的不起作用约束。  

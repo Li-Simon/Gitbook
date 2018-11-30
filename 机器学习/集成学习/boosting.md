@@ -153,7 +153,7 @@ Input: Data set D, A loss function L, A base learner $$L_\Phi$$, the number of i
 5. Determin the structure $$\hat R_{jm}, j=1,...,T$$ by selecting splits which maximize  
 &emsp;&emsp;$$ Gain = \frac{1}{2}[\frac{G_{L}^2}{H_{L}} + \frac{G_{R}^2}{H_{R}} - \frac{G_{jm}^2}{H_{jm}}]$$  
 6. Determine the leaf weights $$w_{jm}, j=1,...,T$$   for the learnt structure by  
-$$\hat w_{jm} = -\frac{G_{jm}}{H_{jm}}, j=1,2...,T$$  
+&emsp;&emsp;$$\hat w_{jm} = -\frac{G_{jm}}{H_{jm}}, j=1,2...,T$$  
 7. $$\hat f_m(x) = \eta \displaystyle \sum_{j=1}^T \hat w_{jm}I(x \in \hat R_{jm})$$;  
 8. $$\hat f^m(x) = \hat f^{(m-1)}(x) + \hat f_m(x)$$;  
 9. end  

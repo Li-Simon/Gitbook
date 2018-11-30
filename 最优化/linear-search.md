@@ -92,7 +92,7 @@ A drawback of Newton's method is that evaluation of $$F(x^{(k)})$$ for large n c
 
 Levenberg-Marquardt Modification:  
 If the Hessian matrix $$F(x^{(k)})$$ is not positive definite, then the search direction $$d^{(k)} = -F(x^{(k)})^{-1}g^{(k)}$$ may not point in a descent direction. A simple technique to ensure that the search direction is a descent direction is to introduce the so-called Levenberg-Marquardt Modification to Newton's algorithm:  
-$$x^{(k+1)} =x^{(k)} - \alpha _k F(x^{(k)} + u_kI)^{-1}g^{(k)}$$  
+&emsp;&emsp;$$x^{(k+1)} =x^{(k)} - \alpha _k F(x^{(k)} + u_kI)^{-1}g^{(k)}$$  
 where $$u_k \ge 0$$
 
 # Newton's methods for nonlinear least-squares

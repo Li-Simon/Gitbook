@@ -22,7 +22,9 @@ else:
 其中L是线性模型  
 &emsp;&emsp;$$ L(h) = \frac{1}{2}||f(x) + J(x)h||^2$$  
 在L-M我们通过$$\rho$$来控制阻尼因子，在dog-leg算法中，我们通过它来控制步长  
-Dog Leg Method
+Dog Leg Method:  
+$$k:=0;x=x_0;\Delta := \Delta_0; g:=J(x)^Tf(x)$$  
+found:= $$(||f(x)||_{\infinity} \le \epsilon_3)$$or$$||g||\le \epsilon_1$$
 
 ![](/assets/DogLeg_Algo.gif)
 

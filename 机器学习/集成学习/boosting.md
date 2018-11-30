@@ -136,14 +136,14 @@ Output: $$\hat f(x) = \hat g^{(M)}(x) = \displaystyle \sum_{m=1}^M\hat f_m(x)$$
 &emsp;&emsp;$$ = \displaystyle \sum_{j=1}^T\displaystyle \sum_{i\in I_{jm}}[\hat g_m(x_i)w_{jm} + \frac{1}{2}\hat h_m(x_i)w_{jm}^2]$$  
 定义：  
 &emsp;&emsp;$$ G_{jm} = \displaystyle  \sum_{i \in I_{jm}} \hat g_m(x_i)$$  
-$$\kern{4 em} H_{jm} = \displaystyle  \sum_{i \in I_{jm}} \hat h_m(x_i)$$  
+&emsp;&emsp;$$ H_{jm} = \displaystyle  \sum_{i \in I_{jm}} \hat h_m(x_i)$$  
 因此，可以把cost function写成：  
 &emsp;&emsp;$$J_m(\phi_m) = \displaystyle \sum_{j=1}^T[G_{jm}w_{jm} + \frac{1}{2}H_{jm}w_{jm}^2]$$  
 &emsp;&emsp;&emsp;&emsp;$$ \ge -\displaystyle \sum_{j=1}^T\frac{1}{2}\frac{G_{jm}^2}{H_{jm}}$$  
 成立条件是：  
 &emsp;&emsp;$$w_{jm} = -\frac{G_{jm}}{H_{jm}}, j=1,2...,T$$  
 为了寻找最佳分裂点j，也就是最大化如下的Gain:  
-$$\kern{4 em} Gain = \frac{1}{2}[\frac{G_{L}^2}{H_{L}} + \frac{G_{R}^2}{H_{R}} - \frac{G_{jm}^2}{H_{jm}}]$$  
+&emsp;&emsp;$$Gain = \frac{1}{2}[\frac{G_{L}^2}{H_{L}} + \frac{G_{R}^2}{H_{R}} - \frac{G_{jm}^2}{H_{jm}}]$$  
 总结起来：Newton tree boosting算法如下：  
 Input: Data set D, A loss function L, A base learner $$L_\Phi$$, the number of iterations M. The learning rate $$\eta$$  
 1. Initialize $$\hat f^{(0)}(x) = \hat f_{(0)}(x) = \hat \theta_0 = arg min_\theta \displaystyle \sum_{i=1}^n L(y_i, \theta)$$;  

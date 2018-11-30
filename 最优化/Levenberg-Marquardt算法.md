@@ -7,9 +7,9 @@
 ##牛顿法
 [牛顿法](https://en.wikipedia.org/wiki/Newton's\_method\_in\_optimization)
 把cost function进行展开到二阶：  
-$$\kern{4 em}f(x_{t+1}) = f(x_t) + g(x_{t+1} - x_t)  + \frac{1}{2} (x_{t+1} -x_t)^TH(x_{t+1} -x_t)$$  
+&emsp;&emsp;$$f(x_{t+1}) = f(x_t) + g(x_{t+1} - x_t)  + \frac{1}{2} (x_{t+1} -x_t)^TH(x_{t+1} -x_t)$$  
 求导，$$\frac{\partial f}{\partial x_t} = g + H(x_{t+1} -x_t)$$,让导数为0就有  
-$$\kern{4 em}x_{t+1} = x_t - H^{-1}g$$  
+&emsp;&emsp;$$x_{t+1} = x_t - H^{-1}g$$  
 要是H是正定的，上面的就是凸函数，也就一定有了最小值。可惜H不一定是正定的，这就引导出了下面的方法
 
 ##[高斯-牛顿法](https://en.wikipedia.org/wiki/Gauss–Newton_algorithm)  

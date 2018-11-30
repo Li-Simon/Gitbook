@@ -61,6 +61,26 @@ cost function可以表示成残差的形式：
 就得到：  
 &emsp;&emsp;$$\beta = (H + \lambda I_n)^{-1}H\beta_0 - (H + \lambda I_n)^{-1}g$$,
 算法流程如下：  
+$$k:=0;x=x_0;v:=2;A:=J(x)^TJ(x); g:=J(x)^Tf(x);u:=\tau*\max(a_{ii})$$    
+found:= $$(||g||_{\infty} \le \epsilon_1)$$
+while(not found) and $$k < k_{max}$$  
+&emsp; &emsp;k:=k+1,计算$$h_{lm}$$根据$$(A+uI)h_{lm} = -g$$   
+&emsp;&emsp; if $$||h_{lm}||\le  \epsilon(||x||+\epsilon_2)$$  
+&emsp; &emsp;&emsp;&emsp; found := true  
+&emsp;&emsp; else:  
+&emsp; &emsp;&emsp;&emsp; $$x_{new}:=x+h_{lm}$$  
+
+
+
+
+
+&emsp;&emsp;$$h_{sd}:=-\alpha g$$; solve $$J(x)h_{gn} \simeq -f(x)$$  
+&emsp;&emsp;  计算 $$h_{dl}$$  
+&emsp;&emsp; if $$||h_{dl}|| \le \epsilon(||x||+\epsilon_2)$$  
+&emsp; &emsp;&emsp;&emsp; found := true  
+
+
+
 ![](/assets/L_M_Algo.gif)
 
 ```py

@@ -20,7 +20,7 @@ ADMM最典型的例子就是加L1或者L2正则化的优化问题；下面以L1�
 lasso的拉格朗日形式可以等价表示成：  
 &emsp;&emsp;$$\displaystyle \min_{\beta \in R^p,\theta \in R^p}[\frac{1}{2N}||\mathbf{y-X\beta}||^2_2 + \frac{1}{N}\lambda||\theta||_1],  \beta-\theta = 0$$   
 相应的增广拉格朗日函数为：  
-&emsp;&emsp;$$\displaystyle \min_{\beta \in R^p,\theta \in R^p}[\frac{1}{2N}||\mathbf{y-X\beta}||^2_2 + \frac{1}{N}\lambda||\theta||_1]+ \rho||\beta-\theta||_2^2$$     
+&emsp;&emsp;$$\displaystyle \min_{\beta \in R^p,\theta \in R^p}[\frac{1}{2N}||\mathbf{y-X\beta}||^2_2 + \frac{1}{N}\lambda||\theta||_1+ \rho||\beta-\theta||_2^2]$$     
 对于lasso，ADMM的更新公式为：   
 &emsp;&emsp;$$\beta^{t+1} = \mathbf{(X^TX+\rho I)}^{-1}(\mathbf{X^Ty}+\rho \theta^t - u^t)$$     
 &emsp;&emsp;$$\theta^{t+1} = S_{\lambda / \rho}(\beta^{t+1} + u^t/\rho)$$   

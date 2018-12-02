@@ -14,18 +14,21 @@
   $$\mathbf{\lambda_{k+1}}:= \mathbf{\lambda_{k}} + c(A_1x_{k+1}^{(1)} + A_2x_{k+1}^{(2)} -b)$$  
 这种思想是每一个更小的最优化问题都能被更有效地解决或者某些情形有接近的形式。
 
-##例子
-ADMM最典型的例子就是加L1或者L2正则化的优化问题；下面以L1正则化为例。    
-###用ADMM求解Lasso问题
+## 例子
+
+ADMM最典型的例子就是加L1或者L2正则化的优化问题；下面以L1正则化为例。
+
+### 用ADMM求解Lasso问题
+
 lasso的拉格朗日形式可以等价表示成：  
-&emsp;&emsp;$$\displaystyle \min_{\beta \in R^p,\theta \in R^p}[\frac{1}{2N}||\mathbf{y-X\beta}||^2_2 + \frac{1}{N}\lambda||\theta||_1],  \beta-\theta = 0$$   
+  $$\displaystyle \min_{\beta \in R^p,\theta \in R^p}[\frac{1}{2N}||\mathbf{y-X\beta}||^2_2 + \frac{1}{N}\lambda||\theta||_1],  \beta-\theta = 0$$  
 相应的增广拉格朗日函数为：  
-&emsp;&emsp;$$\displaystyle \min_{\beta \in R^p,\theta \in R^p}[\frac{1}{2N}||\mathbf{y-X\beta}||^2_2 + \frac{1}{N}\lambda||\theta||_1+ \rho||\beta-\theta||_2^2]$$     
-对于lasso，ADMM的更新公式为：   
-&emsp;&emsp;$$\beta^{t+1} = \mathbf{(X^TX+\rho I)}^{-1}(\mathbf{X^Ty}+\rho \theta^t - u^t)$$     
-&emsp;&emsp;$$\theta^{t+1} = S_{\lambda / \rho}(\beta^{t+1} + u^t/\rho)$$   
-&emsp;&emsp;$$u^{t+1} =u^t +  \rho(\beta^{t} - \theta^{t+1})$$   
-对$$\beta$$进行岭回归，对$$\theta$$进行的更新是软阈值，对u采用线性更新。 
- 
+  $$\displaystyle \min_{\beta \in R^p,\theta \in R^p}[\frac{1}{2N}||\mathbf{y-X\beta}||^2_2 + \frac{1}{N}\lambda||\theta||_1+ \rho||\beta-\theta||_2^2]$$  
+对于lasso，ADMM的更新公式为：  
+  $$\beta^{t+1} = \mathbf{(X^TX+\rho I)}^{-1}(\mathbf{X^Ty}+\rho \theta^t - u^t)$$  
+  $$\theta^{t+1} = S_{\lambda / \rho}(\beta^{t+1} + u^t/\rho)$$  
+  $$u^{t+1} =u^t +  \rho(\beta^{t+1} - \theta^{t+1})$$  
+对$$\beta$$进行岭回归，对$$\theta$$进行的更新是软阈值，对u采用线性更新。
+
 [^1]: 《线性与非线性规划》David G. Luenberger
 

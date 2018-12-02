@@ -25,6 +25,7 @@ lasso的拉格朗日形式可以等价表示成：
 &emsp;&emsp;$$\beta^{t+1} = \mathbf{(X^TX+\rho I)}^{-1}(\mathbf{X^Ty}+\rho \theta^t - u^t)$$     
 &emsp;&emsp;$$\theta^{t+1} = S_{\lambda / \rho}(\beta^{t+1} + u^t/\rho)$$   
 &emsp;&emsp;$$u^{t+1} =u^t +  \rho(\beta^{t} - \theta^{t+1})$$   
-对$$\beta$$进行岭回归，对$$\theta$$进行的更新是软阈值，对u采用线性更新。  
+对$$\beta$$进行岭回归，对$$\theta$$进行的更新是软阈值，对u采用线性更新。 
+ 
 [^1]: 《线性与非线性规划》David G. Luenberger
 

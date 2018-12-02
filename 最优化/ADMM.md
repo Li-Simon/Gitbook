@@ -15,7 +15,7 @@
 这种思想是每一个更小的最优化问题都能被更有效地解决或者某些情形有接近的形式。
 
 ##例子
-ADMM最典型的例子就是加L1或者L2正则化的优化问题；  
+ADMM最典型的例子就是加L1或者L2正则化的优化问题；下面以L1正则化为例。    
 ###用ADMM求解Lasso问题
 lasso的拉格朗日形式可以等价表示成：  
 &emsp;&emsp;$$\displaystyle \min_{\beta \in R^p,\theta \in R^p}[\frac{1}{2N}||\mathbf{y-X\beta}||^2_2 + \frac{1}{N}\lambda||\theta||_1],  \beta-\theta = 0$$   

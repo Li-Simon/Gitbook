@@ -16,7 +16,9 @@
 
 ##例子
 ADMM最典型的例子就是加L1或者L2正则化的优化问题；  
-###ADMM解L1正则化问题
+###用ADMM求解Lasso问题
+lasso的拉格朗日形式可以等价表示成：  
+
 
 
 [^1]: 《线性与非线性规划》David G. Luenberger

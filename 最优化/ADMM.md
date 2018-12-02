@@ -18,7 +18,7 @@
 ADMM最典型的例子就是加L1或者L2正则化的优化问题；  
 ###用ADMM求解Lasso问题
 lasso的拉格朗日形式可以等价表示成：  
-
+&emsp;&emsp;$$\displaystyle \min_{\beta \in R^p,\theta \in R^p}[\frac{1}{2N}||\mathbf{y-X\beta}||^2_2 + \frac{1}{N}\lambda||\theta||_1],  \beta-\theta = 0$$
 
 
 [^1]: 《线性与非线性规划》David G. Luenberger

@@ -12,6 +12,10 @@ Regression:&emsp;&emsp;$$ \hat f_{rf}^B(x) = \frac{1}{B}\displaystyle \sum_{b=1}
 当B趋于无穷时，上述表达式就是bagging 估计的一个Monte Carlo估计。
 
 #### Random Forest
+随机森林的两个随机：  
+1. 随机挑选一部分训练样本。  
+2. 随机挑选一部分特征。  
+
 参数推荐：  
 对于分类问题，默认m是$$\sqrt{p}$$,最小的节点数是1.  
 对于回归问题，默认的m是p/3，最小的节点尺寸是5.  

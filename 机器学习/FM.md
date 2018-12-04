@@ -1,5 +1,6 @@
 #Factorization Machines(FM)
 这一节讨论点击率预测原发，常用的CTR预估算法有FM, FFM, DeepFM。  
+要明白FM与SVD之间的联系。  
 ##FM
 一般的线性模型为：  
 &emsp;&emsp;$$ y = w_0 + \displaystyle \sum_{i=1}^nw_ix_i$$
@@ -12,7 +13,8 @@
 以上就是FM模型。k是超参数，一般娶30或者40。时间复杂度是$$O(kn^2)$$,可通过如下方式化简。  
 &emsp;&emsp;$$ \displaystyle \sum_{i=1}^n\displaystyle \sum_{j=i+1}^n(V_i,V_j)x_ix_j$$  
 &emsp;&emsp;$$ =\frac{1}{2}\displaystyle \sum_{i=1}^n\displaystyle \sum_{j=1}^n(V_i,V_j)x_ix_j - \frac{1}{2}\displaystyle \sum_{i=1}^n(V_i,V_i)x_ix_i$$  
-&emsp;&emsp;$$  =\frac{1}{2}\displaystyle \sum_{f=1}^n(\displaystyle \sum_{i=1}^nv_{if}x_i)^2 - \displaystyle \sum_{i=1}^nv_{if}^2x_i^2)$$    
+&emsp;&emsp;$$  =\frac{1}{2}\displaystyle \sum_{f=1}^k(\displaystyle \sum_{i=1}^nv_{if}x_i)^2 - \displaystyle \sum_{i=1}^nv_{if}^2x_i^2)$$    
 通过对每个特征引入lantent vector$$\mathbf{V_i}$$,并对公式进行化简，可以把时间复杂度降为$$O(kn)$$.    
+##Field-aware Factorization Machines(FFM)
 
 

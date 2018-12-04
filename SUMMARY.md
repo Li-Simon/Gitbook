@@ -105,7 +105,6 @@
   * [Sklearn的代码架构](问题求解系统/Sklearn的代码架构.md)
   * [Tensorflow介绍](问题求解系统/Tensorflow介绍.md)
   * [Tensorflow的代码架构](问题求解系统/Tensorflow的代码架构.md)
-  * [自己动手写神经网络](问题求解系统/自己动手写神经网络.md)
   * [常用数据处理技巧](问题求解系统/常用数据处理技巧.md)
   * [NLP常用处理技巧](问题求解系统/NLP常用处理技巧.md)
 * [第十章 问题](面试/README.md)

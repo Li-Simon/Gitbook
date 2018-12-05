@@ -26,7 +26,7 @@
 &emsp;&emsp;$$ B_kp_k = -\nabla f(x_k)$$  
 &emsp;&emsp;$$ B_k$$就是近似的Hassian 阵。下面我们讨论$$B_k$$如何变化，  
 我们要求$$B_k$$的更新满足quasi-Netwon条件  
-&emsp;&emsp;$$ B_{k+1}(x_{k+1} - x_k) = \nabla f(x_{K+1} - \nabla f(x_{K})$$  
+&emsp;&emsp;$$ B_{k+1}(x_{k+1} - x_k) = \nabla f(x_{K+1}) - \nabla f(x_{K})$$  
 这个条件就是简单的求$$f(x)$$的二阶导数。  
 令：  
 &emsp;&emsp;$$ y_k = \nabla f(x_{k+1}) - \nabla f(x_{k})$$， $$s_k = x_{k+1} - x_k$$, 因此&emsp;&emsp;$$B_{k+1}$$满足$$B_{k+1}s_k = y_k$$  

@@ -4,7 +4,7 @@
 符号约定：  
 &emsp;&emsp;$$ g_k: \nabla f(x_k)$$,即目标函数关于k次迭代值$$x_k$$的导数  
 &emsp;&emsp;$$ G_k: G(x_k) = \nabla ^2f(x_k)$$,即Hassian矩阵  
-&emsp;&emsp;$$ d_k: $$第k次迭代的步长方向，在最速下降算法中，有$$d_k = -g_k$$  
+&emsp;&emsp;$$ d_k: $$第k次迭代的优化方向，在最速下降算法中，有$$d_k = -g_k$$  
 &emsp;&emsp;$$ \alpha_k$$:第k次迭代的步长因子，有$$x_{k+1} = x_k + \alpha_k d_k$$  
 在精确线性搜索中，步长因子$$\alpha _k$$由下面的因子确定：  
 &emsp;&emsp;$$ \alpha _k = arg min _{\alpha} f(x_k + \alpha d_k)$$  

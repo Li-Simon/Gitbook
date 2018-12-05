@@ -30,7 +30,7 @@ $$\mathbf{\lambda^*}$$为拉格朗日乘子向量，$$\mathbf{u^*}$$是iKKT乘�
 $$F(\mathbf{x})$$是f在$$\mathbf{x}$$处的Hassian矩阵；  
 &emsp;&emsp;$$\mathbf{\lambda}\mathbf{H}(\mathbf{x}) = \lambda _1H_1(\mathbf{x}) + ... + \lambda _mH_m(\mathbf{x})$$  
 &emsp;&emsp;$$\mathbf{u}\mathbf{G}(\mathbf{x}) = u_1G_1(\mathbf{x}) + ... + u_pG_p(\mathbf{x})$$  
-其中$$G_k(\mathbf{x})$$是$$g_k$$处的Hassian矩阵。  
+其中$$G_k(\mathbf{x})$$是$$g_k$$的Hassian矩阵。  
 起作用约束所定义曲面的切线空间：
 &emsp;&emsp;$$T(\mathbf{x^*}) = (y \in R^n: Dh(x^*)y)=0,Dg_j(x^*)y)=0, j \in J(x^*) $$.  
 ####定理： 二阶必要条件：

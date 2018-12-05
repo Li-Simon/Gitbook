@@ -20,7 +20,7 @@ KKT条件：某个点是局部极小点所满足的一阶必要条件。
 定理： KKT条件， 设$$f, \mathbf{g}, \mathbf{h} \in C^1$$,设$$\mathbf{x^*}$$是问题$$\mathbf{h} = 0, \mathbf{g} \le 0$$的一个正则点和局部极小点， 那么必然存在$$\lambda ^* \in R^m$$ 和$$u^* \in R^p$$使得以下条件成立：  
 &emsp;&emsp;$$\mathbf{u^*} \ge \mathbf{0}$$  
 &emsp;&emsp;$$Df(\mathbf{x^*}) + \mathbf{\lambda^*}Dh(\mathbf{x^*}) + \mathbf{u^*}Dg(\mathbf{x^*})  = \mathbf{0^T}$$   
-&emsp;&emsp;$$\mathbf{u^{*T}}\mathbf{g(x*)} = 0$$   
+&emsp;&emsp;$$\mathbf{u^{*T}}\mathbf{g(x^*)} = 0$$   
 $$\mathbf{\lambda^*}$$为拉格朗日乘子向量，$$\mathbf{u^*}$$是iKKT乘子向量，其元素分别成为拉格朗日乘子，KKT乘子。  
 ##充分条件
 上面讲了局部极小的必要条件，这里我们讨论局部极小的充分条件。 然后我们就利用KKT条件去求不等式约束问题。  

@@ -11,7 +11,7 @@ Powell’s Dog Leg Method是一种信赖域方法
 = F(x) + \alpha h_{sd}^TJ(x)^{T}f(x) + \frac{1}{2}\alpha ^2 ||J(x)h_{sd}||^{2}$$  
 当$$\alpha$$取如下值得时候，以上函数取最小值  
 &emsp;&emsp;$$ \alpha = - \frac{h_{sd}^TJ(x)^Tf(x)}{||J(x)h_{sd}||^{2}} = \frac{||g||^2}{||J(x)h_{sd}||^{2}}$$  
-现在有两个步长的选择 $$a = \alpha h_{sd}$$ 以及 $$b = h_{gn}$$,Powell建议在信赖域半价是$$\Delta$$的时候，步长可以如下选择  
+现在有两个步长的选择 $$a = \alpha h_{sd}$$ 以及 $$b = h_{gn}$$,Powell建议在信赖域半径是$$\Delta$$的时候，步长可以如下选择  
 If $$||h_{gn}|| \leq \Delta, h_{dl} = h_{gn}$$  
 &emsp;&emsp;Elseif: $$||\alpha h_{sd}|| \geq \Delta, h_{dl} = (\Delta / ||h_{sd}||)h_{sd}$$  
 else:  

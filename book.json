@@ -2,8 +2,8 @@
 	"plugins": ["katex"],
 	"pdf": {
     "pageNumbers": true,
-    "fontSize": 15,
-    "paperSize": "b5",
+    "fontSize": 18,
+    "paperSize": "a4",
     "margin": {
       "right": 30,
       "left": 30,

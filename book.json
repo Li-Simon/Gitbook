@@ -3,7 +3,7 @@
 	"pdf": {
     "pageNumbers": true,
     "fontSize": 18,
-    "paperSize": "a4",
+    "paperSize": "b5",
     "margin": {
       "right": 30,
       "left": 30,

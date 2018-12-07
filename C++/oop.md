@@ -18,7 +18,7 @@ C++最重要的特征就是代码重用。这通过继承与组合来实现。
 | :--- | :--- | :--- | :--- |
 | public继承 | public | protected | 子类无权访问 |
 | protect继承 | protectd | protected | 子类无权访问 |
-| provate继承 | private | private | 子类无权访问 |
+| private继承 | private | private | 子类无权访问 |
 
 C++可以多继承，但Java,C\#只能是单继承。
 

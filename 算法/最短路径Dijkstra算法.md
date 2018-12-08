@@ -30,4 +30,14 @@ for each $$edge(u,v)\in E[G]$$
 &emsp;do if $$d[v] > d[u] + w(u,v)$$    
 &emsp;&emsp;then return FALSE    
 return TRUE  
+###Dijkstra算法
+DIJKSTRA(G,w,s)  
+INITIALIZE-SINGLE-SOURCE(G,s)    
+$$S\gets \emptyset$$  
+$$Q\gets V[G]$$  
+while $$Q\ne \emptyset$$    
+&emsp;do $$u \gets EXTRACT-MIN[Q]$$      
+&emsp;&emsp;$$S \gets S \bigcup u$$        
+&emsp;&emsp;for each vertex$$v\in Adj[u]$$    
+&emsp;&emsp;&emsp;do RELAX(u,v,w)     
 [^1]: 《算法导论》单源最短路径  

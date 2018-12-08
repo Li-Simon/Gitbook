@@ -19,5 +19,15 @@ if $$d[v] > d[u]+ w(u,v)$$:
 &emsp;&emsp; $$\pi[v] \gets u$$       
 
 基于松弛的算法。松弛是改变最短路径和前驱的唯一方式，这节的算法之间的区别在于对每条边进行松弛操作的次数不同，以及对边进行松弛操作的次序有所不同。在Dijkstra算法以及关于有向无回图路图的最短路径算法中，对每条边执行一次松弛操作。在Bellman-Ford算法中，对每条边执行多次松弛操作。  
-
+###Bellman-Ford算法
+Bellman-Ford算法能在一般的情况(带有负权边的情况下)，解决单源最短路径问题。  
+BELLMAN--FORD(G,w,s)    
+INITIALIZE-SINGLE-SOURCE(G,s)    
+for $$i \gets i$$ to $$|V[G]|-1$$    
+&emsp;do for each edge $$(u,v) \in E[G]$$    
+&emsp;&emsp;do RELAX(u,v,w)     
+for each $$edge(u,v)\in E[G]$$    
+&emsp;do if $$d[v] > d[u] + w(u,v)$$    
+&emsp;&emsp;then return FALSE    
+return TRUE  
 [^1]: 《算法导论》单源最短路径  

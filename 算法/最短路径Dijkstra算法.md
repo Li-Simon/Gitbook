@@ -25,7 +25,7 @@ BELLMAN--FORD(G,w,s)
 INITIALIZE-SINGLE-SOURCE(G,s)    
 for $$i \gets i$$ to $$|V[G]|-1$$    
 &emsp;do for each edge $$(u,v) \in E[G]$$    
-&emsp;&emsp;do RELAX(u,v,w)     
+&emsp;&emsp;do RELAX(u, v, w)     
 for each $$edge(u,v)\in E[G]$$    
 &emsp;do if $$d[v] > d[u] + w(u,v)$$    
 &emsp;&emsp;then return FALSE    
@@ -39,6 +39,6 @@ while $$Q\ne \emptyset$$
 &emsp;do $$u \gets EXTRACT-MIN[Q]$$       
 &emsp;&emsp;$$S \gets S \bigcup u$$         
 &emsp;&emsp;for each vertex$$v\in Adj[u]$$    
-&emsp;&emsp;&emsp;do RELAX(u,v,w)      
+&emsp;&emsp;&emsp;do RELAX(u, v, w)      
 
 [^1]: 《算法导论》单源最短路径  

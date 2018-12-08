@@ -40,4 +40,5 @@ while $$Q\ne \emptyset$$
 &emsp;&emsp;$$S \gets S \bigcup u$$         
 &emsp;&emsp;for each vertex$$v\in Adj[u]$$    
 &emsp;&emsp;&emsp;do RELAX(u,v,w)      
+
 [^1]: 《算法导论》单源最短路径  

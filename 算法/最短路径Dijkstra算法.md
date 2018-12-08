@@ -7,8 +7,12 @@ INITIALIZE-SINGLE-SOURCE(G,s)
 for each vertex $$v \in V[G]$$:
 &emsp;do $$d[v] \gets \infty $$
 &emsp;&emsp; $$\pi[v] \gets NIL$$    
-$$d[s] \gets 0$$
-
+$$d[s] \gets 0$$  
+在松弛一条边(u,v)的过程中，要测试是否可以通过u，对迄今找到的v的最短路径进行松弛；如果可以改进的话，则更新d[v]与$$\pi[v]$$。一次松弛操作可以减小最短路径估计的值d[v]，并更新v的前驱域$$\pi[v]$$。下面的伪代码对边(u,v)进行了松弛操作。  
+RELAX(u,v,w)
+if $$d[v] > d[u]+ w(u,v)$$:
+&emsp;then do $$d[v] \gets d[u] + w(u,v)$$
+&emsp;&emsp; $$\pi[v] \gets u$$    
 
 
 

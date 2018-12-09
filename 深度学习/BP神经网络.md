@@ -164,43 +164,51 @@ if __name__ == '__main__':
 ## CNN
 
 现在我们讨论卷积神经网络的误差怎么反向传播，以及参数的梯度怎么计算。主要涉及到的概念就是卷积计算，pooling,步长，边界补齐。  
-下图就是一个典型的CNN[^1]。    
+下图就是一个典型的CNN[^1]。
 
-![](/assets/CNN_fig.png)  
-###卷积计算
+![](/assets/CNN_fig.png)
+
+### 卷积计算
+
 假设I就是输入的图像，$$K \in R^{k_1 \times k_2}$$的卷积核，则卷积如下计算：  
-&emsp;&emsp;$$(I \ast K)_{ij} = \sum_{m = 0}^{k_1 - 1} \sum_{n = 0}^{k_2 - 1} I(i-m, j-n)K(m,n)$$   
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$$= \sum_{m = 0}^{k_1 - 1} \sum_{n = 0}^{k_2 - 1} I(i+m, j+n)K(-m,-n)$$    
+  $$(I \ast K)_{ij} = \sum_{m = 0}^{k_1 - 1} \sum_{n = 0}^{k_2 - 1} I(i-m, j-n)K(m,n)$$  
+       $$= \sum_{m = 0}^{k_1 - 1} \sum_{n = 0}^{k_2 - 1} I(i+m, j+n)K(-m,-n)$$  
 卷积和Cross-correlation是一样的，当$$K(-m,-n) == K(m,n)$$;  
-首先通过数学来描述每一层网络： 
-对于图像，我们输入是一个高H，长W和通道C=3的张量，比如图像 
+首先通过数学来描述每一层网络：   
+对于图像，我们输入是一个高H，长W和通道C=3的张量，比如图像   
 $$I \in \mathbb{R}^{H \times W \times C}$$;对于D个Filters，我们有$$K \in \mathbb{R}^{k_1 \times k_2 \times C \times D}$$,以及偏置$$b \in \mathbb{R}^{D}$$。  
 因此通过卷积操作之后的输出是：  
-&emsp;&emsp;$$(I \ast K)_{ij} = \sum_{m = 0}^{k_1 - 1} \sum_{n = 0}^{k_2 - 1} \sum_{c = 1}^{C} K_{m,n,c}\cdot I_{i+m, j+n, c} + b$$  
+  $$(I \ast K)_{ij} = \sum_{m = 0}^{k_1 - 1} \sum_{n = 0}^{k_2 - 1} \sum_{c = 1}^{C} K_{m,n,c}\cdot I_{i+m, j+n, c} + b$$  
 对于灰度图C=1：  
-&emsp;&emsp;$$(I \ast K)_{ij} = \sum_{m = 0}^{k_1 - 1} \sum_{n = 0}^{k_2 - 1} K_{m,n} \cdot I_{i+m, j+n} + b$$
+  $$(I \ast K)_{ij} = \sum_{m = 0}^{k_1 - 1} \sum_{n = 0}^{k_2 - 1} K_{m,n} \cdot I_{i+m, j+n} + b$$
 
-###记号
+### 记号
+
 为了方便我们的计算，我们约定使用如下计算：  
-1. l表示低l层，l=1是第一层，l=L是最后一层     
-2. 输入的维度是$$H\times W$$，用i,j表示其迭代子   
+1. l表示低l层，l=1是第一层，l=L是最后一层  
+2. 输入的维度是$$H\times W$$，用i,j表示其迭代子  
 3. 卷积核w的维度是$$k_1\times k_2$$， m,n是他们的迭代子  
 4. $$w_{m,n}^{l}$$是连接第l层神经元与第l-1层之间的权值矩阵，也就是卷积核。  
 5. $$b^l$$是第l层的偏置  
-6. l层的输入$$x_{i,j}^l$$与第l-1层的输出$$O_{i,j}^{l-1}$$之间关系是： 
-&emsp;&emsp;$$x_{i,j}^l = \sum_{m}\sum_{n} w_{m,n}^l o_{i + m,j + n}^{l-1} + b^l$$   
+6. l层的输入$$x_{i,j}^l$$与第l-1层的输出$$O_{i,j}^{l-1}$$之间关系是：   
+  $$x_{i,j}^l = \sum_{m}\sum_{n} w_{m,n}^l o_{i + m,j + n}^{l-1} + b^l$$  
 7. $$O_{i,j}^{l-1}$$是l层的输出：  
-&emsp;&emsp;$$O_{i,j}^{l-1} = f(x_{i,j}^l)$$  
-8. $$f(\cdot)$$是激活函数  
-####l层的输入输出
-&emsp;&emsp;$$x_{i,j}^l = \text{rot}_{180^\circ} \left\{ w_{m,n}^l \right\} \ast o_{i,j}^{l-1} + b_{i,j}^l $$  
-&emsp;&emsp;$$  x_{i,j}^l = \sum_{m} \sum_{n} w_{m,n}^l o_{i+m,j+n}^{l-1} + b_{i,j}^l $$   
-&emsp;&emsp;$$ o_{i,j}^l = f(x_{i,j}^l) $$
-###误差
-神经网络的输出值是$$y_p$$,相应的目标值是$$t_p$$。因此误差是：  
-###误差反向
+  $$O_{i,j}^{l-1} = f(x_{i,j}^l)$$  
+8. $$f(\cdot)$$是激活函数
+
+#### l层的输入输出
+
+  $$x_{i,j}^l = \text{rot}_{180^\circ} \left\{ w_{m,n}^l \right\} \ast o_{i,j}^{l-1} + b_{i,j}^l $$  
+  $$  x_{i,j}^l = \sum_{m} \sum_{n} w_{m,n}^l o_{i+m,j+n}^{l-1} + b_{i,j}^l $$  
+  $$ o_{i,j}^l = f(x_{i,j}^l) $$
+
+### 误差
+
+神经网络的输出值是$$y_p$$,相应的目标值是$$t_p$$。因此误差是：
+
+### 误差反向
+
 我们所有要计算的参数就是每层卷积核与偏置。  
 
-
-[^1]: https://www.jefkine.com/general/2016/09/05/backpropagation-in-convolutional-neural-networks/
+![](/assets/CNN_Conv.png)
 

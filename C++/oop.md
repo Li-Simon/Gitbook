@@ -40,8 +40,7 @@ int main()
 }
 ```
 
-多重继承的优点是对象可以调用多个基类中的接口，缺点是容易出现继承上的二义性。  
-
+多重继承的优点是对象可以调用多个基类中的接口，缺点是容易出现继承上的二义性。
 
 #### 虚拟继承
 
@@ -55,41 +54,43 @@ using namespace std;
 class Parent
 {
 public:
-	Parent():num(0){cout<<"Parent"<<endl;}
-	Parent(int n):num(n){cout<<"Parent(int)"<<endl;}
+    Parent():num(0){cout<<"Parent"<<endl;}
+    Parent(int n):num(n){cout<<"Parent(int)"<<endl;}
 private:
-	int num;
+    int num;
 };
 
 class Child1 : virtual public Parent
 {
 public:
-	Child1(){cout<<"Child1"<<endl;}
-	Child1(int num):Parent(num){cout<<"Child1(int)"<<endl;}
+    Child1(){cout<<"Child1"<<endl;}
+    Child1(int num):Parent(num){cout<<"Child1(int)"<<endl;}
 };
 
 class Child2 : virtual public Parent
 {
 public:
-	Child2(){cout<<"Child2"<<endl;}
-	Child2(int num):Parent(num){cout<<"Child2(int)"<<endl;}
+    Child2(){cout<<"Child2"<<endl;}
+    Child2(int num):Parent(num){cout<<"Child2(int)"<<endl;}
 };
 
 class Dervied : public Child2,public Child1
 {
 public:
-	Dervied():Child1(0),Child2(1){}
-	Dervied(int num):Child1(num),Child2(num+1){}
+    Dervied():Child1(0),Child2(1){}
+    Dervied(int num):Child1(num),Child2(num+1){}
 };
 
 void main()
 {
-	Dervied d(4);
+    Dervied d(4);
 }
 ```
-多重继承类对象的构造顺序与其继承列表中基类的排列顺序一致\(在上面的例子中是class Dervied : public Child2,public Child1; 因此先调用Child2的构造函数再调用Child1的构造函数\)；而不是与构造函数初始化列表中的顺序一致(Dervied(int num):Child1(num),Child2(num+1){}
-)，因此结果输出如下：  
 
+多重继承类对象的构造顺序与其继承列表中基类的排列顺序一致\(在上面的例子中是class Dervied : public Child2,public Child1; 因此先调用Child2的构造函数再调用Child1的构造函数\)；而不是与构造函数初始化列表中的顺序一致\(Dervied\(int num\):Child1\(num\),Child2\(num+1\){}  
+\)，因此结果输出如下：
+
+### ![](/assets/multi_inherti.png)
 
 ### 组合
 

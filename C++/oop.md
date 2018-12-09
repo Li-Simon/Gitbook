@@ -91,7 +91,7 @@ void main()
 
 ![](/assets/multi_inhit.png)  
 如果不是虚拟继承，则输出结果如下,它有两份Parent的拷贝：  
-![](/assets/multi_inhit_nonvirtual.png)
+![](/assets/multi_inhit_nonvirtual.png)  
 
 ### 组合
 
@@ -114,6 +114,7 @@ void main()
 3. 当派生类对象被视为基类对象时（派生类类型转成基类类型），虽然类型被转变，但虚函数表指针（地址）并没有发生改变，仍然是派生类的虚函数指针，所有在调用基类的函数时，会调用派生类的虚函数实现。
 
 ![](/assets/Virtual_function_table.png)
+###抽象基类与纯虚函数
 
 ### 多态的好处
 

@@ -93,11 +93,7 @@ void main()
 
 如果不是虚拟继承，则输出结果如下,它有两份Parent的拷贝：
 
-### ![](/assets/multi_inhit_non_virtual.png)
-
 ### ![](/assets/multi_nv2.png)
-
-### ![](/assets/multi_inhit_nv.png)
 
 ### 组合
 

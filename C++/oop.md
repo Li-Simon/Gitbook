@@ -35,7 +35,7 @@ class D: public B, public C {};
 int main()
 {
     D d;
-    A *pd = &d;
+    A *pd = &d;//虚拟继承能转换成功，非虚拟继承不能
     return 0;
 }
 

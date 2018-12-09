@@ -180,7 +180,7 @@ $$I \in \mathbb{R}^{H \times W \times C}$$;对于D个Filters，我们有$$K \in 
 &emsp;&emsp;$$(I \ast K)_{ij} = \sum_{m = 0}^{k_1 - 1} \sum_{n = 0}^{k_2 - 1} \sum_{c = 1}^{C} K_{m,n,c}\cdot I_{i+m, j+n, c} + b$$  
 对于灰度图C=1：  
 &emsp;&emsp;$$
-(I \ast K)_{ij} &= \sum_{m = 0}^{k_1 - 1} \sum_{n = 0}^{k_2 - 1} K_{m,n} \cdot I_{i+m, j+n} + b 
+(I \ast K)_{ij} = \sum_{m = 0}^{k_1 - 1} \sum_{n = 0}^{k_2 - 1} K_{m,n} \cdot I_{i+m, j+n} + b 
 $$
 
   

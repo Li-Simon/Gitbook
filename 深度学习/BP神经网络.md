@@ -181,7 +181,23 @@ $$I \in \mathbb{R}^{H \times W \times C}$$;对于D个Filters，我们有$$K \in 
 对于灰度图C=1：  
 &emsp;&emsp;$$(I \ast K)_{ij} = \sum_{m = 0}^{k_1 - 1} \sum_{n = 0}^{k_2 - 1} K_{m,n} \cdot I_{i+m, j+n} + b$$
 
-  
+###记号
+为了方便我们的计算，我们约定使用如下计算：  
+1. l表示低l层，l=1是第一层，l=L是最后一层     
+2. 输入的维度是$$H\times W$$，用i,j表示其迭代子   
+3. 卷积核w的维度是$$k_1\times k_2$$， m,n是他们的迭代子  
+4. $$w_{m,n}^{l}$$是连接第l层神经元与第l-1层之间的权值矩阵，也就是卷积核。  
+5. $$b^l$$是第l层的偏置  
+6. l层的输入$$x_{i,j}^l$$与第l-1层的输出$$O_{i,j}^{l-1}$$之间关系是： 
+&emsp;&emsp;$$x_{i,j}^l = \sum_{m}\sum_{n} w_{m,n}^l o_{i + m,j + n}^{l-1} + b^l$$   
+7. $$O_{i,j}^{l-1}$$是l层的输出：  
+&emsp;&emsp;$$O_{i,j}^{l-1} = f(x_{i,j}^l)$$  
+8. $$f(\cdot)$$是激活函数  
+####l层的输入输出
+&emsp;&emsp;$$x_{i,j}^l = \text{rot}_{180^\circ} \left\{ w_{m,n}^l \right\} \ast o_{i,j}^{l-1} + b_{i,j}^l $$  
+&emsp;&emsp;$$  x_{i,j}^l = \sum_{m} \sum_{n} w_{m,n}^l o_{i+m,j+n}^{l-1} + b_{i,j}^l $$   
+&emsp;&emsp;$$ o_{i,j}^l = f(x_{i,j}^l) $$
+
 
 
 [^1]: https://www.jefkine.com/general/2016/09/05/backpropagation-in-convolutional-neural-networks/

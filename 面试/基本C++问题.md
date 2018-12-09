@@ -99,8 +99,7 @@ void main()
 }
 ```
 
-### ![](/assets/String_Result.png)
-### 
+![](/assets/String_Result.png)
 
 ### 字符串指针赋值问题
 

@@ -164,7 +164,6 @@ if __name__ == '__main__':
 ## CNN
 
 现在我们讨论卷积神经网络的误差怎么反向传播，以及参数的梯度怎么计算。  
-![](/assets/LeNet.png)
 
 ![](/assets/CNN_fig.png)
 

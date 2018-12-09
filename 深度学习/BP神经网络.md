@@ -230,6 +230,8 @@ $$H\times W$$的图像经过$$k_1\times k_2$$的卷积核作用之后，得到�
 &emsp;&emsp;$$\frac{\partial E}{\partial x_{i',j'}^{l}} = \sum_{i,j \in Q} \frac{\partial E}{\partial x_{Q}^{l+1}}\frac{\partial x_{Q}^{l+1}}{\partial x_{i',j'}^l}$$
 &emsp;&emsp;&emsp;&emsp;&emsp;$$= \sum_{i,j \in Q} \delta^{l+1}_{Q} \frac{\partial x_{Q}^{l+1}}{\partial x_{i',j'}^l}$$  
 只有有限区域Q中的$$\delta^{l+1}_{i,j}$$对$$\delta^{l}_{i,j}$$有影响，Q的大小就是卷积核的大小。  
+&emsp;&emsp;$$\frac{\partial E}{\partial x_{i',j'}^{l}} = \sum_{m = 0}^{k_1 -1} \sum_{n = 0}^{k_2 -1} \frac{\partial E}{\partial x_{i'-m, j'-n}^{l+1}}\frac{\partial x_{i'-m, j'-n}^{l+1}}{\partial x_{i',j'}^l} $$  
+&emsp;&emsp;&emsp;&emsp;&emsp;$$= \sum_{m = 0}^{k_1 -1} \sum_{n = 0}^{k_2 -1} \delta^{l+1}_{i'-m, j'-n} \frac{\partial x_{i'-m, j'-n}^{l+1}}{\partial x_{i',j'}^l} $$ 
 
 
 

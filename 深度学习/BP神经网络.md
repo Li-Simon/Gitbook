@@ -203,7 +203,8 @@ $$I \in \mathbb{R}^{H \times W \times C}$$;对于D个Filters，我们有$$K \in 
 
 ### 误差
 
-神经网络的输出值是$$y_p$$,相应的目标值是$$t_p$$。因此误差是：
+神经网络的输出值是$$y_p$$,相应的目标值是$$t_p$$。因此误差是：  
+&emsp;&emsp;$$E =  \frac{1}{2}\sum_{p} \left(t_p - y_p \right)^2 $$
 
 ### 误差反向
 

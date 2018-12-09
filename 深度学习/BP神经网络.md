@@ -81,7 +81,7 @@ $$\mathbf{a^{(l)}}=[a^{(l)}_1,a^{(l)}_2,...,a^{(l)}_{n_l}]\in R^{n_l}$$表示第
   $$W^{(l)} = W^{(l)} - \frac{u}{N}\displaystyle \sum_{i=1}^{N} \frac{\partial E_i}{\partial W^{(l)}}$$  
   $$\mathbf{b^{(l)} = b^{(l)}} - \frac{u}{N}\displaystyle \sum_{i=1}^{N} \frac{\partial E_i}{\partial b^{(l)}}$$
 
-
+###代码实现
 如下是一个输入两个变量，只含有4个神经元的隐含层以及一个输出变量的网络。  
 ```py
 import numpy as np

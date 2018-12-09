@@ -163,7 +163,10 @@ if __name__ == '__main__':
 
 ## CNN
 
-现在我们讨论卷积神经网络的误差怎么反向传播，以及参数的梯度怎么计算。下图就是一个典型的CNN。    
+现在我们讨论卷积神经网络的误差怎么反向传播，以及参数的梯度怎么计算。下图就是一个典型的CNN[^1]。    
 
 ![](/assets/CNN_fig.png)
+
+
+[^1]: https://www.jefkine.com/general/2016/09/05/backpropagation-in-convolutional-neural-networks/
 

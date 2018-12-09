@@ -38,12 +38,55 @@ int main()
     A *pd = &d;//虚拟继承能转换成功，非虚拟继承不能
     return 0;
 }
+```
 
-```  
 多重继承的优点是对象可以调用多个基类中的接口，缺点是容易出现继承上的二义性。  
-多重继承类对象的构造顺序与其继承列表中基类的排列顺序一致(再上面的例子中是class D: public B, public C {}; 因此先调用B的构造函数再调用C的构造函数)；而不是与构造函数初始化列表中的顺序一致。    
-####虚拟继承
-这里要讨论为啥虚拟继承能消除二义性。  
+多重继承类对象的构造顺序与其继承列表中基类的排列顺序一致\(再上面的例子中是class D: public B, public C {}; 因此先调用B的构造函数再调用C的构造函数\)；而不是与构造函数初始化列表中的顺序一致。
+
+#### 虚拟继承
+
+这里要讨论为啥虚拟继承能消除二义性。
+
+```cpp
+#include "StdAfx.h"
+#include <iostream>
+using namespace std;
+
+class Parent
+{
+public:
+	Parent():num(0){cout<<"Parent"<<endl;}
+	Parent(int n):num(n){cout<<"Parent(int)"<<endl;}
+private:
+	int num;
+};
+
+class Child1 : virtual public Parent
+{
+public:
+	Child1(){cout<<"Child1"<<endl;}
+	Child1(int num):Parent(num){cout<<"Child1(int)"<<endl;}
+};
+
+class Child2 : virtual public Parent
+{
+public:
+	Child2(){cout<<"Child2"<<endl;}
+	Child2(int num):Parent(num){cout<<"Child2(int)"<<endl;}
+};
+
+class Dervied : public Child2,public Child1
+{
+public:
+	Dervied():Child1(0),Child2(1){}
+	Dervied(int num):Child1(num),Child2(num+1){}
+};
+
+void main()
+{
+	Dervied d(4);
+}
+```
 
 ### 组合
 

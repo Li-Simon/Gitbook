@@ -1,29 +1,124 @@
 # 基本C++问题
-####指针与引用的区别
-指针是一个变量，该变量储存的是一个地址，指向内存中的一个内存单元；而引用只是原来变量的一个别名。  
-####数组名与指针的区别
-数组名a可以当成数字首地址的指针,除如下两种情况，sizeof(a),&a.  
+
+#### 指针与引用的区别
+
+指针是一个变量，该变量储存的是一个地址，指向内存中的一个内存单元；而引用只是原来变量的一个别名。
+
+#### 数组名与指针的区别
+
+数组名a可以当成数字首地址的指针,除如下两种情况，sizeof\(a\),&a.  
 1.取sizeof得到不同结果；对数组取sizeof得到整个数组的长度；对指针取sizeof得到指针本身所占空间的大小。  
 2.指针可以pointer++，数组名不可以。  
-3.指针可以赋值再指向别人，数组名不可以。  
-###实现String类的构造函数，析构函数和赋值函数
+3.指针可以赋值再指向别人，数组名不可以。
 
-###字符串指针赋值问题
+### 实现String类的构造函数，析构函数和赋值函数
+
+```cpp
+#pragma once
+class AString
+{
+public:
+	AString(const char* str = NULL);
+	AString(const AString &other);
+	~AString(void);
+	AString & operator=(const AString &other);
+private:
+	char *m_String;
+};
+```
+
+```cpp
+#include "StdAfx.h"
+#include "AString.h"
+#include <iostream>
+using namespace std;
+
+AString::~AString(void)
+{
+	cout<<"Destructing"<<endl;
+	if(m_String != NULL)
+	{
+		delete [] m_String;
+		m_String = NULL;
+	}
+}
+
+AString::AString(const char* str)
+{
+	cout<<"Constructing"<<endl;
+	if(str == NULL)
+	{
+		m_String = new char[1];
+		*m_String = '\0';
+	}
+	else
+	{
+		m_String = new char[strlen(str)+1];
+		strcpy(m_String, str);
+	}
+}
+
+AString::AString(const AString &other)
+{
+	cout<<"Constructing copy"<<endl;
+	m_String = new char[strlen(other.m_String)+1];
+	strcpy(m_String, other.m_String);
+}
+
+AString & AString::operator=(const AString &other)
+{
+	cout<<"Operator = Function:"<<endl;
+	if(this == &other)
+	{
+		return *this;
+	}
+	delete []m_String;
+	m_String = new char[strlen(other.m_String)+1];
+	strcpy(m_String, other.m_String);
+	return *this;
+}
+```
+
+```cpp
+#include "StdAfx.h"
+#include "AString.h"
+#include <iostream>
+using namespace std;
+
+void main()
+{
+	cout<<"Step 1"<<endl;
+	AString a("hello");
+	cout<<"Step 2"<<endl;
+	AString b("world");
+	cout<<"Step 3"<<endl;
+	AString c(a);
+	cout<<"Step 4"<<endl;
+	c = b;
+	cout<<"Step 5"<<endl;
+}
+```
+
+### 
+
+### 字符串指针赋值问题
+
 如果指针没有分配空间，则会出现0xC0000005: Access violation writing location
 
 ```cpp
 void main(int n)
 {
-	//char pStr[] = "abc";//right
-	//char pStr[4] = "abc";//right
+    //char pStr[] = "abc";//right
+    //char pStr[4] = "abc";//right
         //char pStr[3] = "abc";//wrong,need >=4
-	char* pStr = "abc"; //wrong, 没有分配空间，
-	char temp = 'b';
-	pStr[0] = temp;
-	printf("%s\n",pStr);
+    char* pStr = "abc"; //wrong, 没有分配空间，
+    char temp = 'b';
+    pStr[0] = temp;
+    printf("%s\n",pStr);
 }
 ```
 
+### ![](/assets/String_Result.png)
 
 ### sizeof
 

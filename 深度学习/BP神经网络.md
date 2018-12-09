@@ -216,7 +216,15 @@ $$H\times W$$的图像经过$$k_1\times k_2$$的卷积核作用之后，得到�
 因为：  
 &emsp;&emsp;$$  x_{i,j}^l = \sum_{m} \sum_{n} w_{m,n}^l o_{i+m,j+n}^{l-1} + b_{i,j}^l $$ 
 代入上式得到：  
-&emsp;&emsp;$$\frac{\partial x_{i,j}^{l}}{\partial w_{m^{\prime},n^{\prime}}^l} = \frac{\partial}{\partial w_{m^{\prime},n^{\prime}}^l}\left( \sum_{m} \sum_{n} w_{m,n}^{l}o_{i+m, j+n}^{l-1} + b^l \right) $$
+&emsp;&emsp;$$\frac{\partial x_{i,j}^{l}}{\partial w_{m^{\prime},n^{\prime}}^l} = \frac{\partial}{\partial w_{m^{\prime},n^{\prime}}^l}\left( \sum_{m} \sum_{n} w_{m,n}^{l}o_{i+m, j+n}^{l-1} + b^l \right) $$  
+得到：  
+&emsp;&emsp;$$\frac{\partial x_{i,j}^{l}}{\partial w_{m^{\prime},n^{\prime}}^l} = \frac{\partial}{\partial w_{m',n'}^l}\left( w_{0,0}^{l} o_{ i + 0, j + 0}^{l-1} + \dots + w_{m',n'}^{l} o_{ i + m^{\prime}, j + n^{\prime}}^{l-1} + \dots + b^l\right) $$
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$$= \frac{\partial}{\partial w_{m^{\prime},n^{\prime}}^l}\left( w_{m^{\prime},n^{\prime}}^{l} o_{ i + m^{\prime}, j + n^{\prime}}^{l-1}\right)$$
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$$=  o_{i+m^{\prime},j+n^{\prime}}^{l-1} $$  
+最终得到误差对卷积核的梯度是：  
+&emsp;&emsp;$$\frac{\partial E}{\partial w_{m',n'}^l} = \sum_{i=0}^{H-k_1} \sum_{j=0}^{W-k_2} \delta^{l}_{i,j} o_{ i + m^{\prime}, j + n^{\prime}}^{l-1}$$   
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$$= \text{rot}_{180^\circ} \left\{ \delta^{l}_{i,j} \right\} \ast  o_{m^{\prime},n^{\prime}}^{l-1}$$
+
 
 
 

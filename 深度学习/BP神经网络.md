@@ -197,7 +197,10 @@ $$I \in \mathbb{R}^{H \times W \times C}$$;对于D个Filters，我们有$$K \in 
 &emsp;&emsp;$$x_{i,j}^l = \text{rot}_{180^\circ} \left\{ w_{m,n}^l \right\} \ast o_{i,j}^{l-1} + b_{i,j}^l $$  
 &emsp;&emsp;$$  x_{i,j}^l = \sum_{m} \sum_{n} w_{m,n}^l o_{i+m,j+n}^{l-1} + b_{i,j}^l $$   
 &emsp;&emsp;$$ o_{i,j}^l = f(x_{i,j}^l) $$
-
+###误差
+神经网络的输出值是$$y_p$$,相应的目标值是$$t_p$$。因此误差是：  
+###误差反向
+我们所有要计算的参数就是每层卷积核与偏置。  
 
 
 [^1]: https://www.jefkine.com/general/2016/09/05/backpropagation-in-convolutional-neural-networks/

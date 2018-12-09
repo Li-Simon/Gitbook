@@ -1,8 +1,9 @@
 # 自己动手写神经网络
 
-这里需要实现NN，CNN,RNN，区别在于是否加卷积。对于NN，要保证层数不说限制，每层的神经元不受限制，只处理一维输入,输出也就一维,也就是分类问题；CNN处理二维输入\(图像\)，设计卷积和卷积核，实现的例子就是LeNet-5。RNN就是实现最简单的RNN。三者通用的东西是什么？可以提出来，我们需要用到哪些模块？这个心里是要清楚的。  
+这里需要实现NN，CNN,RNN，区别在于是否加卷积。对于NN，要保证层数不说限制，每层的神经元不受限制，只处理一维输入,输出也就一维,也就是分类问题；CNN处理二维输入\(图像\)，设计卷积和卷积核，实现的例子就是LeNet-5。RNN就是实现最简单的RNN。三者通用的东西是什么？可以提出来，我们需要用到哪些模块？这个心里是要清楚的。
 
 ## DNN
+
 首先讨论普通的DNN  
 ![](/assets/BP_CNN1.png)
 
@@ -33,7 +34,7 @@ $$\mathbf{a^{(l)}}=[a^{(l)}_1,a^{(l)}_2,...,a^{(l)}_{n_l}]\in R^{n_l}$$表示第
 
 ## 对输出层权重参数更新
 
-  $$\frac{\partial E}{\partial w_{ij}^{(n_L)}} = \frac{\partial E}{\partial z_{i}^{(n_L)}} \frac{\partial z_{i}^{(n_L)}}{\partial w_{ij}^{(n_L)}} = \delta_i^{(n_L)}a_j^{(n_L-1)}$$  
+$$\frac{\partial E}{\partial w_{ij}^{(n_L)}} = \frac{\partial E}{\partial z_{i}^{(n_L)}} \frac{\partial z_{i}^{(n_L)}}{\partial w_{ij}^{(n_L)}} = \delta_i^{(n_L)}a_j^{(n_L-1)}$$  
 其中：  
   $$\delta_i^{(n_L)} = \frac{\partial E}{\partial z_{i}^{(n_L)}} = -(y_i - a_i^{(n_L)})f'(z_i^{(n_L)})$$  
 因此：  
@@ -45,7 +46,7 @@ $$\mathbf{a^{(l)}}=[a^{(l)}_1,a^{(l)}_2,...,a^{(l)}_{n_l}]\in R^{n_l}$$表示第
 对于隐藏层有：  
   $$\frac{\partial E}{\partial w_{ij}^{(l)}} = \frac{\partial E}{\partial z_{i}^{(l)}} \frac{\partial z_{i}^{(l)}}{\partial w_{ij}^{(l)}} = \delta_i^{(l)}a_j^{(l-1)}$$
 
-  $$\delta_i^{(l)} = \frac{\partial E}{\partial z_{i}^{(l)}} =\displaystyle \sum_{j=1}^{n_{l+1}} \frac{\partial E}{\partial z_{j}^{(l+1)}} \frac{\partial z_{j}^{(l+1)}}{\partial z_{i}^{(l)}} =\displaystyle \sum_{j=1}^{n_{l+1}} \delta_j^{(l+1)} \frac{\partial z_{j}^{(l+1)}}{\partial z_{i}^{(l)}} $$  
+$$\delta_i^{(l)} = \frac{\partial E}{\partial z_{i}^{(l)}} =\displaystyle \sum_{j=1}^{n_{l+1}} \frac{\partial E}{\partial z_{j}^{(l+1)}} \frac{\partial z_{j}^{(l+1)}}{\partial z_{i}^{(l)}} =\displaystyle \sum_{j=1}^{n_{l+1}} \delta_j^{(l+1)} \frac{\partial z_{j}^{(l+1)}}{\partial z_{i}^{(l)}} $$  
   $$\frac{\partial z_{j}^{(l+1)}}{\partial z_{i}^{(l)}} = \frac{\partial z_{j}^{(l+1)}}{\partial a_{i}^{(l)}}\frac{\partial a_{i}^{(l)}}{\partial z_{i}^{(l)}} = w_{ji}^{(l+1)}f'(z_{i}^{(l)})$$  
 因此有：  
   $$\delta_i^{(l)} = \displaystyle \sum_{j=1}^{n_{l+1}} \delta_j^{(l+1)} w_{ji}^{(l+1)}f'(z_{i}^{(l)}) = (\displaystyle \sum_{j=1}^{n_{l+1}} \delta_j^{(l+1)} w_{ji}^{(l+1)})f'(z_{i}^{(l)})$$  
@@ -56,7 +57,7 @@ $$\mathbf{a^{(l)}}=[a^{(l)}_1,a^{(l)}_2,...,a^{(l)}_{n_l}]\in R^{n_l}$$表示第
 
 ### 对输出层与隐含偏置求导数
 
-  $$\frac{\partial E}{\partial b_{i}^{(l)}} = \frac{\partial E}{\partial z_{i}^{(l)}} \frac{\partial z_{i}^{(l)}}{\partial b_{i}^{(l)}} = \delta_i^{(l)}$$
+$$\frac{\partial E}{\partial b_{i}^{(l)}} = \frac{\partial E}{\partial z_{i}^{(l)}} \frac{\partial z_{i}^{(l)}}{\partial b_{i}^{(l)}} = \delta_i^{(l)}$$
 
 ## BP四个核心公式
 
@@ -68,16 +69,18 @@ $$\mathbf{a^{(l)}}=[a^{(l)}_1,a^{(l)}_2,...,a^{(l)}_{n_l}]\in R^{n_l}$$表示第
 
 ### 两个辅助公式
 
-  $$\mathbf{z^{(l)}}=\mathbf{W^{(l)}a^{(l-1)} + b^{(l)}}$$  
+$$\mathbf{z^{(l)}}=\mathbf{W^{(l)}a^{(l-1)} + b^{(l)}}$$  
   $$\mathbf{a^{(l)}}=f(\mathbf{z^{(l)}})$$
 
 ## 参数更新
 
-  $$W^{(l)} = W^{(l)} - \frac{u}{N}\displaystyle \sum_{i=1}^{N} \frac{\partial E_i}{\partial W^{(l)}}$$  
+$$W^{(l)} = W^{(l)} - \frac{u}{N}\displaystyle \sum_{i=1}^{N} \frac{\partial E_i}{\partial W^{(l)}}$$  
   $$\mathbf{b^{(l)} = b^{(l)}} - \frac{u}{N}\displaystyle \sum_{i=1}^{N} \frac{\partial E_i}{\partial b^{(l)}}$$
 
-###代码实现
-如下是一个输入两个变量，只含有4个神经元的隐含层以及一个输出变量的网络(2,4,1)。  
+### 代码实现
+
+如下是一个输入两个变量，只含有4个神经元的隐含层以及一个输出变量的网络\(2,4,1\)。
+
 ```py
 import numpy as np
 
@@ -158,12 +161,10 @@ if __name__ == '__main__':
     print("predict is ", result)
 ```
 
-##CNN
+## CNN
+
 现在我们讨论卷积神经网络的误差怎么反向传播，以及参数的梯度怎么计算。  
 ![](/assets/LeNet.png)
 
-
-
-
-
+![](/assets/CNN_fig.png)
 

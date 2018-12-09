@@ -239,7 +239,7 @@ $$H\times W$$的图像经过$$k_1\times k_2$$的卷积核作用之后，得到�
 &emsp;&emsp;$$\frac{\partial x_{i'-m,j'-n}^{l+1}}{\partial x_{i',j'}^l} = \frac{\partial}{\partial x_{i',j'}^l} \left( \sum_{m'} \sum_{n'} w_{m', n'}^{l+1} o_{i' - m + m',j' - n + n'}^{l} + b^{l+1} \right)$$  
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$$= \frac{\partial}{\partial x_{i',j'}^l}\left( \sum_{m'} \sum_{n'} w_{m',n'}^{l+1}f\left(x_{i' - m + m',j' - n + n'}^{l}\right) + b^{l+1} \right)$$  
 得到：  
-&emsp;&emsp;$$\frac{\partial x_{i^{\prime} - m,j^{\prime} - n}^{l+1}}{\partial x_{i',j'}^l} = \frac{\partial}{\partial x_{i',j'}^l}\left( w_{m',n'}^{l+1} f\left(x_{ 0 - m + m', 0 - n + n'}^{l}\right) + \dots + w_{m,n}^{l+1} f\left(x_{i',j'}^{l}\right) + \dots + b^{l+1}\right)$$
+&emsp;&emsp;$$\frac{\partial x_{i^{\prime} - m,j^{\prime} - n}^{l+1}}{\partial x_{i',j'}^l} = \frac{\partial}{\partial x_{i',j'}^l}\left( w_{m',n'}^{l+1} f\left(x_{ 0 - m + m', 0 - n + n'}^{l}\right) + ... + w_{m,n}^{l+1} f\left(x_{i',j'}^{l}\right) + ... + b^{l+1}\right)$$
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$$= \frac{\partial}{\partial x_{i',j'}^l}\left( w_{m,n}^{l+1} f\left(x_{i',j'}^{l} \right) \right)$$
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$$= w_{m,n}^{l+1} \frac{\partial}{\partial x_{i',j'}^l} \left( f\left(x_{i',j'}^{l} \right) \right)$$
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$$= w_{m,n}^{l+1} f'\left(x_{i',j'}^{l}\right)$$  

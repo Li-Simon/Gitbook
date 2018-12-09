@@ -225,7 +225,11 @@ $$H\times W$$的图像经过$$k_1\times k_2$$的卷积核作用之后，得到�
 &emsp;&emsp;$$\frac{\partial E}{\partial w_{m',n'}^l} = \sum_{i=0}^{H-k_1} \sum_{j=0}^{W-k_2} \delta^{l}_{i,j} o_{ i + m^{\prime}, j + n^{\prime}}^{l-1}$$   
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$$= \text{rot}_{180^\circ} \left\{ \delta^{l}_{i,j} \right\} \ast  o_{m^{\prime},n^{\prime}}^{l-1}$$
 现在我们需要来计算$$\delta^{l}_{i,j}$$:   
-&emsp;&emsp;$$\delta^{l}_{i,j} = \frac{\partial E}{\partial x_{i,j}^{l}}$$
+&emsp;&emsp;$$\delta^{l}_{i,j} = \frac{\partial E}{\partial x_{i,j}^{l}}$$  
+可以由链式法则来求，并建立起$$\delta^{l}_{i,j}$$与$$\delta^{l+1}_{i,j}$$之间的关系：  
+&emsp;&emsp;$$\frac{\partial E}{\partial x_{i',j'}^{l}} = \sum_{i,j \in Q} \frac{\partial E}{\partial x_{Q}^{l+1}}\frac{\partial x_{Q}^{l+1}}{\partial x_{i',j'}^l}$$
+&emsp;&emsp;&emsp;&emsp;&emsp;$$= \sum_{i,j \in Q} \delta^{l+1}_{Q} \frac{\partial x_{Q}^{l+1}}{\partial x_{i',j'}^l}$$  
+只有有限区域Q中的$$\delta^{l+1}_{i,j}$$对$$\delta^{l}_{i,j}$$有影响，Q的大小就是卷积核的大小。  
 
 
 

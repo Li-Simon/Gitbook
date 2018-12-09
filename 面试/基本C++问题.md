@@ -99,6 +99,7 @@ void main()
 }
 ```
 
+### ![](/assets/String_Result.png)
 ### 
 
 ### 字符串指针赋值问题
@@ -118,7 +119,6 @@ void main(int n)
 }
 ```
 
-### ![](/assets/String_Result.png)
 
 ### sizeof
 

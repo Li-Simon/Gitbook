@@ -197,8 +197,7 @@ $$I \in \mathbb{R}^{H \times W \times C}$$;对于D个Filters，我们有$$K \in 
 8. $$f(\cdot)$$是激活函数
 
 #### l层的输入输出
-
-  $$x_{i,j}^l = \text{rot}_{180^\circ} \left\{ w_{m,n}^l \right\} \ast o_{i,j}^{l-1} + b_{i,j}^l $$  
+&emsp;&emsp;$$x_{i,j}^l = \text{rot}_{180^\circ} \left\{ w_{m,n}^l \right\} \ast o_{i,j}^{l-1} + b_{i,j}^l $$  
   $$  x_{i,j}^l = \sum_{m} \sum_{n} w_{m,n}^l o_{i+m,j+n}^{l-1} + b_{i,j}^l $$  
   $$ o_{i,j}^l = f(x_{i,j}^l) $$
 
@@ -209,6 +208,15 @@ $$I \in \mathbb{R}^{H \times W \times C}$$;对于D个Filters，我们有$$K \in 
 ### 误差反向
 
 我们所有要计算的参数就是每层卷积核与偏置。  
+我们需要通过改变卷积核中的一个矩阵元$$w_{m'n'}$$来观察最终的误差怎么改变，再反过来调节卷积核个的元素大小，最终使得网络输出值与相应的目标值之间的误差极小。  
+![](/assets/CNN_Conv.png) 
+$$H\times W$$的图像经过$$k_1\times k_2$$的卷积核作用之后，得到的图像大小是$$(H-k_1+1) \times (W-k_2 + 1)$$。 因此相应的梯度可以由链式法则表示：  
+&emsp;&emsp;$$\frac{\partial E}{\partial w_{m^{\prime},n^{\prime}}^l} = \sum_{i=0}^{H-k_1} \sum_{j=0}^{W-k_2} \frac{\partial E}{\partial x_{i,j}^{l}} \frac{\partial x_{i,j}^{l}}{\partial w_{m^{\prime},n^{\prime}}^l}$$     
+&emsp;&emsp;&emsp;&emsp;&emsp;$$= \sum_{i=0}^{H-k_1} \sum_{j=0}^{W-k_2} \delta^{l}_{i,j} \frac{\partial x_{i,j}^{l}}{\partial w_{m^{\prime},n^{\prime}}^l}$$  
+因为：  
+&emsp;&emsp;$$  x_{i,j}^l = \sum_{m} \sum_{n} w_{m,n}^l o_{i+m,j+n}^{l-1} + b_{i,j}^l $$ 
+代入上式得到：  
+&emsp;&emsp;$$\frac{\partial x_{i,j}^{l}}{\partial w_{m^{\prime},n^{\prime}}^l} = \frac{\partial}{\partial w_{m^{\prime},n^{\prime}}^l}\left( \sum_{m} \sum_{n} w_{m,n}^{l}o_{i+m, j+n}^{l-1} + b^l \right) $$
 
-![](/assets/CNN_Conv.png)
+
 

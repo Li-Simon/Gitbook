@@ -1,14 +1,9 @@
 # 自己动手写神经网络
 
 这里需要实现NN，CNN,RNN，区别在于是否加卷积。对于NN，要保证层数不说限制，每层的神经元不受限制，只处理一维输入,输出也就一维,也就是分类问题；CNN处理二维输入\(图像\)，设计卷积和卷积核，实现的例子就是LeNet-5。RNN就是实现最简单的RNN。三者通用的东西是什么？可以提出来，我们需要用到哪些模块？这个心里是要清楚的。  
-![](/assets/LeNet.png)
 
-![](/assets/WriteNNByHand.png)
-
-## NN
-
-## CNN
-
+## DNN
+首先讨论普通的DNN  
 ![](/assets/BP_CNN1.png)
 
 $$n_l$$是层神经元数目；  
@@ -162,6 +157,13 @@ if __name__ == '__main__':
     result = bp.forward_prop(np.reshape([1, 1], (2, 1)))
     print("predict is ", result)
 ```
+
+##CNN
+现在我们讨论卷积神经网络的误差怎么反向传播，以及参数的梯度怎么计算。  
+![](/assets/LeNet.png)
+
+
+
 
 
 

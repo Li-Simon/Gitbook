@@ -173,7 +173,8 @@ if __name__ == '__main__':
 (I \ast K)_{ij} &= \sum_{m = 0}^{k_1 - 1} \sum_{n = 0}^{k_2 - 1} I(i-m, j-n)K(m,n) \\
 &= \sum_{m = 0}^{k_1 - 1} \sum_{n = 0}^{k_2 - 1} I(i+m, j+n)K(-m,-n)
 \end{align}$$
-首先通过描述每一个网络：  
+首先通过数学来描述每一层网络：  
+  
 
 
 [^1]: https://www.jefkine.com/general/2016/09/05/backpropagation-in-convolutional-neural-networks/

@@ -248,4 +248,5 @@ $$H\times W$$的图像经过$$k_1\times k_2$$的卷积核作用之后，得到�
 &emsp;&emsp;&emsp;&emsp;&emsp;$$= \text{rot}_{180^\circ} \left\{ \sum_{m = 0}^{k_1 - 1} \sum_{n = 0}^{k_2 - 1} \delta^{l+1}_{i^{\prime} + m,j^{\prime} + n} w_{m,n}^{l+1} \right\} f'\left(x_{i',j'}^{l}\right)$$  
 &emsp;&emsp;&emsp;&emsp;&emsp;$$= \delta^{l+1}_{i',j'} \ast \text{rot}_{180^\circ} \left\{ w_{m,n}^{l+1} \right\} f'\left(x_{i',j'}^{l} \right)$$
 
+[^1]: https://www.jefkine.com/general/2016/09/05/backpropagation-in-convolutional-neural-networks/
 

@@ -170,8 +170,7 @@ if __name__ == '__main__':
 ###卷积计算
 假设I就是输入的图像，$$K \in R^{k_1 \times k_2}$$的卷积核，则卷积如下计算：  
 &emsp;&emsp;$$(I \ast K)_{ij} = \sum_{m = 0}^{k_1 - 1} \sum_{n = 0}^{k_2 - 1} I(i-m, j-n)K(m,n)$$   
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$$= \sum_{m = 0}^{k_1 - 1} \sum_{n = 0}^{k_2 - 1} I(i+m, j+n)K(-m,-n)
-$$  
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$$= \sum_{m = 0}^{k_1 - 1} \sum_{n = 0}^{k_2 - 1} I(i+m, j+n)K(-m,-n)$$    
 卷积和Cross-correlation是一样的，当$$K(-m,-n) == K(m,n)$$;  
 首先通过数学来描述每一层网络： 
 对于图像，我们输入是一个高H，长W和通道C=3的张量，比如图像 

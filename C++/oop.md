@@ -28,9 +28,19 @@ C++可以多继承，但Java,C\#只能是单继承。正由于C++可以多继承
 2. 使用虚拟继承，使得多重继承类D只拥有类A的一份拷贝，也就是：
 
 ```cpp
-class B: virtual public A
-class C: virtual public A
-```
+class A {}
+class B: virtual public A {};
+class C: virtual public A {};
+class D: public B, public C {}; 
+int main()
+{
+    D d;
+    A *pd = &d;
+    return 0;
+}
+
+```  
+多重继承的优点是对象可以调用多个基类中的接口，缺点是容易出现继承上的二义性。  
 
 ### 组合
 

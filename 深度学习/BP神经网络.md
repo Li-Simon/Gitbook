@@ -173,7 +173,11 @@ if __name__ == '__main__':
 (I \ast K)_{ij} &= \sum_{m = 0}^{k_1 - 1} \sum_{n = 0}^{k_2 - 1} I(i-m, j-n)K(m,n) \\
 &= \sum_{m = 0}^{k_1 - 1} \sum_{n = 0}^{k_2 - 1} I(i+m, j+n)K(-m,-n)
 \end{align}$$
-首先通过数学来描述每一层网络：  
+首先通过数学来描述每一层网络： 
+对于图像，我们输入是一个高H，长W和通道C=3的张量，比如图像 
+$$I \in \mathbb{R}^{H \times W \times C}$$;对于D个Filters，我们有$$K \in \mathbb{R}^{k_1 \times k_2 \times C \times D}$$,以及偏置$$b \in \mathbb{R}^{D}$$。  
+因此通过卷积操作之后的输出是：  
+&emsp;&emsp;$$(I \ast K)_{ij} = \sum_{m = 0}^{k_1 - 1} \sum_{n = 0}^{k_2 - 1} \sum_{c = 1}^{C} K_{m,n,c}\cdot I_{i+m, j+n, c} + b$$
   
 
 

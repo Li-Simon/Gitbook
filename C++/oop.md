@@ -91,9 +91,9 @@ void main()
 
 ![](/assets/multi_inhit.png)  
 如果不是虚拟继承，则输出结果如下,它有两份Parent的拷贝：  
-![](/assets/multi_inhit_nonvirtual.png)
+![](/assets/mul_inhit.png)
 
-### 组合
+\#\#组合
 
 集成与组合都是为了实现代码的复用。组合是通过把别的类作为自己的成员变量来使用其它类的功能。  
 集成是is-a关系，组合是has-a关系。

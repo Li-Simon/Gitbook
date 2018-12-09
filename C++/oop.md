@@ -90,7 +90,7 @@ void main()
 多重继承类对象的构造顺序与其继承列表中基类的排列顺序一致\(在上面的例子中是class Dervied : public Child2,public Child1; 因此先调用Child2的构造函数再调用Child1的构造函数\)；而不是与构造函数初始化列表中的顺序一致\(Dervied\(int num\):Child1\(num\),Child2\(num+1\){}  
 \)，因此结果输出如下：
 
-![](/assets/multi_inherti.png)
+![](/assets/multi_inhit.png)
 
 ### 组合
 

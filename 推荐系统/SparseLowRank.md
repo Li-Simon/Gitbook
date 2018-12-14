@@ -51,5 +51,5 @@ L2好处是能防止过拟合，还可以使得条件数很多的Hessian阵优�
 
 ## 优化问题求解
 
-[^1]: http://www.cnblogs.com/TenosDoIt/p/3708996.html
+[^1]: 参考 http://www.cnblogs.com/TenosDoIt/p/3708996.html
 

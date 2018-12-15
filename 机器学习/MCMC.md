@@ -46,6 +46,15 @@ $$\theta^{(1)} \to \theta^{(2)} \to ...\theta^{(t)} \to$$
 [MCMC——Gibbs Sampling算法](https://www.cnblogs.com/xbinworld/p/4266146.html)
 
 
+#统计推断
+贝叶斯方法把参数视为随机变量，这些随机变量具有先验分布，表示这些随机变量在人们心目中的取值。我们可以从贝叶斯的角度，来对正则化进行解释。 
+##L1正则化 
+当我们认为模型的拟合的残差符合高斯分布，而模型的参数$$\beta_i$$服从独立同分布的拉普拉斯分布，也就是：   
+&emsp;&emsp;$$ y_i \in N(\beta_0 + x_i^T\beta,\sigma^2)$$  
+&emsp;&emsp;$$\beta_i \in (1/2\tau)\exp(-|\beta|/\tau)$$  
+
+
+
 
 
 

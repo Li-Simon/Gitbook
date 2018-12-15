@@ -102,7 +102,7 @@
   * [基于内容的推荐算法](推荐系统/基于内容的推荐算法.md)
   * [基于知识的推荐](推荐系统/基于知识的推荐.md)
   * [在线学习](推荐系统/在线学习.md)
-  * [Sparse Low Rank](推荐系统/SparseLowRank.md)
+  * [稀疏低秩分解](推荐系统/SparseLowRank.md)
   * [Learning To Rank LTR](推荐系统/learning-to-rank-ltr.md)
   * [Problem Solver Systems](推荐系统/ProbelmSolvingSystem.md)
 * [第八章 项目工作](Kaggle/README.md)

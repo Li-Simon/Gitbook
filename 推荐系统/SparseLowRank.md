@@ -72,7 +72,12 @@ L2好处是能防止过拟合，还可以使得条件数很多的Hessian阵优�
 这称为谱正则化。这种修改所得到的解Z并不能精确拟合观测值。但是在观测值含有噪声的情况下，这种方式能减少过拟合。  
 下面介绍求解上面问题的一般过程。  
 ##### 基于Soft-Impute的矩阵填充
-首先定义几个符号，观测到的元素子集用$$\Omega$$表示，由此定义投影算子$$$$
+首先定义几个符号，观测到的元素子集用$$\Omega$$表示，由此定义投影算子$$P_{\Omega}:\Re^{m\times n}\to \Re^{m\times n}$$为：   
+&emsp;&emsp;$$[P_{\Omega}(Z)]_{ij} = z_{ij}$$, if$$(i,j)\in \Omega$$   
+&emsp;&emsp;$$[P_{\Omega}(Z)]_{ij} = 0$$, if$$(i,j)\notin \Omega$$   
+即$$P_{\Omega}$$会用0代替Z中的缺失值，只留下观测值。有了这个定义，就可以得到等式：  
+&emsp;&emsp;$$\displaystyle \displaystyle \sum_{(i,j)\in \Omega}(z_{ij}-m_{ij})^2 = ||P_{\Omega}(Z) - P_{\Omega}(M)||_F^2$$   
+
 ###终极目的
 想办法把Krylov子空间用到矩阵计算上面去。  
 

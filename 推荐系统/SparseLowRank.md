@@ -62,7 +62,7 @@ L2好处是能防止过拟合，还可以使得条件数很多的Hessian阵优�
 一般而言，合成和采样如果满足不等式：  
 &emsp;&emsp;$$N \ge Crp \log p$$  
 则用核范数松弛方法精确恢复矩阵的概率很高。  
-####谱正则化
+####谱正则化[^2]
 矩阵Z的低秩填充，也就是求解如下问题：  
 &emsp;&emsp;$$minimize rank(M)$$，约束为： $$m_{ij}=z_{ij},(i,j)\in \Omega$$   
 上面是一个非凸目标函数，可以松弛为凸形式， 原子范数是矩阵秩的凸松弛：  
@@ -73,5 +73,6 @@ L2好处是能防止过拟合，还可以使得条件数很多的Hessian阵优�
 下面介绍求解上面问题的一般过程。  
 ## 优化问题求解
 
-[^1]: 参考 机器学习中的范数规则化之（二）核范数与规则项参数选择 [https://blog.csdn.net/zouxy09/article/details/24972869](https://blog.csdn.net/zouxy09/article/details/24972869)
+[^1]: 参考 机器学习中的范数规则化之（二）核范数与规则项参数选择 [https://blog.csdn.net/zouxy09/article/details/24972869](https://blog.csdn.net/zouxy09/article/details/24972869)  
+[^2]: 《稀疏统计学习及其应用》7.3
 

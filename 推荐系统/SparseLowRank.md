@@ -71,7 +71,9 @@ L2好处是能防止过拟合，还可以使得条件数很多的Hessian阵优�
   $$\displaystyle \min _{M} \frac{1}{2} \displaystyle \sum_{(i,j)\in \Omega}(z_{ij}-m_{ij})^2 + \lambda ||M||_* $$   
 这称为谱正则化。这种修改所得到的解Z并不能精确拟合观测值。但是在观测值含有噪声的情况下，这种方式能减少过拟合。  
 下面介绍求解上面问题的一般过程。  
-## 优化问题求解
+##### 优化问题求解
+###终极目的
+想办法把Krylov子空间用到矩阵计算上面去。  
 
 [^1]: 参考 机器学习中的范数规则化之（二）核范数与规则项参数选择 [https://blog.csdn.net/zouxy09/article/details/24972869](https://blog.csdn.net/zouxy09/article/details/24972869)  
 [^2]: 《稀疏统计学习及其应用》7.3

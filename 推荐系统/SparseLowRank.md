@@ -69,7 +69,7 @@ L2好处是能防止过拟合，还可以使得条件数很多的Hessian阵优�
 &emsp;&emsp;$$minimize ||M||_*$$，约束为： $$m_{ij}=z_{ij},(i,j)\in \Omega$$   
 上面没有考虑到噪声，考虑到噪声，则对观测到的值直接建模并不现实，下面是一种更实际的方法，是对上式得松弛版本：   
   $$\displaystyle \min _{M} \frac{1}{2} \displaystyle \sum_{(i,j)\in \Omega}(z_{ij}-m_{ij})^2 + \lambda ||M||_* $$   
-
+这称为谱正则化。这种修改所得到的解Z并不能精确拟合观测值。但是在观测值含有噪声的情况下，这种方式能减少过拟合。  
 ## 优化问题求解
 
 [^1]: 参考 机器学习中的范数规则化之（二）核范数与规则项参数选择 [https://blog.csdn.net/zouxy09/article/details/24972869](https://blog.csdn.net/zouxy09/article/details/24972869)

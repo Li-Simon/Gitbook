@@ -79,6 +79,10 @@ L2好处是能防止过拟合，还可以使得条件数很多的Hessian阵优�
 &emsp;&emsp;$$\displaystyle \displaystyle \sum_{(i,j)\in \Omega}(z_{ij}-m_{ij})^2 = ||P_{\Omega}(Z) - P_{\Omega}(M)||_F^2$$   
 矩阵W的秩为r，则相应的奇异值分解$$W=UDV^T$$,这里定义它的软阈值化版本：  
 &emsp;&emsp;$$S_{\lambda}(W) = UD_{\lambda}V^T$$，其中$$D_{\lambda}=diag[(d_1-\lambda)_+,...,(d_r-\lambda)_+]$$  
+Soft-Impute算法：  
+1. 初始化$$Z^{old} = 0$$,创建递减的$$\lambda_1>\lambda_2>...>\lambda_k$$。  
+2. 对于每个k=1,2,...,K，令$$\lambda = \lambda_k$$，并进行下面的迭代，直到收敛：  
+ 
 ###终极目的
 想办法把Krylov子空间用到矩阵计算上面去。  
 

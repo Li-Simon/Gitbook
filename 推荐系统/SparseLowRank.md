@@ -88,7 +88,9 @@ Soft-Impute算法：
 
 1.  初始化$$Z^{old} = 0$$,创建递减的$$\lambda_1>\lambda_2>...>\lambda_k$$。
 2. 对于每个k=1,2,...,K，令$$\lambda = \lambda_k$$，并进行下面的迭代，直到收敛：
-   1. 计算
+   1. 计算$$\hat Z_{\lambda} \gets S_{\lambda}(P_{\Omega}(Z) + P^{+}_{\Omega}(Z^{odd}))$$  
+   2. 更新$$Z^{old} \gets \hat Z_{\lambda}$$  
+3. 输出序列$$\hat Z_{\lambda_1},...,\hat Z_{\lambda_K}$$  
 
 
 

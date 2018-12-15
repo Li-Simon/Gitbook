@@ -104,4 +104,4 @@ Soft-Impute算法：
 想办法把Krylov子空间用到矩阵计算上面去。
 
 [^1]: 参考 机器学习中的范数规则化之（二）核范数与规则项参数选择 [https://blog.csdn.net/zouxy09/article/details/24972869](https://blog.csdn.net/zouxy09/article/details/24972869)  
-
+[^2]: 《稀疏统计学习及其应用》7.3  

@@ -95,6 +95,10 @@ Soft-Impute算法：
 在计算中，可以通过如下分解来优化计算：  
 &emsp;&emsp;$$P_{\Omega}(Z) + P^+_{\Omega}(Z^{old}) = (P_{\Omega}(Z) - P^+_{\Omega}(Z^{old})) +Z^{old}$$  
 右边第一部分是稀疏的，第二部分是SVD的软阈值，是低秩的。  
+可以证明，这个迭代算法能收敛到问题：  
+  $$\displaystyle \min _{M\in R^{m\times n}} \frac{1}{2} ||P_{\Omega}(Z) - P_{\Omega}(M)||_F^2 + \lambda ||M||_* $$   
+的解，这是目标函数的另外一种表示。  
+
 ### 终极目的
 
 想办法把Krylov子空间用到矩阵计算上面去。

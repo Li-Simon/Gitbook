@@ -88,12 +88,13 @@ Soft-Impute算法：
 
 1.  初始化$$Z^{old} = 0$$,创建递减的$$\lambda_1>\lambda_2>...>\lambda_k$$。
 2. 对于每个k=1,2,...,K，令$$\lambda = \lambda_k$$，并进行下面的迭代，直到收敛：
-   1. 计算$$\hat Z_{\lambda} \gets S_{\lambda}(P_{\Omega}(Z) + P^{+}_{\Omega}(Z^{odd}))$$  
+   1. 计算$$\hat Z_{\lambda} \gets S_{\lambda}(P_{\Omega}(Z) + P^{+}_{\Omega}(Z^{old}))$$  
    2. 更新$$Z^{old} \gets \hat Z_{\lambda}$$  
 3. 输出序列$$\hat Z_{\lambda_1},...,\hat Z_{\lambda_K}$$  
 
-
-
+在计算中，可以通过如下分解来优化计算：  
+&emsp;&emsp;$$P_{\Omega}(Z) + P^+_{\Omega}(Z^{old}) = (P_{\Omega}(Z) - P^+_{\Omega}(Z^{old})) +Z^{old}$$  
+右边第一部分是稀疏的，第二部分是SVD的软阈值，是低秩的。  
 ### 终极目的
 
 想办法把Krylov子空间用到矩阵计算上面去。

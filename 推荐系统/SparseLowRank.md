@@ -104,7 +104,7 @@ Soft-Impute算法：
 想办法把Krylov子空间用到矩阵计算上面去。  
 ###RIP
 RIP: Restricted Isometric Property受限等容性条件。  
-调和分析是下一个需要看的数学方向，因为这涉及到压缩感知这一块。    
+调和分析是下一个需要看的数学方向，因为这涉及到压缩感知这一块。 [调和分析](https://blog.csdn.net/alec1987/article/details/7511013)起源于Euler,Fourier等著名科学家的研究，主要涉及算子插值方法、极大函数方法、球调和函数理论、位势理论、奇异积分以及一般可微函数空间等。经过近200年的发展，已经成为数学中的核心学科之一，在偏微分方程、代数数论中有广泛的应用。   
 
 [^1]: 参考 机器学习中的范数规则化之（二）核范数与规则项参数选择 [https://blog.csdn.net/zouxy09/article/details/24972869](https://blog.csdn.net/zouxy09/article/details/24972869)  
 [^2]: 《稀疏统计学习及其应用》7.3  

@@ -103,7 +103,8 @@ Soft-Impute算法：
 
 想办法把Krylov子空间用到矩阵计算上面去。  
 ###RIP
-RIP: Restricted Isometric Property受限等容性条件  
+RIP: Restricted Isometric Property受限等容性条件。  
+调和分析是下一个需要看的数学方向，因为这涉及到压缩感知这一块。    
 
 [^1]: 参考 机器学习中的范数规则化之（二）核范数与规则项参数选择 [https://blog.csdn.net/zouxy09/article/details/24972869](https://blog.csdn.net/zouxy09/article/details/24972869)  
 [^2]: 《稀疏统计学习及其应用》7.3  

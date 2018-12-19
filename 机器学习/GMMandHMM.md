@@ -78,10 +78,11 @@ A,B,$$\pi$$称为马尔科夫模型的三要素。
 &emsp;&emsp;$$ \displaystyle \sum_{i=1}^{T-1}\gamma_t(i)$$  
 (c)在观测O下由状态i转移到状态j的期望值：     
 &emsp;&emsp;$$ \displaystyle \sum_{i=1}^{T-1}\xi_t(i,j)$$  
+
 ## 学习算法
 ### 监督学习方法
-   我们有观测序列和对应的状态序列$$[(O_1,I_1),(O_2,I_2),...,(O_S,I_S)]$$  
-   怎么可以通过统计方法来得到转移矩阵A，观测概率B，以及初始状态概率$$\pi$$。     
+我们有观测序列和对应的状态序列$$[(O_1,I_1),(O_2,I_2),...,(O_S,I_S)]$$    
+怎么可以通过统计方法来得到转移矩阵A，观测概率B，以及初始状态概率$$\pi$$。           
 &emsp;&emsp;$$\hat a_{ij} = \frac{A_{ij}}{\displaystyle \sum_{j=1}^NA_{ij}}, i=1,2,..,N;j=1,2,...,N$$   
 &emsp;&emsp;$$\hat b_j(k) = \frac{B_{jk}}{\displaystyle \sum_{k=1}^MB_{jk}},j=1,2,..,N;k=1,2,...,M$$  
    初始状态概率$$\pi_i$$的估计值$$\hat\pi_i$$为S个样本中初始状态为$$q_i$$的频率。  

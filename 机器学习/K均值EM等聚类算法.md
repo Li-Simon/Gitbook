@@ -1,4 +1,4 @@
-# K均值EM等聚类算法
+# K均值
 K-means是一种无监督的学习方法，通过定义距离与分类的数目K，样本归属于哪个类，取决于该样本距离K个类中心的距离，选择距离最小的类作为归属。随机选择K个起始点，通过迭代，最终收敛。其迭代过程就是求如下函数极小的过程。  
 &emsp;&emsp;$$ E = \displaystyle \sum_{i=1}^K \displaystyle \sum_{x \in C_i} ||\mathbf{x - u_i}||^2$$   
 &emsp;&emsp;$$\mathbf{u_i} = \frac{1}{|C_i|}\displaystyle \sum_{x \in C_i} \mathbf{x}$$    

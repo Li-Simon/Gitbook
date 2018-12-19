@@ -81,6 +81,7 @@ A,B,$$\pi$$称为马尔科夫模型的三要素。
 (c)在观测O下由状态i转移到状态j的期望值：     
 &emsp;&emsp;$$ \displaystyle \sum_{i=1}^{T-1}\xi_t(i,j)$$  
 
+
 ## 学习算法
 ### 监督学习方法
 我们有观测序列和对应的状态序列$$[(O_1,I_1),(O_2,I_2),...,(O_S,I_S)]$$    
@@ -89,6 +90,7 @@ A,B,$$\pi$$称为马尔科夫模型的三要素。
 &emsp;&emsp;$$\hat b_j(k) = \frac{B_{jk}}{\displaystyle \sum_{k=1}^MB_{jk}},j=1,2,..,N;k=1,2,...,M$$  
    初始状态概率$$\pi_i$$的估计值$$\hat\pi_i$$为S个样本中初始状态为$$q_i$$的频率。  
    人工标注的成本很高，因此就会利用非监督学习的方法。  
+   
 ### Baum-Welch算法思想
    假设给定训练数据只包含S个长度为T的观察序列$$(O_1,O_2,...,O_s)$$而没有对应的状态序列，目标是学习HMM模型$$\lambda = (A,B,\pi)$$的参数。我们将观测序列数据堪称观察数据O,状态序列数据看作不可观测的隐数据I,那么隐马尔科夫模型事实上是一个含有隐变量的概率模型：  
 &emsp;&emsp;$$ P(O|\lambda) =\displaystyle \sum_{I}P(O|I,\lambda)P(I|\lambda) $$  
@@ -103,7 +105,8 @@ A,B,$$\pi$$称为马尔科夫模型的三要素。
    于是函数$$Q(\lambda,\hat\lambda)$$可以写成：  
 &emsp;&emsp;$$Q(\lambda,\hat\lambda) = \displaystyle \sum_{I}\log \pi_{i_1}P(O,I|\hat\lambda) + \displaystyle \sum_{I}(\displaystyle \sum_{t=1}^{T-1}\log a_{i_ti_{t+1}})P(O,I|\hat \lambda) + \displaystyle \sum_{I}(\displaystyle \sum_{t=1}^{T-1}\log b_{i_t}(o_t))P(O,I|\hat \lambda)$$  
    式中求和都是对所有训练数据的序列总长度T进行的。  
-3. EM算法的M步：极大化Q函数$$Q(\lambda,\hat\lambda)$$求模型参数A,B,$$\lambda$$。极大化，满足梯度为0，也就对A，B,$$\lambda$$中的元素分别求导令其为0。  
+3. EM算法的M步：极大化Q函数$$Q(\lambda,\hat\lambda)$$求模型参数A,B,$$\lambda$$。极大化，满足梯度为0，也就对A，B,$$\lambda$$中的元素分别求导令其为0。   
+
    在$$Q(\lambda,\hat\lambda)$$中的三项中，分别只包含了$$\pi,a_{ij},b_j(k)$$,因此求解起来比较方便。此外，我们还可以利用概率和为1的限定条件，也就是利用拉格朗日乘子来进行计算。   
    对$$Q(\lambda,\hat\lambda)$$的第一项，我们求$$\lambda$$:  
 &emsp;&emsp;$$\displaystyle \sum_{I}\log \pi_{i_1}P(O,I|\hat\lambda) = \displaystyle \sum_{i=1}^N\log \pi_{i}P(O,i_1 = i|\hat\lambda)$$  
@@ -127,7 +130,8 @@ A,B,$$\pi$$称为马尔科夫模型的三要素。
 &emsp;&emsp;$$ b_j(k) = \frac{\displaystyle \sum_{t=1}^{T}P(O,i_t=j|\hat \lambda)I(o_t=v_k)}{\displaystyle \sum_{t=1}^{T}P(O,i_t=j|\hat \lambda)}$$  
    $$\hat \lambda$$是当前$$(A,B,\pi)$$的估计值，因此可以通过迭代，得到  $$(A,B,\pi)$$的收敛解。
 
-   ### Baum-Welch算法
+
+### Baum-Welch算法
 
    输入：观测数据$$O=(o_1,o_2,...,o_T)$$;  
    输出：隐马尔科夫模型的参数  

@@ -2,6 +2,7 @@
 
 * [序言](README.md)
 * [第一章 工具](工具/README.md)
+  * [简历](工具/简历.md)
   * [参考书籍](工具/推荐书籍.md)
 * [第二章 C++](C++/README.md)
   * [OOP](C++/oop.md)
@@ -121,6 +122,7 @@
   * [Learning To Rank LTR](推荐系统/learning-to-rank-ltr.md)
   * [Problem Solver Systems](推荐系统/ProbelmSolvingSystem.md)
 * [第八章 项目工作](Kaggle/README.md)
+  * [Residual NN](Kaggle/ResiNN.md)
   * [Fast项目](Kaggle/Fast项目.md)
   * [Miura项目](Kaggle/Miura项目.md)
   * [Titanic](Kaggle/Titanic.md)

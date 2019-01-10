@@ -26,6 +26,9 @@ SVD实现维数约化，以及SVD与神经网络的实现。SVD与非线性维�
 
 ![](/assets/NMF.png)
 
+###张量分解
+Tucker分解可以用于张量分解，不止是有矩阵分解，还有张量分解，那么本征值怎么推广到张量？张量分解有什么用?  
+
 
 
 [^1] [SVD在推荐系统中的应用](http://charleshm.github.io/2016/03/SVD-Recommendation-System/)

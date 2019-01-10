@@ -18,6 +18,6 @@ $$b_i$$： 物品偏置（item bias）项。这一项表示了物品接受的评
 这个时候我们的损失函数变为：  
 &emsp;&emsp;$$E = \sum_{(u,i)\in \mathcal{k}}(r_{ui}-\mu - b_i - b_u - \mathbf{q}_i^T\mathbf{p}_u) + \lambda (\lVert p_u \rVert_2) + \lVert q_i \rVert_2 + b_u^2 + b_i^2) $$
 
-
+##SVD与神经网络实现
 
 [^1] [SVD在推荐系统中的应用](http://charleshm.github.io/2016/03/SVD-Recommendation-System/)

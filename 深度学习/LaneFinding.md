@@ -328,7 +328,9 @@ plt.show()
 
 ### Search from Prior
 
-我们也可以利用卷积来寻找Lane Line的位置，
+我们也可以利用卷积来寻找Lane Line的位置，具体步骤就是。  
+
+###Convolution Methods
 
 ## Measuring Curvature
 

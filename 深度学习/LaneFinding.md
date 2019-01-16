@@ -178,6 +178,8 @@ plt.plot(histogram)
 
 ### Sliding Window
 
+如果我们把图像切分成小的window,通过上面的Histogram Peaks找到每个小window的peak，也就是对于的路线最可能过的点，做一条曲线来拟合这些点，这条曲线就是lane line。如下图中的黄线。  
+
 ![](/assets/Sliding_window.png)
 
 ### Search from Prior

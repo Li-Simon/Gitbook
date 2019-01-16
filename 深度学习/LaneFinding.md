@@ -124,16 +124,16 @@ scaled_sobel = np.uint8(255*abs_sobelx/np.max(abs_sobelx))
 ```
 
 ```py
-    gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
-    sobelx = cv2.Sobel(gray, cv2.CV_64F, 1, 0, ksize=sobel_kernel)
-    sobely = cv2.Sobel(gray, cv2.CV_64F, 0, 1, ksize=sobel_kernel)
-    # Calculate the gradient magnitude
-    gradmag = np.sqrt(sobelx**2 + sobely**2)
-    # Rescale to 8 bit
-    scale_factor = np.max(gradmag)/255 
-    gradmag = (gradmag/scale_factor).astype(np.uint8) 
-    binary_output = np.zeros_like(gradmag)
-    binary_output[(gradmag >= mag_thresh[0]) & (gradmag <= mag_thresh[1])] = 1
+gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
+sobelx = cv2.Sobel(gray, cv2.CV_64F, 1, 0, ksize=sobel_kernel)
+sobely = cv2.Sobel(gray, cv2.CV_64F, 0, 1, ksize=sobel_kernel)
+# Calculate the gradient magnitude
+gradmag = np.sqrt(sobelx**2 + sobely**2)
+# Rescale to 8 bit
+scale_factor = np.max(gradmag)/255 
+gradmag = (gradmag/scale_factor).astype(np.uint8) 
+binary_output = np.zeros_like(gradmag)
+binary_output[(gradmag >= mag_thresh[0]) & (gradmag <= mag_thresh[1])] = 1
 ```
 
 

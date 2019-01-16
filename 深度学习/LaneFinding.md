@@ -104,12 +104,13 @@ binary[(S > thresh[0]) & (S <= thresh[1])] = 1
 
 ### Gradient Thresholds
 
-我们可以通过soble算子来求不同方向的梯度，可以用来检测方向以及通过阈值来进行分割。
-强度阈值：
+我们可以通过soble算子来求不同方向的梯度，可以用来检测方向以及通过阈值来进行分割。  
+强度阈值：  
 $$abssobel_x = (sobel_x^2)^{1/2}$$  
 $$abssobel_y = (sobel_y^2)^{1/2}$$  
 $$abssobel_{xy} = (sobel_x^2 + sobel_y^2)^{1/2}$$  
 角度阈值：  $$\arctan(sobel_y/sobel_x)$$
+
 #### Sobel Operator
 
 ![](/assets/Sobel_X_Y.png)
@@ -120,6 +121,19 @@ sobelx = cv2.Sobel(gray, cv2.CV_64F, 1, 0)
 sobely = cv2.Sobel(gray, cv2.CV_64F, 0, 1)
 abs_sobelx = np.absolute(sobelx)
 scaled_sobel = np.uint8(255*abs_sobelx/np.max(abs_sobelx))
+```
+
+```py
+    gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
+    sobelx = cv2.Sobel(gray, cv2.CV_64F, 1, 0, ksize=sobel_kernel)
+    sobely = cv2.Sobel(gray, cv2.CV_64F, 0, 1, ksize=sobel_kernel)
+    # Calculate the gradient magnitude
+    gradmag = np.sqrt(sobelx**2 + sobely**2)
+    # Rescale to 8 bit
+    scale_factor = np.max(gradmag)/255 
+    gradmag = (gradmag/scale_factor).astype(np.uint8) 
+    binary_output = np.zeros_like(gradmag)
+    binary_output[(gradmag >= mag_thresh[0]) & (gradmag <= mag_thresh[1])] = 1
 ```
 
 

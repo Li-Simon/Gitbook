@@ -91,6 +91,7 @@ S = hls[:,:,2]
 可以把RGB转换成HLS图像。
 
 ### HLS and Color Thresholds
+实验发现，对于目标检测而言，对S通道进行阈值分割能得到更Robust的结果，特殊情况例外，比如R,G,B单色的目标物体。  
 
 ```py
 thresh = (90, 255)

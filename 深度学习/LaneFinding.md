@@ -328,6 +328,8 @@ plt.show()
 
 ### Search from Prior
 
+我们也可以利用卷积来寻找Lane Line的位置，
+
 ## Measuring Curvature
 
 

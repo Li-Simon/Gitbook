@@ -104,10 +104,11 @@ binary[(S > thresh[0]) & (S <= thresh[1])] = 1
 
 ### Gradient Thresholds
 
-我们可以通过soble算子来求不同方向的梯度，可以用来检测方向以及通过阈值来进行分割。  
-####Sobel Operator
+我们可以通过soble算子来求不同方向的梯度，可以用来检测方向以及通过阈值来进行分割。
 
+#### Sobel Operator   
 
+![](/assets/Sobel_X_Y.png)
 
 ```
 gray = cv2.cvtColor(im, cv2.COLOR_RGB2GRAY)

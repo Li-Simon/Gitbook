@@ -21,5 +21,56 @@
 7. 如果你自己有一辆无人车，你怎么基于特定场景(工厂环境)设计鲁棒，计算量极小的算法来实现道路检测，自动驾驶？  
 8. 明白无人驾驶在哪些方面无深度学习而不可？  
 
+## Camera Calibration
+
+To ensure that the geometrical shape of objects is represented consistently, no matter where they appear in an image.  
+![](/assets/Distortion.png)  
+\($$x_c,y_c$$\)是扭曲中心，r是原始图像中一点到扭曲中心的距离。
+
+### radial distortion
+
+径向扭曲，具有旋转不变性，因此对x,y的修正是一样的。  
+$$x_{distored} = x_{ideal}(1 + k_1 r^2 + k_2 r^4 + k_3 r^6)$$  
+$$y_{distored} = y_{ideal}(1 + k_1 r^2 + k_2 r^4 + k_3 r^6)$$
+
+### tangential distortion
+
+$$x_{corrected} = x + [2p_1 xy + p_2(r^2 + 2x^2)]$$  
+$$y_{corrected} = y + [2p_2 xy +  p_1(r^2 + 2y^2)]$$
+
+### calibrate Camera
+
+To computer the transformation between 3D object points in the world and 2D image points  
+我们一般使用棋盘模型来的得到这些扭曲系数\($$k_1,k_2,k_3,p_1,p_2$$\)  
+ret, mtx, dist, rvecs, tvecs = cv2.calibrateCamera\(objpoints, imgpoints, img\_size,None,None\), 其中mtx is camera matrix, mtx, dist is distortion coefficients. 具体而言，imgpoints是真实的扭曲的图像中的点的3D坐标，objpoints是没有扭曲的棋盘坐标，是2D的，通过这两者之间，可以建立i一个映射关系，返回ret, mtx, dist, rvecs, tvecs这些参数。  
+其中imgpoints可以通过OpenCV的函数来搜索到扭曲图像中的角点，ret, corners = cv2.findChessboardCorners\(gray, \(8,6\), None\)。  
+再用dst = cv2.undistort\(img, mtx, dist, None, mtx\)就可以恢复图像了。
+
+## Perspective Transform
+
+To transform an image such that we are effectively viewing objects from adifferent angle or direction.
+
+```py
+offset = 100 # offset for dst points
+# Grab the image shape
+img_size = (gray.shape[1], gray.shape[0])
+
+# For source points I'm grabbing the outer four detected corners
+src = np.float32([corners[0], corners[nx-1], corners[-1], corners[-nx]])
+# For destination points, I'm arbitrarily choosing some points to be
+# a nice fit for displaying our warped result 
+# again, not exact, but close enough for our purposes
+dst = np.float32([[offset, offset], [img_size[0]-offset, offset], [img_size[0]-offset, img_size[1]-offset], 
+                                     [offset, img_size[1]-offset]])
+# Given src and dst points, calculate the perspective transform matrix
+M = cv2.getPerspectiveTransform(src, dst)
+# Warp the image using OpenCV warpPerspective()
+warped = cv2.warpPerspective(undist, M, img_size)
+```
+
+注意dst中对应于src中的四点可以任意，getPerspectiveTransform中注意参数顺序。
+
+
+
 
 

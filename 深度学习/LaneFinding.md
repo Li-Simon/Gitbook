@@ -91,7 +91,8 @@ S = hls[:,:,2]
 可以把RGB转换成HLS图像。
 
 ### HLS and Color Thresholds
-实验发现，对于目标检测而言，对S通道进行阈值分割能得到更Robust的结果，特殊情况例外，比如R,G,B单色的目标物体。  
+
+实验发现，对于目标检测而言，对S通道进行阈值分割能得到更Robust的结果，特殊情况例外，比如R,G,B单色的目标物体。
 
 ```py
 thresh = (90, 255)
@@ -101,4 +102,20 @@ binary[(S > thresh[0]) & (S <= thresh[1])] = 1
 
 ![](/assets/HLS_S_channel.png)
 
-###Gradient Thresholds 
+### Gradient Thresholds
+
+我们可以通过soble算子来求不同方向的梯度，可以用来检测方向以及通过阈值来进行分割。  
+####Sobel Operator
+
+
+
+```
+gray = cv2.cvtColor(im, cv2.COLOR_RGB2GRAY)
+sobelx = cv2.Sobel(gray, cv2.CV_64F, 1, 0)
+sobely = cv2.Sobel(gray, cv2.CV_64F, 0, 1)
+abs_sobelx = np.absolute(sobelx)
+scaled_sobel = np.uint8(255*abs_sobelx/np.max(abs_sobelx))
+```
+
+
+

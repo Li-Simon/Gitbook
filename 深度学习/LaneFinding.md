@@ -333,7 +333,7 @@ plt.show()
 我们也可以利用卷积来寻找Lane Line的位置，具体步骤就是。
 ###Convolution Methods
 我们也可以利用卷积来寻找Lane Line的位置，具体步骤就是。 
-对一个小的窗口，比如高度为80，长度L就是图像x轴长度的一个窗口区域， 对这个窗口区域做Histogram，得到一个大小为L的一维数组， 一个卷积核对这个数组做卷积，得到的Peak位置，就是Lane Line上的点。  
+对一个小的窗口，比如高度为80，长度L就是图像x轴长度的一个窗口区域， 对这个窗口区域做Histogram，得到一个大小为L的一维数组， 一个卷积核对这个数组做卷积，位于我们感兴趣的Margin区域内的Peak位置，就是Lane Line上的点。把这些点连起来就可以得到整条Lane Line。    
 ## Measuring Curvature
 
 

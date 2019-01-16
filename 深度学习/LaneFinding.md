@@ -336,11 +336,22 @@ plt.show()
 ### Convolution Methods
 
 我们也可以利用卷积来寻找Lane Line的位置，具体步骤就是。  
-对一个小的窗口，比如高度为80，长度L就是图像x轴长度的一个窗口区域， 对这个窗口区域做Histogram，得到一个大小为L的一维数组， 一个卷积核对这个数组做卷积，位于我们感兴趣的Margin区域内的Peak位置，就是Lane Line上的点。把这些点连起来就可以得到整条Lane Line。  
+对一个小的窗口，比如高度为80，长度L就是图像x轴长度的一个窗口区域， 对这个窗口区域做Histogram，得到一个大小为L的一维数组， 一个卷积核对这个数组做卷积，位于我们感兴趣的Margin区域内的Peak位置，就是Lane Line上的点。把这些点连起来就可以得到整条Lane Line。
 
 ![](/assets/Lane_Line_Finding_Conv.png)
 
-## Measuring Curvature
+## Measuring Curvature  
+对于直线：  
+$$x = f(y) = Ay^2 + By + C$$  
+曲线$$x = f(y)$$的曲率半价定义为：  
+$$R_{curve} = \frac{(1+(\frac{dy}{dx})^2)^{3/2}}{|\frac{d^2x}{dy^2}|}$$    
+对于我们的例子有：  
+$$f'(y) = \frac{dy}{dx} = 2Ay + B$$   
+$$f''(y) = \frac{d^2x}{dy^2} = 2A$$   
+因此，(y,x)点的曲率半径为：  
+$$R_{curve} = \frac{(1+ (2Ay + B)^2)^{3/2}}{|2A|}$$   
+当然，我们还可以进行无标度化，来得到一个不带单位的方程，具体就是对x,y除以一个单位因子。  
+![](/assets/Lane_Line_Curvature_1.png)
 
 
 

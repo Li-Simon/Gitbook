@@ -326,12 +326,13 @@ plt.imshow(out_img)
 plt.show()
 ```
 
-### Search from Prior
+### Search from Prior  
+这是基于先验(前面的位置与方向的方法)，具体就是，根据以前的运动曲线，比如在小范围内可以拟合成二次曲线，再基于当前的位置，我们就可以确定下一时刻大致的运动范围，因此我们不需要检验所有与前进方向垂直的区域，只需要检验Margin区域来得到下一位置的Lane line的位置。
 
-我们也可以利用卷积来寻找Lane Line的位置，具体步骤就是。  
-
+我们也可以利用卷积来寻找Lane Line的位置，具体步骤就是。
 ###Convolution Methods
 
+我们也可以利用卷积来寻找Lane Line的位置，具体步骤就是。 
 ## Measuring Curvature
 
 

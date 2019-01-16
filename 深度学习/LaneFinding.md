@@ -341,16 +341,17 @@ plt.show()
 ![](/assets/Lane_Line_Finding_Conv.png)
 
 ## Measuring Curvature  
-对于直线：  
-$$x = f(y) = Ay^2 + By + C$$  
-曲线$$x = f(y)$$的曲率半价定义为：  
-$$R_{curve} = \frac{(1+(\frac{dy}{dx})^2)^{3/2}}{|\frac{d^2x}{dy^2}|}$$    
+对于曲线：  
+&emsp&emsp $$x = f(y) = Ay^2 + By + C$$  
+曲线$$x = f(y)$$的曲率半径定义为：  
+&emsp&emsp $$R_{curve} = \frac{(1+(\frac{dy}{dx})^2)^{3/2}}{|\frac{d^2x}{dy^2}|}$$    
 对于我们的例子有：  
-$$f'(y) = \frac{dy}{dx} = 2Ay + B$$   
-$$f''(y) = \frac{d^2x}{dy^2} = 2A$$   
+&emsp&emsp $$f'(y) = \frac{dy}{dx} = 2Ay + B$$   
+&emsp&emsp $$f''(y) = \frac{d^2x}{dy^2} = 2A$$   
 因此，(y,x)点的曲率半径为：  
-$$R_{curve} = \frac{(1+ (2Ay + B)^2)^{3/2}}{|2A|}$$   
-当然，我们还可以进行无标度化，来得到一个不带单位的方程，具体就是对x,y除以一个单位因子。  
+&emsp&emsp $$R_{curve} = \frac{(1+ (2Ay + B)^2)^{3/2}}{|2A|}$$   
+##无标度化
+当然，我们还可以进行无标度化，来得到一个不带单位的方程，具体就是对x,y除以一个单位因子，这个因子就是每个pixel对应的物理长度。    
 ![](/assets/Lane_Line_Curvature_1.png)
 
 

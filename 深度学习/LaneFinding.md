@@ -92,5 +92,11 @@ S = hls[:,:,2]
 
 ### HLS and Color Thresholds
 
-![](/assets/HLS_Channel_Compare.png)
+```py
+thresh = (90, 255)
+binary = np.zeros_like(S)
+binary[(S > thresh[0]) & (S <= thresh[1])] = 1
+```
+
+
 

@@ -178,6 +178,8 @@ plt.plot(histogram)
 
 ### Sliding Window
 
+![](/assets/Sliding_window.png)
+
 ### Search from Prior
 
 ## Measuring Curvature

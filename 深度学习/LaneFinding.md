@@ -106,11 +106,11 @@ binary[(S > thresh[0]) & (S <= thresh[1])] = 1
 
 我们可以通过soble算子来求不同方向的梯度，可以用来检测方向以及通过阈值来进行分割。
 
-#### Sobel Operator   
+#### Sobel Operator
 
 ![](/assets/Sobel_X_Y.png)
 
-```
+```py
 gray = cv2.cvtColor(im, cv2.COLOR_RGB2GRAY)
 sobelx = cv2.Sobel(gray, cv2.CV_64F, 1, 0)
 sobely = cv2.Sobel(gray, cv2.CV_64F, 0, 1)

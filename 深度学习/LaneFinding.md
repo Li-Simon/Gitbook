@@ -11,7 +11,7 @@
 * Wrap the detected lane boundaries back onto the original image
 * Output visual display of the lane boundaries and numerical estimation of lane curvature and vehicle position  
 
-####任务
+##任务
 1. 明白相机参数，扭曲系数的直观图像与怎么计算这些参数？
 2. 怎么挑选颜色变换来得到鲁棒的图像？
 3. 怎么进行perspective transform(透视变换)？ 
@@ -43,7 +43,8 @@ To computer the transformation between 3D object points in the world and 2D imag
 我们一般使用棋盘模型来的得到这些扭曲系数\($$k_1,k_2,k_3,p_1,p_2$$\)  
 ret, mtx, dist, rvecs, tvecs = cv2.calibrateCamera\(objpoints, imgpoints, img\_size,None,None\), 其中mtx is camera matrix, mtx, dist is distortion coefficients. 具体而言，imgpoints是真实的扭曲的图像中的点的3D坐标，objpoints是没有扭曲的棋盘坐标，是2D的，通过这两者之间，可以建立i一个映射关系，返回ret, mtx, dist, rvecs, tvecs这些参数。  
 其中imgpoints可以通过OpenCV的函数来搜索到扭曲图像中的角点，ret, corners = cv2.findChessboardCorners\(gray, \(8,6\), None\)。  
-再用dst = cv2.undistort\(img, mtx, dist, None, mtx\)就可以恢复图像了。
+再用dst = cv2.undistort\(img, mtx, dist, None, mtx\)就可以恢复图像了。  
+
 
 ## Perspective Transform
 
@@ -67,7 +68,11 @@ M = cv2.getPerspectiveTransform(src, dst)
 warped = cv2.warpPerspective(undist, M, img_size)
 ```
 
-注意dst中对应于src中的四点可以任意，getPerspectiveTransform中注意参数顺序。
+注意dst中对应于src中的四点可以任意，getPerspectiveTransform中注意参数顺序。  
+
+##Color transformation, HSV and HLS
+彩色图像可以用RGB来表示，也可以用HSV空间(hue色相, saturation饱和度, and value明度), 或者HLS空间(hue色相, lightness亮度, and saturation饱和度)来表示。  
+
 
 
 

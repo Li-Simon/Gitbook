@@ -251,18 +251,11 @@ def find_lane_pixels(binary_warped):
 
         histogram2 = np.sum(binary_warped[win_y_low:win_y_high, :], axis=0)
 
-        #good_left_inds = np.argmax(histogram[win_xleft_low:win_xleft_high]) + win_xleft_low
-        #good_right_inds = np.argmax(histogram[win_xright_low:win_xright_high]) + win_xright_low
         good_left_inds = ((nonzeroy >= win_y_low) & (nonzeroy < win_y_high) &
                           (nonzerox >= win_xleft_low) & (nonzerox < win_xleft_high)).nonzero()[0]
 
         good_right_inds = ((nonzeroy >= win_y_low) & (nonzeroy < win_y_high) &
                           (nonzerox >= win_xright_low) & (nonzerox < win_xright_high)).nonzero()[0]
-
-        #good_left_inds = np.dot(histogram2[win_xleft_low:win_xleft_high], range(win_xleft_low, win_xleft_high))/np.sum(histogram2[win_xleft_low:win_xleft_high])
-        #good_right_inds = np.dot(histogram2[win_xright_low:win_xright_high],range(win_xright_low, win_xright_high))/np.sum(histogram2[win_xright_low:win_xright_high])
-        #leftx_current = good_left_inds.astype(int)
-        #rightx_current = good_right_inds.astype(int)
 
         if len(good_left_inds) > minpix:
             leftx_current = np.int(np.mean(nonzerox[good_left_inds]))
@@ -272,10 +265,6 @@ def find_lane_pixels(binary_warped):
         # Append these indices to the lists
         left_lane_inds.append(good_left_inds)
         right_lane_inds.append(good_right_inds)
-        #double_mid_y = (win_y_low + win_y_high)/2
-        #i_mid_y = int(double_mid_y)
-        #lefty.append(i_mid_y)
-        #righty.append(i_mid_y)
 
         ### TO-DO: If you found > minpix pixels, recenter next window ###
         ### (`right` or `leftx_current`) on their mean position ###
@@ -334,7 +323,7 @@ def fit_polynomial(binary_warped):
 out_img = fit_polynomial(binary_warped)
 
 plt.imshow(out_img)
-plt.show() 
+plt.show()
 ```
 
 ### Search from Prior

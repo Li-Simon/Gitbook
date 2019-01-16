@@ -74,12 +74,23 @@ warped = cv2.warpPerspective(undist, M, img_size)
 
 ## Color transformation, HSV and HLS
 
-彩色图像可以用RGB来表示，也可以用HSV空间\(hue色相, saturation饱和度, and value明度\), 或者HLS空间\(hue色相, lightness亮度, and saturation饱和度\)来表示。   
+彩色图像可以用RGB来表示，也可以用HSV空间\(hue色相, saturation饱和度, and value明度\), 或者HLS空间\(hue色相, lightness亮度, and saturation饱和度\)来表示。
 
 ![](/assets/HSV_HLS.png)
 
-HSL（a~d）和HSV（e~h）。上半部分（a、e）：两者的3D模型截面。下半部分：将模型中三个参数的其中之一固定为常量，其它两个参数的图像。(图像引用自维基百科中文版)   
-由OpenCV的cv2.imread()可以得到RGB图像，再由
-hls = cv2.cvtColor(im, cv2.COLOR_RGB2HLS)可以把RGB转换成HLS图像。    
+HSL（a~d）和HSV（e~h）。上半部分（a、e）：两者的3D模型截面。下半部分：将模型中三个参数的其中之一固定为常量，其它两个参数的图像。\(图像引用自维基百科中文版\)  
+由OpenCV的cv2.imread\(\)可以得到RGB图像，再由
 
+```py
+hls = cv2.cvtColor(image, cv2.COLOR_RGB2HLS)
+H = hls[:,:,0]
+L = hls[:,:,1]
+S = hls[:,:,2]
+```
+
+可以把RGB转换成HLS图像。
+
+### HLS and Color Thresholds
+
+![](/assets/HLS_Channel_Compare.png)
 

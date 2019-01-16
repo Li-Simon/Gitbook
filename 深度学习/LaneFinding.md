@@ -101,3 +101,4 @@ binary[(S > thresh[0]) & (S <= thresh[1])] = 1
 
 ![](/assets/HLS_S_channel.png)
 
+###Gradient Thresholds 

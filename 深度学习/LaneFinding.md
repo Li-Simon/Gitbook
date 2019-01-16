@@ -22,14 +22,13 @@
 8. 明白无人驾驶在哪些方面无深度学习而不可？  
 
 ## Camera Calibration
-
+由于相机棱镜的不完美，导致了图形的径向扭曲，由于相机位置不正，导致了图像的切向扭曲，因为我们有必要对现实扭曲的图像进行矫正来得到完美的图像。  
 To ensure that the geometrical shape of objects is represented consistently, no matter where they appear in an image.  
 ![](/assets/Distortion.png)  
 \($$x_c,y_c$$\)是扭曲中心，r是原始图像中一点到扭曲中心的距离。
 
 ### radial distortion
-
-径向扭曲，具有旋转不变性，因此对x,y的修正是一样的。  
+径向扭曲，具有旋转不变性，因此对x,y的修正是一样的。通过一些高阶的修正来还原模型，我们需要求得这些修正的系数。    
 $$x_{distored} = x_{ideal}(1 + k_1 r^2 + k_2 r^4 + k_3 r^6)$$  
 $$y_{distored} = y_{ideal}(1 + k_1 r^2 + k_2 r^4 + k_3 r^6)$$
 

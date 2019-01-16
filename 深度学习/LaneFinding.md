@@ -105,7 +105,11 @@ binary[(S > thresh[0]) & (S <= thresh[1])] = 1
 ### Gradient Thresholds
 
 我们可以通过soble算子来求不同方向的梯度，可以用来检测方向以及通过阈值来进行分割。
-
+强度阈值：
+$$abs_sobelx = (sobel_x^2)^{1/2}$$  
+$$abs_sobely = (sobel_y^2)^{1/2}$$  
+$$abs_sobelxy = (sobel_x^2 + sobel_y^2)^{1/2}$$  
+角度阈值：  $$\arctan(sobel_y/sobel_x)$$
 #### Sobel Operator
 
 ![](/assets/Sobel_X_Y.png)

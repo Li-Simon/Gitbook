@@ -158,7 +158,12 @@ scale_factor = np.max(gradmag)/255
 gradmag = (gradmag/scale_factor).astype(np.uint8) 
 binary_output = np.zeros_like(gradmag)
 binary_output[(gradmag >= mag_thresh[0]) & (gradmag <= mag_thresh[1])] = 1
-```
+```  
+##Advanced Topic for Finding Lines
+###Histogram Peaks
+###Sliding Window
+###Search from Prior
 
+##Measuring Curvature
 
 

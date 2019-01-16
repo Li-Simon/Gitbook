@@ -46,7 +46,7 @@ To computer the transformation between 3D object points in the world and 2D imag
 我们一般使用棋盘模型来的得到这些扭曲系数\($$k_1,k_2,k_3,p_1,p_2$$\)  
 ret, mtx, dist, rvecs, tvecs = cv2.calibrateCamera\(objpoints, imgpoints, img\_size,None,None\), 其中mtx is camera matrix, mtx, dist is distortion coefficients. 具体而言，imgpoints是真实的扭曲的图像中的点的3D坐标，objpoints是没有扭曲的棋盘坐标，是2D的，通过这两者之间，可以建立i一个映射关系，返回ret, mtx, dist, rvecs, tvecs这些参数。  
 其中imgpoints可以通过OpenCV的函数来搜索到扭曲图像中的角点，ret, corners = cv2.findChessboardCorners\(gray, \(8,6\), None\)。  
-再用dst = cv2.undistort\(img, mtx, dist, None, mtx\)就可以恢复图像了。   
+再用dst = cv2.undistort\(img, mtx, dist, None, mtx\)就可以恢复图像了。  
 具体步骤如下：  
 Finding chessboard corners \(for an 8x6 board\):
 
@@ -165,6 +165,16 @@ binary_output[(gradmag >= mag_thresh[0]) & (gradmag <= mag_thresh[1])] = 1
 ### Histogram Peaks
 
 ![](/assets/Histogram_raw_image.png)
+
+```py
+import numpy as np
+import matplotlib.pyplot as plt
+
+histogram = np.sum(img[img.shape[0]//2:,:], axis=0)
+plt.plot(histogram)
+```
+
+![](/assets/Histogram_CV_line.png)
 
 ### Sliding Window
 

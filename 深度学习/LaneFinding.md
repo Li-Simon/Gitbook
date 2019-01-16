@@ -37,7 +37,7 @@ $$y_{distored} = y_{ideal}(1 + k_1 r^2 + k_2 r^4 + k_3 r^6)$$
 $$x_{corrected} = x + [2p_1 xy + p_2(r^2 + 2x^2)]$$  
 $$y_{corrected} = y + [2p_2 xy +  p_1(r^2 + 2y^2)]$$
 
-### calibrate Camera
+### Calibrating Camera
 
 To computer the transformation between 3D object points in the world and 2D image points  
 我们一般使用棋盘模型来的得到这些扭曲系数\($$k_1,k_2,k_3,p_1,p_2$$\)  

@@ -95,7 +95,17 @@ Training Step: 1000  | total loss: 6.41052 | time: 88.615s
 
 ### 到pre-trained VGG
 
-tensorlayer有一个功能就是  
+tensorlayer有一个功能就是tl.files.assign_params  
+
+
+```py
+# 1st parameter
+tl.files.assign_params(sess, [load_params[0]], network)
+# the first three parameters
+tl.files.assign_params(sess, load_params[:3], network)
+
+```
+
 
 ![](/assets/ResidualNN_Pretrained_VGG.png)
 

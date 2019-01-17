@@ -77,7 +77,7 @@ Training Step: 6000  | total loss: 5.99239 | time: 50.356ss
 
 ### 网络选择
 
-从一开始的VGG到
+从一开始的普通CNN
 
 ```py
 #batch_size =5
@@ -92,6 +92,12 @@ net = tflearn.residual_block(net, 2, 64)
 net = tflearn.conv_2d(net, 1, 1)
 Training Step: 1000  | total loss: 6.41052 | time: 88.615s
 ```
+
+### 到pre-trained VGG
+
+tensorlayer有一个功能就是  
+
+![](/assets/ResidualNN_Pretrained_VGG.png)
 
 ### 效果
 

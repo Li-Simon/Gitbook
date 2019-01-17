@@ -96,7 +96,7 @@ Training Step: 1000  | total loss: 6.41052 | time: 88.615s
 ### 到pre-trained VGG
 
 tensorlayer恢复以前模型中有一个函数就是tl.files.assign_params，它可以用来指定一些层的参数， 
-Assign the given parameters to the TensorLayer network.
+Assign the given parameters to the TensorLayer network. 这可以用复用以前模型提取的特征。  
 
 ```py
 # 1st parameter

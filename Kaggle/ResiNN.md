@@ -110,7 +110,7 @@ tl.files.assign_params(sess, load_params[:3], network)
 ![](/assets/ResidualNN_Pretrained_VGG.png)  
 
 ####VGG16
-VGG16的名字由来是因为卷积层加上全连接层一共16层，5个pooling层不计算在内，因为pooling层没有权重参数。  
+VGG16的名字由来是因为卷积层加上全连接层一共16层，5个pooling层不计算在内，因为pooling层没有权重参数。根据每层参数数目与参数类型float32 = 4 byte,因此整个网络的参数大小是500多M。 
 
 ```py
 0 conv1_1_W (3, 3, 3, 64) float32

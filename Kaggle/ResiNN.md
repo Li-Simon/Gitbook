@@ -107,7 +107,47 @@ tl.files.assign_params(sess, load_params[:3], network)
 ```
 
 
-![](/assets/ResidualNN_Pretrained_VGG.png)
+![](/assets/ResidualNN_Pretrained_VGG.png)  
+
+####VGG16
+
+
+```py
+0 conv1_1_W (3, 3, 3, 64) float32
+1 conv1_1_b (64,) float32
+2 conv1_2_W (3, 3, 64, 64) float32
+3 conv1_2_b (64,) float32
+4 conv2_1_W (3, 3, 64, 128) float32
+5 conv2_1_b (128,) float32
+6 conv2_2_W (3, 3, 128, 128) float32
+7 conv2_2_b (128,) float32
+8 conv3_1_W (3, 3, 128, 256) float32
+9 conv3_1_b (256,) float32
+10 conv3_2_W (3, 3, 256, 256) float32
+11 conv3_2_b (256,) float32
+12 conv3_3_W (3, 3, 256, 256) float32
+13 conv3_3_b (256,) float32
+14 conv4_1_W (3, 3, 256, 512) float32
+15 conv4_1_b (512,) float32
+16 conv4_2_W (3, 3, 512, 512) float32
+17 conv4_2_b (512,) float32
+18 conv4_3_W (3, 3, 512, 512) float32
+19 conv4_3_b (512,) float32
+20 conv5_1_W (3, 3, 512, 512) float32
+21 conv5_1_b (512,) float32
+22 conv5_2_W (3, 3, 512, 512) float32
+23 conv5_2_b (512,) float32
+24 conv5_3_W (3, 3, 512, 512) float32
+25 conv5_3_b (512,) float32
+26 fc6_W (25088, 4096) float32
+27 fc6_b (4096,) float32
+28 fc7_W (4096, 4096) float32
+29 fc7_b (4096,) float32
+30 fc8_W (4096, 1000) float32
+31 fc8_b (1000,) float32
+```
+
+
 
 ### 效果
 

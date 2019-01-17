@@ -146,7 +146,8 @@ VGG16的名字由来是因为卷积层加上全连接层一共16层，5个poolin
 30 fc8_W (4096, 1000) float32
 31 fc8_b (1000,) float32
 ```
-
+TOTAL memory: 24M * 4 bytes ~= 93MB / image (only forward! ~*2 for bwd)  
+TOTAL params: 138M parameters  
 
 
 ### 效果

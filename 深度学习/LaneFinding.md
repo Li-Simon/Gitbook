@@ -352,7 +352,8 @@ plt.show()
 &emsp&emsp $$R_{curve} = \frac{(1+ (2Ay + B)^2)^{3/2}}{|2A|}$$   
 ##无标度化
 当然，我们还可以进行无标度化，来得到一个不带单位的方程，具体就是对x,y除以一个单位因子，这个因子就是每个pixel对应的物理长度。    
-![](/assets/Lane_Line_Curvature_1.png)
+![](/assets/Lane_Line_Curvature_1.png)   
+
 
 
 

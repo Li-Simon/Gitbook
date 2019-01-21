@@ -114,6 +114,7 @@
   * [模型压缩](深度学习/模型压缩.md)
   * [无人驾驶](深度学习/无人驾驶.md)
     * [Lane Finding](深度学习/LaneFinding.md)
+    * [Tensorflow](深度学习/Tensorflow.md)
 * [第七章 推荐系统](推荐系统/README.md)
   * [计算广告学概论](推荐系统/计算广告学概论.md)
   * [协同过滤算法](推荐系统/协同过滤算法.md)

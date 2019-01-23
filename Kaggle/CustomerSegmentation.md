@@ -257,10 +257,10 @@ Itemset：存在的物品组合，比如{A,B,C,...,X}
 Support:特定组合物品组合占所有交易的比列。  
 n = number of transactions with beer and diaper;     
 N = total transactions;  
-$$\kern{4 em}supp(beer,diaper) = \frac{n}{N}$$  
+&emsp;&emsp;$$supp(beer,diaper) = \frac{n}{N}$$  
 Confidence：一种规则的置信度。  
 for a rule which statrs{beer->diaper}    
-$$\kern{4 em}confidence(beer,diaper) = \frac{supp(beer and diaper)}{supp(beer)}$$   
+&emsp;&emsp;$$confidence(beer,diaper) = \frac{supp(beer and diaper)}{supp(beer)}$$   
 Lift:  the lift of rule {X->Y}  
-$$\kern{4 em}lift(X->Y) = \frac{supp(X U Y)}{supp(X)*supp(Y)}$$   
+&emsp;&emsp;$$lift(X->Y) = \frac{supp(X U Y)}{supp(X)*supp(Y)}$$   
 Frequent itemset: Frequent itemsets are itemsets whose support is greater than a user defined support threshold.  

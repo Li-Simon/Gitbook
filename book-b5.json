@@ -1,0 +1,14 @@
+{
+	"plugins": ["katex"],
+	"pdf": {
+    "pageNumbers": true,
+    "fontSize": 14,
+    "paperSize": "b5",
+    "margin": {
+      "right": 10,
+      "left": 10,
+      "top": 10,
+      "bottom": 10
+    }
+  }
+}

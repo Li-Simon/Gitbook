@@ -333,7 +333,28 @@ plt.show()
 这是基于先验\(前面的位置与方向的方法\)，具体就是，根据以前的运动曲线，比如在小范围内可以拟合成二次曲线，再基于当前的位置，我们就可以确定下一时刻大致的运动范围，因此我们不需要检验所有与前进方向垂直的区域，只需要检验Margin区域来得到下一位置的Lane line的位置。  
 通过一步步的迭代，更新拟合曲线的参数与位置，就可以得到整条Lane Line。
 
-![](/assets/Lane_line_search_from_prior.png)
+![](/assets/Lane_line_search_from_prior.png)   
+
+####可行区域填充
+得到Lane Lines之后，我们使用dstack是二进制图像变成三维图像，再用彩色填充道路之间的区域。  
+再用getPerspectiveTransform得到一个逆矩阵，从而把bird view变成原始空间的图像。  
+再叠加原始的图像，得到对道路进行填充的图像。      
+
+```cpp
+Minv = cv2.getPerspectiveTransform(dst, src)
+    
+warp_zero = np.zeros_like(combined_binary).astype(np.uint8)
+color_warp = np.dstack((warp_zero, warp_zero, warp_zero))
+pts_left = np.array([np.flipud(np.transpose(np.vstack([left_fitx, lefty])))])
+pts_right = np.array([np.transpose(np.vstack([right_fitx, righty]))])
+pts = np.hstack((pts_left, pts_right))
+cv2.polylines(color_warp, np.int_([pts]), isClosed=False, color=(0,0,255), thickness = 40)
+cv2.fillPoly(color_warp, np.int_([pts]), (0,255, 0))
+newwarp = cv2.warpPerspective(color_warp, Minv, (combined_binary.shape[1], combined_binary.shape[0]))
+result = cv2.addWeighted(mpimg.imread(image), 1, newwarp, 0.5, 0)
+```
+
+
 
 ### Convolution Methods
 

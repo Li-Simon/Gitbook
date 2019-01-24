@@ -96,6 +96,8 @@ warped = cv2.warpPerspective(undist, M, img_size)
 
 注意dst中对应于src中的四点可以任意，getPerspectiveTransform中注意参数顺序。
 
+![](/assets/warpPerspective.png)
+
 ## Color transformation, HSV and HLS
 
 彩色图像可以用RGB来表示，也可以用HSV空间\(hue色相, saturation饱和度, and value明度\), 或者HLS空间\(hue色相, lightness亮度, and saturation饱和度\)来表示。
@@ -340,20 +342,20 @@ plt.show()
 
 ![](/assets/Lane_Line_Finding_Conv.png)
 
-## Measuring Curvature  
+## Measuring Curvature
+
 对于曲线：  
-&emsp&emsp $$x = f(y) = Ay^2 + By + C$$  
+   $$x = f(y) = Ay^2 + By + C$$  
 曲线$$x = f(y)$$的曲率半径定义为：  
-&emsp&emsp $$R_{curve} = \frac{(1+(\frac{dy}{dx})^2)^{3/2}}{|\frac{d^2x}{dy^2}|}$$    
+   $$R_{curve} = \frac{(1+(\frac{dy}{dx})^2)^{3/2}}{|\frac{d^2x}{dy^2}|}$$  
 对于我们的例子有：  
-&emsp&emsp $$f'(y) = \frac{dy}{dx} = 2Ay + B$$   
-&emsp&emsp $$f''(y) = \frac{d^2x}{dy^2} = 2A$$   
-因此，(y,x)点的曲率半径为：  
-&emsp&emsp $$R_{curve} = \frac{(1+ (2Ay + B)^2)^{3/2}}{|2A|}$$   
-##无标度化
-当然，我们还可以进行无标度化，来得到一个不带单位的方程，具体就是对x,y除以一个单位因子，这个因子就是每个pixel对应的物理长度。    
-![](/assets/Lane_Line_Curvature_1.png)   
+   $$f'(y) = \frac{dy}{dx} = 2Ay + B$$  
+   $$f''(y) = \frac{d^2x}{dy^2} = 2A$$  
+因此，\(y,x\)点的曲率半径为：  
+   $$R_{curve} = \frac{(1+ (2Ay + B)^2)^{3/2}}{|2A|}$$
 
+## 无标度化
 
-
+当然，我们还可以进行无标度化，来得到一个不带单位的方程，具体就是对x,y除以一个单位因子，这个因子就是每个pixel对应的物理长度。  
+![](/assets/Lane_Line_Curvature_1.png)
 

@@ -339,7 +339,7 @@ plt.show()
 得到Lane Lines之后，我们使用dstack是二进制图像变成三维图像，再用彩色填充道路之间的区域。  
 再用getPerspectiveTransform得到一个逆矩阵，从而把bird view变成原始空间的图像。  
 再叠加原始的图像，得到对道路进行填充的图像。   
-src不必要太精确，只需是包含原始道路区域的梯形，而dst坐标是特定矩形的四个顶点。         
+src不必要太精确，只需是包含原始道路区域的梯形，而dst坐标是特定矩形的四个顶点。 当然，求src的精确方法是，通过卷积，来求得道路的终点。           
 
 ```cpp
 Minv = cv2.getPerspectiveTransform(dst, src)
@@ -380,4 +380,7 @@ result = cv2.addWeighted(mpimg.imread(image), 1, newwarp, 0.5, 0)
 
 当然，我们还可以进行无标度化，来得到一个不带单位的方程，具体就是对x,y除以一个单位因子，这个因子就是每个pixel对应的物理长度。  
 ![](/assets/Lane_Line_Curvature_1.png)
+
+
+在实际中，我们需要确保两条线之间的距离在一定的区间，必须要有这个约束。  
 

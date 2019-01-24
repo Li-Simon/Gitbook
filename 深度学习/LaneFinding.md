@@ -339,7 +339,7 @@ plt.show()
 得到Lane Lines之后，我们使用dstack是二进制图像变成三维图像，再用彩色填充道路之间的区域。  
 再用getPerspectiveTransform得到一个逆矩阵，从而把bird view变成原始空间的图像。  
 再叠加原始的图像，得到对道路进行填充的图像。   
-src不必要太精确，只需是包含原始道路区域的梯形。        
+src不必要太精确，只需是包含原始道路区域的梯形，而dst坐标是特定矩形的四个顶点。         
 
 ```cpp
 Minv = cv2.getPerspectiveTransform(dst, src)

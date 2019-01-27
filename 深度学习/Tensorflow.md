@@ -10,3 +10,13 @@ Recently, pooling layers have fallen out of favor. Some reasons are:
 2. Dropout is a much better regularizer.   
 3. Pooling results in a loss of information. Think about the max pooling operation as an example.   
 4. We only keep the largest of n numbers, thereby disregarding n-1 numbers completely.   
+
+
+```py
+input = tf.placeholder(tf.float32, (None, 4, 4, 5))
+filter_shape = [1, 2, 2, 1]
+strides = [1, 2, 2, 1]
+padding = 'VALID'
+pool = tf.nn.max_pool(input, filter_shape, strides, padding)
+```
+

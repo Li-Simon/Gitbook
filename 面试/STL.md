@@ -41,7 +41,12 @@ STL中体现了泛型程序设计的思想，泛型是一种软件的复用技�
 7. set
 8. map
 9. pair 
-
+###Set
+set的特性是所有的元素都会根据键值自动排序，set的元素不像map那样同时拥有实值(value)和键值(key)，set元素的键值就是实值，实值就是键值。 Set不允许两个元素拥有相同的键值，不呢个通过迭代器修改set元素的值。  
+multiset和set的唯一区别在于multiset允许键值重复。  
 ##algorithms
+
+
+
 
 

@@ -92,6 +92,7 @@
     * [集成学习](机器学习/集成学习.md)
       * [Bagging](机器学习/集成学习/bagging.md)
       * [Boosting](机器学习/集成学习/boosting.md)
+      * [RF,GBDT,XGBOOST,LightGBM比较](机器学习/集成学习/集成算法比较.md)
   * [生成算法](机器学习/生成算法.md)
     * [贝叶斯方法](机器学习/贝叶斯方法.md)
     * [隐马尔科夫模型](机器学习/GMMandHMM.md)

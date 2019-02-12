@@ -169,7 +169,7 @@ Output: $$\hat f(x) = \hat g^{(M)}(x) = \displaystyle \sum_{m=1}^M\hat f_m(x)$$
 &emsp;&emsp;&emsp;&emsp;$$ \ge -\displaystyle \sum_{j=1}^T\frac{1}{2}\frac{G_{jm}^2}{H_{jm}+\lambda}$$  
 成立条件是：  
 &emsp;&emsp;$$w_{jm} = -\frac{G_{jm}}{H_{jm}+\lambda}, j=1,2...,T$$  
-为了寻找最佳分裂点j，也就是最大化如下的Gain:  
+为了寻找最佳分裂点j，也就是最大化如下的Gain,也就是原来的cost 减去分裂后的cost:  
 &emsp;&emsp;$$Gain = \frac{1}{2}[\frac{G_{L}^2}{H_{L}+\lambda} + \frac{G_{R}^2}{H_{R}+\lambda} - \frac{(G_L + G_R)^2}{H_{L} + H_{R}+\lambda}] - \lambda$$  
 
 

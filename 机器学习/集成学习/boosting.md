@@ -2,6 +2,7 @@
 Boosting系列方法的原理图如下：
 
 ![](/assets/Boosting.png)
+在这里，我们将介绍GBDT, XGBoost以及LightGBM。  
 
 #### AdaBoost
 

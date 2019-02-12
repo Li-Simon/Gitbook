@@ -170,7 +170,7 @@ Output: $$\hat f(x) = \hat g^{(M)}(x) = \displaystyle \sum_{m=1}^M\hat f_m(x)$$
 成立条件是：  
 &emsp;&emsp;$$w_{jm} = -\frac{G_{jm}}{H_{jm}+\lambda}, j=1,2...,T$$  
 为了寻找最佳分裂点j，也就是最大化如下的Gain:  
-&emsp;&emsp;$$Gain = \frac{1}{2}[\frac{G_{L}^2}{H_{L}+\lambda} + \frac{G_{R}^2}{H_{R}+\lambda} - \frac{(G_L + G_R)^2}{H_{L} + H_{R}+\lambda}]$$  
+&emsp;&emsp;$$Gain = \frac{1}{2}[\frac{G_{L}^2}{H_{L}+\lambda} + \frac{G_{R}^2}{H_{R}+\lambda} - \frac{(G_L + G_R)^2}{H_{L} + H_{R}+\lambda}] - \lambda$$  
 
 
 

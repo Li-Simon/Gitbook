@@ -10,7 +10,8 @@
 ![](/assets/GoogLeNetInception.png)  
 1. Inception V1:它将1x1，3x3，5x5的conv和3x3的pooling，堆叠在一起，一方面增加了网络的width，另一方面增加了网络对尺度的适应性；  
 2. inception先通过一个1\*1的低channel的卷积核，来对后面的大的卷积核起降维作用，进而控制参数量。  
-GoogLeNet的参数 :可以看出里面用7x7的平均池代替了全连接。
+GoogLeNet的参数 :可以看出里面用7x7的平均池代替了全连接。  
+#### 1\*1的卷积核与Inception[^3] 
 
 ### Inception v2模型
 
@@ -50,7 +51,7 @@ v4研究了Inception模块结合Residual Connection能不能有改进？发现Re
 1. 多余的分类器在训练开始的时候并不能起到作用，在训练快结束的时候，使用它可以有所提升最底层的那个多余的分类器去掉以后也不会有损失。  
 2. 以为多余的分类器起到的是梯度传播下去的重要作用，但通过实验认为实际上起到的是regularizer的作用，因为在多余的分类器前添加dropout或者batch normalization后效果更佳。
 
-### 1\*1的卷积核与Inception[^3]
+
 
 [^1]: 深入浅出——网络模型中Inception的作用与结构全解析深入浅出——网络模型中Inception的作用与结构全解析  [https://blog.csdn.net/u010402786/article/details/52433324](https://blog.csdn.net/u010402786/article/details/52433324)
 

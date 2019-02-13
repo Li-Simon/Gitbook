@@ -118,7 +118,6 @@
     * [GRU](深度学习/GRU.md)
   * [目标检测](深度学习/计算机视觉.md)
     * [R-CNN](深度学习/R-CNN.md)
-    * [R-CNN](深度学习/R-CNN.md)
     * [Fast-RCNN](深度学习/Fast-RCNN.md)
     * [Faster-RCNN](深度学习/Faster-RCNN.md)
     * [YOLO](深度学习/YOLO.md)

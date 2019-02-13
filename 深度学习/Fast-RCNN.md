@@ -31,9 +31,27 @@ SPP：Spatial Pyramid Pooling（空间金字塔池化）
 
 SPP Net的作者Kaiming He等人逆向思考，既然由于全连接FC层的存在，普通的CNN需要通过固定输入图片的大小来使得全连接层的输入固定。那借鉴卷积层可以适应任何尺寸，为何不能在卷积层的最后加入某种结构，使得后面全连接层得到的输入变成固定的呢？
 
-这个“化腐朽为神奇”的结构就是spatial pyramid pooling layer。下图便是R-CNN和SPP Net检测流程的比较：  
+这个“化腐朽为神奇”的结构就是spatial pyramid pooling layer。下图便是R-CNN和SPP Net检测流程的比较：
 
-![](/assets/RCNN_SPP_Comp.png)
+![](/assets/RCNN_SPP_Comp.png)  
+它的特点有两个:  
+1.结合空间金字塔方法实现CNNs的多尺度输入。  
+SPP Net的第一个贡献就是在最后一个卷积层后，接入了金字塔池化层，保证传到下一层全连接层的输入固定。  
+换句话说，在普通的CNN机构中，输入图像的尺寸往往是固定的（比如224\*224像素），输出则是一个固定维数的向量。SPP Net在普通的CNN结构中加入了ROI池化层（ROI Pooling），使得网络的输入图像可以是任意尺寸的，输出则不变，同样是一个固定维数的向量。
+
+简言之，CNN原本只能固定输入、固定输出，CNN加上SSP之后，便能任意输入、固定输出。神奇吧？
+
+ROI池化层一般跟在卷积层后面，此时网络的输入可以是任意尺度的，在SPP layer中每一个pooling的filter会根据输入调整大小，而SPP的输出则是固定维数的向量，然后给到全连接FC层。  
+
+![](/assets/SPP_Const_output.png)
+
+2.只对原图提取一次卷积特征  
+在R-CNN中，每个候选框先resize到统一大小，然后分别作为CNN的输入，这样是很低效的。  
+而SPP Net根据这个缺点做了优化：只对原图进行一次卷积计算，便得到整张图的卷积特征feature map，然后找到每个候选框在feature map上的映射patch，将此patch作为每个候选框的卷积特征输入到SPP layer和之后的层，完成特征提取工作。
+
+如此这般，R-CNN要对每个区域计算卷积，而SPPNet只需要计算一次卷积，从而节省了大量的计算时间，比R-CNN有一百倍左右的提速。   
+
+![](/assets/SPP_Fc.png)
 
 ##### ROI Pooling
 

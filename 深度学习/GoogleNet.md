@@ -12,7 +12,8 @@ GoogLeNet的参数 :可以看出里面用7x7的平均池代替了全连接。
 ![](/assets/GoogLeNetInception.png)  
 
 #### 1\*1的卷积核与Inception[^3] 
-1. 实现跨通道的交互和信息整合
+1. 实现跨通道的交互和信息整合  
+对于nxn（n>1）的卷积核，我们通常还要考虑pad(边缘补0的个数)，stride（每次卷积移动的步长）。但是当尺寸是1x1时，对于single channel而言就相当于对原特征的scala操作；但是我们一般遇到的都是multi-channel的情况，此时我们便可以根据自己的需要定义卷积核的个数，从而进行降（升）维。如上面所说，如果将它看作cross channel的pooling 操作，它还能帮我们得到在同一位置不同通道之间进行特征的aggregation。   
 2. 进行卷积核通道数的降维和升维
 左边是naive的inception模块，右边是加入1x1 convolution进行降维的inception。假设输入的的feature map是28×28×192, 其中192表示通道数目。卷积核大小以及卷积通道数(包括三种卷积核，分别是1x1x64,3x3x128,5x5x32)，右图中在3x3，5x5 convolution前新加入的1x1的卷积核为96和16通道的，在max pooling后加入的1x1卷积为32通道。  
 那么图a该层的参数为（1x1x192x64）+(3x3x192x128)+(5x5x192x32)   

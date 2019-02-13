@@ -40,7 +40,9 @@ R-CNN（Region CNN，区域卷积神经网络）可以说是利用深度学习�
 
 目标检测的衡量标准是重叠面积：许多看似准确的检测结果，往往因为候选框不够准确，重叠面积很小，故需要一个位置精修步骤，对于每一个类，训练一个线性回归模型去判定这个框是否框得完美，如下图：  
 
-![](/assets/RCNN_Location_Regression.png)
+![](/assets/RCNN_Location_Regression.png)   
+
+R-CNN将深度学习引入检测领域后，一举将PASCAL VOC上的检测率从35.1%提升到53.7%。  
 
 [^1]: 大话目标检测经典模型（RCNN、Fast RCNN、Faster RCNN）  [https://my.oschina.net/u/876354/blog/1787921](https://my.oschina.net/u/876354/blog/1787921)
 

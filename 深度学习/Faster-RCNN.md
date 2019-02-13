@@ -13,7 +13,15 @@
 ![](/assets/RCNN_Fast_Faster_RCNN_compare.png)
 
 Faster R-CNN可以简单地看成是“区域生成网络+Fast R-CNN”的模型，用区域生成网络（Region Proposal Network，简称RPN）来代替Fast R-CNN中的Selective Search（选择性搜索）方法。  
-如下图:   
+如下图:
 
 ![](/assets/Faster_RCNN_principle.png)
+
+#### RPN
+
+RPN如下图:   
+
+![](/assets/Faster_RCNN_RPN.png)
+
+
 

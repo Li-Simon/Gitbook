@@ -5,7 +5,7 @@
 2. 采用一种高效的机器视觉深度神经网络结构，称为"Inception",这种模块化结构方便增加与修改，现在inception版本到了V6/V7。GoogLeNet中采用了9个inception模块。  
 3. 为了避免梯度小时，网络额外增加了2个辅助的softmax用于向前传导梯度。
 
-GoogLeNet中的Inception  
+###Inception结构 
 ![](/assets/GoogLeNetInception.png)  
 GoogLeNet的参数 :可以看出里面用7x7的平均池代替了全连接。  
 后续改进的版本：  

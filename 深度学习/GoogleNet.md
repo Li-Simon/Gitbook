@@ -6,11 +6,11 @@
 3. 为了避免梯度小时，网络额外增加了2个辅助的softmax用于向前传导梯度。
 
 ### Inception v1模型[^1]
-
-![](/assets/GoogLeNetInception.png)  
 1. Inception V1:它将1x1，3x3，5x5的conv和3x3的pooling，堆叠在一起，一方面增加了网络的width，另一方面增加了网络对尺度的适应性；  
 2. inception先通过一个1\*1的低channel的卷积核，来对后面的大的卷积核起降维作用，进而控制参数量。  
-GoogLeNet的参数 :可以看出里面用7x7的平均池代替了全连接。  
+GoogLeNet的参数 :可以看出里面用7x7的平均池代替了全连接。   
+![](/assets/GoogLeNetInception.png)  
+
 #### 1\*1的卷积核与Inception[^3] 
 
 ### Inception v2模型

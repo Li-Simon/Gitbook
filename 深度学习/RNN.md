@@ -125,7 +125,9 @@ GRU这个结构2014年才出现，结构与LSTM类似，效果一样，但是精
   $$r_t$$是reset gate，决定candidate activation时，是否要放弃以前的activate $$h_t$$  
   $$\hat h_t$$是candidate activation，接收\[$$x_t,h_{t-1}$$\]  
   $$h_t$$是activation，是GRU的隐层，接收\[$$h_{t-1},\hat h_{t}$$\].  
-GRU相对于LSTM，它取消了输出门。由更新门与重置门共同控制怎么从上一刻的的隐藏状态$$h_{t-1}$$到当前的隐藏状态$$h_t$$。如果reset门取1而update门取0，则退化到RNN。    
+GRU相对于LSTM，它取消了输出门。由更新门与重置门共同控制怎么从上一刻的的隐藏状态$$h_{t-1}$$到当前的隐藏状态$$h_t$$。如果reset门取1而update门取0，则退化到RNN。  
+#####GRU优势
+相对于LSTM的参数更少。    
 
 ![](/assets/GRU_LSTM_Structure.png)  
 现在看这图，就清晰很多，i,o,f都是门向量，作用就是控制流过这些门的流量，使得通过向量各个分量的通过门之后，其分量的值变为原来的x倍，$$x \in [0,1]$$是门的系数。就连输出也有一个输出门向量来控制。
@@ -139,5 +141,6 @@ LSTM 和GRU的不同点。首先LSTM有一个输出门来控制memory content的
 ## 注意力机制
 
 [^1] RNN-LSTM-GRU-最小GRU  [https://www.jianshu.com/p/166db8ab3cef](https://www.jianshu.com/p/166db8ab3cef)  
-[^2] RNN LSTM与GRU深度学习模型学习笔记  [https://blog.csdn.net/softee/article/details/54292102](https://blog.csdn.net/softee/article/details/54292102)
+[^2] RNN LSTM与GRU深度学习模型学习笔记  [https://blog.csdn.net/softee/article/details/54292102](https://blog.csdn.net/softee/article/details/54292102)  
+[^3] RNN以及LSTM的介绍和公式梳理  https://blog.csdn.net/Dark_Scope/article/details/47056361  
 

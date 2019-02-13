@@ -102,11 +102,11 @@ $$\hat c = \sigma_c(W_cx_t + U_ch_{t-1} + b_c)$$
 ### Peephole LSTM
 
 第二种是带遗忘门的Peephole LSTM，公式如下：  
-  $$ f_t = \sigma_g(W_fx_t + U_fc_{t-1} + b_f)$$  
+  $$f_t = \sigma_g(W_fx_t + U_fc_{t-1} + b_f)$$  
   $$i_t = \sigma_g(W_ix_t + U_ic_{t-1} + b_i)$$  
-  $$ o_t = \sigma_g(W_ox_t + U_oc_{t-1} + b_o)$$  
+  $$o_t = \sigma_g(W_ox_t + U_oc_{t-1} + b_o)$$  
   $$c_t = f_t*c_{t-1} + i_t*\sigma_c(W_cx_t + b_c)$$  
-  $$ h_t = o_t*\sigma_h(c_t)$$  
+  $$h_t = o_t*\sigma_h(c_t)$$  
 和上面的公式比较，发现只是把$$h_{t-1}$$换成了$$c_{t-1}$$，即三个门的输入都改成了\[$$x_t,c_{t-1}$$\],因为是从cell state里取得信息，所以叫窥视管\(peephole\)。  
 把这两种结构结合起来，可以用如下图描述：  
 ![](/assets/LSTM_Structure.png)

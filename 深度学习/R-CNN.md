@@ -26,11 +26,11 @@ R-CNN（Region CNN，区域卷积神经网络）可以说是利用深度学习�
   在合并时须保证合并操作的尺度较为均匀，避免一个大区域陆续“吃掉”其它小区域，保证合并后形状规则。   
   （3）输出所有曾经存在过的区域，即所谓候选区域      
 
-* #### 2、特征提取
 
+#### 2、特征提取
   使用深度网络提取特征之前，首先把候选区域归一化成同一尺寸 227×227。   
   使用CNN模型进行训练，例如AlexNet，一般会略作简化，如下图：  
-* ![](/assets/RCNN_AlexNet.png)
+* ![](/assets/RCNN_AlexNet.png)  
 
 [^1]: 大话目标检测经典模型（RCNN、Fast RCNN、Faster RCNN）  [https://my.oschina.net/u/876354/blog/1787921](https://my.oschina.net/u/876354/blog/1787921)
 

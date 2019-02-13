@@ -11,11 +11,14 @@ R-CNN中独立的分类器和回归器需要大量特征作为训练样本。Fas
 
 #### Fast R-CNN原理示意图
 
-![](/assets/Fast_RCNN_Principle.png)
+![](/assets/Fast_RCNN_Principle.png)  
+R-CNN虽然不再像传统方法那样穷举，但R-CNN流程的第一步中对原始图片通过Selective Search提取的候选框region proposal多达2000个左右，而这2000个候选框每个框都需要进行CNN提特征+SVM分类，计算量很大，导致R-CNN检测速度很慢，一张图都需要47s。  
+有没有方法提速呢？答案是有的，这2000个region proposal不都是图像的一部分吗，那么我们完全可以对图像提一次卷积层特征，然后只需要将region proposal在原图的位置映射到卷积层特征图上，这样对于一张图像我们只需要提一次卷积层特征，然后将每个region proposal的卷积层特征输入到全连接层做后续操作。
+
+但现在的问题是每个region proposal的尺度不一样，而全连接层输入必须是固定的长度，所以直接这样输入全连接层肯定是不行的。SPP Net恰好可以解决这个问题。
 
 
-
-### SPP Net
+### SPP Net[^1]
 
 SPP：Spatial Pyramid Pooling（空间金字塔池化）  
 众所周知，CNN一般都含有卷积部分和全连接部分，其中，卷积层不需要固定尺寸的图像，而全连接层是需要固定大小的输入。  
@@ -50,7 +53,7 @@ ROI池化层一般跟在卷积层后面，此时网络的输入可以是任意�
 如此这般，R-CNN要对每个区域计算卷积，而SPPNet只需要计算一次卷积，从而节省了大量的计算时间，比R-CNN有一百倍左右的提速。
 
 ![](/assets/SPP_FC.png)  
-#### 1、在特征提取阶段
+#### 1、在特征提取阶段[^2]
 
 通过CNN（如AlexNet）中的conv、pooling、relu等操作都不需要固定大小尺寸的输入，因此，在原始图片上执行这些操作后，输入图片尺寸不同将会导致得到的feature map（特征图）尺寸也不同，这样就不能直接接到一个全连接层进行分类。  
 
@@ -77,3 +80,6 @@ Fast R-CNN和R-CNN相比，训练时间从84小时减少到9.5小时，测试时
 
 ![](/assets/RCNN_FastRCNN_time_Compare.png)
 
+
+[^1]: 一文读懂目标检测：R-CNN、Fast R-CNN、Faster R-CNN、YOLO、SSD  https://blog.csdn.net/v_JULY_v/article/details/80170182  
+[^2]:  大话目标检测经典模型（RCNN、Fast RCNN、Faster RCNN）  https://my.oschina.net/u/876354/blog/1787921

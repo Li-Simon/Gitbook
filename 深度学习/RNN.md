@@ -154,8 +154,7 @@ LSTM 和GRU的不同点。首先LSTM有一个输出门来控制memory content的
 1. LSTM可控”记忆“的曝光度，而GRU完全暴露”记忆“，是不可控的；
 2. LSTM的新”记忆“是与forget gate独立的，而GRU的新”记忆“受update gate控制
  
- 
-## Seq2Seq
+
 
 ## 注意力机制
 

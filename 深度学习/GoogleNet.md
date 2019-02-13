@@ -17,7 +17,7 @@ GoogLeNet的参数 :可以看出里面用7x7的平均池代替了全连接。
 ![](/assets/GoogLeNetParameters.png)
 
 
-
+###GoogleNet structure
 ![](/assets/GoogleNet_structure.png)
 
 

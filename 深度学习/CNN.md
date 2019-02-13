@@ -8,6 +8,8 @@ CNN核心：局部感受野，权值共享，时间或空间亚采样这三种�
 
 ![](/assets/CNN_Evlution.png)
 
+![](/assets/CNN_Develop.png)
+
 ## CNN基础知识
 
 这里，我们将讨论CNN中用到的基础知识，比如：卷积，stride, paddle, pooling, 激活函数，误差反向传播，局部感知，权值共享。

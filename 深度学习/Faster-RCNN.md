@@ -40,7 +40,7 @@ RPN的工作步骤如下：
 ![](/assets/Faster_RCNN_4_cost_functions.png)
 
 
-
+####总结
 Faster R-CNN设计了提取候选区域的网络RPN，代替了费时的Selective Search（选择性搜索），使得检测速度大幅提升，下表对比了R-CNN、Fast R-CNN、Faster R-CNN的检测速度：
 
 ![](/assets/RCNN_time_compare.png)   

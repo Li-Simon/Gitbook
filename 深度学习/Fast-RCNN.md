@@ -21,7 +21,7 @@ R-CNN中独立的分类器和回归器需要大量特征作为训练样本。Fas
 
 SPP：Spatial Pyramid Pooling（空间金字塔池化）  
 众所周知，CNN一般都含有卷积部分和全连接部分，其中，卷积层不需要固定尺寸的图像，而全连接层是需要固定大小的输入。  
-所以当全连接层面对各种尺寸的输入数据时，就需要对输入数据进行crop（crop就是从一个大图扣出网络输入大小的patch，比如227×227），或warp（把一个边界框bounding box的内容resize成227×227）等一系列操作以统一图片的尺寸大小，比如224_224（ImageNet）、32_32\(LenNet\)、96\*96等。  
+所以当全连接层面对各种尺寸的输入数据时，就需要对输入数据进行crop（crop就是从一个大图扣出网络输入大小的patch，比如227×227），或warp（把一个边界框bounding box的内容resize成227×227）等一系列操作以统一图片的尺寸大小，比如224\_224（ImageNet）、32\_32\(LenNet\)、96\*96等。
 
 ![](/assets/SPP_Crop.png)
 
@@ -31,7 +31,9 @@ SPP：Spatial Pyramid Pooling（空间金字塔池化）
 
 SPP Net的作者Kaiming He等人逆向思考，既然由于全连接FC层的存在，普通的CNN需要通过固定输入图片的大小来使得全连接层的输入固定。那借鉴卷积层可以适应任何尺寸，为何不能在卷积层的最后加入某种结构，使得后面全连接层得到的输入变成固定的呢？
 
-这个“化腐朽为神奇”的结构就是spatial pyramid pooling layer。下图便是R-CNN和SPP Net检测流程的比较：
+这个“化腐朽为神奇”的结构就是spatial pyramid pooling layer。下图便是R-CNN和SPP Net检测流程的比较：  
+
+![](/assets/RCNN_SPP_Comp.png)
 
 ##### ROI Pooling
 
@@ -51,7 +53,7 @@ Fast R-CNN很重要的一个贡献是成功地让人们看到了Region Proposal+
 
 Fast-RCNN的优势：  
 1. 加入ROI Pooling层使得每个提名区域的输出大小一致  
-2. 把分类任务与位置回归任务放在一个网络里面，同时训练，损失函数是分类损失函数加上回归损失函数。加快了训练过程。   
+2. 把分类任务与位置回归任务放在一个网络里面，同时训练，损失函数是分类损失函数加上回归损失函数。加快了训练过程。  
 Fast R-CNN和R-CNN相比，训练时间从84小时减少到9.5小时，测试时间从47秒减少到0.32秒，并且在PASCAL VOC 2007上测试的准确率相差无几，约在66%-67%之间。
 
 ![](/assets/RCNN_FastRCNN_time_Compare.png)

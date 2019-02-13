@@ -13,10 +13,11 @@
 GoogLeNet的参数 :可以看出里面用7x7的平均池代替了全连接。   
 
 
-后续改进的版本：  
+####后续改进的版本：  
 1. Inception-v2在之前的版本中主要加入了batch Normalization；另外也借鉴VGGNet的思想，用两个3x3的卷积代替5x5的卷积，不仅降低了训练参数，也提升了速度。  
 2. Inception-3在v2的基础上进一步分解大的卷积，比如把nxn的卷积拆分成两个一维卷积：1xn,nx1。  
 3. Inception-V4借鉴了ResNet可以构建更深层网络的思想，设计了一个更深更优化的模型。  
+
 ![](/assets/GoogLeNetParameters.png)
 
 ### GoogleNet structure

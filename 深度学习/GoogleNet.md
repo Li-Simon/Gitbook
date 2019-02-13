@@ -6,7 +6,8 @@
 3. 为了避免梯度小时，网络额外增加了2个辅助的softmax用于向前传导梯度。
 
 ###Inception结构 
-![](/assets/GoogLeNetInception.png)  
+![](/assets/GoogLeNetInception.png)   
+b版本的inception先通过一个1*1的低channel的卷积核，来对后面的大的卷积核起降维作用，进而控制参数量。  
 GoogLeNet的参数 :可以看出里面用7x7的平均池代替了全连接。  
 后续改进的版本：  
 1. Inception-v2在之前的版本中主要加入了batch Normalization；另外也借鉴VGGNet的思想，用两个3x3的卷积代替5x5的卷积，不仅降低了训练参数，也提升了速度。  

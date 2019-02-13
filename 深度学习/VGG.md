@@ -16,7 +16,10 @@ AlexNet中每层卷积层中只包含一个卷积，卷积核的大小是7*7,。
 
 1, VGG16相比AlexNet的一个改进是采用连续的几个3x3的卷积核代替AlexNet中的较大卷积核（11x11，7x7，5x5）。         
 比如用2个3x3代替一个5x5   
-![](/assets/VGG_small_kernel_replace_large.png)     
+![](/assets/VGG_small_kernel_replace_large.png)   
+
+2. VGG的多尺度训练   
+VGGNet使用了Multi-Scale的方法做数据增强，将原始图像缩放到不同尺寸S，然后再随机裁切224′224的图片，这样能增加很多数据量，对于防止模型过拟合有很不错的效果。实践中，作者令S在[256,512]这个区间内取值，使用Multi-Scale获得多个版本的数据，并将多个版本的数据合在一起进行训练。VGG作者在尝试使用LRN之后认为LRN的作用不大，还导致了内存消耗和计算时间增加[^1]。 
 
 
 

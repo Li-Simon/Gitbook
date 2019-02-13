@@ -111,6 +111,7 @@
   * [CNN](深度学习/CNN.md)
     * [GoogleNet](深度学习/GoogleNet.md)
     * [VGG](深度学习/VGG.md)
+    * [ResiNN](深度学习/ResiNN.md)
   * [计算机视觉](深度学习/计算机视觉.md)
   * [RNN](深度学习/RNN.md)
   * [深度学习成功的关键](深度学习/深度学习成功的关键.md)

@@ -31,7 +31,17 @@ AlexNet中每层卷积层中只包含一个卷积，卷积核的大小是7\_7,�
 4. VGG的多尺度训练   
    VGGNet使用了Multi-Scale的方法做数据增强，将原始图像缩放到不同尺寸S，然后再随机裁切224′224的图片，这样能增加很多数据量，对于防止模型过拟合有很不错的效果。实践中，作者令S在\[256,512\]这个区间内取值，使用Multi-Scale获得多个版本的数据，并将多个版本的数据合在一起进行训练。VGG作者在尝试使用LRN之后认为LRN的作用不大，还导致了内存消耗和计算时间增加[^1]。  
 
+###VGG的意义[^3]
+众所周知，VGG是一个良好的特征提取器，其与训练好的模型也经常被用来做其他事情，比如计算perceptual loss(风格迁移和超分辨率任务中)，尽管现在resnet和inception网络等等具有很高的精度和更加简便的网络结构，但是在特征提取上，VGG一直是一个很好的网络，所以说，当你的某些任务上resnet或者inception等表现并不好时，不妨试一下VGG，或许会有意想不到的结果。 
+VGG之所以是一个很好的特征提取器，除了和它的网络结构有关，我认为还和它的训练方式有关系，VGG并不是直接训练完成的，它使用了逐层训练的方法。
+
+分析到这里可以得出结论，VGG对于Alexnet来说，改进并不是很大，主要改进就在于使用了小卷积核，网络是分段卷积网络，通过maxpooling过度，同时网络更深更宽。
+https://blog.csdn.net/qq_25737169/article/details/79084205 
+
+
 [^1]:  VGGNet网络结构  [https://blog.csdn.net/dcrmg/article/details/79254654](https://blog.csdn.net/dcrmg/article/details/79254654)
 
 [^2]:  一文读懂VGG网络 https://zhuanlan.zhihu.com/p/41423739
+
+[^3]:  VGG网络结构分析  https://blog.csdn.net/qq_25737169/article/details/79084205
 

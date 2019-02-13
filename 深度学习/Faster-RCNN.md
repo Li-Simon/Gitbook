@@ -29,12 +29,16 @@ RPN的工作步骤如下：
 * 滑动窗口的位置提供了物体的大体位置信息   
 * 框的回归提供了框更精确的位置   
 
-####联合四个损失函数的网络
-一种网络，四个损失函数;
-　　•	RPN calssification(anchor good.bad)
-　　•	RPN regression(anchor->propoasal)
-　　•	Fast R-CNN classification(over classes)
-　　•	Fast R-CNN regression(proposal ->box)   
+#### 联合四个损失函数的网络
+
+一种网络，四个损失函数;  
+　　•    RPN calssification\(anchor good.bad\)  
+　　•    RPN regression\(anchor-&gt;propoasal\)  
+　　•    Fast R-CNN classification\(over classes\)  
+　　•    Fast R-CNN regression\(proposal -&gt;box\)  
+
+![](/assets/Faster_RCNN_4_cost_functions.png)
+
 
 
 Faster R-CNN设计了提取候选区域的网络RPN，代替了费时的Selective Search（选择性搜索），使得检测速度大幅提升，下表对比了R-CNN、Fast R-CNN、Faster R-CNN的检测速度：

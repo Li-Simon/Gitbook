@@ -10,7 +10,7 @@
 ![](/assets/RNN_HeKaiming_result1.png)  
 
 
-##### Residual-NN的实现
+#### Residual-NN的实现
 
 [参考He Kaiming的这篇文章](https://arxiv.org/pdf/1603.05027v2.pdf)  
 Residual Block的设计如下：  

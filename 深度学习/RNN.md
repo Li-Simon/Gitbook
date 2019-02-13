@@ -13,15 +13,11 @@
 ### 循环神经网络（RNN）
 
 #### 最简单的RNN
-
-![](/assets/RNN_Simple_1.png)
-
-![](/assets/RNN_Simple_2.png)
-
+网上最易懂得结构图[^1]：    
 ![](/assets/RNN_simple_2.png)
-
+一个简单的RNN内部的结构是：  
 ![](/assets/RNN_sim_2.png)
-
+展开图：  
 ![](/assets/RNN_unfold.png)
 
 循环神经网络中一些重要的设计模式包含如下几种：  
@@ -105,3 +101,4 @@ LSTM 和GRU的不同点。首先LSTM有一个输出门来控制memory content的
 
 
 
+[^1] RNN-LSTM-GRU-最小GRU  https://www.jianshu.com/p/166db8ab3cef

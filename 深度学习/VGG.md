@@ -4,9 +4,7 @@
 
 #### VGG结构
 
-![](/assets/VGG_Str1.png)
-
-![](/assets/VGG_structure.png)  
+![](/assets/VGG_Str1.png)  
 VGG16包含16层，VGG19包含19层。一系列的VGG在最后三层的全连接层上完全一样，整体结构上都包含5组卷积层，卷积层之后跟一个MaxPool。所不同的是5组卷积层中包含的级联的卷积层越来越多。
 
 #### 图像大小变化

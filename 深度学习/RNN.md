@@ -111,7 +111,7 @@ $$\hat c = \sigma_c(W_cx_t + U_ch_{t-1} + b_c)$$
 把这两种结构结合起来，可以用如下图描述：  
 ![](/assets/LSTM_Structure.png)
 
-图中连着门的那些虚线都市peephole。三个输入都是\[$$x_t,h_{t-1},c_{t-1}$$\]
+图中连着门的那些虚线都市peephole。三个输入都是$$x_t,h_{t-1},c_{t-1}$$
 
 ## [GRU](https://blog.csdn.net/zhangxb35/article/details/70060295)
 

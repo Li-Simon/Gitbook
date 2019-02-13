@@ -26,5 +26,12 @@ R-CNN中独立的分类器和回归器需要大量特征作为训练样本。Fas
 
 在R-CNN中，先生成候选框，然后再通过CNN提取特征，之后再用SVM分类，最后再做回归得到具体位置（bbox regression）。而在Fast R-CNN中，作者巧妙的把最后的bbox regression也放进了神经网络内部，与区域分类合并成为了一个multi-task模型，如下图所示：  
 
-![](/assets/FASTRCNN_bbox_regression.png)
+![](/assets/FASTRCNN_bbox_regression.png)  
+实验表明，这两个任务能够共享卷积特征，并且相互促进。   
+Fast R-CNN很重要的一个贡献是成功地让人们看到了Region Proposal+CNN（候选区域+卷积神经网络）这一框架实时检测的希望，原来多类检测真的可以在保证准确率的同时提升处理速度。  
+
+####总结
+Fast-RCNN的优势：
+1. 加入ROI Pooling层使得每个提名区域的输出大小一致  
+2. 把分类任务与位置回归任务放在一个网络里面，同时训练，损失函数是分类损失函数加上回归损失函数。  
 

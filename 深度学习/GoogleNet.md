@@ -41,7 +41,7 @@ v4研究了Inception模块结合Residual Connection能不能有改进？发现Re
 
 ![](/assets/GoogleNet_structure.png)   
 
-###Auxiliary Classifiers
+###Auxiliary Classifiers[^2]
 需要注意的是，为了避免梯度消失，网络额外增加了2个辅助的softmax用于向前传导梯度。文章中说这两个辅助的分类器的loss应该加一个衰减系数，实际测试的时候，这两个额外的softmax会被去掉。   
 在GoogLeNet中，使用了多余的在底层的分类器，直觉上可以认为这样做可以使底层能够在梯度下降中学的比较充分，但在实践中发现两条： 
 1. 多余的分类器在训练开始的时候并不能起到作用，在训练快结束的时候，使用它可以有所提升最底层的那个多余的分类器去掉以后也不会有损失。
@@ -49,4 +49,4 @@ v4研究了Inception模块结合Residual Connection能不能有改进？发现Re
 
 
 [^1]: 深入浅出——网络模型中Inception的作用与结构全解析深入浅出——网络模型中Inception的作用与结构全解析  [https://blog.csdn.net/u010402786/article/details/52433324](https://blog.csdn.net/u010402786/article/details/52433324)
-
+[^2]:  Inception in CNN  https://blog.csdn.net/stdcoutzyx/article/details/51052847

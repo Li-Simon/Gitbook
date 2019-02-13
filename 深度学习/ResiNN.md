@@ -2,7 +2,7 @@
 
 #### Residual NN提出来的背景：
 
-随着网络变深，训练误差与测试误差得提高了。这是违反我们的训练的初衷的，因为即使我们把26层后面的网络变成恒等映射，效果也不会变差。  
+随着网络变深，训练误差与测试误差得提高了。这是违反我们的训练的初衷的，因为即使我们把36层后面的网络变成恒等映射，效果也不会变差。  
 ![](/assets/RNN_HeKaiming_result1.png)  
 存在这种随着网络层数增加，会出现如下两个问题：  
 1.梯度消失或者爆炸，导致训练难以收敛。这个问题可以通过norimalized initialization 和intermediate normalization layers解决。  
@@ -11,7 +11,7 @@
 ##### Residual-NN的实现
 
 [参考He Kaiming的这篇文章](https://arxiv.org/pdf/1603.05027v2.pdf)  
-Residual Block的设计如下：  
+Residual Block的设计如下[^1]：  
 ![](/assets/ResidualNNStructure.png)  
 对于每一个Residual Units：  
 &emsp;&emsp;$$ y_l = h(x_l) + F(x_l,W_l)$$  
@@ -35,3 +35,5 @@ Residual Block的设计如下：
 Resi-NN能解决以往随着模型加深训练与测试误差变大的现象。与其它网络的结果比较。  
 ![](/assets/ResiNN_ResultsCompare.png)
 
+
+[^1]: [译] Deep Residual Learning for Image Recognition (ResNet)  https://www.jianshu.com/p/f71ba99157c7

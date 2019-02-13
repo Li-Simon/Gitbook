@@ -21,7 +21,15 @@ Faster R-CNN可以简单地看成是“区域生成网络+Fast R-CNN”的模型
 
 RPN如下图:   
 
-![](/assets/Faster_RCNN_RPN.png)
+![](/assets/Faster_RCNN_RPN.png)  
+RPN的工作步骤如下：  
+- 在feature map（特征图）上滑动窗口  
+- 建一个神经网络用于物体分类+框位置的回归   
+- 滑动窗口的位置提供了物体的大体位置信息   
+- 框的回归提供了框更精确的位置   
+
+
+Faster R-CNN设计了提取候选区域的网络RPN，代替了费时的Selective Search（选择性搜索），使得检测速度大幅提升，下表对比了R-CNN、Fast R-CNN、Faster R-CNN的检测速度：   
 
 
 

@@ -8,5 +8,11 @@
 ######这样，目标检测的四个基本步骤（候选区域生成，特征提取，分类，位置精修）终于被统一到一个深度网络框架之内。  
 如下图所示：  
 
-![](/assets/RCNN_Fast_Faster_RCNN_compare.png)
+![](/assets/RCNN_Fast_Faster_RCNN_compare.png)     
+
+Faster R-CNN可以简单地看成是“区域生成网络+Fast R-CNN”的模型，用区域生成网络（Region Proposal Network，简称RPN）来代替Fast R-CNN中的Selective Search（选择性搜索）方法。
+如下图:  
+
+
+
 

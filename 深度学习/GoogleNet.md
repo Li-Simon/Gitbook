@@ -42,7 +42,7 @@ v4研究了Inception模块结合Residual Connection能不能有改进？发现Re
 2. Inception-3在v2的基础上进一步分解大的卷积，比如把nxn的卷积拆分成两个一维卷积：1xn,nx1。  
 3. Inception-V4借鉴了ResNet可以构建更深层网络的思想，设计了一个更深更优化的模型。  
 
-###不同Inception版本
+###不同Inception模块复杂度
 ![](/assets/GoogLeNetParameters.png)   
 
 ### Auxiliary Classifiers[^2]

@@ -4,7 +4,7 @@ CNN主要是处理空间数据，比如图像数据。CNN主要包含LetNet-5,Al
 CNN核心：局部感受野，权值共享，时间或空间亚采样这三种思想来保证某种程度的平移，尺度，形变不变性。  
 介绍每种模型的时候，要说明这种模型的优点，最好能阐述为啥会有这种优点。
 
-## CNN的演化
+## CNN的演化[^2]
 
 ![](/assets/CNN_Evlution.png)
 
@@ -119,4 +119,6 @@ Dense Blocks之间通过pooling与convolution来改变图像尺寸。
    2、加入非线性。卷积层之后经过激励层，1\*1的卷积在前一层的学习表示上添加了非线性激励（ non-linear activation ），提升网络的表达能力。
 
 [参考](https://zhuanlan.zhihu.com/p/32486381)
+[^2]:  深入浅出——网络模型中Inception的作用与结构全解析  https://blog.csdn.net/u010402786/article/details/52433324
+
 

@@ -6,7 +6,6 @@ CNN核心：局部感受野，权值共享，时间或空间亚采样这三种�
 
 ## CNN的演化[^2]
 
-![](/assets/CNN_Evlution.png)
 
 ![](/assets/CNN_Develop.png)
 

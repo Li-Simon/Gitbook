@@ -43,7 +43,7 @@ SPP Net的第一个贡献就是在最后一个卷积层后，接入了金字塔�
 
 ROI池化层一般跟在卷积层后面，此时网络的输入可以是任意尺度的，在SPP layer中每一个pooling的filter会根据输入调整大小，而SPP的输出则是固定维数的向量，然后给到全连接FC层。
 
-![](/assets/SPP_Const_output.png)
+![](/assets/SPP_ROI_Pooling.png)
 
 2.只对原图提取一次卷积特征  
 在R-CNN中，每个候选框先resize到统一大小，然后分别作为CNN的输入，这样是很低效的。  

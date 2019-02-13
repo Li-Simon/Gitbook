@@ -8,6 +8,6 @@
 ![](/assets/VGG_11_19.png)
 
 
-
+####图像大小变化
 ![](/assets/VGG_Structure.png)
 

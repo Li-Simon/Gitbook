@@ -13,9 +13,7 @@ R-CNN中独立的分类器和回归器需要大量特征作为训练样本。Fas
 
 ![](/assets/Fast_RCNN_Principle.png)
 
-#### 在特征提取阶段
 
-通过CNN（如AlexNet）中的conv、pooling、relu等操作都不需要固定大小尺寸的输入，因此，在原始图片上执行这些操作后，输入图片尺寸不同将会导致得到的feature map（特征图）尺寸也不同，这样就不能直接接到一个全连接层进行分类。
 
 ### SPP Net
 
@@ -51,7 +49,10 @@ ROI池化层一般跟在卷积层后面，此时网络的输入可以是任意�
 
 如此这般，R-CNN要对每个区域计算卷积，而SPPNet只需要计算一次卷积，从而节省了大量的计算时间，比R-CNN有一百倍左右的提速。
 
-![](/assets/SPP_FC.png)
+![](/assets/SPP_FC.png)  
+#### 1、在特征提取阶段
+
+通过CNN（如AlexNet）中的conv、pooling、relu等操作都不需要固定大小尺寸的输入，因此，在原始图片上执行这些操作后，输入图片尺寸不同将会导致得到的feature map（特征图）尺寸也不同，这样就不能直接接到一个全连接层进行分类。  
 
 ##### ROI Pooling
 

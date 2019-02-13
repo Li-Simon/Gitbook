@@ -122,10 +122,10 @@ GRU这个结构2014年才出现，结构与LSTM类似，效果一样，但是精
   $$ \hat h_t = \tanh(Wx_t + U(r_t*h_{t-1}))$$  
   $$h_t = (1-z_t)*h_{t-1} + z_t*\hat h_t$$  
 四行的解释如下：  
-  $$z_t$$是update gate，更新activation时的逻辑门。  
-  $$r_t$$是reset gate，决定candidate activation时，是否要放弃以前的activate $$h_t$$    
-  $$\hat h_t$$是candidate activation，接收$$x_t,h_{t-1}$$   
-  $$h_t$$是activation，是GRU的隐层，接收$$h_{t-1},\hat h_{t}$$     
+$$z_t$$是update gate，更新activation时的逻辑门。  
+$$r_t$$是reset gate，决定candidate activation时，是否要放弃以前的activate $$h_t$$    
+$$\hat h_t$$是candidate activation，接收$$x_t,h_{t-1}$$   
+$$h_t$$是activation，是GRU的隐层，接收$$h_{t-1},\hat h_{t}$$       
 GRU相对于LSTM，它取消了输出门。由更新门与重置门共同控制怎么从上一刻的的隐藏状态$$h_{t-1}$$到当前的隐藏状态$$h_t$$。     
 其中$$r_t$$ 用来控制需要 保留多少之前的记忆，比如如果$$r_t$$ 为0，那么 $$\tilde{h}_t$$只包含当前词的信息。    
 $$z_t$$控制需要从前一时刻的隐藏层 $$h_{t−1}$$ 中遗忘多少信息，需要加入多少当前时刻的隐藏层信息$$\tilde{h}_t$$,最后得到 $$h_t$$。   

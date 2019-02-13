@@ -13,9 +13,11 @@
 
 ### 原理
 
-1. VGG16相比AlexNet的一个改进是采用连续的几个3x3的卷积核代替AlexNet中的较大卷积核（11x11，7x7，5x5）。  
-比如用2个3x3代替一个5x5
-![](/assets/VGG_small_kernel_replace_large.png)
+1, VGG16相比AlexNet的一个改进是采用连续的几个3x3的卷积核代替AlexNet中的较大卷积核（11x11，7x7，5x5）。         
+比如用2个3x3代替一个5x5   
+![](/assets/VGG_small_kernel_replace_large.png)     
+
+
 
 
 

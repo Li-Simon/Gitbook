@@ -1,9 +1,6 @@
 ## Fast-RCNN
 
 继2014年的R-CNN推出之后，Ross Girshick在2015年推出Fast R-CNN，构思精巧，流程更为紧凑，大幅提升了目标检测的速度。  
-Fast R-CNN和R-CNN相比，训练时间从84小时减少到9.5小时，测试时间从47秒减少到0.32秒，并且在PASCAL VOC 2007上测试的准确率相差无几，约在66%-67%之间。
-
-![](/assets/RCNN_FastRCNN_time_Compare.png)
 
 #### Fast R-CNN主要解决R-CNN的一下问题
 
@@ -38,5 +35,10 @@ Fast R-CNN很重要的一个贡献是成功地让人们看到了Region Proposal+
 
 Fast-RCNN的优势：  
 1. 加入ROI Pooling层使得每个提名区域的输出大小一致  
-2. 把分类任务与位置回归任务放在一个网络里面，同时训练，损失函数是分类损失函数加上回归损失函数。加快了训练过程。
+2. 把分类任务与位置回归任务放在一个网络里面，同时训练，损失函数是分类损失函数加上回归损失函数。加快了训练过程。 
+Fast R-CNN和R-CNN相比，训练时间从84小时减少到9.5小时，测试时间从47秒减少到0.32秒，并且在PASCAL VOC 2007上测试的准确率相差无几，约在66%-67%之间。
+
+![](/assets/RCNN_FastRCNN_time_Compare.png)
+
+
 

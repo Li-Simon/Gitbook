@@ -116,7 +116,7 @@
     * [传统RNN](深度学习/传统RNN.md)
     * [LSTM](深度学习/LSTM.md)
     * [GRU](深度学习/GRU.md)
-  * [计算机视觉](深度学习/计算机视觉.md)
+  * [目标检测](深度学习/计算机视觉.md)
     * [R-CNN](深度学习/R-CNN.md)
     * [R-CNN](深度学习/R-CNN.md)
     * [Fast-RCNN](深度学习/Fast-RCNN.md)

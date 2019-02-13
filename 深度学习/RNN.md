@@ -20,9 +20,9 @@
 
 ![](/assets/RNN_simple_2.png)
 
-
-
 ![](/assets/RNN_sim_2.png)
+
+![](/assets/RNN_unfold.png)
 
 循环神经网络中一些重要的设计模式包含如下几种：  
 \(1\)每个时间步都有输出，并且隐藏单元之间有循环连接的循环网络，如下图所示。  

@@ -23,5 +23,7 @@ SSD仅需要一张输入图像和训练所需要的每个目标的 groud truth�
 $$L(x,c,l,g) = \frac{1}{N}(L_{conf}(x,c) + \alpha L_{loc}(x,c,g))$$  
 其中 N 是先验框的正样本数量。这里 $$x^p_{ij}\in \{ 1,0 \} $$为一个指示参数，当 $$x^p_{ij}= 1 $$时表示第 i 个先验框与第 j 个ground truth匹配，并且ground truth的类别为 p 。 c 为类别置信度预测值。 l 为先验框的所对应边界框的位置预测值，而 g 是ground truth的位置参数。对于位置误差，其采用Smooth L1 loss，定义如下：
 
+![](/assets/ssd_cost_loc.png)
+
 ![](/assets/ssd_cost_smo.png)
 

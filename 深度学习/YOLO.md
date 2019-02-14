@@ -10,7 +10,7 @@ one stage算法仅仅使用一个CNN网络直接预测不同目标的类别与�
 ![](/assets/YOLO_Principle.png)
 
 #### 网络设计
-
+Yolo采用卷积网络来提取特征，然后使用全连接层来得到预测值。网络结构参考GooLeNet模型，包含24个卷积层和2个全连接层，如图8所示。对于卷积层，主要使用1x1卷积来做channle reduction，然后紧跟3x3卷积。对于卷积层和全连接层，采用Leaky ReLU激活函数： max(x, 0.1x) 。但是最后一层却采用线性激活函数。  
 ![](/assets/YOLO_Net_Structure.png)
 
 #### 原理解析

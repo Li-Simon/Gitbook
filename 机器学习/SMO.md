@@ -29,9 +29,9 @@ SMO是一种启发式算法，基本思路就是，如果所有变量都满足KK
 
 ###二次规划问题的解
 上面优化问题的未剪辑的解是：  
-$$\alpha_2^{\text{new,nuc}} = \alpha_2^{\text{old}} + \frac{y_2(E_1 - E_2)}{\eta}$$  
+&emsp;&emsp;$$\alpha_2^{\text{new,nuc}} = \alpha_2^{\text{old}} + \frac{y_2(E_1 - E_2)}{\eta}$$  
 其中:$$\eta = K_{11} + K_{22} - 2K_{12}$$  
-$$E_i = g(x_i) - y_i = (\displaystyle \sum_{j=1}^N\alpha_jy_jK(\mathbf{x_i,x_j}) + b) - y_i$$, i=1,2  
+&emsp;&emsp;$$E_i = g(x_i) - y_i = (\displaystyle \sum_{j=1}^N\alpha_jy_jK(\mathbf{x_i,x_j}) + b) - y_i$$, i=1,2  
 经过剪辑之后，$$\alpha_2$$的解是：  
 &emsp;&emsp;$$\alpha_2^{\text{new}} = H$$, if $$\alpha_2^{\text{new,nuc}} > H$$   
 &emsp;&emsp;$$\alpha_2^{\text{new}} = \alpha_2^{\text{new,nuc}}$$, if $$L < \alpha_2^{\text{new,nuc}} < H$$   

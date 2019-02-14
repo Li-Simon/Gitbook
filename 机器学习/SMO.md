@@ -28,7 +28,24 @@ SMO是一种启发式算法，基本思路就是，如果所有变量都满足KK
 其中$$K_{ij} = K(x_1,x_j),i,j=1,2,..,N$$,  $$\xi$$是常数。   
 
 ###二次规划问题的解
-上面优化问题的解是： 
+上面优化问题的未剪辑的解是：  
+$$\alpha_2^{\text{new,nuc}} = \alpha_2^{\text{old}} + \frac{y_2(E_1 - E_2)}{\eta}$$  
+其中:$$\eta = K_{11} + K_{22} - 2K_{12}$$  
+$$E_i = g(x_i) - y_i = (\displaystyle \sum_{j=1}^N\alpha_jy_jK(\mathbf{x_i,x_j}) + b) - y_i$$, i=1,2  
+经过剪辑之后，$$\alpha_2$$的解是：  
+&emsp;&emsp;$$\alpha_2^{\text{new}} = H$$, if $$\alpha_2^{\text{new,nuc}} > H$$   
+&emsp;&emsp;$$\alpha_2^{\text{new}} = \alpha_2^{\text{new,nuc}}$$, if $$L < \alpha_2^{\text{new,nuc}} < H$$   
+&emsp;&emsp;$$\alpha_2^{\text{new}} = L$$, if $$\alpha_2^{\text{new,nuc}} < L$$   
+由$$\alpha_2^{\text{new}}$$求得$$\alpha_1^{\text{new}}$$是：  
+&emsp;&emsp;$$\alpha_1^{\text{new}} = \alpha_1^{\text{old}} + y_1y_2(\alpha_2^{\text{old}} - \alpha_2^{\text{new}})$$   
+其中：  
+当$$y_1 \ne y_2$$时，$$L = max(0,\alpha_2^{\text{old}} -\alpha_1^{\text{old}}),H = min(C,C + \alpha_2^{\text{old}} -\alpha_1^{\text{old}})$$   
+当$$y_1 = y_2$$时，$$L = max(0,\alpha_2^{\text{old}} +\alpha_1^{\text{old}}-C),H = min(C,\alpha_2^{\text{old}} +\alpha_1^{\text{old}})$$   
+
+
+
+
+
 
  
 

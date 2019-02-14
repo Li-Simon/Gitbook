@@ -57,4 +57,5 @@ SSD与其它检测算法的对比结果（在VOC2007数据集）如表所示，�
 ![](/assets/ssd_results.png)
 
 [^1]: 目标检测|SSD原理与实现  https://zhuanlan.zhihu.com/p/33544892   
+
 [^2]: 一文读懂目标检测：R-CNN、Fast R-CNN、Faster R-CNN、YOLO、SSD   https://blog.csdn.net/v_JULY_v/article/details/80170182

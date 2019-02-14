@@ -23,8 +23,11 @@ SMO是一种启发式算法，基本思路就是，如果所有变量都满足KK
 假设我们要优化的就是$$\alpha_1, \alpha_2$$，而其它的$$\alpha$$都是常量，则我们要优化的是如下的两个变量的二次规划问题。  
 &emsp;&emsp;$$\displaystyle \min_{\mathbf{\alpha_1,\alpha_2}}W(\alpha_1,\alpha_2) = \frac{1}{2}K_{11}\alpha_1^2 + \frac{1}{2}K_{22}\alpha_2^2 + y_1y_2K_{12}\alpha_1\alpha_2 -(\alpha_1 + \alpha_2)$$
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$$ + y_1\alpha_1\displaystyle \sum_{j=3}^N\alpha_iy_iK_{i1}+ y_2\alpha_2\displaystyle \sum_{j=3}^N\alpha_iy_iK_{i2}$$   
-&emsp;&emsp;s.t.  $$\alpha_1y_1 + \alpha_2y_2 = -\displaystyle \sum_{i=3}^N\alpha_iy_i = \epsilon$$   
-&emsp;&emsp;&emsp;&emsp;$$0 \le \alpha_i \le C, i = 1,2$$ 
+&emsp;&emsp;s.t.  $$\alpha_1y_1 + \alpha_2y_2 = -\displaystyle \sum_{i=3}^N\alpha_iy_i = \xi$$   
+&emsp;&emsp;&emsp;&emsp;$$0 \le \alpha_i \le C, i = 1,2$$   
+其中$$K_{ij} = K(x_1,x_j),i,j=1,2,..,N$$,  $$\xi$$是常数。   
+
+###二次规划问题的解
 
  
 

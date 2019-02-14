@@ -26,4 +26,6 @@ $$L(x,c,l,g) = \frac{1}{N}(L_{conf}(x,c) + \alpha L_{loc}(x,c,g))$$
 ![](/assets/ssd_cost_loc.png)
 
 ![](/assets/ssd_cost_smo.png)
+对于置信度偏差采用softmax:  
+
 

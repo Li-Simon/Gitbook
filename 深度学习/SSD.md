@@ -16,3 +16,7 @@ SSD仅需要一张输入图像和训练所需要的每个目标的 groud truth�
 
 ![](/assets/SSD_Net_Structure.png)
 
+
+####损失函数 
+训练样本确定了，然后就是损失函数了。损失函数定义为位置误差（locatization loss， loc）与置信度误差（confidence loss, conf）的加权和：  
+

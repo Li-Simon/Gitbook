@@ -39,8 +39,10 @@ SMO是一种启发式算法，基本思路就是，如果所有变量都满足KK
 由$$\alpha_2^{\text{new}}$$求得$$\alpha_1^{\text{new}}$$是：  
 &emsp;&emsp;$$\alpha_1^{\text{new}} = \alpha_1^{\text{old}} + y_1y_2(\alpha_2^{\text{old}} - \alpha_2^{\text{new}})$$   
 其中：  
-当$$y_1 \ne y_2$$时，$$L = max(0,\alpha_2^{\text{old}} -\alpha_1^{\text{old}}),H = min(C,C + \alpha_2^{\text{old}} -\alpha_1^{\text{old}})$$   
-当$$y_1 = y_2$$时，$$L = max(0,\alpha_2^{\text{old}} +\alpha_1^{\text{old}}-C),H = min(C,\alpha_2^{\text{old}} +\alpha_1^{\text{old}})$$   
+当$$y_1 \ne y_2$$时，  
+&emsp;&emsp;$$L = max(0,\alpha_2^{\text{old}} -\alpha_1^{\text{old}}),H = min(C,C + \alpha_2^{\text{old}} -\alpha_1^{\text{old}})$$   
+当$$y_1 = y_2$$时，  
+&emsp;&emsp;$$L = max(0,\alpha_2^{\text{old}} +\alpha_1^{\text{old}}-C),H = min(C,\alpha_2^{\text{old}} +\alpha_1^{\text{old}})$$   
 
 
 

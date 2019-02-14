@@ -50,7 +50,7 @@ $$L(x,c,l,g) = \frac{1}{N}(L_{conf}(x,c) + \alpha L_{loc}(x,c,g))$$
 
 #### 结果
 
-SSD与其它检测算法的对比结果（在VOC2007数据集）如表所示，基本可以看到，SSD与Faster R-CNN有同样的准确度，并且与Yolo具有同样较快地检测速度。  
+SSD与其它检测算法的对比结果（在VOC2007数据集）如表所示，基本可以看到，SSD与Faster R-CNN有同样的准确度，并且与Yolo具有同样较快地检测速度。
 
-![](/assets/SSD_result.png)
+![](/assets/SSD_Result.png)
 

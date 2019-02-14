@@ -11,9 +11,9 @@ SMO是一种启发式算法，基本思路就是，如果所有变量都满足KK
 如此，SMO算法不断的把原始问题分解为子问题并对子问题求解，最终达到求解原始问题的目的。  
 #####第一个变量的选取
 查找违反KKT条件最严重的点，如下是KKT条件：  
-&emsp;&emsp;$$\alpha_i = 0$$等级于$$y_ig(x_i) \ge 1$$   
-&emsp;&emsp;$$0 \lt \alpha_i \lt  C$$等级于$$y_ig(x_i) = 1$$  
-&emsp;&emsp;$$\alpha_i =  C$$等级于$$y_ig(x_i) \le 1$$  
+&emsp;&emsp;$$\alpha_i = 0$$等价于$$y_ig(x_i) \ge 1$$   
+&emsp;&emsp;$$0 \lt \alpha_i \lt  C$$等价于$$y_ig(x_i) = 1$$  
+&emsp;&emsp;$$\alpha_i =  C$$等价于$$y_ig(x_i) \le 1$$  
 其中： $$g(x_i) = \displaystyle \sum_{j=1}^N\alpha_jy_jK(\mathbf{x_i,x_j}) + b$$ 
 分两步查找，首先查找满足$$0 \lt \alpha_i \lt  C$$的$$\alpha$$,因为这是支持向量对应的点，如果都符合KKT条件，则再遍历所有的$$\alpha$$,检查是否符合KKT条件。  
 #####第二个变量的选取

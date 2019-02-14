@@ -30,6 +30,8 @@ $$L(x,c,l,g) = \frac{1}{N}(L_{conf}(x,c) + \alpha L_{loc}(x,c,g))$$
 对于置信度偏差采用softmax:   
 
 ![](/assets/SSD_cost_conf.png)  
+####数据扩增
 
+采用数据扩增（Data Augmentation）可以提升SSD的性能，主要采用的技术有水平翻转（horizontal flip），随机裁剪加颜色扭曲（random crop & color distortion），随机采集块域（Randomly sample a patch）（获取小目标训练样本）
 
 [^1]:  目标检测|SSD原理与实现  https://zhuanlan.zhihu.com/p/33544892

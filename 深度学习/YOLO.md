@@ -49,3 +49,6 @@ Yolo算法将目标检测看成回归问题，所以采用的是均方差损失�
 YOLO将目标检测任务转换成一个回归问题，大大加快了检测的速度，使得YOLO可以每秒处理45张图像。而且由于每个网络预测目标窗口时使用的是全图信息，使得false positive比例大幅降低（充分的上下文信息）。
 
 但是YOLO也存在问题：没有了Region Proposal机制，只使用7*7的网格回归会使得目标不能非常精准的定位，这也导致了YOLO的检测精度并不是很高。
+
+[^2]: 目标检测|YOLO原理与实现  https://zhuanlan.zhihu.com/p/32525231
+[^3]: 一文读懂目标检测：R-CNN、Fast R-CNN、Faster R-CNN、YOLO、SSD   https://blog.csdn.net/v_JULY_v/article/details/80170182

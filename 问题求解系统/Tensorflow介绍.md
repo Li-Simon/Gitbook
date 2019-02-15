@@ -49,6 +49,25 @@ gpus: 封装了cuda/cudnn编程库
 ###tf核心概念
 tf的核心是围绕Graph展开的，简而言之，就是Tensor沿着Graph传递闭包完成Flow的过程。
 ####Graph
+我们以下面一个例子来理解tf来基于graph进行计算的：  
+
+
+```py
+n [5]:
+import tensorflow as tf
+x = 2
+y = 3
+add_op = tf.add(x, y, name='Add')
+mul_op = tf.multiply(x, y, name='Multiply')
+pow_op = tf.pow(add_op, mul_op, name='Power')
+useless_op = tf.multiply(x, add_op, name='Useless')
+
+with tf.Session() as sess:
+    pow_out, useless_out = sess.run([pow_op, useless_op])
+
+```
+
+
 
 
 ####Tensor

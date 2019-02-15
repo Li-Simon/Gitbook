@@ -130,7 +130,7 @@ b = tf.get_variable(name="B", initializer=tf.constant(3))
 c = tf.add(a, b, name="Add")
 # add an Op to initialize global variables
 init_op = tf.global_variables_initializer()
-#
+# without this line, we will get "FailedPreconditionError: Attempting to use uninitialized value"
 
 # launch the graph in a session
 with tf.Session() as sess:

@@ -1,5 +1,5 @@
 #Tensorflow的核心概念
-tf的核心是围绕Graph, Variable, Session展开的，简而言之，就是Tensor沿着Graph传递闭包完成Flow的过程。
+tf的核心是围绕Graph, Variable, Session展开的，简而言之，就是Session中Tensor沿着Graph传递闭包完成Flow的过程。
 
 ### Graph
 

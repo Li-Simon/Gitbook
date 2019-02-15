@@ -79,7 +79,31 @@ with tf.Session() as sess:
 
 ![](/assets/Graph_ReLU.png)
 
-#### Session
+### Session
+To compute anything, a graph must be launched in a session. Technically, session places the graph ops on hardware such as CPUs or GPUs and provides methods to execute them. In our example, to run the graph and get the value for c the following code will create a session and execute the graph by running 'c':  
+
+
+```py
+import tensorflow as tf
+a = 2
+b = 3
+c = tf.add(a, b, name='Add')
+print(c)  
+
+Tensor("Add:0", shape=(), dtype=int32)  
+```
+
+
+```py
+with tf.Session() as sess:
+    print(sess.run(c))
+5
+```
+
+
+
+
+
 
 ### Tensor
 

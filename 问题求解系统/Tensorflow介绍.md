@@ -120,6 +120,25 @@ W = tf.Variable(tf.zeros([784,10]))
 ```
 
 ##### Initialize Variables {#2.2.-Initialize-Variables}
+ TensorFlow recommends to use the wraper __tf.get_variable__ instead as it accepts the name, shape, etc as its arguments with many more as follows:  
+
+
+```py
+tf.get_variable(name,
+                shape=None,
+                dtype=None,
+                initializer=None,
+                regularizer=None,
+                trainable=True,
+                collections=None,
+                caching_device=None,
+                partitioner=None,
+                validate_shape=True,
+                use_resource=None,
+                custom_getter=None,
+                constraint=None)
+```
+
 
 变量必须被初始化才能被使用：  
 

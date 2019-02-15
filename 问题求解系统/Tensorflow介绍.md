@@ -95,6 +95,7 @@ with tf.Session() as sess:
     # feed it to the placeholder
     print(sess.run(c, feed_dict=d)) 
 ```
+####Session
 
 
 ### Tensor

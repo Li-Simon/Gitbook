@@ -11,9 +11,9 @@
 API接口层。Tensor C API是对TF功能模块的接口封装，便于其他语言平台调用。   
 应用层。不同编程语言在应用层通过API接口层调用TF核心功能实现相关实验和应用。   
 ####代码结构
-以2018.09.23的master为基准:   
-
+以2018.09.23的master为基准:    
 tensorflow/core  
+![](/assets/tensorflow_code_code.png)  
 
 其中，tensorflow/core目录包含了TF核心模块代码：   
 
@@ -57,7 +57,7 @@ Tensor的两个主要的成员变量
 
 #### 核心代码
 
-![](/assets/tensorflow_code_code.png)
+
 
 ### 架构
 

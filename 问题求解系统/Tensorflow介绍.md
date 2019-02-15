@@ -108,7 +108,7 @@ with tf.Session() as sess:
 
 ##### Create Variables {#2.1.-Create-Variables}
 
-create a variable, we should use **tf.Variable **as:  
+create a variable, we should use **tf.Variable **as:
 
 ```py
 # Create a variable.
@@ -120,8 +120,8 @@ W = tf.Variable(tf.zeros([784,10]))
 ```
 
 ##### Initialize Variables {#2.2.-Initialize-Variables}
- TensorFlow recommends to use the wraper __tf.get_variable__ instead as it accepts the name, shape, etc as its arguments with many more as follows:  
 
+TensorFlow recommends to use the wraper **tf.get\_variable** instead as it accepts the name, shape, etc as its arguments with many more as follows:
 
 ```py
 tf.get_variable(name,
@@ -139,8 +139,7 @@ tf.get_variable(name,
                 constraint=None)
 ```
 
-
-变量必须被初始化才能被使用：  
+变量必须被初始化才能被使用：
 
 ```py
 # create graph
@@ -160,8 +159,8 @@ with tf.Session() as sess:
     print(sess.run(b))
     print(sess.run(c))
 ```
-######example in neural network
 
+###### Example in neural network
 
 ```py
 # create graph
@@ -179,12 +178,11 @@ with tf.Session() as sess:
     W, b = sess.run([weights, biases])
     print('weights = {}'.format(W))
     print('biases = {}'.format(b))
-    
+
 weights = [[-0.00376599 -0.00506956  0.00082394]
  [ 0.0016487   0.00981423 -0.00226094]]
 biases = [0. 0. 0.]
 ```
-
 
 #### Placeholder
 

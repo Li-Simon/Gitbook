@@ -78,6 +78,24 @@ with tf.Session() as sess:
 ####ReLU Graph
 ![](/assets/Graph_ReLU.png)
 
+####Placeholder
+Placeholders are more basic than a variable. It is simply a variable that we asign data in a future time. Placeholders are nodes whose value is fed in at execution time. If we have inputs to our network that depend on some external data and we don't want our graph to depend on any real value while developing the graph, placeholders are the datatype we need. In fact, we can build the graph without any data. Therefore, placeholders don't need any initial value; only a datatype (such as float32) and a tensor shape so the graph still knows what to compute with even though it doesn't have any stored values yet.
+Some examples of creating placeholders are as follows:  
+
+
+```py
+a = tf.constant([5, 5, 5], tf.float32, name='A')
+b = tf.placeholder(tf.float32, shape=[3], name='B')
+c = tf.add(a, b, name="Add")
+
+with tf.Session() as sess:
+    # create a dictionary:
+    d = {b: [1, 2, 3]}
+    # feed it to the placeholder
+    print(sess.run(c, feed_dict=d)) 
+```
+
+
 ### Tensor
 
 Matrix表示二维线性映射，Tensor表示多维线性映射。TF中Tensor的维数描述为阶，数值是0阶，向量是1阶，矩阵是2阶，以此类推，可以表示n阶高维数据。  

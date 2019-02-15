@@ -45,7 +45,8 @@ Tensor("Add:0", shape=(), dtype=int32)
 with tf.Session() as sess:
     print(sess.run(c))
 5
-```
+```  
+This code creates a Session object (assigned to sess), and then (the second line) invokes its run method to run enough of the computational graph to evaluate c. This means that it only runs that part of the graph which is necessary to get the value of c (remember the flexibility of using TensorFlow? In this simple example, it runs the whole graph). Remember to close the session at the end of the session. That is done using the last line in the above code.  
 
 ## Tensor
 

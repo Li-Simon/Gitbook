@@ -1,7 +1,7 @@
 #Tensorflow的核心概念
 tf的核心是围绕Graph, Variable, Session展开的，简而言之，就是Session中Tensor沿着Graph传递闭包完成Flow的过程。
 
-### Graph
+## Graph
 
 TensorFlow is a way of representing computation without actually performing it until asked. The first step to learn Tensorflow is to understand its main key feature, the "computational graph" approach. Basically, all Tensorflow codes contain two important parts:  
 1. 构建Graph,它表示计算的数据流  
@@ -28,7 +28,7 @@ with tf.Session() as sess:
 
 ![](/assets/Graph_ReLU.png)
 
-### Session
+## Session
 To compute anything, a graph must be launched in a session. Technically, session places the graph ops on hardware such as CPUs or GPUs and provides methods to execute them. In our example, to run the graph and get the value for c the following code will create a session and execute the graph by running 'c':  
 
 ```py
@@ -47,12 +47,7 @@ with tf.Session() as sess:
 5
 ```
 
-
-
-
-
-
-### Tensor
+## Tensor
 
 Matrix表示二维线性映射，Tensor表示多维线性映射。TF中Tensor的维数描述为阶，数值是0阶，向量是1阶，矩阵是2阶，以此类推，可以表示n阶高维数据。  
 Tensor定义和运算主要是调用Eigen矩阵计算库完成的。

@@ -75,12 +75,11 @@ with tf.Session() as sess:
 
 ![](/assets/tf_graph_ex1.png)\#\#\#
 
-####ReLU Graph
+#### ReLU Graph
+
 ![](/assets/Graph_ReLU.png)
 
-
-####Session
-
+#### Session
 
 ### Tensor
 
@@ -88,13 +87,30 @@ Matrix表示二维线性映射，Tensor表示多维线性映射。TF中Tensor的
 Tensor定义和运算主要是调用Eigen矩阵计算库完成的。
 
 Tensor的定义在tensorflow/core/framework/tensor.h中。
-####Constant  
-####VARIABLE  
-####Placeholder
-Placeholder比variable更基本，它是一个变量我们将要指定的数据。Placehos是一些在执行时被喂进的数据。  
-Placeholders are more basic than a variable. It is simply a variable that we asign data in a future time. Placeholders are nodes whose value is fed in at execution time. If we have inputs to our network that depend on some external data and we don't want our graph to depend on any real value while developing the graph, placeholders are the datatype we need. In fact, we can build the graph without any data. Therefore, placeholders don't need any initial value; only a datatype (such as float32) and a tensor shape so the graph still knows what to compute with even though it doesn't have any stored values yet.
-Some examples of creating placeholders are as follows:  
 
+#### Constant
+
+As the name speaks for itself, **Constants  **are used as constants. They create a node that takes value and it does not change. You can simply create a constant tensor using  **tf.constant, **It accepts the five arguments:  
+
+```py
+tf.constant(value, dtype=None, shape=None, name='Const', verify_shape=False)
+n [3]:
+# create graph
+a = tf.constant(2)
+b = tf.constant(3)
+c = a + b
+# launch the graph in a session
+with tf.Session() as sess:
+    print(sess.run(c))
+```
+
+#### VARIABLE
+
+#### Placeholder
+
+Placeholder比variable更基本，它是一个变量我们将要指定的数据。Placehos是一些在执行时被喂进的数据。  
+Placeholders are more basic than a variable. It is simply a variable that we asign data in a future time. Placeholders are nodes whose value is fed in at execution time. If we have inputs to our network that depend on some external data and we don't want our graph to depend on any real value while developing the graph, placeholders are the datatype we need. In fact, we can build the graph without any data. Therefore, placeholders don't need any initial value; only a datatype \(such as float32\) and a tensor shape so the graph still knows what to compute with even though it doesn't have any stored values yet.  
+Some examples of creating placeholders are as follows:
 
 ```py
 a = tf.constant([5, 5, 5], tf.float32, name='A')
@@ -105,9 +121,8 @@ with tf.Session() as sess:
     # create a dictionary:
     d = {b: [1, 2, 3]}
     # feed it to the placeholder
-    print(sess.run(c, feed_dict=d)) 
+    print(sess.run(c, feed_dict=d))
 ```
-
 
 [^1]: tensorflow代码解析——概览  [https://daiwk.github.io/posts/platform-tensorflow-code-analysis-overview.html](https://daiwk.github.io/posts/platform-tensorflow-code-analysis-overview.html)  
 

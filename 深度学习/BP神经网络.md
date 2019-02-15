@@ -75,9 +75,9 @@ $$\mathbf{z^{(l)}}=\mathbf{W^{(l)}a^{(l-1)} + b^{(l)}}$$
 ## 参数更新
 
 $$W^{(l)} = W^{(l)} - \frac{u}{N}\displaystyle \sum_{i=1}^{N} \frac{\partial E_i}{\partial W^{(l)}}$$  
-$$\mathbf{b^{(l)} = b^{(l)}} - \frac{u}{N}\displaystyle \sum_{i=1}^{N} \frac{\partial E_i}{\partial b^{(l)}}$$  
+$$\mathbf{b^{(l)} = b^{(l)}} - \frac{u}{N}\displaystyle \sum_{i=1}^{N} \frac{\partial E_i}{\partial b^{(l)}}$$
 
-
+### ![](/assets/backprop_four.png)
 
 ### 代码实现
 
@@ -200,7 +200,7 @@ $$I \in \mathbb{R}^{H \times W \times C}$$;对于D个Filters，我们有$$K \in 
 
 #### l层的输入输出
 
-  $$x_{i,j}^l = \text{rot}_{180^\circ} \left\{ w_{m,n}^l \right\} \ast o_{i,j}^{l-1} + b_{i,j}^l $$  
+$$x_{i,j}^l = \text{rot}_{180^\circ} \left\{ w_{m,n}^l \right\} \ast o_{i,j}^{l-1} + b_{i,j}^l $$  
   $$  x_{i,j}^l = \sum_{m} \sum_{n} w_{m,n}^l o_{i+m,j+n}^{l-1} + b_{i,j}^l $$  
   $$ o_{i,j}^l = f(x_{i,j}^l) $$
 
@@ -219,7 +219,7 @@ $$H\times W$$的图像经过$$k_1\times k_2$$的卷积核作用之后，得到�
   $$\frac{\partial E}{\partial w_{m^{\prime},n^{\prime}}^l} = \sum_{i=0}^{H-k_1} \sum_{j=0}^{W-k_2} \frac{\partial E}{\partial x_{i,j}^{l}} \frac{\partial x_{i,j}^{l}}{\partial w_{m^{\prime},n^{\prime}}^l}$$  
      $$= \sum_{i=0}^{H-k_1} \sum_{j=0}^{W-k_2} \delta^{l}_{i,j} \frac{\partial x_{i,j}^{l}}{\partial w_{m^{\prime},n^{\prime}}^l}$$  
 因为：  
-  $$  x_{i,j}^l = \sum_{m} \sum_{n} w_{m,n}^l o_{i+m,j+n}^{l-1} + b_{i,j}^l $$   
+  $$  x_{i,j}^l = \sum_{m} \sum_{n} w_{m,n}^l o_{i+m,j+n}^{l-1} + b_{i,j}^l $$  
 代入上式得到：  
   $$\frac{\partial x_{i,j}^{l}}{\partial w_{m^{\prime},n^{\prime}}^l} = \frac{\partial}{\partial w_{m^{\prime},n^{\prime}}^l}\left( \sum_{m} \sum_{n} w_{m,n}^{l}o_{i+m, j+n}^{l-1} + b^l \right) $$  
 得到：  
@@ -233,18 +233,18 @@ $$H\times W$$的图像经过$$k_1\times k_2$$的卷积核作用之后，得到�
 
 #### 误差对每输入的导数
 
-  $$\delta^{l}_{i,j} = \frac{\partial E}{\partial x_{i,j}^{l}}$$  
+$$\delta^{l}_{i,j} = \frac{\partial E}{\partial x_{i,j}^{l}}$$  
 可以由链式法则来求，并建立起$$\delta^{l}_{i,j}$$与$$\delta^{l+1}_{i,j}$$之间的关系：  
   $$\frac{\partial E}{\partial x_{i',j'}^{l}} = \sum_{i,j \in Q} \frac{\partial E}{\partial x_{Q}^{l+1}}\frac{\partial x_{Q}^{l+1}}{\partial x_{i',j'}^l}$$  
      $$= \sum_{i,j \in Q} \delta^{l+1}_{Q} \frac{\partial x_{Q}^{l+1}}{\partial x_{i',j'}^l}$$  
 只有有限区域Q中的$$\delta^{l+1}_{i,j}$$对$$\delta^{l}_{i,j}$$有影响，Q的大小就是卷积核的大小。  
   $$\frac{\partial E}{\partial x_{i',j'}^{l}} = \sum_{m = 0}^{k_1 -1} \sum_{n = 0}^{k_2 -1} \frac{\partial E}{\partial x_{i'-m, j'-n}^{l+1}}\frac{\partial x_{i'-m, j'-n}^{l+1}}{\partial x_{i',j'}^l} $$  
-     $$= \sum_{m = 0}^{k_1 -1} \sum_{n = 0}^{k_2 -1} \delta^{l+1}_{i'-m, j'-n} \frac{\partial x_{i'-m, j'-n}^{l+1}}{\partial x_{i',j'}^l} $$   
+     $$= \sum_{m = 0}^{k_1 -1} \sum_{n = 0}^{k_2 -1} \delta^{l+1}_{i'-m, j'-n} \frac{\partial x_{i'-m, j'-n}^{l+1}}{\partial x_{i',j'}^l} $$  
 再求下面的导数：
 
 #### 相邻两层输入之间的导数
 
-  $$\frac{\partial x_{i'-m,j'-n}^{l+1}}{\partial x_{i',j'}^l} = \frac{\partial}{\partial x_{i',j'}^l} \left( \sum_{m'} \sum_{n'} w_{m', n'}^{l+1} o_{i' - m + m',j' - n + n'}^{l} + b^{l+1} \right)$$  
+$$\frac{\partial x_{i'-m,j'-n}^{l+1}}{\partial x_{i',j'}^l} = \frac{\partial}{\partial x_{i',j'}^l} \left( \sum_{m'} \sum_{n'} w_{m', n'}^{l+1} o_{i' - m + m',j' - n + n'}^{l} + b^{l+1} \right)$$  
        $$= \frac{\partial}{\partial x_{i',j'}^l}\left( \sum_{m'} \sum_{n'} w_{m',n'}^{l+1}f\left(x_{i' - m + m',j' - n + n'}^{l}\right) + b^{l+1} \right)$$  
 得到：  
   $$\frac{\partial x_{i^{\prime} - m,j^{\prime} - n}^{l+1}}{\partial x_{i',j'}^l} = \frac{\partial}{\partial x_{i',j'}^l}\left( w_{m',n'}^{l+1} f\left(x_{ 0 - m + m', 0 - n + n'}^{l}\right) + ... + w_{m,n}^{l+1} f\left(x_{i',j'}^{l}\right) + ... + b^{l+1}\right)$$  

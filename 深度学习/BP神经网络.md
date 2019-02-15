@@ -70,7 +70,7 @@ $$\frac{\partial E}{\partial b_{i}^{(l)}} = \frac{\partial E}{\partial z_{i}^{(l
 ### 两个辅助公式
 
 $$\mathbf{z^{(l)}}=\mathbf{W^{(l)}a^{(l-1)} + b^{(l)}}$$  
-  $$\mathbf{a^{(l)}}=f(\mathbf{z^{(l)}})$$
+$$\mathbf{a^{(l)}}=f(\mathbf{z^{(l)}})$$
 
 ## 参数更新
 

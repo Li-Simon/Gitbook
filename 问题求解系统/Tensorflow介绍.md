@@ -54,7 +54,7 @@ tf的核心是围绕Graph展开的，简而言之，就是Tensor沿着Graph传�
 
 #### Graph
 
-我们以下面一个例子来理解tf来基于graph进行计算的：
+我们以下面一个例子来理解tf来基于graph进行计算的[^2]：
 
 ```py
 n [5]:
@@ -81,5 +81,7 @@ Tensor定义和运算主要是调用Eigen矩阵计算库完成的。
 
 Tensor的定义在tensorflow/core/framework/tensor.h中。
 
-[^1]: tensorflow代码解析——概览  [https://daiwk.github.io/posts/platform-tensorflow-code-analysis-overview.html](https://daiwk.github.io/posts/platform-tensorflow-code-analysis-overview.html)
+[^1]: tensorflow代码解析——概览  [https://daiwk.github.io/posts/platform-tensorflow-code-analysis-overview.html](https://daiwk.github.io/posts/platform-tensorflow-code-analysis-overview.html)  
+
+[^2]: EasyTensorflow https://www.easy-tensorflow.com/tf-tutorials/basics/graph-and-session
 

@@ -1,17 +1,15 @@
 #Tensorflow的核心概念
 tf的核心是围绕Graph, Variable, Session展开的，简而言之，就是Session中Tensor沿着Graph传递闭包完成Flow的过程。
-
-## Graph
-
 TensorFlow is a way of representing computation without actually performing it until asked. The first step to learn Tensorflow is to understand its main key feature, the "computational graph" approach. Basically, all Tensorflow codes contain two important parts:  
 1. 构建Graph,它表示计算的数据流  
-2. 运行一个Session，它执行graph中的操作  
+2. 运行一个Session，它执行graph中的操作   
+## Graph
 Graph包括节点与边：  
-“节点” 一般用来表示施加的数学操作，但也可以表示数据输入（feed in）的起点/输出（push out）的终点，或者是读取/写入持久变量（persistent variable）的终点。
+“节点” 一般用来表示施加的数学操作，但也可以表示数据输入（feed in）的起点/输出（push out）的终点，或者是读取/写入持久变量（persistent variable）的终点。  
 
-“线”表示“节点”之间的输入/输出关系。这些数据“线”可以输运“size可动态调整”的多维数据数组，即“张量”（tensor）。
+“线”表示“节点”之间的输入/输出关系。这些数据“线”可以输运“size可动态调整”的多维数据数组，即“张量”（tensor）。  
 
-张量从图中流过的直观图像是这个工具取名为“Tensorflow”的原因。一旦输入端的所有张量准备好，节点将被分配到各种计算设备完成异步并行地执行运算。
+张量从图中流过的直观图像是这个工具取名为“Tensorflow”的原因。一旦输入端的所有张量准备好，节点将被分配到各种计算设备完成异步并行地执行运算。  
 
 我们以下面一个例子来理解tf来基于graph进行计算的[^1]：
 

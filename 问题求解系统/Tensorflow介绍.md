@@ -160,6 +160,10 @@ with tf.Session() as sess:
     W, b = sess.run([weights, biases])
     print('weights = {}'.format(W))
     print('biases = {}'.format(b))
+    
+weights = [[-0.00376599 -0.00506956  0.00082394]
+ [ 0.0016487   0.00981423 -0.00226094]]
+biases = [0. 0. 0.]
 ```
 
 

@@ -22,7 +22,7 @@ with tf.Session() as sess:
     pow_out, useless_out = sess.run([pow_op, useless_op])
 ```
 
-![](/assets/tf_graph_ex1.png)\#\#\#
+![](/assets/tf_graph_ex1.png) 
 
 #### ReLU Graph
 

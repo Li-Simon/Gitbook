@@ -75,6 +75,7 @@ with tf.Session() as sess:
 
 ![](/assets/tf_graph_ex1.png)\#\#\#
 
+####ReLU Graph
 ![](/assets/Graph_ReLU.png)
 
 ### Tensor

@@ -9,7 +9,7 @@ Graph包括节点与边：
 
 “线”表示“节点”之间的输入/输出关系。这些数据“线”可以输运“size可动态调整”的多维数据数组，即“张量”（tensor）。  
 
-张量从图中流过的直观图像是这个工具取名为“Tensorflow”的原因。一旦输入端的所有张量准备好，节点将被分配到各种计算设备完成异步并行地执行运算。  
+张量从图中流过的直观图像是这个工具取名为“Tensorflow”的原因。一旦输入端的所有张量准备好，节点将被分配到各种计算设备完成异步并行地执行运算[^2]。  
 
 我们以下面一个例子来理解tf来基于graph进行计算的[^1]：
 
@@ -175,4 +175,4 @@ with tf.Session() as sess:
 
 
 [^1]: EasyTensorflow [https://www.easy-tensorflow.com/tf-tutorials/basics/graph-and-session](https://www.easy-tensorflow.com/tf-tutorials/basics/graph-and-session)
-
+[^2]: TensorFlow核心概念和原理介绍 https://www.cnblogs.com/wkslearner/p/8185890.html

@@ -154,6 +154,7 @@
   * [Sklearn的代码架构](问题求解系统/Sklearn的代码架构.md)
   * [Tensorflow介绍](问题求解系统/Tensorflow介绍.md)
     * [Tensorflow的核心概念](问题求解系统/Tensorflow的核心概念.md)
+    * [Tensorflow的原理](问题求解系统/Tensorflow的原理.md)
     * [Tensorflow的代码架构](问题求解系统/Tensorflow的代码架构.md)
   * [常用数据处理技巧](问题求解系统/常用数据处理技巧.md)
   * [NLP常用处理技巧](问题求解系统/NLP常用处理技巧.md)

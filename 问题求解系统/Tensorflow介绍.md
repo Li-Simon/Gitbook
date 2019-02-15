@@ -106,7 +106,7 @@ with tf.Session() as sess:
 
 #### VARIABLE
 
-### Create Variables {#2.1.-Create-Variables}
+##### Create Variables {#2.1.-Create-Variables}
 
 create a variable, we should use **tf.Variable **as:  
 
@@ -119,7 +119,7 @@ m = tf.Variable([[1, 2], [3, 4]], name="matrix")
 W = tf.Variable(tf.zeros([784,10]))
 ```
 
-### Initialize Variables {#2.2.-Initialize-Variables}
+##### Initialize Variables {#2.2.-Initialize-Variables}
 
 变量必须被初始化才能被使用：  
 
@@ -141,7 +141,7 @@ with tf.Session() as sess:
     print(sess.run(b))
     print(sess.run(c))
 ```
-#####example in neural network
+######example in neural network
 
 
 ```py

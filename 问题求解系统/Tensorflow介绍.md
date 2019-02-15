@@ -48,6 +48,8 @@ eigen3：eigen矩阵运算库，tf基础ops调用
 gpus: 封装了cuda/cudnn编程库
 ###tf核心概念
 tf的核心是围绕Graph展开的，简而言之，就是Tensor沿着Graph传递闭包完成Flow的过程。
+####Graph
+
 
 ####Tensor
 Matrix表示二维线性映射，Tensor表示多维线性映射。TF中Tensor的维数描述为阶，数值是0阶，向量是1阶，矩阵是2阶，以此类推，可以表示n阶高维数据。   
@@ -55,7 +57,6 @@ Tensor定义和运算主要是调用Eigen矩阵计算库完成的。
 
 Tensor的定义在tensorflow/core/framework/tensor.h中。   
 
-Tensor的两个主要的成员变量  
 
 
 

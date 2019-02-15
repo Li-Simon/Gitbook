@@ -2,7 +2,7 @@
 
 ###总体结构[^1]
 从底向上分为设备管理和通信层、数据操作层、图计算层、API接口层、应用层。   
-
+![](/assets/tensorflow_framework.png)     
 1. 底层设备通信层负责网络通信和设备管理。  
    1. 设备管理可以实现TF设备异构的特性，支持CPU、GPU、Mobile等不同设备。  
    2. 网络通信依赖gRPC通信协议实现不同设备间的数据传输和更新。  
@@ -61,7 +61,7 @@ Tensor的两个主要的成员变量
 
 ### 架构
 
-![](/assets/tensorflow_framework.png)   
+
 
 [^1]: tensorflow代码解析——概览  https://daiwk.github.io/posts/platform-tensorflow-code-analysis-overview.html
 

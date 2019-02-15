@@ -55,12 +55,6 @@ Tensor的定义在tensorflow/core/framework/tensor.h中。
 
 Tensor的两个主要的成员变量  
 
-#### 核心代码
-
-
-
-### 架构
-
 
 
 [^1]: tensorflow代码解析——概览  https://daiwk.github.io/posts/platform-tensorflow-code-analysis-overview.html

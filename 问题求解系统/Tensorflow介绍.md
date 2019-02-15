@@ -1,4 +1,4 @@
-## Tensorflor介绍
+# Tensorflor介绍
 
 ### 总体结构[^1]
 
@@ -48,18 +48,17 @@ tensroflow/python目录是python API客户端脚本
 eigen3：eigen矩阵运算库，tf基础ops调用  
 gpus: 封装了cuda/cudnn编程库
 
-### tf核心概念
+## tf核心概念
 
 tf的核心是围绕Graph展开的，简而言之，就是Tensor沿着Graph传递闭包完成Flow的过程。
 
-#### Graph
+### Graph
 TensorFlow is a way of representing computation without actually performing it until asked. The first step to learn Tensorflow is to understand its main key feature, the "computational graph" approach. Basically, all Tensorflow codes contain two important parts:  
 1. 构建Graph,它表示计算的数据流   
 2. 运行一个Session，它执行graph中的操作  
 我们以下面一个例子来理解tf来基于graph进行计算的[^2]：
 
 ```py
-n [5]:
 import tensorflow as tf
 x = 2
 y = 3
@@ -75,7 +74,7 @@ with tf.Session() as sess:
 ![](/assets/tf_graph_ex1.png)
 
 
-#### Tensor
+### Tensor
 
 Matrix表示二维线性映射，Tensor表示多维线性映射。TF中Tensor的维数描述为阶，数值是0阶，向量是1阶，矩阵是2阶，以此类推，可以表示n阶高维数据。  
 Tensor定义和运算主要是调用Eigen矩阵计算库完成的。

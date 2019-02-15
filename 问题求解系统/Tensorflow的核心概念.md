@@ -1,4 +1,4 @@
-#Tensorflow的核心概念
+##Tensorflow的核心概念
 tf的核心是围绕Graph, Variable, Session展开的，简而言之，就是Session中Tensor沿着Graph传递闭包完成Flow的过程。也就是张量从Graph中Flow。  
 TensorFlow is a way of representing computation without actually performing it until asked. The first step to learn Tensorflow is to understand its main key feature, the "computational graph" approach. Basically, all Tensorflow codes contain two important parts:  
 1. 构建Graph,它表示计算的数据流  

@@ -79,6 +79,7 @@ with tf.Session() as sess:
 ![](/assets/Graph_ReLU.png)
 
 ####Placeholder
+Placeholder比variable更基本，它是一个变量我们将要指定的数据。Placehos是一些在执行时被喂进的数据。  
 Placeholders are more basic than a variable. It is simply a variable that we asign data in a future time. Placeholders are nodes whose value is fed in at execution time. If we have inputs to our network that depend on some external data and we don't want our graph to depend on any real value while developing the graph, placeholders are the datatype we need. In fact, we can build the graph without any data. Therefore, placeholders don't need any initial value; only a datatype (such as float32) and a tensor shape so the graph still knows what to compute with even though it doesn't have any stored values yet.
 Some examples of creating placeholders are as follows:  
 

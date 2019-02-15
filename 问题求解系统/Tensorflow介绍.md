@@ -90,7 +90,7 @@ Tensor的定义在tensorflow/core/framework/tensor.h中。
 
 #### Constant
 
-As the name speaks for itself, **Constants  **are used as constants. They create a node that takes value and it does not change. You can simply create a constant tensor using  **tf.constant, **It accepts the five arguments:  
+As the name speaks for itself, **Constants  **are used as constants. They create a node that takes value and it does not change. You can simply create a constant tensor using  **tf.constant, **It accepts the five arguments:
 
 ```py
 tf.constant(value, dtype=None, shape=None, name='Const', verify_shape=False)
@@ -105,6 +105,42 @@ with tf.Session() as sess:
 ```
 
 #### VARIABLE
+
+### Create Variables {#2.1.-Create-Variables}
+
+create a variable, we should use **tf.Variable **as:  
+
+```py
+# Create a variable.
+w = tf.Variable(<initial-value>, name=<optional-name>)
+#Some examples of creating scalar and matrix variables are as follows:
+s = tf.Variable(2, name="scalar") 
+m = tf.Variable([[1, 2], [3, 4]], name="matrix") 
+W = tf.Variable(tf.zeros([784,10]))
+```
+
+### Initialize Variables {#2.2.-Initialize-Variables}
+
+变量必须被初始化才能被使用：  
+
+```py
+# create graph
+a = tf.get_variable(name="A", initializer=tf.constant(2))
+b = tf.get_variable(name="B", initializer=tf.constant(3))
+c = tf.add(a, b, name="Add")
+# add an Op to initialize global variables
+init_op = tf.global_variables_initializer()
+#
+
+# launch the graph in a session
+with tf.Session() as sess:
+    # run the variable initializer operation
+    sess.run(init_op)
+    # now let's evaluate their value
+    print(sess.run(a))
+    print(sess.run(b))
+    print(sess.run(c))
+```
 
 #### Placeholder
 

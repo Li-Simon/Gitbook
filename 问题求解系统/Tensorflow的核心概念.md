@@ -7,7 +7,7 @@ TensorFlow is a way of representing computation without actually performing it u
 1. 构建Graph,它表示计算的数据流  
 2. 运行一个Session，它执行graph中的操作
 
-我们以下面一个例子来理解tf来基于graph进行计算的[^2]：
+我们以下面一个例子来理解tf来基于graph进行计算的[^1]：
 
 ```py
 import tensorflow as tf
@@ -169,7 +169,6 @@ with tf.Session() as sess:
     print(sess.run(c, feed_dict=d))
 ```
 
-[^1]: tensorflow代码解析——概览  [https://daiwk.github.io/posts/platform-tensorflow-code-analysis-overview.html](https://daiwk.github.io/posts/platform-tensorflow-code-analysis-overview.html)  
 
-[^2]: EasyTensorflow [https://www.easy-tensorflow.com/tf-tutorials/basics/graph-and-session](https://www.easy-tensorflow.com/tf-tutorials/basics/graph-and-session)
+[^1]: EasyTensorflow [https://www.easy-tensorflow.com/tf-tutorials/basics/graph-and-session](https://www.easy-tensorflow.com/tf-tutorials/basics/graph-and-session)
 

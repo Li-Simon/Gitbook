@@ -141,7 +141,6 @@
   * [Learning To Rank LTR](推荐系统/learning-to-rank-ltr.md)
   * [Problem Solver Systems](推荐系统/ProbelmSolvingSystem.md)
 * [第八章 项目工作](Kaggle/README.md)
-  * [Residual NN](Kaggle/ResiNN.md)
   * [Fast项目](Kaggle/Fast项目.md)
   * [Miura项目](Kaggle/Miura项目.md)
   * [Titanic](Kaggle/Titanic.md)

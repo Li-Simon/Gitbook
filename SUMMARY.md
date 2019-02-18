@@ -2,7 +2,6 @@
 
 * [序言](README.md)
 * [第一章 工具](工具/README.md)
-  * [简历](工具/简历.md)
   * [Ceres-Solver](工具/Ceres-Solver.md)
   * [参考书籍](工具/推荐书籍.md)
 * [第二章 C++](C++/README.md)

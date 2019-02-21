@@ -2,7 +2,6 @@
 Boosting系列方法的原理图如下：
 
 ![](/assets/Boosting.png)
-在这里，我们将介绍GBDT, XGBoost以及LightGBM。  
 
 #### AdaBoost
 
@@ -106,7 +105,7 @@ AdaBoost 算法最终分类器的训练误差界为：
 #### XGBoost[^1]
 
 模型复杂度惩罚是XGBoost相对于MART的提升。  
-&emsp;&emsp;$$\Omega(f^{(m)})= \displaystyle \sum_{m=1}^M[\gamma T_m + \frac{1}{2}\lambda ||w_m||^2_2 + \alpha ||w_m||_1 ]$$  
+&emsp;&emsp;$$= \displaystyle \sum_{m=1}^M[\gamma T_m + \frac{1}{2}\lambda ||w_m||^2_2 + \alpha ||w_m||_1 ]$$  
 MART includes row subsampling, while XGBoost includes both row and column  
 subsampling
 
@@ -161,16 +160,6 @@ Input: Data set D, A loss function L, A base learner $$L_\Phi$$, the number of i
 7. $$\hat f_m(x) = \eta \displaystyle \sum_{j=1}^T \hat w_{jm}I(x \in \hat R_{jm})$$;  
 8. $$\hat f^m(x) = \hat f^{(m-1)}(x) + \hat f_m(x)$$;  
 9. end  
-Output: $$\hat f(x) = \hat g^{(M)}(x) = \displaystyle \sum_{m=1}^M\hat f_m(x)$$  
-
-###L2正则化
-当我们对损失函数加入树的复杂度以及树的权重的L2正则化的时候(不考虑L1)，
-&emsp;&emsp;$$J_m(\phi_m) = \displaystyle \sum_{j=1}^T[G_{jm}w_{jm} + \frac{1}{2}(H_{jm}+\lambda)w_{jm}^2]$$  
-&emsp;&emsp;&emsp;&emsp;$$ \ge -\displaystyle \sum_{j=1}^T\frac{1}{2}\frac{G_{jm}^2}{H_{jm}+\lambda}$$  
-成立条件是：  
-&emsp;&emsp;$$w_{jm} = -\frac{G_{jm}}{H_{jm}+\lambda}, j=1,2...,T$$  
-为了寻找最佳分裂点j，也就是最大化如下的Gain,也就是原来的cost 减去分裂后的cost:  
-&emsp;&emsp;$$Gain = \frac{1}{2}[\frac{G_{L}^2}{H_{L}+\lambda} + \frac{G_{R}^2}{H_{R}+\lambda} - \frac{(G_L + G_R)^2}{H_{L} + H_{R}+\lambda}] - \lambda$$  
-
+Output: $$\hat f(x) = \hat g^{(M)}(x) = \displaystyle \sum_{m=1}^M\hat f_m(x)$$
 
 

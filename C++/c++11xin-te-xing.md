@@ -10,7 +10,7 @@
 
 #### shared\_ptr
 
- 普通指针到智能指针的转换
+普通指针到智能指针的转换
 
 ```cpp
 int* iPtr = new int(42);
@@ -26,6 +26,8 @@ int* pI = p.get();
 #### unique\_ptr
 
 #### weak\_ptr
+
+为解决shared\_ptr互引用导致的内存不能释放而引入的。
 
 #### C++任意参数模板
 

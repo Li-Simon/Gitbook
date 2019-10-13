@@ -4,6 +4,7 @@
 * [第一章 工具](工具/README.md)
   * [Ceres-Solver](工具/Ceres-Solver.md)
   * [参考书籍](工具/推荐书籍.md)
+  * [Gitbook的安装与使用](工具/gitbookde-an-zhuang-yu-shi-yong.md)
 * [第二章 C++](C++/README.md)
   * [OOP](C++/oop.md)
   * [C++内存问题](C++/C++内存问题.md)

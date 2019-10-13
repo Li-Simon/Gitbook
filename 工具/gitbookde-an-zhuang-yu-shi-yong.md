@@ -4,13 +4,11 @@ gitbook可以用来生成自己的书籍，并且书籍的管理可以像github�
 
 [https://tonydeng.github.io/gitbook-zh/gitbook-howtouse/howtouse/README.html](https://tonydeng.github.io/gitbook-zh/gitbook-howtouse/howtouse/README.html)
 
-[https://jackchan1999.github.io/2017/05/01/gitbook/GitBook%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/](https://jackchan1999.github.io/2017/05/01/gitbook/GitBook%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/)
+[https://jackchan1999.github.io/2017/05/01/gitbook/GitBook%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/](https://jackchan1999.github.io/2017/05/01/gitbook/GitBook使用教程/)
 
 要是用gitbook，需要安装Node.js与gitbook，如果还想使用gitbook生成pdf文件，则需要安装Calibre。
 
-#### 安装Node.js与gitbook
+#### 安装Node.js, gitbook与Calibre
 
-可以去官网上下载这两个软件并安装后面这个链接来安装。
-
-
+可以去官网上下载这些软件并安装后面这个链接来安装。
 
